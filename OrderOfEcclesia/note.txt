@@ -1,8 +1,169 @@
 
+=Memory Addresses=
+
+021007A0-021007C1 : Treasure chests
+
+021007A8=7C	First Heart Repair
+021007AA=7D	First Magical Ticket
+
+=Scraps=
+
+021007A2
+
+C:
+0083007e
+007c0083
+00be007d
+00be00be
+
+A:
+007d00c7
+007c007d
+007e007e
+00be007d
+
+http://www.gamespot.com/ds/action/castlevaniaorderofecclesia/show_msgs.php?topic_id=m-1-46105317&pid=945837&page=12
+
+It's probably humped to hell in the village -precisely- because there's not much happening there.
+Shuffle up the RNG while the game is mostly idle, rather than give it CPU cycles when there's likely to be a bunch of stuff on screen all wanting their own CPU cycles.
+
+Here's more information on the RNG than you could have ever wanted:
+
+0x021011EC - Flag word; while bottom bit is true, the RNG routine is called many times each frame
+
+0x021389C0 - Word (static) of random number; gets hashed into a short
+Chance to acquire built from a scalar of luck (?); also a short
+Has lock prevention using static constant integers
+
+0x02033298 - Seed_Routine
+First to write to RN
+Called twice at boot
+Called fifty times during file load
+Called incessantly in Wygol Village (XD nice trick, Konami!)
+Called twenty-five times when loading Training Hall
+Called sporadically in empty rooms
+Called incessantly in rooms with treasure chests
+Called a whole bunch when you get hit by scythe traps (traps and/or enemies in general?)
+
+.org Seed_Routine
+ldr r2, =#0x021389C0 @Load pointer to RN
+ldr r0, =#0x3243F6AD @A seeding constant
+ldr r3, [r2] @Load base RN; initialized to garbage (usually 0)
+ldr r1, =#0x1B0CB175 @Another seeding constant
+mov r3, r3, asr #0x8 @Hashing opcode
+mla r0, r3, r0, r1 @r0 = (Old RN >> * SEED_CONST_1 + SEED_CONST_2
+str r0, [r2] @Update RN
+bx lr
+
+.org 0x0205C800
+bge 0x0205C854
+@---------------------------------------@Branch over drop code if RN is >= chance to get
+
+Always get drops (based on comparison of RNG return and chance):
+
+0205C800 00000000
+
+Only works for Rotten Meat so far (O_o)
+
+Always get drops (based on return value of RNG):
+
+02033304 E3A00000
+02033318 E3A00000
+
+Gives 1G for every candle, guaranteed >.>
+Makes second and third drops always appear (first drop instead of second if no second)
+
+Looks like people without an Action Replay are just plain stuck farming. There is no humanly possible RNG exploit.
+
+Well, I dunno...can people match the button presses they see in a say, YouTube video, precisely? Because that'd be the only way.
+
+
+Treasure chests really screw with things.
+
+Now, there is a SHORT moment when you're in places without treasure chests before the seeding routine is called again. You definitely won't have an easy time getting fixed drops from chests, but someone might be able to devise a way to get fixed drops from enemies. The enemies that would be susceptible to such an exploit would be limited, though, because it would be based on the levels' designs.
+
+The Seed_Routine is equivalent or similar to Konami typing this in one of their (assuming they wrote the game in C++) .cpp files:
+
+srand(* (int *) 0x021389C0); //If you don't know C++ then don't worry about it. Just know that this is how Konami is screwing with your ability to exploit the RNG.
+
+
+
+
+
+
+
+
+I'm going to need 6 Magical Tickets (warp) this run. The occasions are:
+Skeleton Cave
+Minera Prison, when I backtrack to grab Aeon
+Oblivion Ridge
+Ecclesia, when Barlowe sends me to kill Albus
+Mystery Manor, right after I kill Albus
+Ecclesia, right after I kill Barlowe 
+
+
+I get one for free in Kalidus. Then I need to manipulate 5 more or buy them.
+
 (13888+13440+12992+12544+12096+11648+11200+10752+10304+9856+9408+8960)/12=11424
 (13888+13440+12992+12544+12096+11648+0)/7=10944
 
-OW Map : 021003CC ?
+100310 = GOLD (4)
+1002B8 = MP (2)
+1002BA = Max MP (2)
+
+100D64 = 'total displayed INT'
+100D50 = 'effective base INT'
+
+100D38 = STR stat
+100D3A = CON stat
+100D3C = INT stat
+100D3E = MND stat
+100D40 = LCK stat
+100D36 = your natural DEF stat (this is added to your DEF stat)
+100D34 = your natural ATK stat (this shouldn't exist either. it is unused)
+
+Your stats are recalculated when you level up. So you'll need to pause and unpause with these cheats on to get your godly stats back.
+
+1002C0 = glyph equipped to 'Y'
+1002C2 = glyph equipped to 'X'
+1002C4 = glyph equipped to 'R'
+1002D6 = what is displayed as being equipped to 'R'
+
+Your weapons can be anything from 1 (starting weapon) to 49 or 50 (Dominus). Hacking them to 51-54 lets you use your transformation skills as Shanoa. "Weapon 51" is actually kind of awesome. For the R button the good values are 1 (Magnes), 2 (Paries), 3 (Voliticus), 4 (Black Panther), 23 (Dominus), and 24 (Agartha).
+
+100458 = Lizard Tail (starting item)
+100459 = Ordinary Rock
+10045A = Serpent Scale
+10045B = Glyph Union (starting item)
+10045C = Glyph Sleeve
+10045D = Book of Spirits
+
+Set the relic's bytes to 255 to own the item and set it to ON.
+
+10045E-100548 = inventory
+
+Each byte is one item. The right nibble is the quantity. The left nibble, if odd, marks the item as found in the guide. For some reason the game likes to use '9' for this. So at the start of the game 10045E will have a value of 0x91. That means 1x Potion, and mark it as found in the guide. I recommend you open the memory viewer, put your cursor on 10045E, and then hold down the 9-key for a few seconds. (100485-100489 = colored drops.)
+
+1003EA-100437 = glyphs
+
+Same as inventory items. Just write 0x99 over each byte. *shrug*
+
+1003CC-1003D0 = map availability
+
+Write FF onto each byte. Interestingly, the maps are in a very different order than the order you play them in.
+
+Things to watch:
+10D728 = boss HP (2 bytes)
+1007A2 = contents of the "first" random treasure chest (2 bytes)
+A4, A6, A6, A8, AA, AC, AE = random chests 2-8, even if the map doesn't have that many.
+100374 = game clock, time is in frames (4 bytes) 
+
+
+02128C2E - Shanoa's hitbox - left
+02128C32 - Shanoa's hitbox - right
+021002B8 - Current MP
+0210D728 - one of many enemy hp values, this one is used for the boss at least. 
+
 
 Action Replay CODES
 http://nintendods.cheats.de/cheat_ausgabe.php?id=305087

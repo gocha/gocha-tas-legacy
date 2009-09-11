@@ -1,5 +1,5 @@
 
-11
+17
 00000	02109850	d	h	0	X position (next)
 00001	02109854	d	h	0	Y position (next)
 00002	0210985C	d	s	0	X velocity
@@ -11,4 +11,13 @@
 00008	021002BA	w	u	0	Max MP value
 00009	021002BC	w	u	0	Current heart count
 0000A	021002BE	w	u	0	Max heart count
-0000B	0210030C	d	u	0	Current EXP value
+0000B	021098E5	b	u	0	Invinsibility
+0000C	02128C2E	w	h	0	Shanoa's hitbox left
+0000D	02128C30	w	h	0	Shanoa's hitbox top
+0000E	02128C32	w	h	0	Shanoa's hitbox right
+0000F	02128C34	w	h	0	Shanoa's hitbox bottom
+00010	021389C0	d	h	0	Random Number
+00011	021007A2	d	h	0	Treasure chests #1
+00012	021007A6	d	h	0	Treasure chests #2
+00013	021007AA	d	h	0	Treasure chests #3
+00014	021007AE	d	h	0	Treasure chests #4
