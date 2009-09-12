@@ -1,4 +1,10 @@
 
+=Mistakes and possible improvements of test run=
+
+* Sliding at the edge just before falling down is slower in most cases, because backdash can keep its effect in midair.
+* Monastery - Secare (Sword) can be obtained at the long corridor which is before the boss room. I think it's faster because Banshee won't interrupt Shanoa.
+* Monastery - Possibly, Magnes use in Arthroverta's room (the boss room) can be optimized a little more.
+
 =Memory Addresses=
 
 021007A0-021007C1 : Treasure chests
