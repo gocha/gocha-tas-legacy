@@ -1,5 +1,5 @@
 
-19
+20
 00000	02109850	d	h	0	X position (next)
 00001	02109854	d	h	0	Y position (next)
 00002	0210985C	d	s	0	X velocity
@@ -19,6 +19,6 @@
 00010	021389C0	d	h	0	Random Number
 00011	02109958	d	s	0	Magnes X velocity
 00012	0210995C	d	s	0	Magnes Y velocity
-2
-00013	021007AA	d	h	0	Treasure chests #3
+00013	0210D728	w	s	0	Arthroverta HP
+ts #3
 00014	021007AE	d	h	0	Treasure chests #4
