@@ -6,6 +6,8 @@
 * Monastery - Secare (Sword) can be obtained at the long corridor which is before the boss room. I think it's faster because Banshee won't interrupt Shanoa.
 * Monastery - Possibly, Magnes use in Arthroverta's room (the boss room) can be optimized a little more.
 * Wygol Village - Less heart supply, because it can be recovered by absorbing Glyphs (+10).
+* Ruvas Forest - Saving HPs for Kalidus Channel might save time. Glyph Union could be a time saver, because hearts can be recovered by absorbing Glyphs (+10).
+* Kalidus Channel - It's hard to optimize this level tightly. Especially, I was annoyed at Merman's behavior.
 
 =Memory Addresses=
 
