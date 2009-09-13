@@ -2,9 +2,10 @@
 =Mistakes and possible improvements of test run=
 
 * Sliding at the edge just before falling down is slower in most cases, because backdash can keep its effect in midair. (Beginning-Monastery)
-* Monastery - Lacking backdash when entering the level.
+* Monastery - Lacking backdash when entering the level (exiting previous level with sliding seems to disable that)
 * Monastery - Secare (Sword) can be obtained at the long corridor which is before the boss room. I think it's faster because Banshee won't interrupt Shanoa.
 * Monastery - Possibly, Magnes use in Arthroverta's room (the boss room) can be optimized a little more.
+* Wygol Village - Less heart supply, because it can be recovered by absorbing Glyphs (+10).
 
 =Memory Addresses=
 
