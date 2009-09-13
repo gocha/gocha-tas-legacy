@@ -4,17 +4,18 @@
 if emu then
 	-- Use desmume r2871+, or it'll return wrong value.
 	if OR(0xffffffff, 0) ~= -1 then
+		--require("bit")
 		error("Bad bitwise operation detected. Use newer version to solve the problem.")
+	else
+		bit = {}
+		bit.band = AND
+		bit.bor  = OR
+		bit.bxor = XOR
+		function bit.tobit(num) return AND(num, 0xffffffff) end
+		function bit.lshift(num, shift) return SHIFT(num, -shift) end
+		function bit.rshift(num, shift) return SHIFT(num,  shift) end
+		function bit.arshift(num, shift) return math.floor(num / SHIFT(1, -shift)) end
 	end
-
-	bit = {}
-	bit.band = AND
-	bit.bor  = OR
-	bit.bxor = XOR
-	function bit.tobit(num) return AND(num, 0xffffffff) end
-	function bit.lshift(num, shift) return SHIFT(num, -shift) end
-	function bit.rshift(num, shift) return SHIFT(num,  shift) end
-	function bit.arshift(num, shift) return math.floor(num / SHIFT(1, -shift)) end
 else
 	require("bit")
 end
@@ -85,9 +86,29 @@ end
 else
 -- [ main code for emulua host ] -----------------------------------------------
 
+local RNG_Previous = 0
+local RNG_NumAdvanced = -1
+local RAM = { RNG = 0x021389c0 }
+
+emu.registerafter(function()
+	local searchMax = 100
+
+	RNG_NumAdvanced = -1
+	OoE_RandomSeed(RNG_Previous)
+	for i = 0, searchMax do
+		if OoE_RandomLast() == memory.readdword(RAM.RNG) then
+			RNG_NumAdvanced = i
+			break
+		end
+		OoE_Random()
+	end
+	RNG_Previous = memory.readdword(RAM.RNG)
+end)
+
 gui.register(function()
-	OoE_RandomSeed(memory.readdword(0x021389c0))
+	OoE_RandomSeed(memory.readdword(RAM.RNG))
 	agg.text(116, 5, string.format("NEXT:%08X", OoE_Random()))
+	agg.text(116, 26, "ADVANCED:" .. ((RNG_NumAdvanced == -1) and "???" or tostring(RNG_NumAdvanced)))
 end)
 
 --------------------------------------------------------------------------------
