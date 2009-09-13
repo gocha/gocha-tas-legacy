@@ -13,10 +13,45 @@
 
 021007A2-021007C1 : Treasure chests
 
-021007A8=7C	First Heart Repair
-021007AA=7D	First Magical Ticket
+==Treasure chests==
+
+* 007C - Heart Repair
+* 007D - Magical Ticket
+* 00C1 - Sage
+* 013B - Protect Ring (750G)
+
+Monastery:
+* 021007A8 - First treasure chest
+* 021007AA - Last treasure chest
+
+Minera Prison Island:
+021007AA - First treasure chest
+021007A2 - Second treasure chest
+021007A6 - Fourth treasure chest (optional)
+021007A8 - Sixth treasure chest (optional?; bottom path costs time a little?)
+021007AE - Fifth treasure chest (optional; Bone Archer)
+021007AC - Third treasure chest (optional; Axe Armor stands on the way)
 
 =Scraps=
+
+          #2 -- #3 #4 #1 #6 #5
+          a2 a4 a6 a8 aa ac ae
+08270c8b: e8 -- 7d c1 7d 7d c2	4
+2d0675bf: 7d -- 7d 7d c2 c2 be	5
+0bfadae1: be -- c1 7d 7d c2 c2	3
+d30ae5df: 7d -- 7d be c2 c1 be	6
+c4897990: be -- e8 be 7d c1 7d	1
+e3a90292: c1 -- c1 7d 13b be 7d	2
+
+8136ddce
+cead75dd
+
+
+Potion 500G
+Mind Up 300G
+Magical Ticket 100G
+Meat 290G
+
 
 021007A2
 
