@@ -4,7 +4,7 @@
 if emu then
 	-- Use desmume r2871+, or it'll return wrong value.
 	if OR(0xffffffff, 0) ~= -1 then
-		error("Bit operation")
+		error("Bad bitwise operation detected. Use newer version to solve the problem.")
 	end
 
 	bit = {}
