@@ -36,7 +36,7 @@ Minera Prison Island:
 
           #2 -- #3 #4 #1 #6 #5
           a2 a4 a6 a8 aa ac ae
-08270c8b: e8 -- 7d c1 7d 7d c2	4
+86389c91: e8 -- 7d c1 7d 7d c2	4
 2d0675bf: 7d -- 7d 7d c2 c2 be	5
 0bfadae1: be -- c1 7d 7d c2 c2	3
 d30ae5df: 7d -- 7d be c2 c1 be	6
@@ -150,6 +150,7 @@ Ecclesia, right after I kill Barlowe
 I get one for free in Kalidus. Then I need to manipulate 5 more or buy them.
 
 (13888+13440+12992+12544+12096+11648+11200+10752+10304+9856+9408+8960)/12=11424
+(13888+13440+12992+12544+12096+11648+11200+10752+10304+9856+9408+8960+8512)/13=11200
 (13888+13440+12992+12544+12096+11648+0)/7=10944
 
 100310 = GOLD (4)

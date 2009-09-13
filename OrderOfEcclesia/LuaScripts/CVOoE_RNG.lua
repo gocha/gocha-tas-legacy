@@ -61,11 +61,17 @@ if not emu then
 -- [ main code for normal lua host ] -------------------------------------------
 
 local numsToView = 128
+local searchSpecifiedVal = false
+local valToSearch
 
 if #arg >= 1 then
 	OoE_RandomSeed(tonumber(arg[1]))
 	if #arg >= 2 then
 		numsToView = tonumber(arg[2])
+		if #arg >= 3 then
+			searchSpecifiedVal = true
+			valToSearch = tonumber(arg[3])
+		end
 	end
 else
 	io.write("Input the intial value of RNG: ")
@@ -78,6 +84,12 @@ for i = 1, numsToView do
 		io.write("\n")
 	else
 		io.write(" ")
+	end
+	if searchSpecifiedVal and OoE_RandomLast() == valToSearch then
+		if i % 8 ~= 0 then
+			io.write("\n")
+		end
+		break
 	end
 	OoE_Random()
 end
