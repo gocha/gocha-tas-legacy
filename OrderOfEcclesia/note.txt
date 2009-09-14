@@ -3,7 +3,8 @@
 
 * Sliding at the edge just before falling down is slower in most cases, because backdash can keep its effect in midair. (Beginning-Monastery)
 * Monastery - Lacking backdash when entering the level (exiting previous level with sliding seems to disable that)
-* Monastery - Secare (Sword) can be obtained at the long corridor which is before the boss room. I think it's faster because Banshee won't interrupt Shanoa.
+* Monastery - Secare (Sword) can be obtained at the long corridor which is before the boss room. I think it's faster because Banshee won't interrupt Shanoa. I don't know if it's necessary.
+* Monastery - Don't do Glyph Union attacks continuously, invulnerability costs some of frames. However, do it when MP is full. Attacking delays MP recovery.
 * Monastery - Possibly, Magnes use in Arthroverta's room (the boss room) can be optimized a little more.
 * Wygol Village - Less heart supply, because it can be recovered by absorbing Glyphs (+10).
 * Ruvas Forest - Saving HPs for Kalidus Channel might save time. Glyph Union could be a time saver, because hearts can be recovered by absorbing Glyphs (+10).
