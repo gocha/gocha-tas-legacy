@@ -22,21 +22,35 @@ end
 
 -- pure 32-bit multiplier
 function mul32(a, b)
-	a = bit.tobit(a)
-	b = bit.tobit(b)
-	-- separate the value into two 16-bit values to prevent type casting
-	local b_lo = bit.band(b, 0xffff)
-	local b_hi = bit.rshift(b, 16)
-	-- compute each multiplication
-	local v_lo = bit.tobit(a * b_lo)
-	local v_hi = bit.band(a * b_hi, 0xffff)
-	-- compose them
-	local v = bit.bor(
-		bit.lshift(bit.rshift(v_lo, 16) + v_hi, 16), -- higher 16-bit
-		bit.band(v_lo, 0xffff) -- lower 16-bit
-	)
-	-- return it
-	return bit.tobit(v)
+	-- separate the value into two 8-bit values to prevent type casting
+	local x, y, z = {}, {}, {}
+	x[1] = bit.band(a, 0xff)
+	x[2] = bit.band(bit.rshift(a, 8), 0xff)
+	x[3] = bit.band(bit.rshift(a, 16), 0xff)
+	x[4] = bit.band(bit.rshift(a, 24), 0xff)
+	y[1] = bit.band(b, 0xff)
+	y[2] = bit.band(bit.rshift(b, 8), 0xff)
+	y[3] = bit.band(bit.rshift(b, 16), 0xff)
+	y[4] = bit.band(bit.rshift(b, 24), 0xff)
+	-- calculate for each bytes
+	local v, c
+	v = x[1] * y[1]
+	z[1], c = bit.band(v, 0xff), bit.rshift(v, 8)
+	v = c + x[2] * y[1] + x[1] * y[2]
+	z[2], c = bit.band(v, 0xff), bit.rshift(v, 8)
+	v = c + x[3] * y[1] + x[2] * y[2] + x[1] * y[3]
+	z[3], c = bit.band(v, 0xff), bit.rshift(v, 8)
+	v = c + x[4] * y[1] + x[3] * y[2] + x[2] * y[3] + x[1] * y[4]
+	z[4], c = bit.band(v, 0xff), bit.rshift(v, 8)
+	v = c + x[4] * y[2] + x[3] * y[3] + x[2] * y[4]
+	z[5], c = bit.band(v, 0xff), bit.rshift(v, 8)
+	v = c + x[4] * y[3] + x[3] * y[4]
+	z[6], c = bit.band(v, 0xff), bit.rshift(v, 8)
+	v = c + x[4] * y[4]
+	z[7], z[8] = bit.band(v, 0xff), bit.rshift(v, 8)
+	-- compose them and return it
+	return bit.bor(z[1], bit.lshift(z[2], 8), bit.lshift(z[3], 16), bit.lshift(z[4], 24)),
+	       bit.bor(z[5], bit.lshift(z[6], 8), bit.lshift(z[7], 16), bit.lshift(z[8], 24))
 end
 
 --[ OoE RNG simulator ] --------------------------------------------------------
