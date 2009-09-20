@@ -10,7 +10,6 @@
 * Ruvas Forest - Saving HPs for Kalidus Channel might save time. Glyph Union could be a time saver, because hearts can be recovered by absorbing Glyphs (+10).
 * Kalidus Channel - It's hard to optimize this level tightly. Especially, I was annoyed at Merman's behavior.
 * Minera Prison Island - Giant Skeleton battle is so sloppy. Need to think about a better strategy.
-** I didn't know that the invulnerability for left hand attack and right hand attack are treated independently :(
 
 =Game mechanisms=
 
@@ -25,6 +24,10 @@ Sliding has higher initial velocity, but that cannot be used so much:
 
 * Backdash can keep its effect in midair but sliding cannot. Therefore, it generally shouldn't be used at the edge just before falling down.
 * If sliding is used to exit a level, you cannot do backdash just when you entered to a level. That'll cost a few of frames.
+
+Other findings:
+
+* Decrement of backdash speed stops when Shanoa touches the edge a step only 1 frame. Possibly slightly increase average speed. http://img.f.hatena.ne.jp/images/fotolife/G/GOCHA/20090920/20090920200217.png
 
 =Memory Addresses=
 
