@@ -1,4 +1,13 @@
 
+=== General Info ===
+
+To record a movie, you need to download DeSmuME first.
+http://tasvideos.org/forum/t/8008
+The test run uses 0.9.4+.
+
+DO NOT UPLOAD THE ROM TO THE PROJECT.
+DO NOT ASK HOW TO DOWNLOAD THE ROM.
+
 =Mistakes and possible improvements of test run=
 
 * Sliding at the edge just before falling down is slower in most cases, because backdash can keep its effect in midair. (Beginning-Monastery)
@@ -23,9 +32,9 @@ I'm not sure how can I move optimal, but I can say about some facts.
 * Backdash+jump: (13888+13440+12992+12544+12096+11648+11200+10752+10304+9856+9408+8960)/12=11424
 * Backdash+attack: (13888+13440+12992+12544+12096+11648+0)/7=10944 (crouching decreases velocity a little)
 
-Sliding has higher initial velocity, but that cannot be used so much:
+Sliding has higher initial velocity:
 
-* Backdash can keep its effect in midair but sliding cannot. Therefore, it generally shouldn't be used at the edge just before falling down.
+* Backdash can keep its effect in midair but sliding cannot. Therefore, it shouldn't be used at the edge just before falling down, if you need horizontal speed.
 * If sliding is used to exit a level, you cannot do backdash just when you entered to a level. That'll cost a few of frames.
 
 Other findings:
