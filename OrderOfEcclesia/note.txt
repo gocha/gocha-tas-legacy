@@ -10,6 +10,8 @@
 * Ruvas Forest - Saving HPs for Kalidus Channel might save time. Glyph Union could be a time saver, because hearts can be recovered by absorbing Glyphs (+10).
 * Kalidus Channel - It's hard to optimize this level tightly. Especially, I was annoyed at Merman's behavior.
 * Minera Prison Island - Giant Skeleton battle is so sloppy. Need to think about a better strategy.
+* I picked up a bunch of redundant items, to see what is useful and what is useless.
+* Brachyura has 450 HP for each stage (HP border: 1350, 900, 450)
 
 =Game mechanisms=
 
