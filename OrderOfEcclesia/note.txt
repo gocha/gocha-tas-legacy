@@ -1,26 +1,31 @@
 
 === General Info ===
 
-To record a movie, you need to download DeSmuME first.
-http://tasvideos.org/forum/t/8008
-The test run uses 0.9.4+.
-
 DO NOT UPLOAD THE ROM TO THE PROJECT.
 DO NOT ASK HOW TO DOWNLOAD THE ROM.
 
+To record a movie, you need to download DeSmuME first.
+http://tasvideos.org/forum/t/8008
+Our test run uses 0.9.4+.
+
+In my opinion, a serious run should come after 0.9.5 release.
+Its emulation quality is much better than 0.9.4 family.
+
 =Mistakes and possible improvements of test run=
 
-* Sliding at the edge just before falling down is slower in most cases, because backdash can keep its effect in midair. (Beginning-Monastery)
+* I picked up a bunch of redundant items, to see what is useful and what is useless.
+* Beginning-Monastery - Sliding at the edge just before falling down is slower in most cases, because backdash can keep its effect in midair.
 * Monastery - Lacking backdash when entering the level (exiting previous level with sliding seems to disable that)
-* Monastery - Secare (Sword) can be obtained at the long corridor which is before the boss room. I think it's faster because Banshee won't interrupt Shanoa. I don't know if it's necessary.
+* Monastery - Secare (Sword) can be obtained at the long corridor which is before the boss room. I think it's faster because Banshee won't interrupt Shanoa.
+** However, I think Secare doesn't help Shanoa so much. It shortens the first boss battle a little, but costs a few seconds when obtain/equip it.
 * Monastery - Don't do Glyph Union attacks continuously, invulnerability costs some of frames. However, do it when MP is full. Attacking delays MP recovery.
 * Monastery - Possibly, Magnes use in Arthroverta's room (the boss room) can be optimized a little more.
 * Wygol Village - Less heart supply, because it can be recovered by absorbing Glyphs (+10).
 * Ruvas Forest - Saving HPs for Kalidus Channel might save time. Glyph Union could be a time saver, because hearts can be recovered by absorbing Glyphs (+10).
 * Kalidus Channel - It's hard to optimize this level tightly. Especially, I was annoyed at Merman's behavior.
 * Minera Prison Island - Giant Skeleton battle is so sloppy. Need to think about a better strategy.
-* I picked up a bunch of redundant items, to see what is useful and what is useless.
-* Lighthouse - Brachyura can be defeated without using Union Macir (use Dominus Hatred instead)
+* Minera Prison Island - Exiting Giant Skeleton by sliding might be faster.
+* Lighthouse - Brachyura can be defeated without Union Macir (use Dominus Hatred instead)
 ** Brachyura has 450 HP for each stage (HP border: 1350, 900, 450)
 
 =Game mechanisms=
@@ -32,7 +37,7 @@ I'm not sure how can I move optimal, but I can say about some facts.
 * Backdash+jump: (13888+13440+12992+12544+12096+11648+11200+10752+10304+9856+9408+8960)/12=11424
 * Backdash+attack: (13888+13440+12992+12544+12096+11648+0)/7=10944 (crouching decreases velocity a little)
 
-Sliding has higher initial velocity:
+Sliding has higher initial velocity than backdash, however:
 
 * Backdash can keep its effect in midair but sliding cannot. Therefore, it shouldn't be used at the edge just before falling down, if you need horizontal speed.
 * If sliding is used to exit a level, you cannot do backdash just when you entered to a level. That'll cost a few of frames.
