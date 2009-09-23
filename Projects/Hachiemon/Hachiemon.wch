@@ -1,0 +1,32 @@
+
+30
+00000	030000b0	b	u	0	Health
+00001	030000b1	b	u	0	Lips
+00002	03000dff	b	u	0	Lip Max
+00003	030000b4	b	u	0	Time (minutes)
+00004	030000b5	b	u	0	Time (seconds)
+00005	030000b6	b	u	0	Time (frames)
+00006	0300198c	b	u	0	Players
+00007	0300198d	b	u	0	Foods
+00008	030061d2	b	u	0	Boss Hit Conut
+00009	030061d1	b	u	0	Boss Invincibly
+0000A	03001d30	w	h	0	X New Pos
+0000B	03001d34	w	h	0	Y New Pos
+0000C	03001d50	w	h	0	X Old Pos
+0000D	03001d52	w	h	0	Y Old Pos
+0000E	03001d22	w	h	0	X Pos (Screen)
+0000F	03001d24	w	h	0	Y Pos (Screen)
+00010	03001df0	w	h	0	Lip X Pos
+00011	03001df4	w	h	0	Lip Y Pos
+00012	03001de2	w	h	0	Lip X Pos (Screen)
+00013	03001de4	w	h	0	Lip Y Pos (Screen)
+00014	03001bf0	w	h	0	Boomerang X
+00015	03001bf4	w	h	0	Boomerang Y
+00016	03001d49	b	u	0	X Speed? (px)
+00017	03000d13	b	u	0	X Speed? (Lv.)
+00018	03001d4d	b	u	0	X Sub Speed?
+00019	03001d4a	b	u	0	Y Speed? (px)
+0001A	03001d4e	b	u	0	Y Sub Speed?
+0001B	03000d32	w	h	0	Invincibly
+0001C	03000d26	b	u	0	Roll Timer
+0001D	03000d2a	w	u	0	Long Rip Timer

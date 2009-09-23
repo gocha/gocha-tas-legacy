@@ -1,0 +1,20 @@
+
+18
+00000	03006458	d	h	0	X pos px+subpx
+00001	0300645c	d	h	0	Y pos px+subpx
+00002	03006460	d	s	0	X vel px+subpx
+00003	03006464	d	s	0	Y vel px+subpx
+00004	03000f7a	b	u	0	Health
+00005	03000fb2	b	u	0	Pearl
+00006	03006480	b	u	0	State
+00007	03000f10	b	u	0	State (old)
+00008	03006482	w	u	0	After jump [f]
+00009	03000f4e	b	u	0	Spin timer
+0000A	03000f50	b	u	0	Spin count
+0000B	03000fb8	b	u	0	Invincibility
+0000C	03000f60	b	u	0	Combo timer
+0000D	03000f62	b	u	0	Combo count
+0000E	03001104	d	h	0	Randomness?
+0000F	03000d78	d	h	0	Title Rand #1
+00010	03003bcc	d	h	0	Title Rand #2
+00011	03006464	d	u	0	Title Rand #3

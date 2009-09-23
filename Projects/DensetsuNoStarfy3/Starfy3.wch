@@ -1,0 +1,24 @@
+
+22
+00000	03004ff8	d	h	0	X pos px+subpx
+00001	03004ffc	d	h	0	Y pos px+subpx
+00002	03005000	d	s	0	X vel px+subpx
+00003	03005004	d	s	0	Y vel px+subpx
+00004	03005002	w	s	0	X vel px
+00005	03005006	w	s	0	Y vel px
+00006	03005000	w	h	0	X vel subpx
+00007	03005004	w	h	0	Y vel subpx
+00008	03007cf8	b	u	0	Health
+00009	03007cfa	w	u	0	Pearl
+0000A	03007d14	b	u	0	State
+0000B	03007d18	b	u	0	State (old)
+0000C	03007d56	w	u	0	After jump [f]
+0000D	03007d5a	b	u	0	Spin timer
+0000E	03007d5c	b	u	0	Spin count
+0000F	03007d60	w	h	0	Jump counts
+00010	03007d72	b	u	0	Invincibility
+00011	03007d8c	b	u	0	Combo timer
+00012	03007d8e	b	u	0	Combo count
+00013	03007cfc	b	u	0	Spin Level
+00014	03007cfd	b	u	0	Jump Level
+00015	03007b49	b	u	0	Boss health
