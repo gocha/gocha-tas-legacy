@@ -9,6 +9,8 @@ end
 ----------------------------------------------------------
 -- Import frame data first
 ----------------------------------------------------------
+
+-- TODO: modify the file paths below
 local basedir = "C:/full_path_to/"
 dofile(basedir.."framedata.lua.inl")
 

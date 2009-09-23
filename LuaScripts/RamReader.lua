@@ -10,6 +10,7 @@ end
 -- Import frame data first
 ----------------------------------------------------------
 local frame
+-- TODO: modify the file paths below
 local basedir = "C:/full_path_to/"
 local frameDataPath = basedir.."framedata.txt"
 function importFrameData(path)
