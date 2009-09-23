@@ -9,7 +9,7 @@
 ----------------------------------------------------------
 -- Open log file first
 ----------------------------------------------------------
-local file = io.open("framedata.lua.inl", "w")
+local file = io.open("framedata.lua.inl", "w") -- TODO: modify filename if needed
 if file == nil then
 	error("File could not be opened.")
 end

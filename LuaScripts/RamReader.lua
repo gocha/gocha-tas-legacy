@@ -85,6 +85,8 @@ function func_proc()
 	end
 
 	local ycp_edit = aviutl.get_ycp_edit()
+
+	-- TODO: write your own drawing code here
 	aviutl.draw_bordered_text(ycp_edit,
 		2, 2, -- x, y
 		string.format("%d/%d\nspeed (%d, %d)\ningame: %s",
