@@ -1,0 +1,32 @@
+;------------------------------------------------------------------------
+;  Memory Watch -- Common Settings
+;------------------------------------------------------------------------
+
+;================================
+; >> watch options
+;================================
+:interval:250
+;:interval:50
+:singlerun:true
+:alwaystop:false
+:priority-proc:idle
+:priority-thread:normal
+:usepause:true
+
+;================================
+; >> graphics
+;================================
+:graph:true
+:colbg:000000
+:colplain:CCCCCC
+:coladdr:CC0000
+:colformat:009900
+:colvalue:CCCCCC
+:colvaluedelta:666699
+:coldesc:CCCCCC
+:colgraph:FFFFCC
+:colgraphbg:222266
+:colrominfo:999999
+:fontsize:11
+:fontfamily:Courier New
+:katakana:false
