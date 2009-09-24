@@ -48,7 +48,7 @@
 0002D	7E00BA	b	u	0	Life
 0002E	7E00BE	w	h	0	Gold
 0002F	s00296	b	h	0	Makimono
-00030	7002E2	w	h	0	Walker Energy
+00030	s002E2	w	h	0	Walker Energy
 00031	7E008E	w	h	0	Room #
 00032	7E1662	w	h	0	$210E BG1 X
 00033	7E1672	w	h	0	$210D BG1 Y
