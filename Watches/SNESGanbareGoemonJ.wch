@@ -1,0 +1,45 @@
+
+43
+00000	7e1566	d	h	0	map?
+00001	7e156a	d	h	0	map?
+00002	7E1ED2	b	h	0	Warp?
+00003	7E1ED5	b	h	0	Warp ?
+00004	7E11DA	b	u	0	Chouchin W-LB
+00005	7E123A	b	u	0	Chouchin W-RB
+00006	7E129A	b	u	0	Chouchin W-LM
+00007	7E12FA	b	u	0	Chouchin W-RM
+00008	7E135A	b	u	0	Chouchin W-LA
+00009	7E13BA	b	u	0	Chouchin W-RA
+0000A	7E0078	w	u	0	Counter
+0000B	7E008E	b	u	0	Event Counter
+0000C	7E0068	w	u	0	Disable Moving
+0000D	7E0072	w	u	0	Fading Screen
+0000E	7E00E2	w	u	0	Entering Field
+0000F	7E1D70	w	u	0	Talk Flag #1
+00010	7E1D9C	w	u	0	Talk Flag #2
+00011	7E17D4	w	h	0	Camera X
+00012	7E17E4	w	h	0	Camera Y
+00013	7EC93A	w	h	0	X Pos?
+00014	7EC93C	w	h	0	Y Pos?
+00015	7E1938	w	h	0	X Pos?
+00016	7E193A	w	h	0	Y Pos?
+00017	7EC039	w	h	0	X Pos 1P?
+00018	7E1AAC	d	h	0	Gold       (1P)
+00019	7E0568	w	h	0	X Pos      (1P)
+0001A	7E056A	w	h	0	? Pos      (1P)
+0001B	7E056C	w	h	0	Y Pos +Z   (1P)
+0001C	7E056E	w	h	0	Y Pos -Z   (1P)
+0001D	7E0580	w	s	0	X Speed?   (1P)
+0001E	7E0582	w	h	0	? Speed?   (1P)
+0001F	7E0584	w	s	0	Y Speed?   (1P)
+00020	7E057A	b	u	0	Invincible (1P)
+00021	7E1B5C	d	h	0	Gold       (2P)
+00022	7E05C8	w	h	0	X Pos      (2P)
+00023	7E05CC	w	h	0	Y Pos +Z   (2P)
+00024	7E05CE	w	h	0	Y Pos -Z   (2P)
+00025	7E062A	b	u	0	Invincible (2P)
+00026	7E15BE	w	u	0	Neko      8/
+00027	7E1618	w	u	0	Makimono  5/
+00028	7E1616	w	u	0	Oneesama 16/
+00029	7E0094	w	h	0	Random Number
+0002A	7E003A	w	h	0	Count for Rnd

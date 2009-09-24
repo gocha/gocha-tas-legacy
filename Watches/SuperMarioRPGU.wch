@@ -1,0 +1,10 @@
+
+8
+00000	7E0A14	b	u	0	Kart/Mushroom
+00001	7E0A15	b	u	0	Kart/Boost Clk
+00002	7E0A16	b	u	0	Kart/Boost Lv.
+00003	7E0A0E	d	h	0	Kart/X Pos #1
+00004	7E0A11	d	h	0	Kart/Y Pos #1
+00005	7E0A18	b	h	0	Kart/X Speed #1
+00006	7E0A2A	w	d	0	Kart/Direction
+00007	7E0A5C	d	h	0	Kart/X Pos #2

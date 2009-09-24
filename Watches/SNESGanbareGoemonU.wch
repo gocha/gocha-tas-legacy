@@ -1,0 +1,22 @@
+
+20
+00000	7E0068	w	u	0	Disable Moving
+00001	7E0072	w	u	0	Fading Screen
+00002	7E00E2	w	u	0	Entering Field
+00003	7E1D70	w	u	0	Talk Flag #1
+00004	7E1D9C	w	u	0	Talk Flag #2
+00005	7E17D4	w	h	0	Camera X
+00006	7E17E4	w	h	0	Camera Y
+00007	7E1AAC	d	h	0	Gold       (1P)
+00008	7E0568	w	h	0	X Pos      (1P)
+00009	7E056C	w	h	0	Y Pos +Z   (1P)
+0000A	7E056E	w	h	0	Y Pos -Z   (1P)
+0000B	7E057A	b	u	0	Invincible (1P)
+0000C	7E1B5C	d	h	0	Gold       (2P)
+0000D	7E05C8	w	h	0	X Pos      (2P)
+0000E	7E05CC	w	h	0	Y Pos +Z   (2P)
+0000F	7E05CE	w	h	0	Y Pos -Z   (2P)
+00010	7E062A	b	u	0	Invincible (2P)
+00011	7E15BE	w	u	0	Neko      8/
+00012	7E1616	w	u	0	Oneesama 16/
+00013	7E1618	w	u	0	Makimono  5/

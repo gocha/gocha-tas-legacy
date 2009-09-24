@@ -1,0 +1,34 @@
+
+32
+00000	s01376	d	u	0	Score
+00001	s0137A	b	u	0	Players
+00002	s01790	w	s	0	Nova #1
+00003	s017BA	w	s	0	Nova #2
+00004	s017E4	w	s	0	Nova #3
+00005	s01A19	w	s	0	Nova #4
+00006	s00894	w	h	0	X Cur Pos  (1P)
+00007	s00988	w	h	0	X New Pos  (1P)
+00008	s00A7D	w	h	0	X Sub Pos  (1P)
+00009	s0090E	w	h	0	Y Cur Pos  (1P)
+0000A	s00A02	w	h	0	Y New Pos  (1P)
+0000B	s00AF7	w	h	0	Y Sub Pos  (1P)
+0000C	s016BF	w	s	0	X Speed    (1P)
+0000D	s016C3	w	s	0	Y Speed    (1P)
+0000E	s0137C	b	u	0	Health     (1P)
+0000F	s0149F	b	u	0	Ability    (1P)
+00010	s00896	w	h	0	X Cur Pos  (2P)
+00011	s0098A	w	h	0	X New Pos  (2P)
+00012	s00A7F	w	h	0	X Sub Pos  (2P)
+00013	s00910	w	h	0	Y Cur Pos  (2P)
+00014	s00A04	w	h	0	Y New Pos  (2P)
+00015	s00AF9	w	h	0	Y Sub Pos  (2P)
+00016	s016C1	w	s	0	X Speed    (2P)
+00017	s00BEC	w	s	0	Y Speed    (2P)
+00018	s0137E	b	u	0	Health     (2P)
+00019	s014A1	b	u	0	Ability    (2P)
+0001A	7E184D	w	h	0	GR X Position
+0001B	7E184F	w	h	0	GR Y Position
+0001C	7E1859	w	h	0	GR Ghost X Pos
+0001D	7E185B	w	h	0	GR Ghost Y Pos
+0001E	s016C3	w	s	0	GR X Speed
+0001F	s016BF	w	s	0	GR Y Speed

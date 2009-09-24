@@ -1,0 +1,11 @@
+
+9
+00000	7E0556	b	u	0	Players
+00001	7E0558	b	u	0	Life
+00002	7E056C	b	u	0	Shout
+00003	7E00B6	b	u	0	Invincible
+00004	7E09C4	w	h	0	X Position
+00005	7E0ABC	w	h	0	Y Position
+00006	7E0949	b	h	0	X Subpx Pos?
+00007	7E1010	w	s	0	X Speed
+00008	7E1108	w	s	0	Y Speed

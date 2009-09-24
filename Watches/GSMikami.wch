@@ -1,0 +1,7 @@
+
+5
+00000	7E009A	b	u	0	Weapon
+00001	7E01A0	w	s	0	X Speed
+00002	7E120C	b	u	0	Enemy Health #1
+00003	7E12CC	b	u	0	Enemy Health #2
+00004	7E12FC	b	u	0	Enemy Health #3

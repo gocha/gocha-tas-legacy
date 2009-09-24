@@ -1,0 +1,12 @@
+
+10
+00000	7E0E6C	w	s	0	X Speed
+00001	7E0E70	w	s	0	Y Speed
+00002	7E0E79	w	h	0	X Pos #1
+00003	7E0E7D	w	h	0	X Pos #2
+00004	7E0E81	w	h	0	X Pos #3
+00005	7E0E7B	w	h	0	Y Pos #1
+00006	7E0E7F	w	h	0	Y Pos #2
+00007	7E0E83	w	h	0	Y Pos #3
+00008	7E0E74	b	h	0	X Sub Pos
+00009	7E0E77	b	h	0	Y Sub Pos

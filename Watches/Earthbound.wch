@@ -1,0 +1,13 @@
+
+11
+00000	7E0024	b	h	0	Random number #1
+00001	7E0026	b	h	0	Random number #2
+00002	7E9831	d	u	0	$
+00003	7E9835	d	u	0	ATM $
+00004	7E9875	d	h	0	X position
+00005	7E9877	w	h	0	X px pos
+00006	7E9875	w	h	0	X subpx pos
+00007	7E9879	d	h	0	Y position
+00008	7E987B	w	h	0	Y px pos
+00009	7E9879	w	h	0	Y subpx pos
+0000A	7E9E3C	w	u	0	Skip Sandwich

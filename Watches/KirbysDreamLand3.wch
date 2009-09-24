@@ -1,0 +1,12 @@
+
+10
+00000	s01A22	w	h	0	X Position (1P)
+00001	s01AA2	w	h	0	Y Position (1P)
+00002	s01D22	w	s	0	X Speed    (1P)
+00003	s01DA2	w	s	0	Y Speed    (1P)
+00004	s01A24	w	h	0	X Position (2P)
+00005	s01AA4	w	h	0	Y Position (2P)
+00006	s01D24	w	s	0	X Speed    (2P)
+00007	s01DA4	w	s	0	Y Speed    (2P)
+00008	s01D4A	w	s	0	X Speed (Nago)
+00009	s01DCA	w	s	0	Y Speed (Nago)

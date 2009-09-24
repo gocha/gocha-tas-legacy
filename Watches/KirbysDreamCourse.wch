@@ -1,0 +1,37 @@
+
+35
+00000	7E007E	b	s	0	Fade Level
+00001	7E0080	b	s	0	Fade Speed
+00002	7E0067	w	h	0	Input
+00003	7E006B	w	h	0	Input (trigger)
+00004	7E0086	w	s	0	Camera X
+00005	7E0088	w	s	0	Camera Y
+00006	7E6ADE	b	u	0	LR Press
+00007	7ED9B6	w	u	0	Fly Shot
+00008	7ED9B4	w	s	0	Shot Dir
+00009	7E6B50	b	u	0	Shot L/R
+0000A	7E6B52	b	u	0	Shot U/D
+0000B	7E6B3A	b	u	0	Shot Meter
+0000C	7ED9D4	w	s	0	X Speed
+0000D	7ED9D6	w	s	0	Y Speed
+0000E	7ED9D8	w	s	0	Z Speed
+0000F	7ED9DA	w	s	0	Direction
+00010	7ED9EC	w	u	0	Fly Mode
+00011	7EDA48	w	u	0	Flying
+00012	7EDA76	w	u	0	GFI Enable
+00013	7EDA78	b	u	0	GFI Timer
+00014	7EDA7A	b	u	0	GFI Effect
+00015	7ED9C4	b	u	0	Ability Type
+00016	7ED9C6	b	u	0	Ability Eff1
+00017	7ED9C8	b	u	0	Ability Eff2
+00018	7ED9CA	w	u	0	Ability Used
+00019	7EDA04	b	h	0	Floor Type
+0001A	7EDA0A	b	h	0	Object Type
+0001B	7E6B7E	w	h	0	Cup Power
+0001C	7ED762	b	u	0	Ability Count 1
+0001D	7ED772	b	u	0	Ability X Speed
+0001E	7ED774	b	u	0	Ability Y Speed
+0001F	7ED776	b	u	0	Ability Count 2
+00020	7E69DC	w	s	0	Water Jump
+00021	7EED2D	b	u	0	Dedede Health
+00022	7E69C4	b	u	0	Dedede Level

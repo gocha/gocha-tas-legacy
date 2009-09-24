@@ -1,0 +1,32 @@
+
+30
+00000	7E00B2	w	h	0	Randomness
+00001	7E17A1	w	h	0	Enemy Proc #1
+00002	7E17A3	w	h	0	Enemy Proc #2
+00003	7E1A5F	w	h	0	Angered?
+00004	7E19AB	w	h	0	Player 1 Stat
+00005	7E19AD	w	h	0	Player 2 Stat
+00006	7E1A02	d	h	0	Multiplier Ans
+00007	7E1A06	w	h	0	Multiplicand
+00008	7E1A08	w	h	0	Multiplier
+00009	7E1302	w	u	0	Minutes
+0000A	7E1300	w	u	0	Frames
+0000B	7E1307	w	u	0	Cookies
+0000C	7E1345	b	u	0	Level
+0000D	7E1346	w	u	0	Health
+0000E	7E1348	w	u	0	Magic
+0000F	7E1353	w	u	0	Health MAX
+00010	7E1355	w	u	0	Magic MAX
+00011	7E1339	b	u	0	Fire Lv.
+00012	7E1408	w	u	0	Steps
+00013	7E128F	b	u	0	Enemy Lv.
+00014	7E17BF	w	u	0	Enemy HP
+00015	7E17CC	w	u	0	Enemy HP MAX
+00016	7E17DF	w	u	0	Enemy Cookie
+00017	7E14A6	w	u	0	Enemies Meet
+00018	7E14D9	w	u	0	Day
+00019	7E16E4	w	h	0	BG H Scroll
+0001A	7E16E6	w	h	0	BG V Scroll
+0001B	7E4827	w	h	0	Arle H Pos
+0001C	7E4829	w	h	0	Arle V Pos
+0001D	7E16C5	w	h	0	Arle PosW

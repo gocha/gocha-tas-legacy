@@ -1,0 +1,13 @@
+
+11
+00000	7E0445	w	h	0	Bells? (Flag)
+00001	7E0463	w	h	0	X Position
+00002	7E0460	w	h	0	Y Position
+00003	7E046F	b	u	0	X Speed
+00004	7E0470	b	u	0	X Speed Count
+00005	7E0471	b	u	0	Y Speed #1
+00006	7E0472	b	u	0	Y Speed #2
+00007	7E0473	b	u	0	Y Speed Count
+00008	7E0450	b	u	0	Timer (sec)
+00009	7E044F	b	u	0	Timer (frame)
+0000A	7E0770	b	u	0	Boss Health

@@ -1,0 +1,13 @@
+
+11
+00000	7E0263	w	h	0	X Position
+00001	7E0265	w	h	0	Y Position
+00002	7E0291	b	u	0	Jump Count
+00003	7E028F	b	u	0	Jump SubCount
+00004	7E02A7	w	u	0	Invincible
+00005	7E02D7	b	u	0	Health
+00006	7E02DF	w	u	0	Crystal
+00007	7E080C	b	s	0	X Speed
+00008	7E08A4	b	u	0	Enemy Health
+00009	7E1784	b	u	0	Boss Health
+0000A	7E1789	b	u	0	Boss Invincible

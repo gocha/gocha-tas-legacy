@@ -80,7 +80,7 @@ end
 file:close()
 
 -- export
-io.write("0\n") -- unknown junk which no one needs
+io.write("\n")
 io.write(#wch.watch.."\n")
 for i = 1, #wch.watch do
 	io.write(string.format("%05X", i - 1))
