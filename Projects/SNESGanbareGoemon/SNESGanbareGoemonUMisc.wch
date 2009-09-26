@@ -1,0 +1,12 @@
+
+10
+00000	7E07BE	d	s	0	1P initial jump speed X
+00001	7E07C2	d	s	0	1P initial jump speed Y
+00002	7E1AAC	d	h	0	1P $
+00003	7E099E	d	s	0	2P initial jump speed X
+00004	7E09A2	d	s	0	2P initial jump speed Y
+00005	7E1B5C	d	h	0	2P $
+00006	7E15BE	w	u	0	Cat (8 enemies)
+00007	7E1616	w	u	0	Woman (16 enemies)
+00008	7E1618	w	u	0	Makimono (5 enemies)
+00009	7E00E2	w	u	0	Room transition flag?

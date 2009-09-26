@@ -1,33 +1,21 @@
 
-31
-00000	7E0B25	b	u	0	Players
-00001	7E0B27	b	u	0	Life
-00002	7E0B28	w	u	0	Crystals
-00003	7E0B32	w	h	0	Bells (Flag)
-00004	7E1900	b	u	0	Difficulty
-00005	7E0B24	b	u	0	Character
-00006	7E0B44	w	h	0	X Position
-00007	7E0B43	b	h	0	X Subposition
-00008	7E0B41	w	h	0	Y Position
-00009	7E0B40	b	h	0	Y Subposition
-0000A	7E0E10	b	u	0	X Speed
-0000B	7E0E11	b	u	0	X Speed Count
-0000C	7E0E14	b	u	0	Y Speed
-0000D	7E0E15	b	u	0	Y Speed Count
-0000E	7E0F1B	b	u	0	Ability Pow
-0000F	7E0B3E	b	u	0	Ability Time
-00010	7E0B4A	b	u	0	Invincible
-00011	7E0E13	b	u	0	Walljump Help
-00012	7E0B51	b	u	0	Item Timer (sec)
-00013	7E0B50	b	u	0	Item Timer (frame)
-00014	7E0E09	b	u	0	Timer (sec)
-00015	7E0E08	b	u	0	Timer (frame)
-00016	7E0059	b	u	0	Anime Counter
-00017	7E0C65	b	u	0	Conversation
-00018	7E1118	b	h	0	Boss X Position
-00019	7E1115	b	h	0	Boss Y Position
-0001A	7E1110	b	u	0	Boss Health
-0001B	7E1111	b	u	0	Boss Invincible
-0001C	7E0029	b	u	0	Paused #1
-0001D	7E0172	b	u	0	Paused #2
-0001E	7E0E00	b	u	0	Paused #3
+19
+00000	7E0B44	w	h	0	X position
+00001	7E0B43	b	h	0	X subpx position
+00002	7E0B41	w	h	0	Y yosition
+00003	7E0B40	b	h	0	Y subpx position
+00004	7E0E10	b	u	0	X speed
+00005	7E0E11	b	u	0	X speed count
+00006	7E0E14	b	u	0	Y speed
+00007	7E0E15	b	u	0	Y speed count
+00008	7E0F1B	b	u	0	Ability charge
+00009	7E0B3E	b	u	0	Ability remaining time
+0000A	7E0B4A	b	u	0	Invincibility
+0000B	7E0E13	b	u	0	Walljump help
+0000C	7E0E09	b	u	0	Ingame time (seconds)
+0000D	7E0E08	b	u	0	Ingame time (frames)
+0000E	7E0C65	b	u	0	Conversation state
+0000F	7E1118	b	h	0	Boss X position
+00010	7E1115	b	h	0	Boss Y position
+00011	7E1110	b	u	0	Boss HP
+00012	7E1111	b	u	0	Boss invincibility

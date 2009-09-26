@@ -2,7 +2,7 @@
  
  SNES Madou Monogatari - Hanamaru Daiyouchienji
  Semi-Automated Map Maker (with drag and drop)
- written by gocha (2009-04-26), for snes9x-rr 1.43 svn r92 or later.
+ written by gocha for snes9x-rr 1.43 v16.
  
  This script allows you to take a kindergartener girl to anywhere you like.
  Also, you can take a picture there instantly. Fuzzy pickles!

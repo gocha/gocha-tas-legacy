@@ -1,0 +1,22 @@
+
+20
+00000	7E0411	w	h	0	1P Z position
+00001	7E0433	w	s	0	1P Z speed
+00002	7E046E	b	u	0	1P dash counter
+00003	7E0460	b	u	0	1P weapon level
+00004	7E04D1	w	h	0	2P Z position
+00005	7E04F3	w	s	0	2P Z speed
+00006	7E052E	b	h	0	2P dash counter
+00007	7E0520	b	u	0	2P weapon level
+00008	7E00AE	b	h	0	Remaining time
+00009	7E16B0	b	u	0	Boss HP rate
+0000A	7E16BC	b	u	0	Boss HP max
+0000B	7E16BA	w	h	0	Boss sprite address
+0000C	7E0AA6	b	u	0	Boss HP #1
+0000D	7E05C6	b	u	0	Boss HP #2
+0000E	7E0626	b	u	0	Boss HP #6
+0000F	7E0474	w	h	0	1P Gold
+00010	7E0446	b	u	0	1P HP
+00011	7E04B4	b	u	0	1P HP max
+00012	7E0418	b	u	0	1P Character
+00013	7E0498	b	h	0	1P Players

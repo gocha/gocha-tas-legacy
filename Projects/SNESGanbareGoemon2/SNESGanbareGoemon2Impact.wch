@@ -1,0 +1,8 @@
+
+6
+00000	7E0486	w	h	0	Impact HP (platform)
+00001	7E1B48	w	h	0	Impact HP (boss)
+00002	7E0E16	w	h	0	Boss HP
+00003	7E1B4A	w	h	0	Gold
+00004	7E00D4	b	h	0	Bomb
+00005	7E00D5	b	h	0	Destroyed

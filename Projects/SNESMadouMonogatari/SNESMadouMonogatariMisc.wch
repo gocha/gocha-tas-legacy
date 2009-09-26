@@ -1,0 +1,19 @@
+
+17
+00000	7E16E4	w	h	0	BG X position
+00001	7E16E6	w	h	0	BG Y position
+00002	7E4827	w	h	0	Arle X position
+00003	7E4829	w	h	0	Arle Y position
+00004	7E16C5	w	h	0	Arle's position in word
+00005	7E14D9	w	u	0	Day
+00006	7E1307	w	u	0	Cookies
+00007	7E19AB	w	h	0	Player #1 stat addr
+00008	7E19AD	w	h	0	Player #2 stat addr
+00009	7E17A1	w	h	0	Enemy proc addr #1
+0000A	7E17A3	w	h	0	Enemy proc addr #2
+0000B	7E1A02	d	h	0	Multiplier Ans
+0000C	7E1A06	w	h	0	Multiplicand
+0000D	7E1A08	w	h	0	Multiplier
+0000E	7E1A5F	w	h	0	Enemy special attack flag
+0000F	7E1408	w	u	0	Steps (for encounter)
+00010	7E14A6	w	u	0	Enemies seen (which determines the level of new enemy)

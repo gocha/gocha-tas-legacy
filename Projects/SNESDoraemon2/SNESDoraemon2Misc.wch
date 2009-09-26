@@ -1,0 +1,15 @@
+
+13
+00000	7E0B25	b	u	0	Players
+00001	7E0B27	b	u	0	Life
+00002	7E0B28	w	u	0	Crystals
+00003	7E0B32	b	h	0	Weapons collected
+00004	7E0B32	w	h	0	Bells collected
+00005	7E1900	b	u	0	Difficulty
+00006	7E0B24	b	u	0	Character
+00007	7E0B51	b	u	0	Item Timer (sec)
+00008	7E0B50	b	u	0	Item Timer (frame)
+00009	7E0059	b	u	0	Animation counter
+0000A	7E0029	b	u	0	Game is paused? #1
+0000B	7E0172	b	u	0	Game is paused? #2
+0000C	7E0E00	b	u	0	Game is paused? #3

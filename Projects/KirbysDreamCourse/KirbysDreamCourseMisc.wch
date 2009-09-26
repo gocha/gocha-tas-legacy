@@ -1,0 +1,34 @@
+
+32
+00000	7ED9C6	b	u	0	Ability now working #1
+00001	7ED9C8	b	u	0	Ability now working #2
+00002	7EDA06	d	h	0	Floor Z position
+00003	7E69CE	d	h	0	Water Z position
+00004	7EDA32	w	s	0	Gravity
+00005	7EDA36	w	s	0	Friction
+00006	7EDA48	w	u	0	Flying time
+00007	7EDA76	w	s	0	Go For It is not working?
+00008	7ED9C4	b	u	0	Ability type
+00009	7ED9CA	w	u	0	Ability used
+0000A	7ED762	b	u	0	Ability-specific variable #1
+0000B	7ED776	b	u	0	Ability-specific variable #2
+0000C	7ED772	b	u	0	Ability X speed?
+0000D	7ED774	b	u	0	Ability Y speed?
+0000E	7ED7F0	w	s	0	Tomatoes
+0000F	7ED7F4	w	s	0	Kirby left (1ups)
+00010	7ED9B6	w	u	0	Fly shot selected
+00011	7E6B50	b	u	0	Selected spin L/R
+00012	7E6B52	b	u	0	Selected spin U/D
+00013	7ED9D0	b	u	0	Spin related stuff o_o
+00014	7E007E	b	s	0	Screen fade level
+00015	7E0080	b	s	0	Screen fade speed
+00016	7EED2E	d	h	0	Dedede X position
+00017	7EED33	d	h	0	Dedede Y position
+00018	7EED37	d	h	0	Dedede Z position
+00019	7EED3B	w	s	0	Dedede X velocity
+0001A	7EED3D	w	s	0	Dedede Y velocity
+0001B	7EED3F	w	s	0	Dedede Z velocity
+0001C	7EED47	w	u	0	Dedede is hurting
+0001D	7EED49	w	s	0	Dedede damage dealed
+0001E	7E0067	w	h	0	1P Input
+0001F	7E006B	w	h	0	1P Input (triggered)

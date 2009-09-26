@@ -1,52 +1,26 @@
 
-50
-00000	7E0474	w	h	0	Gold       (1P)
-00001	7E0446	b	u	0	Life       (1P)
-00002	7E04B4	b	u	0	Life MAX   (1P)
-00003	7E0418	b	u	0	Character  (1P)
-00004	7E0498	b	h	0	Players    (1P)
-00005	7E16B0	b	u	0	Boss Health %
-00006	7E16BC	b	u	0	Boss Health MAX
-00007	7E16BA	w	h	0	Boss Health AD?
-00008	7E0AA6	b	u	0	Boss Health #1
-00009	7E05C6	b	u	0	Boss Health #2
-0000A	7E0626	b	u	0	Boss Health #6
-0000B	7E0486	w	h	0	Impact E (Act)
-0000C	7E1B48	w	h	0	Impact E (VS)
-0000D	7E1B4A	w	h	0	Impact Gold	
-0000E	7E00D4	b	h	0	Impact Bomb
-0000F	7E008A	w	h	0	Time Passed
-00010	7E00AE	b	h	0	Time Left
-00011	7E1702	w	h	0	Real Camera X
-00012	7E1712	w	h	0	Real Camera Y
-00013	7E1B04	w	h	0	Camera X
-00014	7E1B06	w	h	0	Camera Y
-00015	7E0409	d	h	0	X Position (1P)
-00016	7E040D	d	h	0	Y Position (1P)
-00017	7E0411	w	h	0	Z Position (1P)
-00018	7E0427	w	s	0	X Speed    (1P)
-00019	7E042D	w	s	0	Y Speed    (1P)
-0001A	7E0433	w	s	0	Z Speed    (1P)
-0001B	7E043C	b	u	0	Balloon    (1P)
-0001C	7E0454	w	s	0	X Speed @A (1P)
-0001D	7E0466	b	s	0	Invincible (1P)
-0001E	7E0460	b	u	0	Weapon Lv. (1P)
-0001F	7E0462	b	h	0	Weapon Pow (1P)
-00020	7E046E	b	h	0	Dash Meter (1P)
-00021	7E04B0	b	u	0	Jump Count (1P)
-00022	7E04D9	d	h	0	X Position (2P)
-00023	7E04DD	d	h	0	Y Position (2P)
-00024	7E04D1	w	h	0	Z Position (2P)
-00025	7E04E7	w	s	0	X Speed    (2P)
-00026	7E04ED	w	s	0	Y Speed    (2P)
-00027	7E04F3	w	s	0	Z Speed    (2P)
-00028	7E04FC	b	u	0	Balloon    (2P)
-00029	7E0514	w	s	0	X Speed @A (2P)
-0002A	7E0526	b	s	0	Invincible (2P)
-0002B	7E0520	b	u	0	Weapon Lv. (2P)
-0002C	7E0522	b	h	0	Weapon Pow (2P)
-0002D	7E052E	b	h	0	Dash Meter (2P)
-0002E	7E0570	b	u	0	Jump Count (2P)
-0002F	7E16B0	b	u	0	Boss Health?
-00030	7E00D5	b	h	0	Impact Bomb Cnt
-00031	7E0E16	w	h	0	Impact Boss E
+24
+00000	7E008A	w	u	0	Ingame time per level
+00001	7E1702	w	h	0	Camera X
+00002	7E1712	w	h	0	Camera Y
+00003	7E1B06	w	h	0	Camera Y for timer trick
+00004	7E0409	d	h	0	1P X position
+00005	7E040D	d	h	0	1P Y position
+00006	7E0427	w	s	0	1P X speed
+00007	7E042D	w	s	0	1P Y speed
+00008	7E0454	w	s	0	1P X speed (platform)
+00009	7E0456	w	s	0	1P Y speed (platform)
+0000A	7E04B0	b	u	0	1P jump timer
+0000B	7E0466	b	s	0	1P invulnerable
+0000C	7E0462	b	s	0	1P subweapon charge
+0000D	7E043C	b	u	0	1P balloon timer
+0000E	7E04C9	d	h	0	2P X position
+0000F	7E04CD	d	h	0	2P Y position
+00010	7E04E7	w	s	0	2P X speed
+00011	7E04ED	w	s	0	2P Y speed
+00012	7E0514	w	s	0	2P X speed (platform)
+00013	7E0516	w	s	0	2P Y speed (platform)
+00014	7E0570	b	u	0	2P jump timer
+00015	7E0526	b	s	0	2P invulnerable
+00016	7E0522	b	s	0	2P subweapon charge
+00017	7E04FC	b	u	0	2P balloon timer

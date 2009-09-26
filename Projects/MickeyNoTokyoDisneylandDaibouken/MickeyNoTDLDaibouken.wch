@@ -1,11 +1,11 @@
 
 9
-00000	7E00DE	d	h	0	X Position
-00001	7E00E3	d	h	0	Y Position
-00002	7E00EE	d	h	0	X Speed
-00003	7E00F6	d	h	0	Y Speed
-00004	7E0114	b	u	0	Invincible
-00005	7E016E	w	s	0	G Balloon
-00006	7E0170	w	h	0	W Balloon
-00007	7E1CBD	b	u	0	Boss Action
-00008	7E1CC3	b	u	0	Boss Health
+00000	7E00DE	d	h	0	X position
+00001	7E00E3	d	h	0	Y position
+00002	7E00EE	d	s	0	X speed
+00003	7E00F6	d	s	0	Y speed
+00004	7E0114	b	u	0	Invincibility
+00005	7E016E	w	s	0	G balloon
+00006	7E0170	w	h	0	W balloon
+00007	7E1CBD	b	u	0	Boss action
+00008	7E1CC3	b	u	0	Boss HP

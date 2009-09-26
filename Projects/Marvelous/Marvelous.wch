@@ -1,5 +1,5 @@
 
 3
-00000	s058A4	b	u	0	Mouse Level
-00001	s05868	b	u	0	Mouse Timer
-00002	s043E9	b	u	0	Team Work
+00000	s058A4	b	u	0	Mouse level (Stage 1)
+00001	s05868	b	u	0	Mouse timer (Stage 1)
+00002	s043E9	b	u	0	Teamwork
