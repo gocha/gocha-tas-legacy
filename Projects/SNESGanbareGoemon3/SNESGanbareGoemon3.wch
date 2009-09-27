@@ -1,102 +1,25 @@
 
-100
-00000	7E1FA4	b	h	0	$2105 BGMode
-00001	7E1662	w	h	0	$210E BG0 X
-00002	7E1672	w	h	0	$210D BG0 Y
-00003	7E1FC6	b	h	0	$211A M7Init
-00004	7E1FC8	w	h	0	$211B M7A
-00005	7E1FCA	w	h	0	$211C M7B
-00006	7E1FCC	w	h	0	$211D M7C
-00007	7E1FCE	w	h	0	$211E M7D
-00008	7E1FD0	w	h	0	$211F M7X
-00009	7E1FD2	w	h	0	$2120 M7Y
-0000A	7E0C3C	b	u	0	Timer
-0000B	7E0C98	b	u	0	Enemy Inv.
-0000C	7E0086	w	h	0	RNG A
-0000D	7E0042	w	h	0	RNG B
-0000E	7E1C38	w	h	0	RNG C
-0000F	7E0028	w	h	0	Input Auto
-00010	7E002C	w	h	0	Input 1
-00011	7E002A	w	h	0	Input 2
-00012	7E002E	w	h	0	Input 1+2
-00013	7E0030	w	h	0	Input Auto
-00014	7E0032	w	h	0	Input 1
-00015	7E0034	w	h	0	Input 2
-00016	7E0036	w	h	0	Input 1+2
-00017	7E0096	w	h	0	Input ??
-00018	7E0098	w	h	0	Input ??
-00019	7E009A	w	h	0	Input ??
-0001A	s008EF	b	h	0	Playtime Hour
-0001B	s008EE	b	h	0	Playtime Min
-0001C	s008F1	b	u	0	Playtime Sec
-0001D	s008F0	b	u	0	Playtime Frame
-0001E	7E1CA6	w	u	0	Defeated
-0001F	7E1CA8	w	u	0	Energy Gained
-00020	7E1CAA	w	u	0	Ryo Gained  /2
-00021	7E1CAC	w	u	0	Bomb Gained *2
-00022	7E1C40	w	h	0	Koban Meter
-00023	7E1C44	w	h	0	Punch Meter
-00024	7E1C48	w	h	0	Impact Health
-00025	7E0DD0	w	h	0	Enemy Health
-00026	7E1CD0	w	u	0	Command Timer
-00027	7E1CC0	w	u	0	Cmd:PunchRush
-00028	7E1CC2	w	u	0	Cmd:BombRush
-00029	7E1CC4	w	u	0	Cmd:GuruPunch
-0002A	7E1CC6	w	u	0	Cmd:SuperUpper
-0002B	7E1CC8	w	u	0	Cmd:Shield
-0002C	7E1CCA	w	u	0	Cmd:Laser
-0002D	7E00BA	b	u	0	Life
-0002E	7E00BE	w	h	0	Gold
-0002F	s00296	b	h	0	Makimono
-00030	s002E2	w	h	0	Walker Energy
-00031	7E008E	w	h	0	Room #
-00032	7E1662	w	h	0	$210E BG1 X
-00033	7E1672	w	h	0	$210D BG1 Y
-00034	7E1682	w	h	0	$21XX BG2 X
-00035	7E1692	w	h	0	$21XX BG2 Y
-00036	7E00E4	w	u	0	Talking
-00037	7E0076	w	u	0	Field Change
-00038	7E1C44	b	u	0	Field Timer
-00039	7E197E	w	h	0	Enter Glitch
-0003A	7E0C46	w	u	0	Boss Health
-0003B	7E0CE8	w	h	0	Enemy Inv Timer
-0003C	7E0408	w	h	0	X Position (1P)
-0003D	7E040C	w	h	0	Y Position (1P)
-0003E	7E0410	w	h	0	Z Position (1P)
-0003F	7E0426	w	s	0	X Speed    (1P)
-00040	7E0428	w	s	0	Y Speed    (1P)
-00041	7E042A	w	s	0	Z Speed    (1P)
-00042	7E042C	b	u	0	Ningyo Cnt (1P)
-00043	7E0438	w	u	0	Invincible (1P)
-00044	7E0440	w	s	0	X Speed @A (1P)
-00045	7E0442	w	s	0	Y Speed @A (1P)
-00046	7E0444	w	s	0	Push Meter (1P)
-00047	7E044E	b	s	0	Weapon Pow (1P)
-00048	7E0452	b	h	0	Inv Timer  (1P)
-00049	7E0464	b	h	0	Dash Meter (1P)
-0004A	7E0468	b	h	0	Trans Time (1P)
-0004B	7E0480	b	h	0	X Repos Hi (1P)
-0004C	7E0482	b	h	0	Y Repos Hi (1P)
-0004D	7E049C	b	u	0	Jump Count (1P)
-0004E	7E04BC	b	h	0	X Falldown (1P)
-0004F	7E04BD	b	h	0	Y Falldown (1P)
-00050	7E04C8	w	h	0	X Position (2P)
-00051	7E04CC	w	h	0	Y Position (2P)
-00052	7E04D0	w	h	0	Z Position (2P)
-00053	7E04E6	w	s	0	X Speed    (2P)
-00054	7E04E8	w	s	0	Y Speed    (2P)
-00055	7E04EA	w	s	0	Z Speed    (2P)
-00056	7E04EC	b	u	0	Ningyo Cnt (2P)
-00057	7E04F8	w	u	0	Invincible (2P)
-00058	7E0500	w	s	0	X Speed @A (2P)
-00059	7E0502	w	s	0	Y Speed @A (2P)
-0005A	7E0502	w	s	0	Push Meter (2P)
-0005B	7E050E	b	s	0	Weapon Pow (2P)
-0005C	7E0512	b	h	0	Inv Timer  (2P)
-0005D	7E0524	b	h	0	Dash Meter (2P)
-0005E	7E0528	b	h	0	Trans Time (2P)
-0005F	7E0540	b	h	0	X Repos Hi (2P)
-00060	7E0542	b	h	0	Y Repos Hi (2P)
-00061	7E055C	b	u	0	Jump Count (2P)
-00062	7E057C	b	h	0	X Falldown (2P)
-00063	7E057D	b	h	0	Y Falldown (2P)
+23
+00000	7E1C44	b	u	0	Room transition cooldown
+00001	7E197E	w	h	0	Door glitch status
+00002	7E0086	w	h	0	Random number
+00003	7E0440	w	s	0	1P X speed (platform)
+00004	7E0442	w	s	0	1P Y speed (platform)
+00005	7E0426	w	s	0	1P X speed
+00006	7E0428	w	s	0	1P Y speed
+00007	7E049C	b	u	0	1P jump timer
+00008	7E0464	b	h	0	1P dash counter
+00009	7E0468	b	h	0	1P transform cooldown
+0000A	7E0452	b	h	0	1P invulnerable
+0000B	7E042C	b	u	0	1P mermaid dash timer
+0000C	7E044E	b	s	0	1P subweapon charge
+0000D	7E0500	w	s	0	2P X speed (platform)
+0000E	7E0502	w	s	0	2P Y speed (platform)
+0000F	7E04E6	w	s	0	2P X speed
+00010	7E04E8	w	s	0	2P Y speed
+00011	7E055C	b	u	0	2P jump timer
+00012	7E0524	b	h	0	2P dash counter
+00013	7E0528	b	h	0	2P transform cooldown
+00014	7E0512	b	h	0	2P invulnerable
+00015	7E04EC	b	u	0	2P mermaid dash timer
+00016	7E050E	b	s	0	2P subweapon charge

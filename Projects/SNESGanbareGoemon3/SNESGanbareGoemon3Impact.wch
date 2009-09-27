@@ -1,0 +1,18 @@
+
+16
+00000	7E0086	w	h	0	Random number
+00001	7E1CA6	w	u	0	Kills
+00002	7E1CA8	w	u	0	Energy Gained
+00003	7E1CAA	w	u	0	Gold gained /2
+00004	7E1CAC	w	u	0	Bomb gained *2
+00005	7E1C40	w	h	0	Koban charge
+00006	7E1C44	w	h	0	Punch charge
+00007	7E1C48	w	h	0	Impact HP
+00008	7E0DD0	w	h	0	Enemy HP
+00009	7E1CD0	w	u	0	Command timer
+0000A	7E1CC0	w	u	0	Punch Rush counter
+0000B	7E1CC2	w	u	0	Bomb Rush counter
+0000C	7E1CC4	w	u	0	Guruguru Punch counter
+0000D	7E1CC6	w	u	0	Super Upper counter
+0000E	7E1CC8	w	u	0	Shield counter
+0000F	7E1CCA	w	u	0	Laser counter
