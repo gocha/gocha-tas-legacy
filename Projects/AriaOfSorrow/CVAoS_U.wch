@@ -1,0 +1,13 @@
+
+11
+00000	02000524	d	h	0	X position
+00001	02000528	d	h	0	Y position
+00002	0200052C	d	s	0	X speed
+00003	02000530	d	s	0	Y speed
+00004	0200055C	b	u	0	Invulnerability
+00005	02000008	d	h	0	Random number
+00006	0201327A	w	u	0	Current HP value
+00007	0201327C	w	u	0	Current MP value
+00008	0201327E	w	u	0	Max HP value
+00009	02013280	w	u	0	Max MP value
+0000A	020000AC	d	u	0	Ingame frame
