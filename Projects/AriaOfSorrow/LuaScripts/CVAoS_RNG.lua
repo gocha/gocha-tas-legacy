@@ -1,11 +1,12 @@
--- Castlevania: Order of Ecclesia - RNG simulator
--- This script runs on both of normal lua host and emulua host (desmume)
+-- Castlevania: Aria of Sorrow - RNG simulator
+-- This script runs on both of normal lua host and emulua host (vba-rr)
+
+if vba and not emu then emu = vba end
 
 if emu then
-	-- Use desmume r2871+, or it'll return wrong value.
 	if OR(0xffffffff, 0) ~= -1 then
-		--require("bit")
-		error("Bad bitwise operation detected. Use newer version to solve the problem.")
+		require("bit")
+		--error("Bad bitwise operation detected. Use newer version to solve the problem.")
 	else
 		bit = {}
 		bit.band = AND
@@ -53,21 +54,21 @@ function mul32(a, b)
 	       bit.bor(z[5], bit.lshift(z[6], 8), bit.lshift(z[7], 16), bit.lshift(z[8], 24))
 end
 
---[ OoE RNG simulator ] --------------------------------------------------------
+--[ AoS RNG simulator ] --------------------------------------------------------
 
-local OoE_RN = 0
+local AoS_RN = 0
 
-function OoE_Random()
-	OoE_RN = bit.tobit(mul32(bit.arshift(OoE_RN, 8), 0x3243f6ad) + 0x1b0cb175)
-	return OoE_RN
+function AoS_Random()
+	AoS_RN = bit.tobit(mul32(bit.rshift(AoS_RN, 8), 0x3243f6ad) + 0x1b0cb175)
+	return AoS_RN
 end
 
-function OoE_RandomSeed(seed)
-	OoE_RN = seed
+function AoS_RandomSeed(seed)
+	AoS_RN = seed
 end
 
-function OoE_RandomLast()
-	return OoE_RN
+function AoS_RandomLast()
+	return AoS_RN
 end
 
 --------------------------------------------------------------------------------
@@ -79,7 +80,7 @@ local searchSpecifiedVal = false
 local valToSearch
 
 if #arg >= 1 then
-	OoE_RandomSeed(tonumber(arg[1]))
+	AoS_RandomSeed(tonumber(arg[1]))
 	if #arg >= 2 then
 		numsToView = tonumber(arg[2])
 		if #arg >= 3 then
@@ -89,23 +90,23 @@ if #arg >= 1 then
 	end
 else
 	io.write("Input the intial value of RNG: ")
-	OoE_RandomSeed(io.read("*n"))
+	AoS_RandomSeed(io.read("*n"))
 end
 
 for i = 1, numsToView do
-	io.write(string.format("%08X", OoE_RandomLast()))
+	io.write(string.format("%08X", AoS_RandomLast()))
 	if i % 8 == 0 then
 		io.write("\n")
 	else
 		io.write(" ")
 	end
-	if searchSpecifiedVal and OoE_RandomLast() == valToSearch then
+	if searchSpecifiedVal and AoS_RandomLast() == valToSearch then
 		if i % 8 ~= 0 then
 			io.write("\n")
 		end
 		break
 	end
-	OoE_Random()
+	AoS_Random()
 end
 
 --------------------------------------------------------------------------------
@@ -114,28 +115,30 @@ else
 
 local RNG_Previous = 0
 local RNG_NumAdvanced = -1
-local RAM = { RNG = 0x021389c0 }
+local RAM = { RNG = 0x02000008 }
 
 emu.registerafter(function()
-	local searchMax = 100
+	local searchMax = 10
 
 	RNG_NumAdvanced = -1
-	OoE_RandomSeed(RNG_Previous)
+	AoS_RandomSeed(RNG_Previous)
 	for i = 0, searchMax do
-		if OoE_RandomLast() == bit.tobit(memory.readdword(RAM.RNG)) then
+		if AoS_RandomLast() == bit.tobit(memory.readdword(RAM.RNG)) then
 			RNG_NumAdvanced = i
 			break
 		end
-		OoE_Random()
+		AoS_Random()
 	end
 	RNG_Previous = bit.tobit(memory.readdword(RAM.RNG))
 end)
 
 gui.register(function()
-	OoE_RandomSeed(bit.tobit(memory.readdword(RAM.RNG)))
-	agg.text(116, 5, string.format("NEXT:%08X", OoE_Random()))
-	agg.text(116, 26, "ADVANCED:" .. ((RNG_NumAdvanced == -1) and "???" or tostring(RNG_NumAdvanced)))
+	AoS_RandomSeed(bit.tobit(memory.readdword(RAM.RNG)))
+	gui.text(186, 5, string.format("NEXT:%08X", AoS_Random()))
+	gui.text(186, 14, "ADVANCED:" .. ((RNG_NumAdvanced == -1) and "???" or tostring(RNG_NumAdvanced)))
 end)
+
+while true do emu.frameadvance() end
 
 --------------------------------------------------------------------------------
 end

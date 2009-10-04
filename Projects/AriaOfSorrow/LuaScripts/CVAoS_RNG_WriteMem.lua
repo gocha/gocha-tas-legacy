@@ -1,4 +1,4 @@
--- Castlevania: Order of Ecclesia - RNG simulator
+-- Castlevania: Aria of Sorrow - RNG simulator
 -- This script calls RNG simulationary and write it to RAM
 -- This script is written for testing luck manipulation things
 
@@ -9,8 +9,8 @@ if not emu then
 end
 
 if OR(0xffffffff, 0) ~= -1 then
-	require("bit")
-	--error("Bad bitwise operation detected. Use newer version to solve the problem.")
+	--require("bit")
+	error("Bad bitwise operation detected. Use newer version to solve the problem.")
 else
 	bit = {}
 	bit.band = AND
@@ -55,34 +55,34 @@ function mul32(a, b)
 	       bit.bor(z[5], bit.lshift(z[6], 8), bit.lshift(z[7], 16), bit.lshift(z[8], 24))
 end
 
---[ OoE RNG simulator ] --------------------------------------------------------
+--[ AoS RNG simulator ] --------------------------------------------------------
 
-local OoE_RN = 0
+local AoS_RN = 0
 
-function OoE_Random()
-	OoE_RN = bit.tobit(mul32(bit.arshift(OoE_RN, 8), 0x3243f6ad) + 0x1b0cb175)
-	return OoE_RN
+function AoS_Random()
+	AoS_RN = bit.tobit(mul32(bit.rshift(AoS_RN, 8), 0x3243f6ad) + 0x1b0cb175)
+	return AoS_RN
 end
 
-function OoE_RandomSeed(seed)
-	OoE_RN = seed
+function AoS_RandomSeed(seed)
+	AoS_RN = seed
 end
 
-function OoE_RandomLast()
-	return OoE_RN
+function AoS_RandomLast()
+	return AoS_RN
 end
 
 -- [ main code ] ---------------------------------------------------------------
 
-local RAM = { RNG = 0x021389c0 }
+local RAM = { RNG = 0x02000008 }
 
 if RNGSeed ~= nil then
-	OoE_RandomSeed(RNGSeed)
+	AoS_RandomSeed(RNGSeed)
 else
-	OoE_RandomSeed(bit.tobit(memory.readdword(RAM.RNG)))
+	AoS_RandomSeed(bit.tobit(memory.readdword(RAM.RNG)))
 end
 for i = 1, RNGAdvance do
-	OoE_Random()
+	AoS_Random()
 end
-memory.writedword(RAM.RNG, OoE_RandomLast())
-print(string.format("%08X", OoE_RandomLast()).." has been written to RAM (#"..RNGAdvance..")")
+memory.writedword(RAM.RNG, AoS_RandomLast())
+emu.message("Wrote "..string.format("%08X", AoS_RandomLast()).." (#"..RNGAdvance..")")
