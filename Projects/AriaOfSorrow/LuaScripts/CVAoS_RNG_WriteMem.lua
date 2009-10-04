@@ -5,7 +5,7 @@
 local RNGAdvance = 0
 
 if not emu then
-	error("This script works under an emulua host (desmume)")
+	error("This script works under an emulua host (vba-rr)")
 end
 
 if OR(0xffffffff, 0) ~= -1 then
