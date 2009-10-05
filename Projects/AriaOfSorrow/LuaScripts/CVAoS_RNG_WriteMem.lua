@@ -86,3 +86,32 @@ for i = 1, RNGAdvance do
 end
 memory.writedword(RAM.RNG, AoS_RandomLast())
 emu.message("Wrote "..string.format("%08X", AoS_RandomLast()).." (#"..RNGAdvance..")")
+
+-- [ RNG viewer ] --------------------------------------------------------------
+
+local RNG_Previous = 0
+local RNG_NumAdvanced = -1
+-- local RAM = { RNG = 0x02000008 }
+
+emu.registerafter(function()
+	local searchMax = 20
+
+	RNG_NumAdvanced = -1
+	AoS_RandomSeed(RNG_Previous)
+	for i = 0, searchMax do
+		if AoS_RandomLast() == bit.tobit(memory.readdword(RAM.RNG)) then
+			RNG_NumAdvanced = i
+			break
+		end
+		AoS_Random()
+	end
+	RNG_Previous = bit.tobit(memory.readdword(RAM.RNG))
+end)
+
+gui.register(function()
+	AoS_RandomSeed(bit.tobit(memory.readdword(RAM.RNG)))
+	gui.text(186, 5, string.format("NEXT:%08X", AoS_Random()))
+	gui.text(186, 14, "ADVANCED:" .. ((RNG_NumAdvanced == -1) and "???" or tostring(RNG_NumAdvanced)))
+end)
+
+while true do emu.frameadvance() end
