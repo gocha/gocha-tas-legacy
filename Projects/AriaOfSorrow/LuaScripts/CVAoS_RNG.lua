@@ -4,6 +4,8 @@
 if vba and not emu then emu = vba end
 
 if emu then
+	gui.opacity(0.681)
+
 	if OR(0xffffffff, 0) ~= -1 then
 		require("bit")
 		--error("Bad bitwise operation detected. Use newer version to solve the problem.")
@@ -118,7 +120,7 @@ local RNG_NumAdvanced = -1
 local RAM = { RNG = 0x02000008 }
 
 emu.registerafter(function()
-	local searchMax = 20
+	local searchMax = 32
 
 	RNG_NumAdvanced = -1
 	AoS_RandomSeed(RNG_Previous)

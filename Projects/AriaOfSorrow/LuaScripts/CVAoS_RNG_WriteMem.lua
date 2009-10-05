@@ -4,6 +4,8 @@
 
 local RNGAdvance = 0
 
+gui.opacity(0.681)
+
 if not emu then
 	error("This script works under an emulua host (vba-rr)")
 end
@@ -94,7 +96,7 @@ local RNG_NumAdvanced = -1
 -- local RAM = { RNG = 0x02000008 }
 
 emu.registerafter(function()
-	local searchMax = 20
+	local searchMax = 32
 
 	RNG_NumAdvanced = -1
 	AoS_RandomSeed(RNG_Previous)
