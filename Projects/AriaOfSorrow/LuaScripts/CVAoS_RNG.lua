@@ -118,7 +118,7 @@ local RNG_NumAdvanced = -1
 local RAM = { RNG = 0x02000008 }
 
 emu.registerafter(function()
-	local searchMax = 10
+	local searchMax = 20
 
 	RNG_NumAdvanced = -1
 	AoS_RandomSeed(RNG_Previous)
