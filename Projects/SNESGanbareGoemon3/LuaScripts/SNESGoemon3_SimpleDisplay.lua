@@ -15,20 +15,8 @@ end
 
 -- [ generic utility functions ] -----------------------------------------------
 
-if OR(0xffffffff, 0) ~= -1 then
+if not bit then
 	require("bit")
-	--error("Bad bitwise operation detected. Use newer version to solve the problem.")
-else
-	-- LuaBitOp style bitwise operation for EmuLua
-	bit = {
-		band    = AND,
-		bor     = OR,
-		bxor    = XOR,
-		tobit   = function(num) return AND(num, 0xffffffff) end;
-		lshift  = function(num, shift) return SHIFT(num, -shift) end;
-		rshift  = function(num, shift) return SHIFT(num,  shift) end;
-		arshift = function(num, shift) return math.floor(num / SHIFT(1, -shift)) end
-	}
 end
 
 -- binary coded decimal encoder/decoder

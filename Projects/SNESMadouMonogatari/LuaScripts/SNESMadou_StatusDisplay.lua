@@ -17,13 +17,9 @@ if emu then error("Unknown SNES EmuLua host.") end
 emu = snes9x
 if not emu then error("Unknown SNES EmuLua host.") end
 
--- require("bit")
-local bit = {}
-bit.band = AND
-bit.bor  = OR
-bit.bxor = XOR
-function bit.lshift(num, shift) return SHIFT(num, -shift) end
-function bit.rshift(num, shift) return SHIFT(num,  shift) end
+if not bit then
+	require("bit")
+end
 
 -- Instant ROM check
 function romCheck()

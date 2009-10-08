@@ -5,21 +5,9 @@ if vba and not emu then emu = vba end
 
 if emu then
 	gui.opacity(0.681)
+end
 
-	if OR(0xffffffff, 0) ~= -1 then
-		require("bit")
-		--error("Bad bitwise operation detected. Use newer version to solve the problem.")
-	else
-		bit = {}
-		bit.band = AND
-		bit.bor  = OR
-		bit.bxor = XOR
-		function bit.tobit(num) return AND(num, 0xffffffff) end
-		function bit.lshift(num, shift) return SHIFT(num, -shift) end
-		function bit.rshift(num, shift) return SHIFT(num,  shift) end
-		function bit.arshift(num, shift) return math.floor(num / SHIFT(1, -shift)) end
-	end
-else
+if not bit then
 	require("bit")
 end
 
