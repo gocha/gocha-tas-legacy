@@ -1,5 +1,4 @@
 -- SNES Trace Logger, based on the disassembler of bsnes
--- TODO: speedups
 
 if not emu then emu = snes9x end
 if not bit then require("bit") end
@@ -62,75 +61,75 @@ function gettraceline(cpuname)
 		return memory.readword(addr) + bit.lshift(memory.readbyte(addr+2), 16)
 	end
 	local decode = {
-		[OPTYPE_DP] = function(addr)
-			return bit.band(regs.d + bit.band(addr, 0xffff), 0xffff)
-		end;
-		[OPTYPE_DPX] = function(addr)
-			return bit.band((regs.d + regs.x + bit.band(addr, 0xffff)), 0xffff)
-		end;
-		[OPTYPE_DPY] = function(addr)
-			return bit.band((regs.d + regs.y + bit.band(addr, 0xffff)), 0xffff)
-		end;
-		[OPTYPE_IDP] = function(addr)
-			addr = bit.band((regs.d + bit.band(addr, 0xffff)), 0xffff)
-			return bit.lshift(regs.db, 16) + memory.readword(addr)
-		end;
-		[OPTYPE_IDPX] = function(addr)
-			addr = bit.band((regs.d + regs.x + bit.band(addr, 0xffff)), 0xffff)
-			return bit.lshift(regs.db, 16) + memory.readword(addr)
-		end;
-		[OPTYPE_IDPY] = function(addr)
-			addr = bit.band((regs.d + bit.band(addr, 0xffff)), 0xffff)
-			return bit.band(bit.lshift(regs.db, 16) + memory.readword(addr) + regs.y, 0xffffff)
-		end;
-		[OPTYPE_ILDP] = function(addr)
-			addr = bit.band(regs.d + bit.band(addr, 0xffff), 0xffff)
-			return readwordbyte(addr)
-		end;
-		[OPTYPE_ILDPY] = function(addr)
-			addr = bit.band((regs.d + bit.band(addr, 0xffff)), 0xffff)
-			return bit.band(readwordbyte(addr) + regs.y, 0xffffff)
-		end;
-		[OPTYPE_ADDR] = function(addr)
-			return bit.lshift(regs.db, 16) + bit.band(addr, 0xffff)
-		end;
-		[OPTYPE_ADDR_PC] = function(addr)
-			return bit.lshift(regs.pb, 16) + bit.band(addr, 0xffff)
-		end;
-		[OPTYPE_ADDRX] = function(addr)
-			return bit.band(bit.lshift(regs.db, 16) + bit.band(addr, 0xffff) + regs.x, 0xffffff)
-		end;
-		[OPTYPE_ADDRY] = function(addr)
-			return bit.band(bit.lshift(regs.db, 16) + bit.band(addr, 0xffff) + regs.y, 0xffffff)
-		end;
-		[OPTYPE_IADDR_PC] = function(addr)
-			return bit.lshift(regs.pb, 16) + bit.band(addr, 0xffff)
-		end;
-		[OPTYPE_IADDRX] = function(addr)
-			return bit.lshift(regs.pb, 16) + bit.band((addr + regs.x), 0xffff)
-		end;
-		[OPTYPE_ILADDR] = function(addr)
-			return bit.band(addr, 0xffffff)
-		end;
-		[OPTYPE_LONG] = function(addr)
-			return bit.band(addr, 0xffffff)
-		end;
-		[OPTYPE_LONGX] = function(addr)
-			return bit.band(addr + regs.x, 0xffffff)
-		end;
-		[OPTYPE_SR] = function(addr)
-			return bit.band((regs.s + bit.band(addr, 0xff)), 0xffff)
-		end;
-		[OPTYPE_ISRY] = function(addr)
-			addr = bit.band((regs.s + bit.band(addr, 0xff)), 0xffff)
-			return bit.band(bit.lshift(regs.db, 16) + memory.readword(addr) + regs.y, 0xffffff)
-		end;
-		[OPTYPE_RELB] = function(addr)
-			return bit.band(bit.lshift(regs.pb, 16) + bit.band((regs.pc + 2), 0xffff) + toint8(addr), 0xffffff)
-		end;
-		[OPTYPE_RELW] = function(addr)
-			return bit.band(bit.lshift(regs.pb, 16) + bit.band((regs.pc + 3), 0xffff) + toint16(addr), 0xffffff)
-		end
+	[OPTYPE_DP] = function(addr)
+		return bit.band(regs.d + bit.band(addr, 0xffff), 0xffff)
+	end;
+	[OPTYPE_DPX] = function(addr)
+		return bit.band((regs.d + regs.x + bit.band(addr, 0xffff)), 0xffff)
+	end;
+	[OPTYPE_DPY] = function(addr)
+		return bit.band((regs.d + regs.y + bit.band(addr, 0xffff)), 0xffff)
+	end;
+	[OPTYPE_IDP] = function(addr)
+		addr = bit.band((regs.d + bit.band(addr, 0xffff)), 0xffff)
+		return bit.lshift(regs.db, 16) + memory.readword(addr)
+	end;
+	[OPTYPE_IDPX] = function(addr)
+		addr = bit.band((regs.d + regs.x + bit.band(addr, 0xffff)), 0xffff)
+		return bit.lshift(regs.db, 16) + memory.readword(addr)
+	end;
+	[OPTYPE_IDPY] = function(addr)
+		addr = bit.band((regs.d + bit.band(addr, 0xffff)), 0xffff)
+		return bit.band(bit.lshift(regs.db, 16) + memory.readword(addr) + regs.y, 0xffffff)
+	end;
+	[OPTYPE_ILDP] = function(addr)
+		addr = bit.band(regs.d + bit.band(addr, 0xffff), 0xffff)
+		return readwordbyte(addr)
+	end;
+	[OPTYPE_ILDPY] = function(addr)
+		addr = bit.band((regs.d + bit.band(addr, 0xffff)), 0xffff)
+		return bit.band(readwordbyte(addr) + regs.y, 0xffffff)
+	end;
+	[OPTYPE_ADDR] = function(addr)
+		return bit.lshift(regs.db, 16) + bit.band(addr, 0xffff)
+	end;
+	[OPTYPE_ADDR_PC] = function(addr)
+		return bit.lshift(regs.pb, 16) + bit.band(addr, 0xffff)
+	end;
+	[OPTYPE_ADDRX] = function(addr)
+		return bit.band(bit.lshift(regs.db, 16) + bit.band(addr, 0xffff) + regs.x, 0xffffff)
+	end;
+	[OPTYPE_ADDRY] = function(addr)
+		return bit.band(bit.lshift(regs.db, 16) + bit.band(addr, 0xffff) + regs.y, 0xffffff)
+	end;
+	[OPTYPE_IADDR_PC] = function(addr)
+		return bit.lshift(regs.pb, 16) + bit.band(addr, 0xffff)
+	end;
+	[OPTYPE_IADDRX] = function(addr)
+		return bit.lshift(regs.pb, 16) + bit.band((addr + regs.x), 0xffff)
+	end;
+	[OPTYPE_ILADDR] = function(addr)
+		return bit.band(addr, 0xffffff)
+	end;
+	[OPTYPE_LONG] = function(addr)
+		return bit.band(addr, 0xffffff)
+	end;
+	[OPTYPE_LONGX] = function(addr)
+		return bit.band(addr + regs.x, 0xffffff)
+	end;
+	[OPTYPE_SR] = function(addr)
+		return bit.band((regs.s + bit.band(addr, 0xff)), 0xffff)
+	end;
+	[OPTYPE_ISRY] = function(addr)
+		addr = bit.band((regs.s + bit.band(addr, 0xff)), 0xffff)
+		return bit.band(bit.lshift(regs.db, 16) + memory.readword(addr) + regs.y, 0xffffff)
+	end;
+	[OPTYPE_RELB] = function(addr)
+		return bit.band(bit.lshift(regs.pb, 16) + bit.band((regs.pc + 2), 0xffff) + toint8(addr), 0xffffff)
+	end;
+	[OPTYPE_RELW] = function(addr)
+		return bit.band(bit.lshift(regs.pb, 16) + bit.band((regs.pc + 3), 0xffff) + toint16(addr), 0xffffff)
+	end
 	}
 
 	local line = ""
@@ -145,275 +144,277 @@ function gettraceline(cpuname)
 	local a8 = (regs.e or regs.p.m)
 	local x8 = (regs.e or regs.p.x)
 
-	-- TODO: use table instead for speedup
-	    if op == 0x00 then line = line .. string.format("brk #$%.2x              ", op8)
-	elseif op == 0x01 then line = line .. string.format("ora ($%.2x,x)   [%.6x]", op8, decode[OPTYPE_IDPX](op8))
-	elseif op == 0x02 then line = line .. string.format("cop #$%.2x              ", op8)
-	elseif op == 0x03 then line = line .. string.format("ora $%.2x,s     [%.6x]", op8, decode[OPTYPE_SR](op8))
-	elseif op == 0x04 then line = line .. string.format("tsb $%.2x       [%.6x]", op8, decode[OPTYPE_DP](op8))
-	elseif op == 0x05 then line = line .. string.format("ora $%.2x       [%.6x]", op8, decode[OPTYPE_DP](op8))
-	elseif op == 0x06 then line = line .. string.format("asl $%.2x       [%.6x]", op8, decode[OPTYPE_DP](op8))
-	elseif op == 0x07 then line = line .. string.format("ora [$%.2x]     [%.6x]", op8, decode[OPTYPE_ILDP](op8))
-	elseif op == 0x08 then line = line .. string.format("php                   ")
-	elseif op == 0x09 then if a8 then line = line .. string.format("ora #$%.2x              ", op8)
-	                             else line = line .. string.format("ora #$%.4x            ", op16) end
-	elseif op == 0x0a then line = line .. string.format("asl a                 ")
-	elseif op == 0x0b then line = line .. string.format("phd                   ")
-	elseif op == 0x0c then line = line .. string.format("tsb $%.4x     [%.6x]", op16, decode[OPTYPE_ADDR](op16))
-	elseif op == 0x0d then line = line .. string.format("ora $%.4x     [%.6x]", op16, decode[OPTYPE_ADDR](op16))
-	elseif op == 0x0e then line = line .. string.format("asl $%.4x     [%.6x]", op16, decode[OPTYPE_ADDR](op16))
-	elseif op == 0x0f then line = line .. string.format("ora $%.6x   [%.6x]", op24, decode[OPTYPE_LONG](op24))
-	elseif op == 0x10 then line = line .. string.format("bpl $%.4x     [%.6x]", bit.band(decode[OPTYPE_RELB](op8), 0xffff), decode[OPTYPE_RELB](op8))
-	elseif op == 0x11 then line = line .. string.format("ora ($%.2x),y   [%.6x]", op8, decode[OPTYPE_IDPY](op8))
-	elseif op == 0x12 then line = line .. string.format("ora ($%.2x)     [%.6x]", op8, decode[OPTYPE_IDP](op8))
-	elseif op == 0x13 then line = line .. string.format("ora ($%.2x,s),y [%.6x]", op8, decode[OPTYPE_ISRY](op8))
-	elseif op == 0x14 then line = line .. string.format("trb $%.2x       [%.6x]", op8, decode[OPTYPE_DP](op8))
-	elseif op == 0x15 then line = line .. string.format("ora $%.2x,x     [%.6x]", op8, decode[OPTYPE_DPX](op8))
-	elseif op == 0x16 then line = line .. string.format("asl $%.2x,x     [%.6x]", op8, decode[OPTYPE_DPX](op8))
-	elseif op == 0x17 then line = line .. string.format("ora [$%.2x],y   [%.6x]", op8, decode[OPTYPE_ILDPY](op8))
-	elseif op == 0x18 then line = line .. string.format("clc                   ")
-	elseif op == 0x19 then line = line .. string.format("ora $%.4x,y   [%.6x]", op16, decode[OPTYPE_ADDRY](op16))
-	elseif op == 0x1a then line = line .. string.format("inc                   ")
-	elseif op == 0x1b then line = line .. string.format("tcs                   ")
-	elseif op == 0x1c then line = line .. string.format("trb $%.4x     [%.6x]", op16, decode[OPTYPE_ADDR](op16))
-	elseif op == 0x1d then line = line .. string.format("ora $%.4x,x   [%.6x]", op16, decode[OPTYPE_ADDRX](op16))
-	elseif op == 0x1e then line = line .. string.format("asl $%.4x,x   [%.6x]", op16, decode[OPTYPE_ADDRX](op16))
-	elseif op == 0x1f then line = line .. string.format("ora $%.6x,x [%.6x]", op24, decode[OPTYPE_LONGX](op24))
-	elseif op == 0x20 then line = line .. string.format("jsr $%.4x     [%.6x]", op16, decode[OPTYPE_ADDR_PC](op16))
-	elseif op == 0x21 then line = line .. string.format("and ($%.2x,x)   [%.6x]", op8, decode[OPTYPE_IDPX](op8))
-	elseif op == 0x22 then line = line .. string.format("jsl $%.6x   [%.6x]", op24, decode[OPTYPE_LONG](op24))
-	elseif op == 0x23 then line = line .. string.format("and $%.2x,s     [%.6x]", op8, decode[OPTYPE_SR](op8))
-	elseif op == 0x24 then line = line .. string.format("bit $%.2x       [%.6x]", op8, decode[OPTYPE_DP](op8))
-	elseif op == 0x25 then line = line .. string.format("and $%.2x       [%.6x]", op8, decode[OPTYPE_DP](op8))
-	elseif op == 0x26 then line = line .. string.format("rol $%.2x       [%.6x]", op8, decode[OPTYPE_DP](op8))
-	elseif op == 0x27 then line = line .. string.format("and [$%.2x]     [%.6x]", op8, decode[OPTYPE_ILDP](op8))
-	elseif op == 0x28 then line = line .. string.format("plp                   ")
-	elseif op == 0x29 then if a8 then line = line .. string.format("and #$%.2x              ", op8)
-	                             else line = line .. string.format("and #$%.4x            ", op16) end
-	elseif op == 0x2a then line = line .. string.format("rol a                 ")
-	elseif op == 0x2b then line = line .. string.format("pld                   ")
-	elseif op == 0x2c then line = line .. string.format("bit $%.4x     [%.6x]", op16, decode[OPTYPE_ADDR](op16))
-	elseif op == 0x2d then line = line .. string.format("and $%.4x     [%.6x]", op16, decode[OPTYPE_ADDR](op16))
-	elseif op == 0x2e then line = line .. string.format("rol $%.4x     [%.6x]", op16, decode[OPTYPE_ADDR](op16))
-	elseif op == 0x2f then line = line .. string.format("and $%.6x   [%.6x]", op24, decode[OPTYPE_LONG](op24))
-	elseif op == 0x30 then line = line .. string.format("bmi $%.4x     [%.6x]", bit.band(decode[OPTYPE_RELB](op8), 0xffff), decode[OPTYPE_RELB](op8))
-	elseif op == 0x31 then line = line .. string.format("and ($%.2x),y   [%.6x]", op8, decode[OPTYPE_IDPY](op8))
-	elseif op == 0x32 then line = line .. string.format("and ($%.2x)     [%.6x]", op8, decode[OPTYPE_IDP](op8))
-	elseif op == 0x33 then line = line .. string.format("and ($%.2x,s),y [%.6x]", op8, decode[OPTYPE_ISRY](op8))
-	elseif op == 0x34 then line = line .. string.format("bit $%.2x,x     [%.6x]", op8, decode[OPTYPE_DPX](op8))
-	elseif op == 0x35 then line = line .. string.format("and $%.2x,x     [%.6x]", op8, decode[OPTYPE_DPX](op8))
-	elseif op == 0x36 then line = line .. string.format("rol $%.2x,x     [%.6x]", op8, decode[OPTYPE_DPX](op8))
-	elseif op == 0x37 then line = line .. string.format("and [$%.2x],y   [%.6x]", op8, decode[OPTYPE_ILDPY](op8))
-	elseif op == 0x38 then line = line .. string.format("sec                   ")
-	elseif op == 0x39 then line = line .. string.format("and $%.4x,y   [%.6x]", op16, decode[OPTYPE_ADDRY](op16))
-	elseif op == 0x3a then line = line .. string.format("dec                   ")
-	elseif op == 0x3b then line = line .. string.format("tsc                   ")
-	elseif op == 0x3c then line = line .. string.format("bit $%.4x,x   [%.6x]", op16, decode[OPTYPE_ADDRX](op16))
-	elseif op == 0x3d then line = line .. string.format("and $%.4x,x   [%.6x]", op16, decode[OPTYPE_ADDRX](op16))
-	elseif op == 0x3e then line = line .. string.format("rol $%.4x,x   [%.6x]", op16, decode[OPTYPE_ADDRX](op16))
-	elseif op == 0x3f then line = line .. string.format("and $%.6x,x [%.6x]", op24, decode[OPTYPE_LONGX](op24))
-	elseif op == 0x40 then line = line .. string.format("rti                   ")
-	elseif op == 0x41 then line = line .. string.format("eor ($%.2x,x)   [%.6x]", op8, decode[OPTYPE_IDPX](op8))
-	elseif op == 0x42 then line = line .. string.format("wdm                   ")
-	elseif op == 0x43 then line = line .. string.format("eor $%.2x,s     [%.6x]", op8, decode[OPTYPE_SR](op8))
-	elseif op == 0x44 then line = line .. string.format("mvp $%.2x,$%.2x           ", op1, op8)
-	elseif op == 0x45 then line = line .. string.format("eor $%.2x       [%.6x]", op8, decode[OPTYPE_DP](op8))
-	elseif op == 0x46 then line = line .. string.format("lsr $%.2x       [%.6x]", op8, decode[OPTYPE_DP](op8))
-	elseif op == 0x47 then line = line .. string.format("eor [$%.2x]     [%.6x]", op8, decode[OPTYPE_ILDP](op8))
-	elseif op == 0x48 then line = line .. string.format("pha                   ")
-	elseif op == 0x49 then if a8 then line = line .. string.format("eor #$%.2x              ", op8)
-	                             else line = line .. string.format("eor #$%.4x            ", op16) end
-	elseif op == 0x4a then line = line .. string.format("lsr a                 ")
-	elseif op == 0x4b then line = line .. string.format("phk                   ")
-	elseif op == 0x4c then line = line .. string.format("jmp $%.4x     [%.6x]", op16, decode[OPTYPE_ADDR_PC](op16))
-	elseif op == 0x4d then line = line .. string.format("eor $%.4x     [%.6x]", op16, decode[OPTYPE_ADDR](op16))
-	elseif op == 0x4e then line = line .. string.format("lsr $%.4x     [%.6x]", op16, decode[OPTYPE_ADDR](op16))
-	elseif op == 0x4f then line = line .. string.format("eor $%.6x   [%.6x]", op24, decode[OPTYPE_LONG](op24))
-	elseif op == 0x50 then line = line .. string.format("bvc $%.4x     [%.6x]", bit.band(decode[OPTYPE_RELB](op8), 0xffff), decode[OPTYPE_RELB](op8))
-	elseif op == 0x51 then line = line .. string.format("eor ($%.2x),y   [%.6x]", op8, decode[OPTYPE_IDPY](op8))
-	elseif op == 0x52 then line = line .. string.format("eor ($%.2x)     [%.6x]", op8, decode[OPTYPE_IDP](op8))
-	elseif op == 0x53 then line = line .. string.format("eor ($%.2x,s),y [%.6x]", op8, decode[OPTYPE_ISRY](op8))
-	elseif op == 0x54 then line = line .. string.format("mvn $%.2x,$%.2x           ", op1, op8)
-	elseif op == 0x55 then line = line .. string.format("eor $%.2x,x     [%.6x]", op8, decode[OPTYPE_DPX](op8))
-	elseif op == 0x56 then line = line .. string.format("lsr $%.2x,x     [%.6x]", op8, decode[OPTYPE_DPX](op8))
-	elseif op == 0x57 then line = line .. string.format("eor [$%.2x],y   [%.6x]", op8, decode[OPTYPE_ILDPY](op8))
-	elseif op == 0x58 then line = line .. string.format("cli                   ")
-	elseif op == 0x59 then line = line .. string.format("eor $%.4x,y   [%.6x]", op16, decode[OPTYPE_ADDRY](op16))
-	elseif op == 0x5a then line = line .. string.format("phy                   ")
-	elseif op == 0x5b then line = line .. string.format("tcd                   ")
-	elseif op == 0x5c then line = line .. string.format("jml $%.6x   [%.6x]", op24, decode[OPTYPE_LONG](op24))
-	elseif op == 0x5d then line = line .. string.format("eor $%.4x,x   [%.6x]", op16, decode[OPTYPE_ADDRX](op16))
-	elseif op == 0x5e then line = line .. string.format("lsr $%.4x,x   [%.6x]", op16, decode[OPTYPE_ADDRX](op16))
-	elseif op == 0x5f then line = line .. string.format("eor $%.6x,x [%.6x]", op24, decode[OPTYPE_LONGX](op24))
-	elseif op == 0x60 then line = line .. string.format("rts                   ")
-	elseif op == 0x61 then line = line .. string.format("adc ($%.2x,x)   [%.6x]", op8, decode[OPTYPE_IDPX](op8))
-	elseif op == 0x62 then line = line .. string.format("per $%.4x     [%.6x]", op16, decode[OPTYPE_ADDR](op16))
-	elseif op == 0x63 then line = line .. string.format("adc $%.2x,s     [%.6x]", op8, decode[OPTYPE_SR](op8))
-	elseif op == 0x64 then line = line .. string.format("stz $%.2x       [%.6x]", op8, decode[OPTYPE_DP](op8))
-	elseif op == 0x65 then line = line .. string.format("adc $%.2x       [%.6x]", op8, decode[OPTYPE_DP](op8))
-	elseif op == 0x66 then line = line .. string.format("ror $%.2x       [%.6x]", op8, decode[OPTYPE_DP](op8))
-	elseif op == 0x67 then line = line .. string.format("adc [$%.2x]     [%.6x]", op8, decode[OPTYPE_ILDP](op8))
-	elseif op == 0x68 then line = line .. string.format("pla                   ")
-	elseif op == 0x69 then if a8 then line = line .. string.format("adc #$%.2x              ", op8)
-	                             else line = line .. string.format("adc #$%.4x            ", op16) end
-	elseif op == 0x6a then line = line .. string.format("ror a                 ")
-	elseif op == 0x6b then line = line .. string.format("rtl                   ")
-	elseif op == 0x6c then line = line .. string.format("jmp ($%.4x)   [%.6x]", op16, decode[OPTYPE_IADDR_PC](op16))
-	elseif op == 0x6d then line = line .. string.format("adc $%.4x     [%.6x]", op16, decode[OPTYPE_ADDR](op16))
-	elseif op == 0x6e then line = line .. string.format("ror $%.4x     [%.6x]", op16, decode[OPTYPE_ADDR](op16))
-	elseif op == 0x6f then line = line .. string.format("adc $%.6x   [%.6x]", op24, decode[OPTYPE_LONG](op24))
-	elseif op == 0x70 then line = line .. string.format("bvs $%.4x     [%.6x]", bit.band(decode[OPTYPE_RELB](op8), 0xffff), decode[OPTYPE_RELB](op8))
-	elseif op == 0x71 then line = line .. string.format("adc ($%.2x),y   [%.6x]", op8, decode[OPTYPE_IDPY](op8))
-	elseif op == 0x72 then line = line .. string.format("adc ($%.2x)     [%.6x]", op8, decode[OPTYPE_IDP](op8))
-	elseif op == 0x73 then line = line .. string.format("adc ($%.2x,s),y [%.6x]", op8, decode[OPTYPE_ISRY](op8))
-	elseif op == 0x74 then line = line .. string.format("stz $%.2x,x     [%.6x]", op8, decode[OPTYPE_DPX](op8))
-	elseif op == 0x75 then line = line .. string.format("adc $%.2x,x     [%.6x]", op8, decode[OPTYPE_DPX](op8))
-	elseif op == 0x76 then line = line .. string.format("ror $%.2x,x     [%.6x]", op8, decode[OPTYPE_DPX](op8))
-	elseif op == 0x77 then line = line .. string.format("adc [$%.2x],y   [%.6x]", op8, decode[OPTYPE_ILDPY](op8))
-	elseif op == 0x78 then line = line .. string.format("sei                   ")
-	elseif op == 0x79 then line = line .. string.format("adc $%.4x,y   [%.6x]", op16, decode[OPTYPE_ADDRY](op16))
-	elseif op == 0x7a then line = line .. string.format("ply                   ")
-	elseif op == 0x7b then line = line .. string.format("tdc                   ")
-	elseif op == 0x7c then line = line .. string.format("jmp ($%.4x,x) [%.6x]", op16, decode[OPTYPE_IADDRX](op16))
-	elseif op == 0x7d then line = line .. string.format("adc $%.4x,x   [%.6x]", op16, decode[OPTYPE_ADDRX](op16))
-	elseif op == 0x7e then line = line .. string.format("ror $%.4x,x   [%.6x]", op16, decode[OPTYPE_ADDRX](op16))
-	elseif op == 0x7f then line = line .. string.format("adc $%.6x,x [%.6x]", op24, decode[OPTYPE_LONGX](op24))
-	elseif op == 0x80 then line = line .. string.format("bra $%.4x     [%.6x]", bit.band(decode[OPTYPE_RELB](op8), 0xffff), decode[OPTYPE_RELB](op8))
-	elseif op == 0x81 then line = line .. string.format("sta ($%.2x,x)   [%.6x]", op8, decode[OPTYPE_IDPX](op8))
-	elseif op == 0x82 then line = line .. string.format("brl $%.4x     [%.6x]", bit.band(decode[OPTYPE_RELW](op16), 0xffff), decode[OPTYPE_RELW](op16))
-	elseif op == 0x83 then line = line .. string.format("sta $%.2x,s     [%.6x]", op8, decode[OPTYPE_SR](op8))
-	elseif op == 0x84 then line = line .. string.format("sty $%.2x       [%.6x]", op8, decode[OPTYPE_DP](op8))
-	elseif op == 0x85 then line = line .. string.format("sta $%.2x       [%.6x]", op8, decode[OPTYPE_DP](op8))
-	elseif op == 0x86 then line = line .. string.format("stx $%.2x       [%.6x]", op8, decode[OPTYPE_DP](op8))
-	elseif op == 0x87 then line = line .. string.format("sta [$%.2x]     [%.6x]", op8, decode[OPTYPE_ILDP](op8))
-	elseif op == 0x88 then line = line .. string.format("dey                   ")
-	elseif op == 0x89 then if a8 then line = line .. string.format("bit #$%.2x              ", op8)
-	                             else line = line .. string.format("bit #$%.4x            ", op16) end
-	elseif op == 0x8a then line = line .. string.format("txa                   ")
-	elseif op == 0x8b then line = line .. string.format("phb                   ")
-	elseif op == 0x8c then line = line .. string.format("sty $%.4x     [%.6x]", op16, decode[OPTYPE_ADDR](op16))
-	elseif op == 0x8d then line = line .. string.format("sta $%.4x     [%.6x]", op16, decode[OPTYPE_ADDR](op16))
-	elseif op == 0x8e then line = line .. string.format("stx $%.4x     [%.6x]", op16, decode[OPTYPE_ADDR](op16))
-	elseif op == 0x8f then line = line .. string.format("sta $%.6x   [%.6x]", op24, decode[OPTYPE_LONG](op24))
-	elseif op == 0x90 then line = line .. string.format("bcc $%.4x     [%.6x]", bit.band(decode[OPTYPE_RELB](op8), 0xffff), decode[OPTYPE_RELB](op8))
-	elseif op == 0x91 then line = line .. string.format("sta ($%.2x),y   [%.6x]", op8, decode[OPTYPE_IDPY](op8))
-	elseif op == 0x92 then line = line .. string.format("sta ($%.2x)     [%.6x]", op8, decode[OPTYPE_IDP](op8))
-	elseif op == 0x93 then line = line .. string.format("sta ($%.2x,s),y [%.6x]", op8, decode[OPTYPE_ISRY](op8))
-	elseif op == 0x94 then line = line .. string.format("sty $%.2x,x     [%.6x]", op8, decode[OPTYPE_DPX](op8))
-	elseif op == 0x95 then line = line .. string.format("sta $%.2x,x     [%.6x]", op8, decode[OPTYPE_DPX](op8))
-	elseif op == 0x96 then line = line .. string.format("stx $%.2x,y     [%.6x]", op8, decode[OPTYPE_DPY](op8))
-	elseif op == 0x97 then line = line .. string.format("sta [$%.2x],y   [%.6x]", op8, decode[OPTYPE_ILDPY](op8))
-	elseif op == 0x98 then line = line .. string.format("tya                   ")
-	elseif op == 0x99 then line = line .. string.format("sta $%.4x,y   [%.6x]", op16, decode[OPTYPE_ADDRY](op16))
-	elseif op == 0x9a then line = line .. string.format("txs                   ")
-	elseif op == 0x9b then line = line .. string.format("txy                   ")
-	elseif op == 0x9c then line = line .. string.format("stz $%.4x     [%.6x]", op16, decode[OPTYPE_ADDR](op16))
-	elseif op == 0x9d then line = line .. string.format("sta $%.4x,x   [%.6x]", op16, decode[OPTYPE_ADDRX](op16))
-	elseif op == 0x9e then line = line .. string.format("stz $%.4x,x   [%.6x]", op16, decode[OPTYPE_ADDRX](op16))
-	elseif op == 0x9f then line = line .. string.format("sta $%.6x,x [%.6x]", op24, decode[OPTYPE_LONGX](op24))
-	elseif op == 0xa0 then if x8 then line = line .. string.format("ldy #$%.2x              ", op8)
-	                             else line = line .. string.format("ldy #$%.4x            ", op16) end
-	elseif op == 0xa1 then line = line .. string.format("lda ($%.2x,x)   [%.6x]", op8, decode[OPTYPE_IDPX](op8))
-	elseif op == 0xa2 then if x8 then line = line .. string.format("ldx #$%.2x              ", op8)
-	                             else line = line .. string.format("ldx #$%.4x            ", op16) end
-	elseif op == 0xa3 then line = line .. string.format("lda $%.2x,s     [%.6x]", op8, decode[OPTYPE_SR](op8))
-	elseif op == 0xa4 then line = line .. string.format("ldy $%.2x       [%.6x]", op8, decode[OPTYPE_DP](op8))
-	elseif op == 0xa5 then line = line .. string.format("lda $%.2x       [%.6x]", op8, decode[OPTYPE_DP](op8))
-	elseif op == 0xa6 then line = line .. string.format("ldx $%.2x       [%.6x]", op8, decode[OPTYPE_DP](op8))
-	elseif op == 0xa7 then line = line .. string.format("lda [$%.2x]     [%.6x]", op8, decode[OPTYPE_ILDP](op8))
-	elseif op == 0xa8 then line = line .. string.format("tay                   ")
-	elseif op == 0xa9 then if a8 then line = line .. string.format("lda #$%.2x              ", op8)
-	                             else line = line .. string.format("lda #$%.4x            ", op16) end
-	elseif op == 0xaa then line = line .. string.format("tax                   ")
-	elseif op == 0xab then line = line .. string.format("plb                   ")
-	elseif op == 0xac then line = line .. string.format("ldy $%.4x     [%.6x]", op16, decode[OPTYPE_ADDR](op16))
-	elseif op == 0xad then line = line .. string.format("lda $%.4x     [%.6x]", op16, decode[OPTYPE_ADDR](op16))
-	elseif op == 0xae then line = line .. string.format("ldx $%.4x     [%.6x]", op16, decode[OPTYPE_ADDR](op16))
-	elseif op == 0xaf then line = line .. string.format("lda $%.6x   [%.6x]", op24, decode[OPTYPE_LONG](op24))
-	elseif op == 0xb0 then line = line .. string.format("bcs $%.4x     [%.6x]", bit.band(decode[OPTYPE_RELB](op8), 0xffff), decode[OPTYPE_RELB](op8))
-	elseif op == 0xb1 then line = line .. string.format("lda ($%.2x),y   [%.6x]", op8, decode[OPTYPE_IDPY](op8))
-	elseif op == 0xb2 then line = line .. string.format("lda ($%.2x)     [%.6x]", op8, decode[OPTYPE_IDP](op8))
-	elseif op == 0xb3 then line = line .. string.format("lda ($%.2x,s),y [%.6x]", op8, decode[OPTYPE_ISRY](op8))
-	elseif op == 0xb4 then line = line .. string.format("ldy $%.2x,x     [%.6x]", op8, decode[OPTYPE_DPX](op8))
-	elseif op == 0xb5 then line = line .. string.format("lda $%.2x,x     [%.6x]", op8, decode[OPTYPE_DPX](op8))
-	elseif op == 0xb6 then line = line .. string.format("ldx $%.2x,y     [%.6x]", op8, decode[OPTYPE_DPY](op8))
-	elseif op == 0xb7 then line = line .. string.format("lda [$%.2x],y   [%.6x]", op8, decode[OPTYPE_ILDPY](op8))
-	elseif op == 0xb8 then line = line .. string.format("clv                   ")
-	elseif op == 0xb9 then line = line .. string.format("lda $%.4x,y   [%.6x]", op16, decode[OPTYPE_ADDRY](op16))
-	elseif op == 0xba then line = line .. string.format("tsx                   ")
-	elseif op == 0xbb then line = line .. string.format("tyx                   ")
-	elseif op == 0xbc then line = line .. string.format("ldy $%.4x,x   [%.6x]", op16, decode[OPTYPE_ADDRX](op16))
-	elseif op == 0xbd then line = line .. string.format("lda $%.4x,x   [%.6x]", op16, decode[OPTYPE_ADDRX](op16))
-	elseif op == 0xbe then line = line .. string.format("ldx $%.4x,y   [%.6x]", op16, decode[OPTYPE_ADDRY](op16))
-	elseif op == 0xbf then line = line .. string.format("lda $%.6x,x [%.6x]", op24, decode[OPTYPE_LONGX](op24))
-	elseif op == 0xc0 then if x8 then line = line .. string.format("cpy #$%.2x              ", op8)
-	                             else line = line .. string.format("cpy #$%.4x            ", op16) end
-	elseif op == 0xc1 then line = line .. string.format("cmp ($%.2x,x)   [%.6x]", op8, decode[OPTYPE_IDPX](op8))
-	elseif op == 0xc2 then line = line .. string.format("rep #$%.2x              ", op8)
-	elseif op == 0xc3 then line = line .. string.format("cmp $%.2x,s     [%.6x]", op8, decode[OPTYPE_SR](op8))
-	elseif op == 0xc4 then line = line .. string.format("cpy $%.2x       [%.6x]", op8, decode[OPTYPE_DP](op8))
-	elseif op == 0xc5 then line = line .. string.format("cmp $%.2x       [%.6x]", op8, decode[OPTYPE_DP](op8))
-	elseif op == 0xc6 then line = line .. string.format("dec $%.2x       [%.6x]", op8, decode[OPTYPE_DP](op8))
-	elseif op == 0xc7 then line = line .. string.format("cmp [$%.2x]     [%.6x]", op8, decode[OPTYPE_ILDP](op8))
-	elseif op == 0xc8 then line = line .. string.format("iny                   ")
-	elseif op == 0xc9 then if a8 then line = line .. string.format("cmp #$%.2x              ", op8)
-	                             else line = line .. string.format("cmp #$%.4x            ", op16) end
-	elseif op == 0xca then line = line .. string.format("dex                   ")
-	elseif op == 0xcb then line = line .. string.format("wai                   ")
-	elseif op == 0xcc then line = line .. string.format("cpy $%.4x     [%.6x]", op16, decode[OPTYPE_ADDR](op16))
-	elseif op == 0xcd then line = line .. string.format("cmp $%.4x     [%.6x]", op16, decode[OPTYPE_ADDR](op16))
-	elseif op == 0xce then line = line .. string.format("dec $%.4x     [%.6x]", op16, decode[OPTYPE_ADDR](op16))
-	elseif op == 0xcf then line = line .. string.format("cmp $%.6x   [%.6x]", op24, decode[OPTYPE_LONG](op24))
-	elseif op == 0xd0 then line = line .. string.format("bne $%.4x     [%.6x]", bit.band(decode[OPTYPE_RELB](op8), 0xffff), decode[OPTYPE_RELB](op8))
-	elseif op == 0xd1 then line = line .. string.format("cmp ($%.2x),y   [%.6x]", op8, decode[OPTYPE_IDPY](op8))
-	elseif op == 0xd2 then line = line .. string.format("cmp ($%.2x)     [%.6x]", op8, decode[OPTYPE_IDP](op8))
-	elseif op == 0xd3 then line = line .. string.format("cmp ($%.2x,s),y [%.6x]", op8, decode[OPTYPE_ISRY](op8))
-	elseif op == 0xd4 then line = line .. string.format("pei ($%.2x)     [%.6x]", op8, decode[OPTYPE_IDP](op8))
-	elseif op == 0xd5 then line = line .. string.format("cmp $%.2x,x     [%.6x]", op8, decode[OPTYPE_DPX](op8))
-	elseif op == 0xd6 then line = line .. string.format("dec $%.2x,x     [%.6x]", op8, decode[OPTYPE_DPX](op8))
-	elseif op == 0xd7 then line = line .. string.format("cmp [$%.2x],y   [%.6x]", op8, decode[OPTYPE_ILDPY](op8))
-	elseif op == 0xd8 then line = line .. string.format("cld                   ")
-	elseif op == 0xd9 then line = line .. string.format("cmp $%.4x,y   [%.6x]", op16, decode[OPTYPE_ADDRY](op16))
-	elseif op == 0xda then line = line .. string.format("phx                   ")
-	elseif op == 0xdb then line = line .. string.format("stp                   ")
-	elseif op == 0xdc then line = line .. string.format("jmp [$%.4x]   [%.6x]", op16, decode[OPTYPE_ILADDR](op16))
-	elseif op == 0xdd then line = line .. string.format("cmp $%.4x,x   [%.6x]", op16, decode[OPTYPE_ADDRX](op16))
-	elseif op == 0xde then line = line .. string.format("dec $%.4x,x   [%.6x]", op16, decode[OPTYPE_ADDRX](op16))
-	elseif op == 0xdf then line = line .. string.format("cmp $%.6x,x [%.6x]", op24, decode[OPTYPE_LONGX](op24))
-	elseif op == 0xe0 then if x8 then line = line .. string.format("cpx #$%.2x              ", op8)
-	                             else line = line .. string.format("cpx #$%.4x            ", op16) end
-	elseif op == 0xe1 then line = line .. string.format("sbc ($%.2x,x)   [%.6x]", op8, decode[OPTYPE_IDPX](op8))
-	elseif op == 0xe2 then line = line .. string.format("sep #$%.2x              ", op8)
-	elseif op == 0xe3 then line = line .. string.format("sbc $%.2x,s     [%.6x]", op8, decode[OPTYPE_SR](op8))
-	elseif op == 0xe4 then line = line .. string.format("cpx $%.2x       [%.6x]", op8, decode[OPTYPE_DP](op8))
-	elseif op == 0xe5 then line = line .. string.format("sbc $%.2x       [%.6x]", op8, decode[OPTYPE_DP](op8))
-	elseif op == 0xe6 then line = line .. string.format("inc $%.2x       [%.6x]", op8, decode[OPTYPE_DP](op8))
-	elseif op == 0xe7 then line = line .. string.format("sbc [$%.2x]     [%.6x]", op8, decode[OPTYPE_ILDP](op8))
-	elseif op == 0xe8 then line = line .. string.format("inx                   ")
-	elseif op == 0xe9 then if a8 then line = line .. string.format("sbc #$%.2x              ", op8)
-	                             else line = line .. string.format("sbc #$%.4x            ", op16) end
-	elseif op == 0xea then line = line .. string.format("nop                   ")
-	elseif op == 0xeb then line = line .. string.format("xba                   ")
-	elseif op == 0xec then line = line .. string.format("cpx $%.4x     [%.6x]", op16, decode[OPTYPE_ADDR](op16))
-	elseif op == 0xed then line = line .. string.format("sbc $%.4x     [%.6x]", op16, decode[OPTYPE_ADDR](op16))
-	elseif op == 0xee then line = line .. string.format("inc $%.4x     [%.6x]", op16, decode[OPTYPE_ADDR](op16))
-	elseif op == 0xef then line = line .. string.format("sbc $%.6x   [%.6x]", op24, decode[OPTYPE_LONG](op24))
-	elseif op == 0xf0 then line = line .. string.format("beq $%.4x     [%.6x]", bit.band(decode[OPTYPE_RELB](op8), 0xffff), decode[OPTYPE_RELB](op8))
-	elseif op == 0xf1 then line = line .. string.format("sbc ($%.2x),y   [%.6x]", op8, decode[OPTYPE_IDPY](op8))
-	elseif op == 0xf2 then line = line .. string.format("sbc ($%.2x)     [%.6x]", op8, decode[OPTYPE_IDP](op8))
-	elseif op == 0xf3 then line = line .. string.format("sbc ($%.2x,s),y [%.6x]", op8, decode[OPTYPE_ISRY](op8))
-	elseif op == 0xf4 then line = line .. string.format("pea $%.4x     [%.6x]", op16, decode[OPTYPE_ADDR](op16))
-	elseif op == 0xf5 then line = line .. string.format("sbc $%.2x,x     [%.6x]", op8, decode[OPTYPE_DPX](op8))
-	elseif op == 0xf6 then line = line .. string.format("inc $%.2x,x     [%.6x]", op8, decode[OPTYPE_DPX](op8))
-	elseif op == 0xf7 then line = line .. string.format("sbc [$%.2x],y   [%.6x]", op8, decode[OPTYPE_ILDPY](op8))
-	elseif op == 0xf8 then line = line .. string.format("sed                   ")
-	elseif op == 0xf9 then line = line .. string.format("sbc $%.4x,y   [%.6x]", op16, decode[OPTYPE_ADDRY](op16))
-	elseif op == 0xfa then line = line .. string.format("plx                   ")
-	elseif op == 0xfb then line = line .. string.format("xce                   ")
-	elseif op == 0xfc then line = line .. string.format("jsr ($%.4x,x) [%.6x]", op16, decode[OPTYPE_IADDRX](op16))
-	elseif op == 0xfd then line = line .. string.format("sbc $%.4x,x   [%.6x]", op16, decode[OPTYPE_ADDRX](op16))
-	elseif op == 0xfe then line = line .. string.format("inc $%.4x,x   [%.6x]", op16, decode[OPTYPE_ADDRX](op16))
-	elseif op == 0xff then line = line .. string.format("sbc $%.6x,x [%.6x]", op24, decode[OPTYPE_LONGX](op24)) end
+	local disasm = {
+	[0x00] = function() return string.format("brk #$%.2x              ", op8) end;
+	[0x01] = function() return string.format("ora ($%.2x,x)   [%.6x]", op8, decode[OPTYPE_IDPX](op8)) end;
+	[0x02] = function() return string.format("cop #$%.2x              ", op8) end;
+	[0x03] = function() return string.format("ora $%.2x,s     [%.6x]", op8, decode[OPTYPE_SR](op8)) end;
+	[0x04] = function() return string.format("tsb $%.2x       [%.6x]", op8, decode[OPTYPE_DP](op8)) end;
+	[0x05] = function() return string.format("ora $%.2x       [%.6x]", op8, decode[OPTYPE_DP](op8)) end;
+	[0x06] = function() return string.format("asl $%.2x       [%.6x]", op8, decode[OPTYPE_DP](op8)) end;
+	[0x07] = function() return string.format("ora [$%.2x]     [%.6x]", op8, decode[OPTYPE_ILDP](op8)) end;
+	[0x08] = function() return string.format("php                   ") end;
+	[0x09] = function() if a8 then return string.format("ora #$%.2x              ", op8)
+	                            else return string.format("ora #$%.4x            ", op16) end end;
+	[0x0a] = function() return string.format("asl a                 ") end;
+	[0x0b] = function() return string.format("phd                   ") end;
+	[0x0c] = function() return string.format("tsb $%.4x     [%.6x]", op16, decode[OPTYPE_ADDR](op16)) end;
+	[0x0d] = function() return string.format("ora $%.4x     [%.6x]", op16, decode[OPTYPE_ADDR](op16)) end;
+	[0x0e] = function() return string.format("asl $%.4x     [%.6x]", op16, decode[OPTYPE_ADDR](op16)) end;
+	[0x0f] = function() return string.format("ora $%.6x   [%.6x]", op24, decode[OPTYPE_LONG](op24)) end;
+	[0x10] = function() return string.format("bpl $%.4x     [%.6x]", bit.band(decode[OPTYPE_RELB](op8), 0xffff), decode[OPTYPE_RELB](op8)) end;
+	[0x11] = function() return string.format("ora ($%.2x),y   [%.6x]", op8, decode[OPTYPE_IDPY](op8)) end;
+	[0x12] = function() return string.format("ora ($%.2x)     [%.6x]", op8, decode[OPTYPE_IDP](op8)) end;
+	[0x13] = function() return string.format("ora ($%.2x,s),y [%.6x]", op8, decode[OPTYPE_ISRY](op8)) end;
+	[0x14] = function() return string.format("trb $%.2x       [%.6x]", op8, decode[OPTYPE_DP](op8)) end;
+	[0x15] = function() return string.format("ora $%.2x,x     [%.6x]", op8, decode[OPTYPE_DPX](op8)) end;
+	[0x16] = function() return string.format("asl $%.2x,x     [%.6x]", op8, decode[OPTYPE_DPX](op8)) end;
+	[0x17] = function() return string.format("ora [$%.2x],y   [%.6x]", op8, decode[OPTYPE_ILDPY](op8)) end;
+	[0x18] = function() return string.format("clc                   ") end;
+	[0x19] = function() return string.format("ora $%.4x,y   [%.6x]", op16, decode[OPTYPE_ADDRY](op16)) end;
+	[0x1a] = function() return string.format("inc                   ") end;
+	[0x1b] = function() return string.format("tcs                   ") end;
+	[0x1c] = function() return string.format("trb $%.4x     [%.6x]", op16, decode[OPTYPE_ADDR](op16)) end;
+	[0x1d] = function() return string.format("ora $%.4x,x   [%.6x]", op16, decode[OPTYPE_ADDRX](op16)) end;
+	[0x1e] = function() return string.format("asl $%.4x,x   [%.6x]", op16, decode[OPTYPE_ADDRX](op16)) end;
+	[0x1f] = function() return string.format("ora $%.6x,x [%.6x]", op24, decode[OPTYPE_LONGX](op24)) end;
+	[0x20] = function() return string.format("jsr $%.4x     [%.6x]", op16, decode[OPTYPE_ADDR_PC](op16)) end;
+	[0x21] = function() return string.format("and ($%.2x,x)   [%.6x]", op8, decode[OPTYPE_IDPX](op8)) end;
+	[0x22] = function() return string.format("jsl $%.6x   [%.6x]", op24, decode[OPTYPE_LONG](op24)) end;
+	[0x23] = function() return string.format("and $%.2x,s     [%.6x]", op8, decode[OPTYPE_SR](op8)) end;
+	[0x24] = function() return string.format("bit $%.2x       [%.6x]", op8, decode[OPTYPE_DP](op8)) end;
+	[0x25] = function() return string.format("and $%.2x       [%.6x]", op8, decode[OPTYPE_DP](op8)) end;
+	[0x26] = function() return string.format("rol $%.2x       [%.6x]", op8, decode[OPTYPE_DP](op8)) end;
+	[0x27] = function() return string.format("and [$%.2x]     [%.6x]", op8, decode[OPTYPE_ILDP](op8)) end;
+	[0x28] = function() return string.format("plp                   ") end;
+	[0x29] = function() if a8 then return string.format("and #$%.2x              ", op8)
+	                            else return string.format("and #$%.4x            ", op16) end end;
+	[0x2a] = function() return string.format("rol a                 ") end;
+	[0x2b] = function() return string.format("pld                   ") end;
+	[0x2c] = function() return string.format("bit $%.4x     [%.6x]", op16, decode[OPTYPE_ADDR](op16)) end;
+	[0x2d] = function() return string.format("and $%.4x     [%.6x]", op16, decode[OPTYPE_ADDR](op16)) end;
+	[0x2e] = function() return string.format("rol $%.4x     [%.6x]", op16, decode[OPTYPE_ADDR](op16)) end;
+	[0x2f] = function() return string.format("and $%.6x   [%.6x]", op24, decode[OPTYPE_LONG](op24)) end;
+	[0x30] = function() return string.format("bmi $%.4x     [%.6x]", bit.band(decode[OPTYPE_RELB](op8), 0xffff), decode[OPTYPE_RELB](op8)) end;
+	[0x31] = function() return string.format("and ($%.2x),y   [%.6x]", op8, decode[OPTYPE_IDPY](op8)) end;
+	[0x32] = function() return string.format("and ($%.2x)     [%.6x]", op8, decode[OPTYPE_IDP](op8)) end;
+	[0x33] = function() return string.format("and ($%.2x,s),y [%.6x]", op8, decode[OPTYPE_ISRY](op8)) end;
+	[0x34] = function() return string.format("bit $%.2x,x     [%.6x]", op8, decode[OPTYPE_DPX](op8)) end;
+	[0x35] = function() return string.format("and $%.2x,x     [%.6x]", op8, decode[OPTYPE_DPX](op8)) end;
+	[0x36] = function() return string.format("rol $%.2x,x     [%.6x]", op8, decode[OPTYPE_DPX](op8)) end;
+	[0x37] = function() return string.format("and [$%.2x],y   [%.6x]", op8, decode[OPTYPE_ILDPY](op8)) end;
+	[0x38] = function() return string.format("sec                   ") end;
+	[0x39] = function() return string.format("and $%.4x,y   [%.6x]", op16, decode[OPTYPE_ADDRY](op16)) end;
+	[0x3a] = function() return string.format("dec                   ") end;
+	[0x3b] = function() return string.format("tsc                   ") end;
+	[0x3c] = function() return string.format("bit $%.4x,x   [%.6x]", op16, decode[OPTYPE_ADDRX](op16)) end;
+	[0x3d] = function() return string.format("and $%.4x,x   [%.6x]", op16, decode[OPTYPE_ADDRX](op16)) end;
+	[0x3e] = function() return string.format("rol $%.4x,x   [%.6x]", op16, decode[OPTYPE_ADDRX](op16)) end;
+	[0x3f] = function() return string.format("and $%.6x,x [%.6x]", op24, decode[OPTYPE_LONGX](op24)) end;
+	[0x40] = function() return string.format("rti                   ") end;
+	[0x41] = function() return string.format("eor ($%.2x,x)   [%.6x]", op8, decode[OPTYPE_IDPX](op8)) end;
+	[0x42] = function() return string.format("wdm                   ") end;
+	[0x43] = function() return string.format("eor $%.2x,s     [%.6x]", op8, decode[OPTYPE_SR](op8)) end;
+	[0x44] = function() return string.format("mvp $%.2x,$%.2x           ", op1, op8) end;
+	[0x45] = function() return string.format("eor $%.2x       [%.6x]", op8, decode[OPTYPE_DP](op8)) end;
+	[0x46] = function() return string.format("lsr $%.2x       [%.6x]", op8, decode[OPTYPE_DP](op8)) end;
+	[0x47] = function() return string.format("eor [$%.2x]     [%.6x]", op8, decode[OPTYPE_ILDP](op8)) end;
+	[0x48] = function() return string.format("pha                   ") end;
+	[0x49] = function() if a8 then return string.format("eor #$%.2x              ", op8)
+	                            else return string.format("eor #$%.4x            ", op16) end end;
+	[0x4a] = function() return string.format("lsr a                 ") end;
+	[0x4b] = function() return string.format("phk                   ") end;
+	[0x4c] = function() return string.format("jmp $%.4x     [%.6x]", op16, decode[OPTYPE_ADDR_PC](op16)) end;
+	[0x4d] = function() return string.format("eor $%.4x     [%.6x]", op16, decode[OPTYPE_ADDR](op16)) end;
+	[0x4e] = function() return string.format("lsr $%.4x     [%.6x]", op16, decode[OPTYPE_ADDR](op16)) end;
+	[0x4f] = function() return string.format("eor $%.6x   [%.6x]", op24, decode[OPTYPE_LONG](op24)) end;
+	[0x50] = function() return string.format("bvc $%.4x     [%.6x]", bit.band(decode[OPTYPE_RELB](op8), 0xffff), decode[OPTYPE_RELB](op8)) end;
+	[0x51] = function() return string.format("eor ($%.2x),y   [%.6x]", op8, decode[OPTYPE_IDPY](op8)) end;
+	[0x52] = function() return string.format("eor ($%.2x)     [%.6x]", op8, decode[OPTYPE_IDP](op8)) end;
+	[0x53] = function() return string.format("eor ($%.2x,s),y [%.6x]", op8, decode[OPTYPE_ISRY](op8)) end;
+	[0x54] = function() return string.format("mvn $%.2x,$%.2x           ", op1, op8) end;
+	[0x55] = function() return string.format("eor $%.2x,x     [%.6x]", op8, decode[OPTYPE_DPX](op8)) end;
+	[0x56] = function() return string.format("lsr $%.2x,x     [%.6x]", op8, decode[OPTYPE_DPX](op8)) end;
+	[0x57] = function() return string.format("eor [$%.2x],y   [%.6x]", op8, decode[OPTYPE_ILDPY](op8)) end;
+	[0x58] = function() return string.format("cli                   ") end;
+	[0x59] = function() return string.format("eor $%.4x,y   [%.6x]", op16, decode[OPTYPE_ADDRY](op16)) end;
+	[0x5a] = function() return string.format("phy                   ") end;
+	[0x5b] = function() return string.format("tcd                   ") end;
+	[0x5c] = function() return string.format("jml $%.6x   [%.6x]", op24, decode[OPTYPE_LONG](op24)) end;
+	[0x5d] = function() return string.format("eor $%.4x,x   [%.6x]", op16, decode[OPTYPE_ADDRX](op16)) end;
+	[0x5e] = function() return string.format("lsr $%.4x,x   [%.6x]", op16, decode[OPTYPE_ADDRX](op16)) end;
+	[0x5f] = function() return string.format("eor $%.6x,x [%.6x]", op24, decode[OPTYPE_LONGX](op24)) end;
+	[0x60] = function() return string.format("rts                   ") end;
+	[0x61] = function() return string.format("adc ($%.2x,x)   [%.6x]", op8, decode[OPTYPE_IDPX](op8)) end;
+	[0x62] = function() return string.format("per $%.4x     [%.6x]", op16, decode[OPTYPE_ADDR](op16)) end;
+	[0x63] = function() return string.format("adc $%.2x,s     [%.6x]", op8, decode[OPTYPE_SR](op8)) end;
+	[0x64] = function() return string.format("stz $%.2x       [%.6x]", op8, decode[OPTYPE_DP](op8)) end;
+	[0x65] = function() return string.format("adc $%.2x       [%.6x]", op8, decode[OPTYPE_DP](op8)) end;
+	[0x66] = function() return string.format("ror $%.2x       [%.6x]", op8, decode[OPTYPE_DP](op8)) end;
+	[0x67] = function() return string.format("adc [$%.2x]     [%.6x]", op8, decode[OPTYPE_ILDP](op8)) end;
+	[0x68] = function() return string.format("pla                   ") end;
+	[0x69] = function() if a8 then return string.format("adc #$%.2x              ", op8)
+	                            else return string.format("adc #$%.4x            ", op16) end end;
+	[0x6a] = function() return string.format("ror a                 ") end;
+	[0x6b] = function() return string.format("rtl                   ") end;
+	[0x6c] = function() return string.format("jmp ($%.4x)   [%.6x]", op16, decode[OPTYPE_IADDR_PC](op16)) end;
+	[0x6d] = function() return string.format("adc $%.4x     [%.6x]", op16, decode[OPTYPE_ADDR](op16)) end;
+	[0x6e] = function() return string.format("ror $%.4x     [%.6x]", op16, decode[OPTYPE_ADDR](op16)) end;
+	[0x6f] = function() return string.format("adc $%.6x   [%.6x]", op24, decode[OPTYPE_LONG](op24)) end;
+	[0x70] = function() return string.format("bvs $%.4x     [%.6x]", bit.band(decode[OPTYPE_RELB](op8), 0xffff), decode[OPTYPE_RELB](op8)) end;
+	[0x71] = function() return string.format("adc ($%.2x),y   [%.6x]", op8, decode[OPTYPE_IDPY](op8)) end;
+	[0x72] = function() return string.format("adc ($%.2x)     [%.6x]", op8, decode[OPTYPE_IDP](op8)) end;
+	[0x73] = function() return string.format("adc ($%.2x,s),y [%.6x]", op8, decode[OPTYPE_ISRY](op8)) end;
+	[0x74] = function() return string.format("stz $%.2x,x     [%.6x]", op8, decode[OPTYPE_DPX](op8)) end;
+	[0x75] = function() return string.format("adc $%.2x,x     [%.6x]", op8, decode[OPTYPE_DPX](op8)) end;
+	[0x76] = function() return string.format("ror $%.2x,x     [%.6x]", op8, decode[OPTYPE_DPX](op8)) end;
+	[0x77] = function() return string.format("adc [$%.2x],y   [%.6x]", op8, decode[OPTYPE_ILDPY](op8)) end;
+	[0x78] = function() return string.format("sei                   ") end;
+	[0x79] = function() return string.format("adc $%.4x,y   [%.6x]", op16, decode[OPTYPE_ADDRY](op16)) end;
+	[0x7a] = function() return string.format("ply                   ") end;
+	[0x7b] = function() return string.format("tdc                   ") end;
+	[0x7c] = function() return string.format("jmp ($%.4x,x) [%.6x]", op16, decode[OPTYPE_IADDRX](op16)) end;
+	[0x7d] = function() return string.format("adc $%.4x,x   [%.6x]", op16, decode[OPTYPE_ADDRX](op16)) end;
+	[0x7e] = function() return string.format("ror $%.4x,x   [%.6x]", op16, decode[OPTYPE_ADDRX](op16)) end;
+	[0x7f] = function() return string.format("adc $%.6x,x [%.6x]", op24, decode[OPTYPE_LONGX](op24)) end;
+	[0x80] = function() return string.format("bra $%.4x     [%.6x]", bit.band(decode[OPTYPE_RELB](op8), 0xffff), decode[OPTYPE_RELB](op8)) end;
+	[0x81] = function() return string.format("sta ($%.2x,x)   [%.6x]", op8, decode[OPTYPE_IDPX](op8)) end;
+	[0x82] = function() return string.format("brl $%.4x     [%.6x]", bit.band(decode[OPTYPE_RELW](op16), 0xffff), decode[OPTYPE_RELW](op16)) end;
+	[0x83] = function() return string.format("sta $%.2x,s     [%.6x]", op8, decode[OPTYPE_SR](op8)) end;
+	[0x84] = function() return string.format("sty $%.2x       [%.6x]", op8, decode[OPTYPE_DP](op8)) end;
+	[0x85] = function() return string.format("sta $%.2x       [%.6x]", op8, decode[OPTYPE_DP](op8)) end;
+	[0x86] = function() return string.format("stx $%.2x       [%.6x]", op8, decode[OPTYPE_DP](op8)) end;
+	[0x87] = function() return string.format("sta [$%.2x]     [%.6x]", op8, decode[OPTYPE_ILDP](op8)) end;
+	[0x88] = function() return string.format("dey                   ") end;
+	[0x89] = function() if a8 then return string.format("bit #$%.2x              ", op8)
+	                            else return string.format("bit #$%.4x            ", op16) end end;
+	[0x8a] = function() return string.format("txa                   ") end;
+	[0x8b] = function() return string.format("phb                   ") end;
+	[0x8c] = function() return string.format("sty $%.4x     [%.6x]", op16, decode[OPTYPE_ADDR](op16)) end;
+	[0x8d] = function() return string.format("sta $%.4x     [%.6x]", op16, decode[OPTYPE_ADDR](op16)) end;
+	[0x8e] = function() return string.format("stx $%.4x     [%.6x]", op16, decode[OPTYPE_ADDR](op16)) end;
+	[0x8f] = function() return string.format("sta $%.6x   [%.6x]", op24, decode[OPTYPE_LONG](op24)) end;
+	[0x90] = function() return string.format("bcc $%.4x     [%.6x]", bit.band(decode[OPTYPE_RELB](op8), 0xffff), decode[OPTYPE_RELB](op8)) end;
+	[0x91] = function() return string.format("sta ($%.2x),y   [%.6x]", op8, decode[OPTYPE_IDPY](op8)) end;
+	[0x92] = function() return string.format("sta ($%.2x)     [%.6x]", op8, decode[OPTYPE_IDP](op8)) end;
+	[0x93] = function() return string.format("sta ($%.2x,s),y [%.6x]", op8, decode[OPTYPE_ISRY](op8)) end;
+	[0x94] = function() return string.format("sty $%.2x,x     [%.6x]", op8, decode[OPTYPE_DPX](op8)) end;
+	[0x95] = function() return string.format("sta $%.2x,x     [%.6x]", op8, decode[OPTYPE_DPX](op8)) end;
+	[0x96] = function() return string.format("stx $%.2x,y     [%.6x]", op8, decode[OPTYPE_DPY](op8)) end;
+	[0x97] = function() return string.format("sta [$%.2x],y   [%.6x]", op8, decode[OPTYPE_ILDPY](op8)) end;
+	[0x98] = function() return string.format("tya                   ") end;
+	[0x99] = function() return string.format("sta $%.4x,y   [%.6x]", op16, decode[OPTYPE_ADDRY](op16)) end;
+	[0x9a] = function() return string.format("txs                   ") end;
+	[0x9b] = function() return string.format("txy                   ") end;
+	[0x9c] = function() return string.format("stz $%.4x     [%.6x]", op16, decode[OPTYPE_ADDR](op16)) end;
+	[0x9d] = function() return string.format("sta $%.4x,x   [%.6x]", op16, decode[OPTYPE_ADDRX](op16)) end;
+	[0x9e] = function() return string.format("stz $%.4x,x   [%.6x]", op16, decode[OPTYPE_ADDRX](op16)) end;
+	[0x9f] = function() return string.format("sta $%.6x,x [%.6x]", op24, decode[OPTYPE_LONGX](op24)) end;
+	[0xa0] = function() if x8 then return string.format("ldy #$%.2x              ", op8)
+	                            else return string.format("ldy #$%.4x            ", op16) end end;
+	[0xa1] = function() return string.format("lda ($%.2x,x)   [%.6x]", op8, decode[OPTYPE_IDPX](op8)) end;
+	[0xa2] = function() if x8 then return string.format("ldx #$%.2x              ", op8)
+	                            else return string.format("ldx #$%.4x            ", op16) end end;
+	[0xa3] = function() return string.format("lda $%.2x,s     [%.6x]", op8, decode[OPTYPE_SR](op8)) end;
+	[0xa4] = function() return string.format("ldy $%.2x       [%.6x]", op8, decode[OPTYPE_DP](op8)) end;
+	[0xa5] = function() return string.format("lda $%.2x       [%.6x]", op8, decode[OPTYPE_DP](op8)) end;
+	[0xa6] = function() return string.format("ldx $%.2x       [%.6x]", op8, decode[OPTYPE_DP](op8)) end;
+	[0xa7] = function() return string.format("lda [$%.2x]     [%.6x]", op8, decode[OPTYPE_ILDP](op8)) end;
+	[0xa8] = function() return string.format("tay                   ") end;
+	[0xa9] = function() if a8 then return string.format("lda #$%.2x              ", op8)
+	                            else return string.format("lda #$%.4x            ", op16) end end;
+	[0xaa] = function() return string.format("tax                   ") end;
+	[0xab] = function() return string.format("plb                   ") end;
+	[0xac] = function() return string.format("ldy $%.4x     [%.6x]", op16, decode[OPTYPE_ADDR](op16)) end;
+	[0xad] = function() return string.format("lda $%.4x     [%.6x]", op16, decode[OPTYPE_ADDR](op16)) end;
+	[0xae] = function() return string.format("ldx $%.4x     [%.6x]", op16, decode[OPTYPE_ADDR](op16)) end;
+	[0xaf] = function() return string.format("lda $%.6x   [%.6x]", op24, decode[OPTYPE_LONG](op24)) end;
+	[0xb0] = function() return string.format("bcs $%.4x     [%.6x]", bit.band(decode[OPTYPE_RELB](op8), 0xffff), decode[OPTYPE_RELB](op8)) end;
+	[0xb1] = function() return string.format("lda ($%.2x),y   [%.6x]", op8, decode[OPTYPE_IDPY](op8)) end;
+	[0xb2] = function() return string.format("lda ($%.2x)     [%.6x]", op8, decode[OPTYPE_IDP](op8)) end;
+	[0xb3] = function() return string.format("lda ($%.2x,s),y [%.6x]", op8, decode[OPTYPE_ISRY](op8)) end;
+	[0xb4] = function() return string.format("ldy $%.2x,x     [%.6x]", op8, decode[OPTYPE_DPX](op8)) end;
+	[0xb5] = function() return string.format("lda $%.2x,x     [%.6x]", op8, decode[OPTYPE_DPX](op8)) end;
+	[0xb6] = function() return string.format("ldx $%.2x,y     [%.6x]", op8, decode[OPTYPE_DPY](op8)) end;
+	[0xb7] = function() return string.format("lda [$%.2x],y   [%.6x]", op8, decode[OPTYPE_ILDPY](op8)) end;
+	[0xb8] = function() return string.format("clv                   ") end;
+	[0xb9] = function() return string.format("lda $%.4x,y   [%.6x]", op16, decode[OPTYPE_ADDRY](op16)) end;
+	[0xba] = function() return string.format("tsx                   ") end;
+	[0xbb] = function() return string.format("tyx                   ") end;
+	[0xbc] = function() return string.format("ldy $%.4x,x   [%.6x]", op16, decode[OPTYPE_ADDRX](op16)) end;
+	[0xbd] = function() return string.format("lda $%.4x,x   [%.6x]", op16, decode[OPTYPE_ADDRX](op16)) end;
+	[0xbe] = function() return string.format("ldx $%.4x,y   [%.6x]", op16, decode[OPTYPE_ADDRY](op16)) end;
+	[0xbf] = function() return string.format("lda $%.6x,x [%.6x]", op24, decode[OPTYPE_LONGX](op24)) end;
+	[0xc0] = function() if x8 then return string.format("cpy #$%.2x              ", op8)
+	                            else return string.format("cpy #$%.4x            ", op16) end end;
+	[0xc1] = function() return string.format("cmp ($%.2x,x)   [%.6x]", op8, decode[OPTYPE_IDPX](op8)) end;
+	[0xc2] = function() return string.format("rep #$%.2x              ", op8) end;
+	[0xc3] = function() return string.format("cmp $%.2x,s     [%.6x]", op8, decode[OPTYPE_SR](op8)) end;
+	[0xc4] = function() return string.format("cpy $%.2x       [%.6x]", op8, decode[OPTYPE_DP](op8)) end;
+	[0xc5] = function() return string.format("cmp $%.2x       [%.6x]", op8, decode[OPTYPE_DP](op8)) end;
+	[0xc6] = function() return string.format("dec $%.2x       [%.6x]", op8, decode[OPTYPE_DP](op8)) end;
+	[0xc7] = function() return string.format("cmp [$%.2x]     [%.6x]", op8, decode[OPTYPE_ILDP](op8)) end;
+	[0xc8] = function() return string.format("iny                   ") end;
+	[0xc9] = function() if a8 then return string.format("cmp #$%.2x              ", op8)
+	                            else return string.format("cmp #$%.4x            ", op16) end end;
+	[0xca] = function() return string.format("dex                   ") end;
+	[0xcb] = function() return string.format("wai                   ") end;
+	[0xcc] = function() return string.format("cpy $%.4x     [%.6x]", op16, decode[OPTYPE_ADDR](op16)) end;
+	[0xcd] = function() return string.format("cmp $%.4x     [%.6x]", op16, decode[OPTYPE_ADDR](op16)) end;
+	[0xce] = function() return string.format("dec $%.4x     [%.6x]", op16, decode[OPTYPE_ADDR](op16)) end;
+	[0xcf] = function() return string.format("cmp $%.6x   [%.6x]", op24, decode[OPTYPE_LONG](op24)) end;
+	[0xd0] = function() return string.format("bne $%.4x     [%.6x]", bit.band(decode[OPTYPE_RELB](op8), 0xffff), decode[OPTYPE_RELB](op8)) end;
+	[0xd1] = function() return string.format("cmp ($%.2x),y   [%.6x]", op8, decode[OPTYPE_IDPY](op8)) end;
+	[0xd2] = function() return string.format("cmp ($%.2x)     [%.6x]", op8, decode[OPTYPE_IDP](op8)) end;
+	[0xd3] = function() return string.format("cmp ($%.2x,s),y [%.6x]", op8, decode[OPTYPE_ISRY](op8)) end;
+	[0xd4] = function() return string.format("pei ($%.2x)     [%.6x]", op8, decode[OPTYPE_IDP](op8)) end;
+	[0xd5] = function() return string.format("cmp $%.2x,x     [%.6x]", op8, decode[OPTYPE_DPX](op8)) end;
+	[0xd6] = function() return string.format("dec $%.2x,x     [%.6x]", op8, decode[OPTYPE_DPX](op8)) end;
+	[0xd7] = function() return string.format("cmp [$%.2x],y   [%.6x]", op8, decode[OPTYPE_ILDPY](op8)) end;
+	[0xd8] = function() return string.format("cld                   ") end;
+	[0xd9] = function() return string.format("cmp $%.4x,y   [%.6x]", op16, decode[OPTYPE_ADDRY](op16)) end;
+	[0xda] = function() return string.format("phx                   ") end;
+	[0xdb] = function() return string.format("stp                   ") end;
+	[0xdc] = function() return string.format("jmp [$%.4x]   [%.6x]", op16, decode[OPTYPE_ILADDR](op16)) end;
+	[0xdd] = function() return string.format("cmp $%.4x,x   [%.6x]", op16, decode[OPTYPE_ADDRX](op16)) end;
+	[0xde] = function() return string.format("dec $%.4x,x   [%.6x]", op16, decode[OPTYPE_ADDRX](op16)) end;
+	[0xdf] = function() return string.format("cmp $%.6x,x [%.6x]", op24, decode[OPTYPE_LONGX](op24)) end;
+	[0xe0] = function() if x8 then return string.format("cpx #$%.2x              ", op8)
+	                            else return string.format("cpx #$%.4x            ", op16) end end;
+	[0xe1] = function() return string.format("sbc ($%.2x,x)   [%.6x]", op8, decode[OPTYPE_IDPX](op8)) end;
+	[0xe2] = function() return string.format("sep #$%.2x              ", op8) end;
+	[0xe3] = function() return string.format("sbc $%.2x,s     [%.6x]", op8, decode[OPTYPE_SR](op8)) end;
+	[0xe4] = function() return string.format("cpx $%.2x       [%.6x]", op8, decode[OPTYPE_DP](op8)) end;
+	[0xe5] = function() return string.format("sbc $%.2x       [%.6x]", op8, decode[OPTYPE_DP](op8)) end;
+	[0xe6] = function() return string.format("inc $%.2x       [%.6x]", op8, decode[OPTYPE_DP](op8)) end;
+	[0xe7] = function() return string.format("sbc [$%.2x]     [%.6x]", op8, decode[OPTYPE_ILDP](op8)) end;
+	[0xe8] = function() return string.format("inx                   ") end;
+	[0xe9] = function() if a8 then return string.format("sbc #$%.2x              ", op8)
+	                            else return string.format("sbc #$%.4x            ", op16) end end;
+	[0xea] = function() return string.format("nop                   ") end;
+	[0xeb] = function() return string.format("xba                   ") end;
+	[0xec] = function() return string.format("cpx $%.4x     [%.6x]", op16, decode[OPTYPE_ADDR](op16)) end;
+	[0xed] = function() return string.format("sbc $%.4x     [%.6x]", op16, decode[OPTYPE_ADDR](op16)) end;
+	[0xee] = function() return string.format("inc $%.4x     [%.6x]", op16, decode[OPTYPE_ADDR](op16)) end;
+	[0xef] = function() return string.format("sbc $%.6x   [%.6x]", op24, decode[OPTYPE_LONG](op24)) end;
+	[0xf0] = function() return string.format("beq $%.4x     [%.6x]", bit.band(decode[OPTYPE_RELB](op8), 0xffff), decode[OPTYPE_RELB](op8)) end;
+	[0xf1] = function() return string.format("sbc ($%.2x),y   [%.6x]", op8, decode[OPTYPE_IDPY](op8)) end;
+	[0xf2] = function() return string.format("sbc ($%.2x)     [%.6x]", op8, decode[OPTYPE_IDP](op8)) end;
+	[0xf3] = function() return string.format("sbc ($%.2x,s),y [%.6x]", op8, decode[OPTYPE_ISRY](op8)) end;
+	[0xf4] = function() return string.format("pea $%.4x     [%.6x]", op16, decode[OPTYPE_ADDR](op16)) end;
+	[0xf5] = function() return string.format("sbc $%.2x,x     [%.6x]", op8, decode[OPTYPE_DPX](op8)) end;
+	[0xf6] = function() return string.format("inc $%.2x,x     [%.6x]", op8, decode[OPTYPE_DPX](op8)) end;
+	[0xf7] = function() return string.format("sbc [$%.2x],y   [%.6x]", op8, decode[OPTYPE_ILDPY](op8)) end;
+	[0xf8] = function() return string.format("sed                   ") end;
+	[0xf9] = function() return string.format("sbc $%.4x,y   [%.6x]", op16, decode[OPTYPE_ADDRY](op16)) end;
+	[0xfa] = function() return string.format("plx                   ") end;
+	[0xfb] = function() return string.format("xce                   ") end;
+	[0xfc] = function() return string.format("jsr ($%.4x,x) [%.6x]", op16, decode[OPTYPE_IADDRX](op16)) end;
+	[0xfd] = function() return string.format("sbc $%.4x,x   [%.6x]", op16, decode[OPTYPE_ADDRX](op16)) end;
+	[0xfe] = function() return string.format("inc $%.4x,x   [%.6x]", op16, decode[OPTYPE_ADDRX](op16)) end;
+	[0xff] = function() return string.format("sbc $%.6x,x [%.6x]", op24, decode[OPTYPE_LONGX](op24)) end
+	}
+	line = line .. disasm[op]()
 
 	line = line .. " "
 
