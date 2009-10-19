@@ -36,3 +36,6 @@ end)
 emu.registerexit(function()
 	file:close()
 end)
+
+----------------------------------------------------------
+while emu.frameadvance do emu.frameadvance() end
