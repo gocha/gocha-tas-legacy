@@ -3,7 +3,7 @@
 if not emu then emu = snes9x end
 if not bit then require("bit") end
 
--- return info string about current instruction and registers
+-- return info string about current instruction and registers.
 function gettraceline(cpuname)
 	local OPTYPE_DP       = 1   -- dp
 	local OPTYPE_DPX      = 2   -- dp,x
@@ -437,7 +437,8 @@ function gettraceline(cpuname)
 
 	return line
 end
--- call this function on the callback of memory.registerexec
+-- the following function works pretty slow when you call it frequently,
+-- but it's somewhat useful for easy checking.
 function trace(cpuname)
 	print(gettraceline(cpuname))
 end
