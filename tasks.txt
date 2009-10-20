@@ -11,5 +11,4 @@ snes9x,vba,fceu,pcsx: allow multiple Lua instances
 snes9x: add debug tool (something like trace logger, register viewer, or disassemble view)
 fceu: add a function to convert old watch to new *.wch (or, write a convert script instead?)
 pcsxrr: revert old C++ to C changes of lua-engine.cpp?
-pcejin: add LuaBitOp library and other recent Lua improvements
 all: Lua: add agg library
