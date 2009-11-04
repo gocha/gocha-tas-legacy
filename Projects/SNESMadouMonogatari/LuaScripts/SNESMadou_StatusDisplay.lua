@@ -13,8 +13,7 @@ local detailedWeaknessInfo = false
 
 -- [ startup ] -----------------------------------------------------------------
 
-if emu then error("Unknown SNES EmuLua host.") end
-emu = snes9x
+emu = emu or snes9x
 if not emu then error("Unknown SNES EmuLua host.") end
 
 if not bit then
@@ -423,9 +422,10 @@ function guiCommonInfoDisplay()
 
 		gui.opacity((0.68 * guiOpacityLevel) * fadeLevel / 15.0 * ownFade / 15.0)
 
-		gui.text(40, 40, string.format([[
-LV.%2d: HP +%2d MP   +%1d ATK +%1d DEF +%1d
-       SPD +%1d MDEF +%1d XXX1 +%1d XXX2 +%1d]], level, hpDiff, mpDiff, atkDiff, defDiff, spdDiff, mdefDiff, a0cDiff, a0dDiff))
+		gui.fillbox(54, 8, 54+148, 8+16, "#00000080")
+		gui.text(54, 8, string.format([[
+LV.%2d: HP +%2d MP   +%1d ATK  +%1d DEF  +%1d
+       SPD +%1d MDEF +%1d PRM1 +%1d PRM2 +%1d]], level, hpDiff, mpDiff, atkDiff, defDiff, spdDiff, mdefDiff, a0cDiff, a0dDiff))
 	end
 end
 
