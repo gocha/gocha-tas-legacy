@@ -8,7 +8,7 @@ local outlinecolor = "#303030"
 
 -- [ initial check ] -----------------------------------------------------------
 
-if snes9x then emu = snes9x end
+emu = emu or snes9x
 if not emu then
 	error("This script runs under SNES emulua host.")
 end

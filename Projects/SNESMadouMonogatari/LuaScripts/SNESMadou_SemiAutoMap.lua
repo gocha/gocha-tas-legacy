@@ -2,7 +2,7 @@
  
  SNES Madou Monogatari - Hanamaru Daiyouchienji
  Semi-Automated Map Maker (with drag and drop)
- written by gocha for snes9x-rr 1.43 v16.
+ written by gocha for snes9x-rr 1.43 v17 svn.
  
  This script allows you to take a kindergartener girl to anywhere you like.
  Also, you can take a picture there instantly. Fuzzy pickles!
@@ -56,8 +56,7 @@ local imagePieceSize = { x = 256, y = 8*19 }
 
 -- [ startup ] -----------------------------------------------------------------
 
-if emu then error("Unknown SNES EmuLua host.") end
-emu = snes9x
+emu = emu or snes9x
 if not emu then error("Unknown SNES EmuLua host.") end
 
 if not bit then
@@ -663,7 +662,7 @@ function guiCommonInfoDisplay()
 		local opac = math.floor(scriptFrameCount % 64)
 		if opac >= 32 then opac = 64 - opac end
 		gui.opacity(guiOpacityMax * (opac/32.0))
-		gui.box(snapInfo.x, snapInfo.y, snapInfo.x + snapInfo.width - 1, snapInfo.y + snapInfo.height - 1, colCaptureBox)
+		gui.box(snapInfo.x, snapInfo.y, snapInfo.x + snapInfo.width - 1, snapInfo.y + snapInfo.height - 1, "clear", colCaptureBox)
 		gui.opacity(guiOpacityMax * fadeLevel / 15.0)
 	elseif roomInfoInMapImage then
 		gui.line(snapInfo.x, snapInfo.y + snapInfo.height - 1, snapInfo.x + snapInfo.width - 1, snapInfo.y + snapInfo.height - 1, colCaptureBox) -- bottom
@@ -675,7 +674,7 @@ function guiCommonInfoDisplay()
 	end
 
 	if safeTiming or (roomInfoInMapImage and capturingMap and snapProgress.x == 0 and snapProgress.y == 0) then
-		gui.fillbox(0, 0, 65, 8, "#0000ffc0")
+		gui.box(0, 0, 65, 8, "#0000ffc0", "#0000ffc0")
 		gui.text(1, 1, string.format("ROOM %03X- %06X", room.id, room.addr), "white", "clear")
 	end
 end
@@ -699,7 +698,7 @@ function guiFreeMoveOnDraw()
 	local arleX, arleY = memory.readwordsigned(RAM.arleXPosW), memory.readwordsigned(RAM.arleYPosW)
 	local arleRect = { left = arleX - bgX + 8, top = arleY - bgY - 19, right = arleX - bgX + 23, bottom = arleY - bgY + 8 }
 
-	gui.box(arleRect.left, arleRect.top, arleRect.right, arleRect.bottom, "white")
+	gui.box(arleRect.left, arleRect.top, arleRect.right, arleRect.bottom, "clear", "white")
 end
 
 -- [ main routines ] -----------------------------------------------------------

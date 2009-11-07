@@ -493,9 +493,9 @@ function smwDrawPMeter()
     end
 
     gui.edgelessbox(pMeterBarXPos, pMeterBarYPos, pMeterBarXPos + pMeterBarWidth, pMeterBarYPos + pMeterBarHeight, "#000000")
-    gui.fillbox(pMeterBarXPos + 1, pMeterBarYPos + 1, pMeterBarXPos + pMeterBarWidth - 1, pMeterBarYPos + pMeterBarHeight - 1, pMeterBGColor)
+    gui.box(pMeterBarXPos + 1, pMeterBarYPos + 1, pMeterBarXPos + pMeterBarWidth - 1, pMeterBarYPos + pMeterBarHeight - 1, pMeterBGColor, pMeterBGColor)
     if pMeter > 0 then
-        gui.fillbox(pMeterBarXPos + 1, pMeterBarYPos + 1, pMeterBarXPos + pMeterBarLen - 1, pMeterBarYPos + pMeterBarHeight - 1, pMeterMeterColor)
+        gui.box(pMeterBarXPos + 1, pMeterBarYPos + 1, pMeterBarXPos + pMeterBarLen - 1, pMeterBarYPos + pMeterBarHeight - 1, pMeterMeterColor, pMeterMeterColor)
     end
 end
 

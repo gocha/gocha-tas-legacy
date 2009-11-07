@@ -22,7 +22,7 @@ gui.opacity(0.6)
 
 --
 
-if not emu then emu = snes9x end
+emu = emu or snes9x
 if not emu then
 	error("This script runs under snes9x")
 end

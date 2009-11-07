@@ -2,7 +2,7 @@
  
  SNES Madou Monogatari - Hanamaru Daiyouchienji
  Extra Status Display
- written by gocha for snes9x-rr 1.43 v16.
+ written by gocha for snes9x-rr 1.43 v17 svn.
  
 ]]--
 
@@ -273,9 +273,9 @@ function gui.drawgauge(gaugeInfo, leftLabel, rightLabel, textColor, textOutlineC
 
 	local x, y = gaugeInfo.x, gaugeInfo.y
 	gui.roundedbox(x, y, x + 2 + gaugeInfo.width, y + 2 + gaugeInfo.height, gaugeInfo.borderColor)
-	gui.fillbox(x + 1, y + 1, x + 1 + gaugeInfo.width, y + 1 + gaugeInfo.height, gaugeInfo.bgcolor)
+	gui.box(x + 1, y + 1, x + 1 + gaugeInfo.width, y + 1 + gaugeInfo.height, gaugeInfo.bgcolor, gaugeInfo.bgcolor)
 	if gaugeInfo.rate > 0 then
-		gui.fillbox(x + 1, y + 1, x + 1 + (gaugeInfo.width * gaugeInfo.rate), y + 1 + gaugeInfo.height, gaugeInfo.color)
+		gui.box(x + 1, y + 1, x + 1 + (gaugeInfo.width * gaugeInfo.rate), y + 1 + gaugeInfo.height, gaugeInfo.color, gaugeInfo.color)
 	end
 	if leftLabel then
 		gui.text(x - 1 - (#leftLabel * 4), y - (gaugeInfo.height/2), leftLabel, textColor, textOutlineColor)
@@ -398,7 +398,7 @@ function guiCommonInfoDisplay()
 	local ingameTime = formatseconds(totalFrames/60.0)
 	--gui.text(128 - (#ingameTime * 2), 1, ingameTime)
 	--gui.text(255 - (#ingameTime * 4), 1, ingameTime)
-	gui.fillbox(255 - (#ingameTime * 4) - 2, 215 - 1, 255, 223, "#000000e0")
+	gui.box(255 - (#ingameTime * 4) - 2, 215 - 1, 255, 223, "#000000e0", "#000000e0")
 	gui.text(255 - (#ingameTime * 4), 215, ingameTime)
 
 	if levelUpStatShowCount > 0 then
@@ -422,7 +422,7 @@ function guiCommonInfoDisplay()
 
 		gui.opacity((0.68 * guiOpacityLevel) * fadeLevel / 15.0 * ownFade / 15.0)
 
-		gui.fillbox(54, 8, 54+148, 8+16, "#00000080")
+		gui.box(54, 8, 54+148, 8+16, "#00000080", "#00000080")
 		gui.text(54, 8, string.format([[
 LV.%2d: HP +%2d MP   +%1d ATK  +%1d DEF  +%1d
        SPD +%1d MDEF +%1d PRM1 +%1d PRM2 +%1d]], level, hpDiff, mpDiff, atkDiff, defDiff, spdDiff, mdefDiff, a0cDiff, a0dDiff))
