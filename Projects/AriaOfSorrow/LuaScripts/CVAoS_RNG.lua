@@ -128,7 +128,7 @@ gui.register(function()
 	gui.text(186, 14, "ADVANCED:" .. ((RNG_NumAdvanced == -1) and "???" or tostring(RNG_NumAdvanced)))
 end)
 
-while true do emu.frameadvance() end
+-- while true do emu.frameadvance() end
 
 --------------------------------------------------------------------------------
 end

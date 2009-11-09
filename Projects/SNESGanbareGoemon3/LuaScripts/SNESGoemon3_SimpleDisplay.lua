@@ -73,4 +73,4 @@ gui.register(function()
 end)
 
 -- [ end of script ] -----------------------------------------------------------
-while true do snes9x.frameadvance() end
+-- while true do emu.frameadvance() end

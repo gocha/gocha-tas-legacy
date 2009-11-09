@@ -540,4 +540,4 @@ gui.register(function()
     smwDisplayInfo()
 end)
 
-while true do emu.frameadvance() end
+-- while true do emu.frameadvance() end

@@ -477,6 +477,7 @@ end)
 
 updateBattleStatFast()
 updateLevelStatFast()
+--[[
 while true do
 	if not romCheck() then
 		emu.registerbefore(nil)
@@ -488,3 +489,4 @@ while true do
 	end
 	emu.frameadvance()
 end
+]]
