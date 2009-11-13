@@ -251,7 +251,7 @@ function smwAllowEscape()
         end
         -- exit the level force
         memory.writebyte(RAM_levelFlagTable + levelIndex, bit.bor(levelFlag, 0x80))
-        smwForceSecretExit = (pad_press[smwPlayer].A ~= nil)
+        smwForceSecretExit = pad_press[smwPlayer].A
         -- activate next stage (destination must be written by smwRewriteOnPauseExit())
         -- pressing B will cancel this effect (exit without activate the next level)
         if not pad_press[smwPlayer].B then
