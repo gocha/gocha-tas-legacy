@@ -2,8 +2,7 @@
 
  Super Mario World (U) Cheat Script by gocha
  Operation check done by using snes9x-rr 1.43 v17 svn
-   http://code.google.com/p/snes9x143-rerecording/
- Last modified: 2009-10-12 (WIP2.1.1, just modified for new lua engine; minor bugfixes)
+ http://code.google.com/p/snes9x-rr/
 
  === Cheat Keys ===
 
@@ -44,79 +43,12 @@ local smwFreeMovePMeterLength = 1 -- frame(s)
 
 -- [ generic utility functions ] -----------------------------------------------
 
-if not emu then emu = snes9x end
 if not emu then
     error("This script runs under snes9x")
 end
 
 if not bit then
     require("bit")
-end
-
--- copy a table
-function table_clone_recursive_(e)
-    if type(e) == "table" then
-        local newTable = {}
-        for k, v in pairs(e) do
-            newTable[k] = table_clone_recursive_(v)
-        end
-        return newTable
-    else
-        return e
-    end
-end
-table.clone = function (e)
-    if type(e) == "table" then
-        return table_clone_recursive_(e)
-    else
-        error("bad argument #1 to 'table.clone' (table expected, got " .. type(e) .. ")")
-    end
-end
-
--- convert table to string (ex. {name=gocha, age=4})
-function table_dump_recursive_(e)
-    if type(e) == "table" then
-        local str = ""
-        local first = true
-        local list = true
-        local lastKey = 0
-        for k in pairs(e) do
-            if type(k) ~= "number" or k - lastKey ~= 1 then
-                list = false
-                break
-            end
-            lastKey = k
-        end
-        for k, v in pairs(e) do
-            if not first then
-                str = str .. ", "
-            else
-                first = false
-            end
-            if not list then
-                str = str .. table_dump_recursive_(k) .. "="
-            end
-            if type(v) == "string" then
-               str = str .. '"' .. table_dump_recursive_(v) .. '"'
-            else
-               str = str .. table_dump_recursive_(v)
-            end
-        end
-        --if list then
-        --    return "(" .. str .. ")"
-        --else
-            return "{" .. str .. "}"
-        --end
-    else
-        return tostring(e)
-    end
-end
-table.dump = function (e)
-    if type(e) == "table" then
-        return table_dump_recursive_(e)
-    else
-        error("bad argument #1 to 'table.dump' (table expected, got " .. type(e) .. ")")
-    end
 end
 
 -- [ gameemu lua utility functions ] -------------------------------------------
@@ -127,8 +59,6 @@ function gui.edgelessbox(x1, y1, x2, y2, colour)
     gui.line(x1+1, y2, x2-1, y2, colour) -- bottom
     gui.line(x1, y1+1, x1, y2-1, colour) -- left
 end
-
-local pad_all_presses = { "start", "select", "up", "down", "left", "right", "A", "B", "X", "Y", "L", "R" }
 
 local pad_max = 2
 local pad_press, pad_down, pad_up, pad_prev, pad_send = {}, {}, {}, {}, {}
@@ -141,29 +71,22 @@ end
 -- scan button presses
 function scanJoypad()
     for i = 1, pad_max do
-        pad_prev[i] = table.clone(pad_press[i])
-        pad_press[i] = joypad.read(i)
-        pad_send[i] = table.clone(pad_press[i])
-        -- scan keydowns
+        pad_prev[i] = copytable(pad_press[i])
+        pad_press[i] = joypad.get(i)
+        pad_send[i] = copytable(pad_press[i])
+        -- scan keydowns, keyups
         pad_down[i] = {}
-        for k in pairs(pad_press[i]) do
-            if not pad_prev[i][k] then
-                pad_down[i][k] = 1
-            end
-        end
-        -- scan keyups
         pad_up[i] = {}
-        for k in pairs(pad_prev[i]) do
-            if not pad_press[i][k] then
-                pad_up[i][k] = 1
-            end
+        for k in pairs(pad_press[i]) do
+            pad_down[i][k] = (pad_press[i][k] and not pad_prev[i][k])
+            pad_up[i][k] = (pad_prev[i][k] and not pad_press[i][k])
         end
         -- count press length
-        for k, v in ipairs(pad_all_presses) do
-            if not pad_press[i][v] then
-                pad_presstime[i][v] = 0
+        for k in pairs(pad_press[i]) do
+            if not pad_press[i][k] then
+                pad_presstime[i][k] = 0
             else
-                pad_presstime[i][v] = pad_presstime[i][v] + 1
+                pad_presstime[i][k] = pad_presstime[i][k] + 1
             end
         end
     end
@@ -172,34 +95,6 @@ end
 function sendJoypad()
     for i = 1, pad_max do
         joypad.set(i, pad_send[i])
-    end
-end
-
--- append button presses
-function AppendJoypadPresses(player, ...)
-    local args = {...}
-    for k, v in ipairs(args) do
-        pad_send[player][v] = 1
-    end
-end
-
--- delete button presses
-function DeleteJoypadPresses(player, ...)
-    local args = {...}
-    for k, v in ipairs(args) do
-        pad_send[player][v] = nil
-    end
-end
-
--- toggle button presses
-function ToggleJoypadPresses(player, ...)
-    local args = {...}
-    for k, v in ipairs(args) do
-        if not pad_send[player][v] then
-            pad_send[player][v] = 1
-        else
-            pad_send[player][v] = nil
-        end
     end
 end
 
@@ -433,7 +328,7 @@ function smwApplyLevelCheats()
         preventItemPopup = false
     end
     if preventItemPopup then
-        DeleteJoypadPresses(smwPlayer, "select")
+        pad_send[smwPlayer].select = not pad_send[smwPlayer].select
     end
 
     -- cut powerup/powerdown animation
@@ -539,5 +434,3 @@ end)
 gui.register(function()
     smwDisplayInfo()
 end)
-
--- while true do emu.frameadvance() end
