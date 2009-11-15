@@ -215,7 +215,7 @@ function gettraceline(cpuname)
 	[0x41] = function() return string.format("eor ($%.2x,x)   [%.6x]", op8, decode[OPTYPE_IDPX](op8)) end;
 	[0x42] = function() return string.format("wdm                   ") end;
 	[0x43] = function() return string.format("eor $%.2x,s     [%.6x]", op8, decode[OPTYPE_SR](op8)) end;
-	[0x44] = function() return string.format("mvp $%.2x,$%.2x           ", op1, op8) end;
+	[0x44] = function() return string.format("mvp $%.2x,$%.2x           ", op16, op8) end;
 	[0x45] = function() return string.format("eor $%.2x       [%.6x]", op8, decode[OPTYPE_DP](op8)) end;
 	[0x46] = function() return string.format("lsr $%.2x       [%.6x]", op8, decode[OPTYPE_DP](op8)) end;
 	[0x47] = function() return string.format("eor [$%.2x]     [%.6x]", op8, decode[OPTYPE_ILDP](op8)) end;
@@ -232,7 +232,7 @@ function gettraceline(cpuname)
 	[0x51] = function() return string.format("eor ($%.2x),y   [%.6x]", op8, decode[OPTYPE_IDPY](op8)) end;
 	[0x52] = function() return string.format("eor ($%.2x)     [%.6x]", op8, decode[OPTYPE_IDP](op8)) end;
 	[0x53] = function() return string.format("eor ($%.2x,s),y [%.6x]", op8, decode[OPTYPE_ISRY](op8)) end;
-	[0x54] = function() return string.format("mvn $%.2x,$%.2x           ", op1, op8) end;
+	[0x54] = function() return string.format("mvn $%.2x,$%.2x           ", op16, op8) end;
 	[0x55] = function() return string.format("eor $%.2x,x     [%.6x]", op8, decode[OPTYPE_DPX](op8)) end;
 	[0x56] = function() return string.format("lsr $%.2x,x     [%.6x]", op8, decode[OPTYPE_DPX](op8)) end;
 	[0x57] = function() return string.format("eor [$%.2x],y   [%.6x]", op8, decode[OPTYPE_ILDPY](op8)) end;
