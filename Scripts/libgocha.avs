@@ -61,7 +61,7 @@ function Super2xSaIResize(clip clip, float "src_left", float "src_top", float "s
 }
 
 # 2xSaI resize (using ffdshow plugin)
-function 2xSaIResize(clip clip, float "src_left", float "src_top", float "src_width", float "src_height")
+function Normal2xSaIResize(clip clip, float "src_left", float "src_top", float "src_width", float "src_height")
 {
 	src_left = default(src_left, 0)
 	src_top = default(src_top, 0)
