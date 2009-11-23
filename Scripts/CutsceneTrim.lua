@@ -6,6 +6,13 @@ local firstTrim = true
 
 function avsWriteLine(str)
 	print(str)
+
+	if not avs then
+		-- avs = io.open("C:\\trim.avs", "w")
+	end
+	if avs then
+		avs:write(tostring(str), "\n")
+	end
 end
 
 function renderThisFrame()
@@ -38,4 +45,9 @@ end)
 emu.registerexit(function()
 	writeTrimLine(emu.framecount() - frameOffset)
 	avsWriteLine("v")
+	if avs then
+		avs:close()
+	end
 end)
+
+-- gui.register(function() if not renderThisFrame() then gui.box(0, 0, 1000, 1000, "blue") end end)
