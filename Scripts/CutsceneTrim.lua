@@ -1,0 +1,41 @@
+-- Smart Video Trimming by EmuLua + AviSynth
+
+local frameOffset = emu.framecount()
+local renderStartedAt = nil
+local firstTrim = true
+
+function avsWriteLine(str)
+	print(str)
+end
+
+function renderThisFrame()
+	return not emu.lagged() -- skip all lag frames
+end
+
+function writeTrimLine(framecount)
+	if renderStartedAt then
+		if firstTrim then
+			avsWriteLine('#AviSource("source.avi")')
+			avsWriteLine(string.format("v=Trim(%d,%d)", renderStartedAt, framecount - 1))
+			firstTrim = false
+		else
+			avsWriteLine(string.format("v=v+Trim(%d,%d)", renderStartedAt, framecount - 1))
+		end
+		renderStartedAt = nil
+	end
+end
+emu.registerafter(function()
+	local framecount = emu.framecount() - frameOffset
+	if renderThisFrame() then
+		if not renderStartedAt then
+			renderStartedAt = framecount
+		end
+	else
+		writeTrimLine(framecount)
+	end
+end)
+
+emu.registerexit(function()
+	writeTrimLine(emu.framecount() - frameOffset)
+	avsWriteLine("v")
+end)
