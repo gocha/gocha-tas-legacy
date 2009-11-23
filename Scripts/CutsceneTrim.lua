@@ -1,6 +1,6 @@
 -- Smart Video Trimming by EmuLua + AviSynth
 
-local frameOffset = emu.framecount()
+local frameOffset = nil
 local renderStartedAt = nil
 local firstTrim = true
 
@@ -32,6 +32,10 @@ function writeTrimLine(framecount)
 	end
 end
 emu.registerafter(function()
+	if frameOffset == nil then
+		frameOffset = emu.framecount()
+	end
+
 	local framecount = emu.framecount() - frameOffset
 	if renderThisFrame() then
 		if not renderStartedAt then
