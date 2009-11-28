@@ -24,17 +24,22 @@ function dsmImport(file)
 			dsm.frame[f] = {}
 			for i = 0, #buttonMappings - 1 do
 				s = string.sub(line, padOfs + i, padOfs + i);
-				dsm.frame[f][ buttonMappings[i+1] ] = ((s~="." and s~=" ") and true or nil)
+				dsm.frame[f][ buttonMappings[i+1] ] = ((s~="." and s~=" ") and true or false)
 			end
 			for i = 0, #cmdMappings - 1 do
 				local bitf = math.pow(2, i) -- (1 << i)
 				if math.floor(cmd / bitf) % 2 ~= 0 then -- (cmd & bitf) ~= 0
 					dsm.frame[f][ cmdMappings[i+1] ] = true
+				else
+					dsm.frame[f][ cmdMappings[i+1] ] = false
 				end
 			end
 
 			dsm.frame[f].touched = ((tonumber(string.sub(line, padOfs + 21, padOfs + 21))~=0) and true or false)
 			if dsm.frame[f].touched then
+				dsm.frame[f].touchX = tonumber(string.sub(line, padOfs + 13, padOfs + 15))
+				dsm.frame[f].touchY = tonumber(string.sub(line, padOfs + 17, padOfs + 19))
+			else
 				dsm.frame[f].touchX = tonumber(string.sub(line, padOfs + 13, padOfs + 15))
 				dsm.frame[f].touchY = tonumber(string.sub(line, padOfs + 17, padOfs + 19))
 			end
