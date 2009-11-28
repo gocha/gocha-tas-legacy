@@ -1,5 +1,5 @@
 
-local file = io.open("D:\\gocha\\work\\laglog.txt", "w")
+local file = io.open("lag.db", "w")
 if not file then
 	error("file open error.")
 end
