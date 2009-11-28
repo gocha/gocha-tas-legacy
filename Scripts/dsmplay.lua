@@ -59,7 +59,11 @@ emu.registerbefore(function()
 end)
 
 emu.registerafter(function()
-	if frameAdvance and not (skiplagframe and emu.lagged()) then
+	local lagged = skiplagframe and emu.lagged()
+	if frameAdvance and not lagged then
+		if lagged then
+			-- print(string.format("%06d", emu.framecount()))
+		end
 		kmv_framecount = kmv_framecount + 1
 	end
 end)
