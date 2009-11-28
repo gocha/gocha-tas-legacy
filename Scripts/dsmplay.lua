@@ -7,6 +7,7 @@ require("dsmlib")
 
 local dsm_path = "input.dsm"
 local dsm_framecount = 1 -- 1 = first frame
+local skiplagframes = false
 
 local dsmfile = io.open(dsm_path, "r")
 if not dsmfile then
@@ -54,6 +55,12 @@ emu.registerbefore(function()
 	stylus.set(pen)
 	pad_prev = copytable(pad)
 	pen_prev = copytable(pen)
+end)
+
+emu.registerafter(function()
+	if skiplagframe and emu.lagged() then
+		dsm_framecount = dsm_framecount - 1
+	end
 end)
 
 emu.registerexit(exitFunc)
