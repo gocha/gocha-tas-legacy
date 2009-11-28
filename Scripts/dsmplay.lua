@@ -5,19 +5,19 @@
 
 require("dsmlib")
 
-local dsm_path = "input.dsm"
-local dsm_framecount = 1 -- 1 = first frame
-local skiplagframes = false
+local kmv_path = "input.dsm"
+local kmv_framecount = 1 -- 1 = first frame
+local skiplagframe = true
 
-local dsmfile = io.open(dsm_path, "r")
-if not dsmfile then
-	error('could not open "'..dsm_path..'"')
+local kmvfile = io.open(kmv_path, "r")
+if not kmvfile then
+	error('could not open "'..kmv_path..'"')
 end
-local dsm = dsmImport(dsmfile)
+local kmv = dsmImport(kmvfile)
 
 function exitFunc()
-	if dsmfile then
-		dsmfile:close()
+	if kmvfile then
+		kmvfile:close()
 	end
 end
 
@@ -29,8 +29,9 @@ end
 
 local pad_prev = joypad.get()
 local pen_prev = stylus.get()
+local frameAdvance = false
 emu.registerbefore(function()
-	if dsm_framecount > #dsm.frame then
+	if kmv_framecount > #kmv.frame then
 		print("movie playback stopped.")
 		emu.registerbefore(nil)
 		emu.registerafter(nil)
@@ -42,14 +43,14 @@ emu.registerbefore(function()
 
 	local pad = pad_prev
 	local pen = pen_prev
-	if sendThisFrame() then
+	frameAdvance = sendThisFrame()
+	if frameAdvance then
 		for k in pairs(pad) do
-			pad[k] = dsm.frame[dsm_framecount][k]
+			pad[k] = kmv.frame[kmv_framecount][k]
 		end
-		pen.x = dsm.frame[dsm_framecount].touchX
-		pen.y = dsm.frame[dsm_framecount].touchY
-		pen.touch = dsm.frame[dsm_framecount].touched
-		dsm_framecount = dsm_framecount + 1
+		pen.x = kmv.frame[kmv_framecount].touchX
+		pen.y = kmv.frame[kmv_framecount].touchY
+		pen.touch = kmv.frame[kmv_framecount].touched
 	end
 	joypad.set(pad)
 	stylus.set(pen)
@@ -58,13 +59,13 @@ emu.registerbefore(function()
 end)
 
 emu.registerafter(function()
-	if skiplagframe and emu.lagged() then
-		dsm_framecount = dsm_framecount - 1
+	if frameAdvance and not (skiplagframe and emu.lagged()) then
+		kmv_framecount = kmv_framecount + 1
 	end
 end)
 
 emu.registerexit(exitFunc)
 
 gui.register(function()
-	gui.text(0, 0, ""..(dsm_framecount-1).."/"..#dsm.frame)
+	gui.text(0, 0, ""..(kmv_framecount-1).."/"..#kmv.frame)
 end)
