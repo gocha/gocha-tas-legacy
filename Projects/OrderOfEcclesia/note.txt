@@ -6,10 +6,7 @@ DO NOT ASK HOW TO DOWNLOAD THE ROM.
 
 To record a movie, you need to download DeSmuME first.
 http://tasvideos.org/forum/t/8008
-Our test run uses 0.9.4+.
-
-In my opinion, a serious run should come after 0.9.5 release.
-Its emulation quality is much better than 0.9.4 family.
+Our test run uses 0.9.5.
 
 =Mistakes and possible improvements of test run=
 
