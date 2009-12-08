@@ -184,7 +184,7 @@ function smvImport(file)
 
 	-- joypad data
 	local buttonMappings = { "b0", "b1", "b2", "b3", "R", "L", "X", "A", "right", "left", "down", "up", "start", "select", "Y", "B" }
-	for f = 1, numFrames do
+	for f = 0, numFrames do
 		smv.frame[f] = {}
 		smv.frame[f].joypad = {}
 		-- read joypad data
@@ -332,7 +332,7 @@ function smvExport(smv, file)
 
 	-- joypad data
 	local buttonMappings = { "b0", "b1", "b2", "b3", "R", "L", "X", "A", "right", "left", "down", "up", "start", "select", "Y", "B" }
-	for f = 1, #smv.frame do
+	for f = 0, #smv.frame do
 		for pad = 1, 5 do
 			if smv.frame[f].joypad[pad] then
 				if smv.frame[f].reset then
@@ -361,7 +361,7 @@ function sm2Import(file)
 
 	local line = file:read("*l")
 	local smv = {}
-	local f = 1
+	local f = 0
 	smv.frame = {}
 	smv.meta = {}
 	local controllers = {}
@@ -450,7 +450,7 @@ function sm2Export(smv, file)
 		file:write("controller"..pad.." "..(smv.frame[1].joypad[pad] ~= nil and 1 or 0).."\n")
 	end
 
-	for f = 1, #smv.frame do
+	for f = 0, #smv.frame do
 		local buttonMappingsR = { "", "left", "up", "right", "down", "b1", "A", "B", "Y", "X", "b2", "L", "R", "b3", "start", "select" }
 		local buttonMappingsW = { "", "L", "U", "R", "D", "0", "A", "B", "Y", "X", "1", "W", "E", "2", "S", "s" }
 		-- local buttonMappingsW = { "-", "<", "^", ">", "v", "0", "A", "B", "Y", "X", "1", "L", "R", "2", "S", "s" }
