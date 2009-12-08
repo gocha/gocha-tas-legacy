@@ -9,8 +9,7 @@ local kmv_path = "input.sm2"
 local kmv_framecount = 1 -- 1 = first frame
 local skiplagframe = not true
 
-print("Loading...")
-print("(If movie is long this might take awhile, please be patient and do not kill script)")
+print("Loading... (If movie is long this might take awhile, please be patient and do not kill script)")
 local kmvfile = io.open(kmv_path, "r")
 if not kmvfile then
 	error('could not open "'..kmv_path..'"')
