@@ -101,14 +101,25 @@ function smvImport(file)
 	-- 01C 4-byte little-endian unsigned int: offset to the controller data inside file
 	local controllerDataOffset = readdword(file)
 
+	local numSamples
+	local controllerType = {}
 	if version >= 4 then
-		error("TODO: handle additional header in 1.51")
-
 		-- 020 4-byte little-endian unsigned int: number of input samples, primarily for peripheral-using games
+		numSamples = readdword(file)
 		-- 024 2 1-byte unsigned ints: what type of controller is plugged into ports 1 and 2 respectively: 0=NONE, 1=JOYPAD, 2=MOUSE, 3=SUPERSCOPE, 4=JUSTIFIER, 5=MULTITAP
+		controllerType[1], controllerType[2] = readbyte(file), readbyte(file)
 		-- 026 4 1-byte signed ints: controller IDs of port 1, or -1 for unplugged
+		readdword(file)
 		-- 02A 4 1-byte signed ints: controller IDs of port 2, or -1 for unplugged
+		readdword(file)
 		-- 02E 18 bytes: reserved for future use
+		file:read(18)
+
+		-- supports traditional style only
+		if numFrames ~= numSamples or controllerType[1] ~= 1 or controllerType[2] ~= 1 then
+			io.stderr:write("smvImport: peripherals are not supported\n")
+			return nil
+		end
 	end
 
 	if not hasSyncInfo then
@@ -306,13 +317,17 @@ function smvExport(smv, file)
 	writedword(file, controllerDataOffset)
 
 	if version >= 4 then
-		error("TODO: handle additional header in 1.51")
-
 		-- 020 4-byte little-endian unsigned int: number of input samples, primarily for peripheral-using games
+		writedword(file, #smv.frame)
 		-- 024 2 1-byte unsigned ints: what type of controller is plugged into ports 1 and 2 respectively: 0=NONE, 1=JOYPAD, 2=MOUSE, 3=SUPERSCOPE, 4=JUSTIFIER, 5=MULTITAP
+		writebyte(file, 1)
+		writebyte(file, 1)
 		-- 026 4 1-byte signed ints: controller IDs of port 1, or -1 for unplugged
+		writedword(file, 0xffffff00)
 		-- 02A 4 1-byte signed ints: controller IDs of port 2, or -1 for unplugged
+		writedword(file, 0xffffff01)
 		-- 02E 18 bytes: reserved for future use
+		file:write(string.char(0):rep(18))
 	end
 
 	-- author info
