@@ -11,6 +11,23 @@ function smvImport(file)
 	local readword  = function(file) local ret = string.byte(file:read(1)); ret = ret + string.byte(file:read(1)) * 0x100; return ret end
 	local readdword = function(file) local ret = string.byte(file:read(1)); ret = ret + string.byte(file:read(1)) * 0x100; ret = ret + string.byte(file:read(1)) * 0x10000; ret = ret + string.byte(file:read(1)) * 0x1000000; return ret end
 	local bitof = function(x, n) return math.floor(x/(2^n)) % 2 end
+	local removenull8 = function(s)
+		local pos = s:find(string.char(0), 1, true) -- utf-16 null
+		if pos then
+			return (pos > 1 and s:sub(1, pos - 1) or "")
+		else
+			return s
+		end
+	end
+	local removenull16 = function(s)
+		local pos = s:find(string.char(0, 0), 1, true) -- utf-16 null
+		if pos then
+			if pos % 2 ~= 0 then pos = pos + 1 end
+			return (pos > 1 and s:sub(1, pos - 1) or "")
+		else
+			return s
+		end
+	end
 	local removepaddings = function(s,c)
 		local pos = #s + 1
 		while pos > 1 and s:sub(pos-1,pos-1):byte() == c do
@@ -115,12 +132,8 @@ function smvImport(file)
 	if forcerawcomment then
 		smv.meta.comment = "base64:" .. base64.enc(comment)
 	else
-		-- truncate glitchy noises
-		local nullpos = comment:find(string.char(0, 0), 0, true) -- utf-16 null
-		if nullpos then
-			if nullpos % 2 ~= 0 then nullpos = nullpos + 1 end
-			comment = (nullpos > 1 and comment:sub(1, nullpos - 1) or "")
-		end
+		-- truncate glitchy noises etc
+		comment = removenull16(comment)
 		-- detect if the comment is a simple ASCII string
 		local isascii = true
 		for i = 1, #comment, 2 do
@@ -146,7 +159,7 @@ function smvImport(file)
 		-- 007 23-byte ascii string
 		smv.meta.romSerial = file:read(23)
 		-- truncate zero paddings
-		smv.meta.romSerial = removepaddings(smv.meta.romSerial, 0)
+		smv.meta.romSerial = removenull8(smv.meta.romSerial)
 		-- encode to base64 if needed
 		if not smv.meta.romSerial:match("^[ -~]*$") then
 			if base64katakana or not smv.meta.romSerial:match("^[ -~"..string.char(0xa0).."-"..string.char(0xdf).."]+$") then
