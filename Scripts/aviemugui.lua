@@ -123,10 +123,9 @@ box = function(x1,y1,x2,y2,fillcolor,outlinecolor)
 	local ycp_edit = aviutl.get_ycp_edit()
 	aviutl.line(ycp_edit, x1, y1, x2, y1, yvo, cbo, cro, avo)
 	if y1 ~= y2 then
-		-- FIXME: workaround: aviutl.line doesn't draw the last pixel of vertical line
-		aviutl.line(ycp_edit, x1, y1+1, x1, y2+1, yvo, cbo, cro, avo)
+		aviutl.line(ycp_edit, x1, y1+1, x1, y2, yvo, cbo, cro, avo)
 		if x1 ~= x2 then
-			aviutl.line(ycp_edit, x2, y1+1, x2, y2+1, yvo, cbo, cro, avo)
+			aviutl.line(ycp_edit, x2, y1+1, x2, y2, yvo, cbo, cro, avo)
 			aviutl.line(ycp_edit, x1+1, y2, x2-1, y2, yvo, cbo, cro, avo)
 		end
 	end
@@ -199,6 +198,7 @@ function load_drawcode(filename)
 		drawcode[f] = assert(loadstring(line))
 		f = f + 1
 	end
+
 	return drawcode
 end
 drawcode = load_drawcode(drawcodefname)
