@@ -133,13 +133,14 @@ box = function(x1,y1,x2,y2,fillcolor,outlinecolor)
 		aviutl.box(ycp_edit, x1+1, y1+1, x2-1, y2-1, yvf, cbf, crf, avf)
 	end
 end;
-line = function(x1,y1,x2,y2,color,skipfirst) -- NYI: skipfirst
+line = function(x1,y1,x2,y2,color,skipfirst)
 	if color == nil then color = "white" end
+	if skipfirst == nil then skipfirst = false end
 	local r, g, b, a = gui.parsecolor(color)
 	local yv, cb, cr = aviutl.rgb2yc(r, g, b)
 	local av = math.floor((1.0-(a/255.0 * gui.opacityValue)) * 4096)
 	av = math.max(0, math.min(4096, av))
-	aviutl.line(aviutl.get_ycp_edit(), x1, y1, x2, y2, yv, cb, cr, av)
+	aviutl.line(aviutl.get_ycp_edit(), x1, y1, x2, y2, yv, cb, cr, av, skipfirst)
 end;
 pixel = function(x,y,color)
 	if color == nil then color = "white" end
