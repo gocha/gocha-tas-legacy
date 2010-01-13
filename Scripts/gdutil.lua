@@ -38,3 +38,34 @@ gd.convertToTrueColor = function(imsrc)
 
 	return im
 end
+-- flip an image about the vertical axis
+gd.flipVertical = function(im)
+	if im == nil then return nil end
+	im:alphaBlending(false)
+	for x = 0, im:sizeX() do
+		for y = 0, math.floor(im:sizeY()/2) do
+			local ct, cb = im:getPixel(x, y), im:getPixel(x, im:sizeY()-1-y)
+			im:setPixel(x, y, cb)
+			im:setPixel(im:sizeX()-1-x, y, ct)
+		end
+	end
+	im:alphaBlending(true) -- TODO: restore the mode
+end
+-- flip an image about the horizontal axis
+gd.flipHorizontal = function(im)
+	if im == nil then return nil end
+	im:alphaBlending(false)
+	for y = 0, im:sizeY() do
+		for x = 0, math.floor(im:sizeX()/2) do
+			local cl, cr = im:getPixel(x, y), im:getPixel(im:sizeX()-1-x, y)
+			im:setPixel(x, y, cr)
+			im:setPixel(im:sizeX()-1-x, y, cl)
+		end
+	end
+	im:alphaBlending(true) -- TODO: restore the mode
+end
+-- applies vertical and horizontal flip
+gd.flipBoth = function(im)
+	gd.flipVertical(im)
+	gd.flipHorizontal(im)
+end
