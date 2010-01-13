@@ -2,7 +2,7 @@
 -- This private script might not be useful for most people ...
 
 srcw, srch = 64, 64
-dstw, dsth = 96, 64
+dstw, dsth = 128, 64
 
 srcf = "a.png"
 dstf = "b.png"
@@ -49,6 +49,10 @@ end
 srcim = gd.convertToTrueColor(gd.createFromPng(srcf))
 if srcim == nil then error("Unable to load " .. srcf) end
 srcim:saveAlpha(true)
+if srcim:sizeX() % srcw ~= 0 or srcim:sizeY() % srch ~= 0 then
+	io.stderr:write("Error: invalid source width\n")
+	return
+end
 dstim = gd.createTrueColorBlank(srcim:sizeX() / srcw * dstw, srcim:sizeY() / srch * dsth)
 if dstim == nil then error("Unable to create an image buffer for " .. dstf) end
 dstim:saveAlpha(true)
