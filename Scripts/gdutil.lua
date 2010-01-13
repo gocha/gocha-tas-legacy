@@ -50,6 +50,7 @@ gd.flipVertical = function(im)
 		end
 	end
 	im:alphaBlending(true) -- TODO: restore the mode
+	return im
 end
 -- flip an image about the horizontal axis
 gd.flipHorizontal = function(im)
@@ -63,9 +64,11 @@ gd.flipHorizontal = function(im)
 		end
 	end
 	im:alphaBlending(true) -- TODO: restore the mode
+	return im
 end
 -- applies vertical and horizontal flip
 gd.flipBoth = function(im)
 	gd.flipVertical(im)
 	gd.flipHorizontal(im)
+	return im
 end
