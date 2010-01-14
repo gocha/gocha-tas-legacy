@@ -43,10 +43,10 @@ gd.flipVertical = function(im)
 	if im == nil then return nil end
 	im:alphaBlending(false)
 	for x = 0, im:sizeX() do
-		for y = 0, math.floor(im:sizeY()/2) do
-			local ct, cb = im:getPixel(x, y), im:getPixel(x, im:sizeY()-1-y)
-			im:setPixel(x, y, cb)
-			im:setPixel(im:sizeX()-1-x, y, ct)
+		for y = 0, math.floor(im:sizeY()/2) - 1 do
+			local c1, c2 = im:getPixel(x, y), im:getPixel(x, im:sizeY()-1-y)
+			im:setPixel(x, y, c2)
+			im:setPixel(im:sizeX()-1-x, y, c1)
 		end
 	end
 	im:alphaBlending(true) -- TODO: restore the mode
@@ -57,10 +57,10 @@ gd.flipHorizontal = function(im)
 	if im == nil then return nil end
 	im:alphaBlending(false)
 	for y = 0, im:sizeY() do
-		for x = 0, math.floor(im:sizeX()/2) do
-			local cl, cr = im:getPixel(x, y), im:getPixel(im:sizeX()-1-x, y)
-			im:setPixel(x, y, cr)
-			im:setPixel(im:sizeX()-1-x, y, cl)
+		for x = 0, math.floor(im:sizeX()/2) - 1 do
+			local c1, c2 = im:getPixel(x, y), im:getPixel(im:sizeX()-1-x, y)
+			im:setPixel(x, y, c2)
+			im:setPixel(im:sizeX()-1-x, y, c1)
 		end
 	end
 	im:alphaBlending(true) -- TODO: restore the mode
