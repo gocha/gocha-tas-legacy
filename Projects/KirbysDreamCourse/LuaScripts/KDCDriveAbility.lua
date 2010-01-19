@@ -113,7 +113,7 @@ emu.registerbefore(function()
 
 	-- jump
 	if padtrig.up then
-		vv = jumpspeed
+		vv = math.max(vv + jumpspeed, jumpspeed)
 		flying = true
 	end
 	-- drop
