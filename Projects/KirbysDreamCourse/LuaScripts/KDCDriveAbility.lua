@@ -9,6 +9,8 @@ backaccelstep, backaccelmax = 16, 0x100
 rotatestep, rotatestepsuper = 2.0, 4.0
 jumpspeed = 2666
 
+minipadfname = nil -- "minipad.png" -- http://gocha-tas.googlecode.com/svn/trunk/Projects/KirbysDreamCourse/LuaScripts/minipad.png
+
 -- [ initial check ] -----------------------------------------------------------
 
 emu = emu or snes9x
@@ -40,8 +42,13 @@ pad, padold = {}, {}
 accel, decel, backaccel = 0, 0, 0
 backboostflipped = false
 
--- require "gd"
-minipad = nil -- gd.createFromPng("minipad.png")
+if minipadfname and minipadfname ~= "" then
+	require "gd"
+	minipad = gd.createFromPng(minipadfname)
+	if not minipad then
+		error("File not found: \""..minipadfname.."\"")
+	end
+end
 padoverlaycolor = "#ff000080"
 
 -- [ subroutines ] -------------------------------------------------------------
