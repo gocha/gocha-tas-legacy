@@ -131,7 +131,21 @@ emu.registerbefore(function()
 		local reccount = movie.rerecordcount()
 		if prev_active and reccount ~= prev_reccount then
 			if reccount % reccount_step == 0 then
-				local name = movie.name()
+				-- FIXME: multibyte character handling
+				local filenameof = function(s)
+					if s == nil then return nil end
+					local i, j = 0, 0
+					repeat
+						j = i
+						i = s:find("[/\\]", j + 1)
+					until not i
+					if j > 0 then
+						return s:sub(j + 1)
+					else
+						return s
+					end
+				end
+				local name = filenameof(movie.name())
 				local msg = name .. ": rerecord count hits " .. reccount .. " now!"
 				print("Tweet processing... (" .. reccount .. " rerecords)")
 				update_status(tw_mail, tw_pass, msg)
