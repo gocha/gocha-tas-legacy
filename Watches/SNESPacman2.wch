@@ -1,0 +1,8 @@
+
+6
+00000	7E1020	d	h	0	X Position
+00001	7E1024	d	h	0	Y Position
+00002	7E1028	w	s	0	X Velocity
+00003	7E102A	w	s	0	Y Velocity
+00004	7E1074	b	u	0	Shoot
+00005	7E02C0	b	h	0	Mood
