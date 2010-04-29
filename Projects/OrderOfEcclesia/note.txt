@@ -10,11 +10,12 @@ Our test run uses 0.9.5.
 
 =Mistakes and possible improvements of test run=
 
+* Magnes can cancel backdash so it should be abused for more boost.
 * I picked up a bunch of redundant items, to see what is useful and what is useless.
 * Beginning-Monastery - Sliding at the edge just before falling down is slower in most cases, because backdash can keep its effect in midair.
 * Monastery - Lacking backdash when entering the level (exiting previous level with sliding seems to disable that)
 * Monastery - Secare (Sword) can be obtained at the long corridor which is before the boss room. I think it's faster because Banshee won't interrupt Shanoa.
-** However, I think Secare doesn't help Shanoa so much. It shortens the first boss battle a little, but costs a few seconds when obtain/equip it.
+** <del>However, I think Secare doesn't help Shanoa so much. It shortens the first boss battle a little, but costs a few seconds when obtain/equip it.</del> not really?
 * Monastery - Don't do Glyph Union attacks continuously, invulnerability costs some of frames. However, do it when MP is full. Attacking delays MP recovery.
 * Monastery - Possibly, Magnes use in Arthroverta's room (the boss room) can be optimized a little more.
 * Wygol Village - Less heart supply, because it can be recovered by absorbing Glyphs (+10).
@@ -60,6 +61,7 @@ Useful cheat codes can be found here and there:
 * 007D - Magical Ticket
 * 00C1 - Sage
 * 013B - Protect Ring (750G)
+* 0154 - Blow Ring
 
 Monastery:
 * 021007A8 - First treasure chest
@@ -72,6 +74,10 @@ Minera Prison Island:
 * 021007A8 - Sixth treasure chest (optional?; bottom path costs time a little?)
 * 021007AE - Fifth treasure chest (optional; Bone Archer)
 * 021007AC - Third treasure chest (optional; Axe Armor stands on the way)
+
+Misty Forest Road:
+* 021007A2 - First treasure chest
+* 021007A4 - Second treasure chest
 
 ==Miscellaneous==
 
