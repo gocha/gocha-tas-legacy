@@ -79,6 +79,9 @@ Misty Forest Road:
 * 021007A2 - First treasure chest
 * 021007A4 - Second treasure chest
 
+Skeleton Cave:
+* 021007A6
+
 ==Miscellaneous==
 
 * Enemy's invincibility count for left hand and that of right hand are treated independently. If you attacked an enemy with left hand, you should do the next attack with right hand, even though you cancel the first attack just before the second attack by backdash. (for details, watch the actual memory values)
