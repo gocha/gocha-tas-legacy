@@ -55,6 +55,20 @@ Useful cheat codes can be found here and there:
 * http://tasvideos.org/forum/p/199347#199347
 * http://nintendods.cheats.de/cheat_ausgabe.php?id=305087
 
+* 0210030C: EXP
+* 020FFD38-020FFD41: Raw STR,CON,INT,MND,LCK (can be glitched by transform + level up)
+* 020FFD48-020FFD55: Raw ACK,DEF,STR,CON,INT,MND,LCK
+* 020FFD5C-020FFD69: Actual values: Raw + Effects (ex. equips, transform glyph)
+* 020FFD88-020FFD91: Raw STR,CON,INT,MND,LCK shadows
+* 020FFE04-020FFE11: Increase rate of each attributes
+* 0210031C-02100329: Attribute points (a ring increases it by 0x1800 or 6144)
+
+A: Strength of glyph
+S: STR or INT, it depends on the type of the glyph you use
+P: Attribute points (when a glyph has two or more attributes, calc the average)
+[ ]: math.floor
+ATK=[ ([A/2]+[S/12]+[A*S/16]) * (1+P/32768) ]
+
 ==Treasure chests==
 
 * 007C - Heart Repair
@@ -62,6 +76,7 @@ Useful cheat codes can be found here and there:
 * 00C1 - Sage
 * 013B - Protect Ring (750G)
 * 0154 - Blow Ring
+* 0155 - Wind Ring
 
 Monastery:
 * 021007A8 - First treasure chest
@@ -80,11 +95,20 @@ Misty Forest Road:
 * 021007A4 - Second treasure chest
 
 Skeleton Cave:
-* 021007A6
+* 021007A2
+
+Somnus Reaf:
+* 021007A2 - First treasure chest (best?)
+* 021007A4 - Second treasure chest
+* 021007A6 - Third treasure chest
+* 021007A8 - Left treasure chest before Monica
+* 021007AA - Right treasure chest before Monica
+* 021007AC - Treasure chest before the bottom warp
+* 021007B0 - Treasure chest at the right bottom of the level
 
 ==Miscellaneous==
 
-* Enemy's invincibility count for left hand and that of right hand are treated independently. If you attacked an enemy with left hand, you should do the next attack with right hand, even though you cancel the first attack just before the second attack by backdash. (for details, watch the actual memory values)
+* Enemy's invincibility count for left hand and that of right hand are handled independently. If you attacked an enemy with left hand, you should do the next attack with right hand, even though you cancel the first attack just before the second attack by backdash. (for details, watch the actual memory values)
 * All 3 DS Castlevania games uses the same RNG routines. We can know how many times the RNG was called on certain frame via Lua script. This would be especially useful for treasure chest manipulation.
 ** RNG information was learned from here http://www.gamespot.com/ds/action/castlevaniaorderofecclesia/show_msgs.php?topic_id=m-1-46105317&pid=945837&page=12
 ** RNG gets reset according to a frame counter when loading a save file. It's very important for Portrait of Ruin, but not much for Order of Ecclesia.
