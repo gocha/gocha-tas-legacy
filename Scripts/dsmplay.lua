@@ -8,6 +8,7 @@ require("dsmlib")
 local kmv_path = "input.dsm"
 local kmv_framecount = 1 -- 1 = first frame
 local skiplagframe = true
+local playback_loop = false
 
 local kmvfile = io.open(kmv_path, "r")
 if not kmvfile then
@@ -32,13 +33,17 @@ local pen_prev = stylus.get()
 local frameAdvance = false
 emu.registerbefore(function()
 	if kmv_framecount > #kmv.frame then
-		print("movie playback stopped.")
-		emu.registerbefore(nil)
-		emu.registerafter(nil)
-		emu.registerexit(nil)
-		gui.register(nil)
-		exitFunc()
-		return
+		if not playback_loop then
+			print("movie playback stopped.")
+			emu.registerbefore(nil)
+			emu.registerafter(nil)
+			emu.registerexit(nil)
+			gui.register(nil)
+			exitFunc()
+			return
+		else
+			kmv_framecount = 1
+		end
 	end
 
 	local pad = pad_prev
