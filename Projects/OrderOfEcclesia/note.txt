@@ -8,27 +8,7 @@ To record a movie, you need to download DeSmuME first.
 http://tasvideos.org/forum/t/8008
 Our test run uses 0.9.6.
 
-=Mistakes and possible improvements of test run=
-
-* Magnes can cancel backdash so it should be abused for more boost.
-* I picked up a bunch of redundant items, to see what is useful and what is useless.
-* Beginning-Monastery - Sliding at the edge just before falling down is slower in most cases, because backdash can keep its effect in midair.
-* Monastery - Lacking backdash when entering the level (exiting previous level with sliding seems to disable that)
-* Monastery - Secare (Sword) can be obtained at the long corridor which is before the boss room. I think it's faster because Banshee won't interrupt Shanoa.
-** <del>However, I think Secare doesn't help Shanoa so much. It shortens the first boss battle a little, but costs a few seconds when obtain/equip it.</del> not really?
-* Monastery - Don't do Glyph Union attacks continuously, invulnerability costs some of frames. However, do it when MP is full. Attacking delays MP recovery.
-* Monastery - Possibly, Magnes use in Arthroverta's room (the boss room) can be optimized a little more.
-* Wygol Village - Less heart supply, because it can be recovered by absorbing Glyphs (+10).
-* Ruvas Forest - Saving HPs for Kalidus Channel might save time. Glyph Union could be a time saver, because hearts can be recovered by absorbing Glyphs (+10).
-* Kalidus Channel - It's hard to optimize this level tightly. Especially, I was annoyed at Merman's behavior.
-* Minera Prison Island - Giant Skeleton battle is so sloppy. Need to think about a better strategy.
-* Minera Prison Island - Exiting Giant Skeleton by sliding might be faster.
-* Lighthouse - Brachyura can be defeated without Union Macir (use Dominus Hatred instead)
-** Brachyura has 450 HP for each stage (HP border: 1350, 900, 450)
-
-=Game mechanisms=
-
-==Methods of Move==
+== Methods of Move ==
 
 w/o inertia:
 * Rapidus+kick (jump 6,1): (6144+16384*8+28672*6)/15 = 20616.5333
@@ -41,25 +21,41 @@ w/  inertia:
 
 * >,<L,>v: (13888+11488)/2 = 12688
 
-<obsoleted>
+=== Parameter Table ===
 
-I'm not sure how can I move optimal, but I can say about some facts.
+LV.	EXP	HP	MP	DEF	STR	CON	INT	MND	LCK
+1	0	128	80	2	5	4	5	3	2
+2	48	136	85	2	6	5	6	4	3
+3	132	144	90	3	7	6	7	4	3
+4	280	152	95	3	8	6	7	5	3
+5	510	160	100	3	8	7	8	5	3
+6	840	168	105	3	9	7	9	5	4
+7	1288	176	110	4	10	8	9	6	4
+8	1872	184	115	4	11	8	10	6	4
+9	2610	192	120	4	11	9	10	7	5
+10	3520	200	125	4	12	9	11	7	5
+11	4620	208	130	5	13	10	12	7	5
+12	5928	216	135	5	13	10	12	8	6
+13	7462	224	140	5	14	11	13	8	6
+14	9240	232	145	5	15	11	13	9	6
+15	11280	240	150	6	15	12	14	9	6
+16	13600	248	155	6	16	12	15	9	7
+17	16218	256	160	6	17	13	15	10	7
+18	19152	264	165	6	18	13	16	10	7
+19	22420	272	170	7	18	14	16	11	8
+20	26040	280	175	7	19	14	17	11	8
 
-* Backdash+jump: (13888+13440+12992+12544+12096+11648+11200+10752+10304+9856+9408+8960)/12=11424
-* Backdash+attack: (13888+13440+12992+12544+12096+11648+0)/7=10944 (crouching decreases velocity a little)
+ATK=[ ([A/2]+[S/12]+[A*S/16]) * (1+P/32768) ]
+A: Strength of glyph
+S: STR or INT, it depends on the type of the glyph you use
+P: Attribute points (when a glyph has two or more attributes, calc their average)
+[ ]: Round a number downwards to the nearest integer
 
-Sliding has higher initial velocity than backdash, however:
+HP Max Up	: Increase HP by 20
+MP Max Up	: Increase MP by 10
+Heart Up	: Increase hearts by 10
 
-* Backdash can keep its effect in midair but sliding cannot. Therefore, it shouldn't be used at the edge just before falling down, if you need horizontal speed.
-* If sliding is used to exit a level, you cannot do backdash just when you entered to a level. That'll cost a few of frames.
-
-Other findings:
-
-* Decrement of backdash speed stops when Shanoa touches the edge a step only 1 frame. Possibly slightly increase average speed. http://img.f.hatena.ne.jp/images/fotolife/G/GOCHA/20090920/20090920200217.png
-
-</obsoleted>
-
-=Memory Addresses=
+=== Memory Addresses ===
 
 See memory watch file (*.wch) for major memory addresses.
 
@@ -78,13 +74,7 @@ Useful cheat codes can be found here and there:
 * 020FFE04-020FFE11: Increase rate of each attributes
 * 0210031C-02100329: Attribute points (a ring increases it by 0x1800 or 6144)
 
-A: Strength of glyph
-S: STR or INT, it depends on the type of the glyph you use
-P: Attribute points (when a glyph has two or more attributes, calc the average)
-[ ]: math.floor
-ATK=[ ([A/2]+[S/12]+[A*S/16]) * (1+P/32768) ]
-
-==Treasure chests==
+== Treasure chests ==
 
 * 007C - Heart Repair
 * 007D - Magical Ticket
@@ -120,26 +110,3 @@ Somnus Reaf:
 * 021007AA - Right treasure chest before Monica
 * 021007AC - Treasure chest before the bottom warp
 * 021007B0 - Treasure chest at the right bottom of the level
-
-==Miscellaneous==
-
-* Enemy's invincibility count for left hand and that of right hand are handled independently. If you attacked an enemy with left hand, you should do the next attack with right hand, even though you cancel the first attack just before the second attack by backdash. (for details, watch the actual memory values)
-* All 3 DS Castlevania games uses the same RNG routines. We can know how many times the RNG was called on certain frame via Lua script. This would be especially useful for treasure chest manipulation.
-** RNG information was learned from here http://www.gamespot.com/ds/action/castlevaniaorderofecclesia/show_msgs.php?topic_id=m-1-46105317&pid=945837&page=12
-** RNG gets reset according to a frame counter when loading a save file. It's very important for Portrait of Ruin, but not much for Order of Ecclesia.
-
-
-
-
-
-=Scraps=
-
-[quote="Catastrophe"]I'm going to need 6 Magical Tickets (warp) this run. The occasions are:
-Skeleton Cave
-Minera Prison, when I backtrack to grab Aeon
-Oblivion Ridge
-Ecclesia, when Barlowe sends me to kill Albus
-Mystery Manor, right after I kill Albus
-Ecclesia, right after I kill Barlowe
-
-I get one for free in Kalidus. Then I need to manipulate 5 more or buy them.[/quote]
