@@ -17,6 +17,7 @@ gui.register(function()
 	local ch_vy = memory.readdwordsigned(0x02109860)
 	local ch_inv = memory.readbyte(0x021098e5)
 	local ch_mptimer = memory.readword(0x020ffec0)
+	local ch_atktimer = memory.readword(0x020ffec2)
 	local hp = memory.readword(0x021002b4)
 	local mp = memory.readword(0x021002b8)
 	local mode = memory.readbyte(0x020d88d0)
@@ -39,8 +40,8 @@ gui.register(function()
 	if mode == 0 then
 		gui.opacity(opacityMaster * (fade/2 + 0.5))
 
-		gui.text(1, 60, string.format("(%6d,%6d) %d %d\nHP%03d/MP%03d",
-			ch_vx, ch_vy, ch_inv, ch_mptimer, hp, mp))
+		gui.text(1, 60, string.format("(%6d,%6d) %d %d %d\nHP%03d/MP%03d",
+			ch_vx, ch_vy, ch_inv, ch_mptimer, ch_atktimer, hp, mp))
 
 		-- enemy info
 		local basead = 0x0210d308
