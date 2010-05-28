@@ -5,7 +5,7 @@ require("gd")
 root = ""
 outdir = root
 sprw, sprh, sprox, sproy = 128, 128, 64, 100
-targetAniIndex = 0
+targetAniIndex = 0x01
 
 -- return if an image is a truecolor one
 gd.isTrueColor = function(im)
@@ -81,12 +81,13 @@ sprDBw, sprDBh = 2048, 3328
 gdlarge = gd.createTrueColorBlank(sprDBw, sprDBh)
 gdlarge:saveAlpha(true)
 gdlarge:alphaBlending(true)
-emu.registerexit(function()
+function exitFunc()
 	if gdlarge ~= nil then
 		gdlarge:png(outdir.."spritedb.png")
 		print("Saved sprite database")
 	end
-end)
+end
+emu.registerexit(exitFunc)
 
 SPRITE_ANIINDEX_ADDR = 0x0210989c
 SPRITE_ANICOUNT_ADDR = 0x0210989e
@@ -101,21 +102,20 @@ memory.writeword(SPRITE_ANIINDEX_ADDR, targetAniIndex)
 memory.writeword(SPRITE_ANICOUNT_ADDR, 0xffff)
 memory.writebyte(SPRITE_TIMER_ADDR, 1)
 
+delayLevel = 2
 mem = { {}, {}, {} }
-delayLevel = 0
 function stmem()
 	for i = 1, delayLevel do
-		mem[i] = copytable(mem[i+1])
-		mem[2] = copytable(mem[3])
+		mem[i+1] = copytable(mem[i])
 	end
-	mem[delayLevel+1].aniIndex = memory.readword(SPRITE_ANIINDEX_ADDR)
-	mem[delayLevel+1].aniCount = memory.readwordsigned(SPRITE_ANICOUNT_ADDR)
-	mem[delayLevel+1].sprIndex = memory.readword(SPRITE_INDEX_ADDR)
-	mem[delayLevel+1].aniTimer = memory.readword(SPRITE_TIMER_ADDR)
-	mem[delayLevel+1].camerax = math.floor(memory.readdwordsigned(CAMERA_POS_X_ADDR) / 0x1000)
-	mem[delayLevel+1].cameray = math.floor(memory.readdwordsigned(CAMERA_POS_Y_ADDR) / 0x1000)
-	mem[delayLevel+1].playerx = math.floor(memory.readdword(PLAYER_POS_X_ADDR) / 0x1000)
-	mem[delayLevel+1].playery = math.floor(memory.readdword(PLAYER_POS_Y_ADDR) / 0x1000)
+	mem[1].aniIndex = memory.readword(SPRITE_ANIINDEX_ADDR)
+	mem[1].aniCount = memory.readwordsigned(SPRITE_ANICOUNT_ADDR)
+	mem[1].sprIndex = memory.readword(SPRITE_INDEX_ADDR)
+	mem[1].aniTimer = memory.readword(SPRITE_TIMER_ADDR)
+	mem[1].camerax = math.floor(memory.readdwordsigned(CAMERA_POS_X_ADDR) / 0x1000)
+	mem[1].cameray = math.floor(memory.readdwordsigned(CAMERA_POS_Y_ADDR) / 0x1000)
+	mem[1].playerx = math.floor(memory.readdword(PLAYER_POS_X_ADDR) / 0x1000)
+	mem[1].playery = math.floor(memory.readdword(PLAYER_POS_Y_ADDR) / 0x1000)
 end
 for i = 1, delayLevel + 1 do
 	emu.frameadvance()
@@ -129,7 +129,7 @@ while mem[1].aniIndex == targetAniIndex do
 		end
 
 		local loopy = 4
-		memory.writebyte(SPRITE_TIMER_ADDR, loopy + 1)
+		memory.writebyte(SPRITE_TIMER_ADDR, loopy + 2)
 		for i = 1, loopy do
 			emu.frameadvance()
 		end
@@ -180,7 +180,7 @@ while mem[1].aniIndex == targetAniIndex do
 		else
 			gdout:png(outdir..pngfname)
 		end
-		print(string.format("output sprite $%04x", mem[1].sprIndex))
+		print(string.format("Output sprite $%04x", mem[1].sprIndex))
 
 		-- memory.writebyte(SPRITE_TIMER_ADDR, 1)
 	end
@@ -188,3 +188,5 @@ while mem[1].aniIndex == targetAniIndex do
 	emu.frameadvance()
 	stmem()
 end
+exitFunc()
+emu.registerexit(nil)
