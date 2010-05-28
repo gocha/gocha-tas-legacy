@@ -5,7 +5,7 @@ require("gd")
 root = ""
 outdir = root
 sprw, sprh, sprox, sproy = 128, 128, 64, 100
-targetAniIndex = 1
+targetAniIndex = 0
 
 -- return if an image is a truecolor one
 gd.isTrueColor = function(im)
@@ -81,6 +81,12 @@ sprDBw, sprDBh = 2048, 3328
 gdlarge = gd.createTrueColorBlank(sprDBw, sprDBh)
 gdlarge:saveAlpha(true)
 gdlarge:alphaBlending(true)
+emu.registerexit(function()
+	if gdlarge ~= nil then
+		gdlarge:png(outdir.."spritedb.png")
+		print("Saved sprite database")
+	end
+end)
 
 SPRITE_ANIINDEX_ADDR = 0x0210989c
 SPRITE_ANICOUNT_ADDR = 0x0210989e
@@ -181,8 +187,4 @@ while mem[1].aniIndex == targetAniIndex do
 
 	emu.frameadvance()
 	stmem()
-end
-
-if gdlarge ~= nil then
-	gdlarge:png(outdir.."spritedb.png")
 end
