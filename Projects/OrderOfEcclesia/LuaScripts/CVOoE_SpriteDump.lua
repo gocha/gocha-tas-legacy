@@ -103,7 +103,10 @@ memory.writeword(SPRITE_ANICOUNT_ADDR, 0xffff)
 memory.writebyte(SPRITE_TIMER_ADDR, 1)
 
 delayLevel = 2
-mem = { {}, {}, {} }
+mem = {}
+for i = 1, delayLevel + 1 do
+	mem[i] = {}
+end
 function stmem()
 	for i = 1, delayLevel do
 		mem[i+1] = copytable(mem[i])
@@ -116,11 +119,14 @@ function stmem()
 	mem[1].cameray = math.floor(memory.readdwordsigned(CAMERA_POS_Y_ADDR) / 0x1000)
 	mem[1].playerx = math.floor(memory.readdword(PLAYER_POS_X_ADDR) / 0x1000)
 	mem[1].playery = math.floor(memory.readdword(PLAYER_POS_Y_ADDR) / 0x1000)
+	for i = 2, delayLevel + 1 do
+		if mem[i] == nil then
+			mem[i] = copytable(mem[1])
+		end
+	end
 end
-for i = 1, delayLevel + 1 do
-	emu.frameadvance()
-	stmem()
-end
+emu.frameadvance()
+stmem()
 while mem[1].aniIndex == targetAniIndex do
 	if mem[1].sprIndex ~= mem[2].sprIndex then
 		direction = memory.readbytesigned(0x02109894)
