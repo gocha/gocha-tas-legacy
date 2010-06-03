@@ -110,3 +110,309 @@ Somnus Reaf:
 * 021007AA - Right treasure chest before Monica
 * 021007AC - Treasure chest before the bottom warp
 * 021007B0 - Treasure chest at the right bottom of the level
+
+=== Koichi's speedrun route ===
+
+http://pukiwiki.a.la9.jp/ubawareshi/?%BA%C7%C3%BB%A5%EB%A1%BC%A5%C8
+
+SEG 1
+
+Ecclesia
+- tutorial
+
+Monastery
+- activate bottom warp
+- equip Magnes
+- get Heart Max at E9
+- manipulate Magical Ticket
+- save
+
+SEG 2
+
+- Arthroverta - Confodere+Confodere
+- warp to bottom
+- exit
+
+Wygol Village
+- refill hearts
+- rescue Nikolai / get Torpor
+
+Ruvas Forest
+- equip Macir
+- manipulate Magical Ticket
+- exit
+
+Kalidus Channel
+- get Magical Ticket
+- rescue Jacob
+- save
+
+SEG 3
+
+Minera Prison Island
+- Giant Skeleton - Macir+Macir
+- get HPMax at J18
+- activate middle warp
+- get Dominus Hatred
+- get 500G / rescue Abram
+- save
+
+SEG 4
+
+Minera Prison Island
+- get Heart Max at F24
+- manipulate Sage
+- Tin Man / equip Strength Ring
+- exit
+
+Lighthouse
+- Brachyura - Macir+Macir
+- rescue Eugen
+- get Serpent Scale + exit
+
+Kalidus Channel
+- get Heart Max at H17
+- save
+
+SEG 5
+
+Tymeo Mountains
+- manipulate Archer Ring
+- rescue Laura
+- exit
+
+Wygol Village
+- save
+
+SEG 6
+
+Misty Forest Road
+- equip Vol Macir
+- manipulate Blow Ring
+- exit
+
+Wygol Village
+- save
+
+SEG 7
+
+Skeleton Cave
+- Dullahan / manipulate Vol Confodere
+- save
+
+SEG 8
+
+- Maneater - Vol Macir+Vol Macir
+- get Ordinary Stone
+- rescue George
+- Magical Ticket
+
+Minera Prison Island
+- warp to middle
+- equip Tower Ring
+- rescue Aeon
+- Magical Ticket
+
+Tymeo Mountains
+- rescue Marcel
+- exit
+
+Kalidus Channel
+- get MPMax at J9 
+- rescue Monica
+- Magical Ticket
+
+Wygol Village
+- save
+
+SEG 9
+
+- Abram - activate Potion+Tonic
+- sell Archer Ring
+- buy Battle Boots
+- buy 9 Magical Tickets
+- buy 4 Tonics
+- buy Potions and Meats as much as you can
+- exit
+
+Somnus Reef
+- manipulate Wind Ring
+- equip Reinforced Suit
+- rescue Anna
+- get Heart Max at L8
+- save
+
+SEG 10
+
+- Rusalka - Vol Confodere+Vol Confodere (High Tonic + 1 or 2 Tonics?)
+- rescue Serge
+- exit
+
+Kalidus Channel
+- enter from left top
+- get Heart Max at C4
+- Magical Ticket
+
+Wygol Village
+- save
+
+SEG 11
+
+Giant's Dwelling
+- Skeleton Beast / manipulate Barbarian Helm
+- save
+
+SEG 12
+
+- Miss Murder / manipulate Vol Secare
+- rescue Daniela
+- save
+
+SEG 13
+
+- Goliath - Vol Falcis+Vol Falcis (1 or 2 Tonics), do sliding to begin the battle from closer position
+- get Dominus Anger
+- exit
+
+Tristis Pass
+- save
+
+SEG 14
+
+- get Vol Grando
+- get Heart Max at N22
+- rescue Irina
+- exit
+
+Oblivion Ridge
+- save
+
+SEG 15
+
+- Gravedorcus - Vol Macir+Vol Macir
+- Magical Ticket
+
+Skeleton Cave
+- get Heart Max at B14
+- Magical Ticket
+
+Ecclesia
+- visit Barlowe
+- exit room, Magical Ticket
+
+Argila Swamp
+- exit
+
+Mystery Manor
+- save
+
+SEG 16
+
+- Albus - Vol Falcis+Vol Falcis
+- get Dominus Agony
+- Magical Ticket
+
+Wygol Village
+- refill hearts
+- exit
+
+Ecclesia
+- Barlowe - Vol Falcis+Vol Falcis+Dominus Agony (1 Meat)
+- Magical Ticket
+
+Castle Entrance
+- save
+
+SEG 17
+
+Library
+- get HPMax at L12
+- activate warp before Blackmore
+- Wallman / Paries
+- Magical Ticket
+
+Wygol Village
+- refill hearts
+- exit
+
+Castle Entrance
+- get Tasty Meat at T14
+- get HPMax at S16
+
+Underground Labyrinth
+- equip Nitesco
+- equip Mercury Boots
+- activate warp before Blackmore
+- save
+
+SEG 18
+
+- Blackmore - Vol Falcis+Nitesco+Dominus Agony (1 Meat)
+- get Super Potion
+- equip Rapidus Fio
+- exit
+
+Castle Entrance
+- warp to warp before Wallman
+
+Library
+- get Dextro Custos
+- Magical Ticket
+
+Castle Entrance
+- warp to warp before Blackmore
+
+Barracks
+- save
+
+SEG 19
+
+- get Heart Max Up at R28
+- get HPMax at R36
+- activate warp
+
+Mechanical Tower
+- save
+
+SEG 20
+
+- get HPMax at L49
+- get Death Ring
+- warp to Barracks
+
+Arms Depot
+- Eligor (about 4 Potions)
+Front - Vol Macir+Vol Macir+Dominus Agony
+Head - Vol Falcis/Macir+Nitesco+Dominus Agony
+- get Arma Custos
+- Magical Ticket
+
+Wygol Village
+- refill hearts
+- exit
+
+Castle Entrance
+- warp to Mechanical Tower
+
+Mechanical Tower
+- save
+
+SEG 21
+
+- Death - Vol Falcis/Macir+Nitesco+Dominus Agony
+- get Sinestro Custos
+
+Forsaken Cloister
+- open Cerberus gate
+- save
+
+SEG 22
+
+Final Approach
+- get Volaticus
+- equip Judgement Ring
+- save
+
+SEG 23
+
+- Dracula - Vol Falcis/Macir+Nitesco+Dominus Agony
