@@ -74,7 +74,21 @@ for player = 1, pad_max do
 end
 
 local dev_press, dev_down, dev_up, dev_prev = input.get(), {}, {}, {}
-local dev_presstime = {}
+local dev_presstime = {
+    xmouse=0, ymouse=0, leftclick=0, rightclick=0, middleclick=0,
+    shift=0, control=0, alt=0, capslock=0, numlock=0, scrolllock=0,
+    ["0"]=0, ["1"]=0, ["2"]=0, ["3"]=0, ["4"]=0, ["5"]=0, ["6"]=0, ["7"]=0, ["8"]=0, ["9"]=0,
+    A=0, B=0, C=0, D=0, E=0, F=0, G=0, H=0, I=0, J=0, K=0, L=0, M=0, N=0, O=0, P=0, Q=0, R=0, S=0, T=0, U=0, V=0, W=0, X=0, Y=0, Z=0,
+    F1=0, F2=0, F3=0, F4=0, F5=0, F6=0, F7=0, F8=0, F9=0, F10=0, F11=0, F12=0,
+    F13=0, F14=0, F15=0, F16=0, F17=0, F18=0, F19=0, F20=0, F21=0, F22=0, F23=0, F24=0,
+    backspace=0, tab=0, enter=0, pause=0, escape=0, space=0,
+    pageup=0, pagedown=0, ["end"]=0, home=0, insert=0, delete=0,
+    left=0, up=0, right=0, down=0,
+    numpad0=0, numpad1=0, numpad2=0, numpad3=0, numpad4=0, numpad5=0, numpad6=0, numpad7=0, numpad8=0, numpad9=0,
+    ["numpad*"]=0, ["numpad+"]=0, ["numpad-"]=0, ["numpad."]=0, ["numpad/"]=0,
+    tilde=0, plus=0, minus=0, leftbracket=0, rightbracket=0,
+    semicolon=0, quote=0, comma=0, period=0, slash=0, backslash=0
+}
 
 -- scan button presses
 function scanJoypad()
@@ -106,18 +120,15 @@ function scanInputDevs()
     -- scan keydowns, keyups
     dev_down = {}
     dev_up = {}
-    for k in pairs(dev_press) do
+    for k in pairs(dev_presstime) do
         dev_down[k] = (dev_press[k] and not dev_prev[k])
         dev_up[k] = (dev_prev[k] and not dev_press[k])
     end
     -- count press length
-    for k in pairs(dev_press) do
+    for k in pairs(dev_presstime) do
         if not dev_press[k] then
             dev_presstime[k] = 0
         else
-            if dev_presstime[k] == nil then
-                dev_presstime[k] = 0
-            end
             dev_presstime[k] = dev_presstime[k] + 1
         end
     end
@@ -390,11 +401,9 @@ function smwDragAndDrop()
     end
     if dev_up["leftclick"] then
         -- for id = 0, smwSpriteMaxCount - 1 do
-        --     local xvel = dev_press["mousex"] - dev_prev["mousex"]
-        --     local yvel = dev_press["mousey"] - dev_prev["mousey"]
         --     if smwDragTargets[id] then
-        --         memory.writebyte(0x7e00b6+id, xvel)
-        --         memory.writebyte(0x7e00aa+id, yvel)
+        --         memory.writebyte(0x7e00b6+id, 0)
+        --         memory.writebyte(0x7e00aa+id, 0)
         --     end
         -- end
         smwDragTargets = {}
@@ -608,12 +617,12 @@ function smwDrawMainInfo()
     end
 
     if grayPOW ~= 0 then
-        gui.text(1, 128 - timerCount * 8, string.format("grayPOW: %d", (grayPOW) * 4 - frameCountAlt % 4))
+        gui.text(1, 128 - timerCount * 8, string.format("grayPOW: %d", grayPOW * 4 - frameCountAlt % 4))
         timerCountPlus()
     end
 
     if bluePOW ~= 0 then
-        gui.text(1, 128 - timerCount * 8, string.format("bluePOW: %d", (bluePOW) * 4 - frameCountAlt % 4))
+        gui.text(1, 128 - timerCount * 8, string.format("bluePOW: %d", bluePOW * 4 - frameCountAlt % 4))
         timerCountPlus()
     end
 
