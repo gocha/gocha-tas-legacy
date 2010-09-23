@@ -17,27 +17,29 @@
 
  === Other Features ===
 
- - P-meter display
  - Cut powerup / powerdown animation
- - Display some other useful informations (holding L+R in 0.5s may switch info view)
+ - Display sprite id/position
+ - Display P-meter
 
- Some of these features can be enabled / disabled by modifying the following option settings.
+ All of these features can be enabled / disabled by modifying the following option settings.
 
 ]]--
 
 -- option start here >>
 
-local smwCutPowerupAnimationOn = true
-local smwCutPowerdownAnimationOn = true
-
-local smwShowInfoMore = false -- if true, displays some of useful informations (hopefully)
-local smwShowInfoMoreKeySw = false -- if true, holding L+R in 0.5s switches info view
+local smwRegularDebugFuncOn = true
+local smwCutPowerupAnimationOn = false
+local smwCutPowerdownAnimationOn = false
 
 -- Move speed definitions for free move mode.
 -- I guess you usually won't need to modify these.
 local smwFreeMoveSpeed = 2.0 -- px/f
 local smwFreeMoveSpeedupMax = 4.0 -- px/f
 local smwFreeMovePMeterLength = 1 -- frame(s)
+
+local guiOpacity = 0.8
+local showPMeter = false
+local showSpriteInfo = true
 
 -- << options end here
 
@@ -116,6 +118,8 @@ local RAM_pMeter = 0x7e13e4
 local RAM_takeOffMeter = 0x7e149f
 local RAM_starInvCount = 0x7e1490
 local RAM_hurtInvCount = 0x7e1497
+local RAM_cameraX = 0x7e001a
+local RAM_cameraY = 0x7e001c
 local RAM_xSpeed = 0x7e007b
 local RAM_ySpeed = 0x7e007d
 local RAM_xPos = 0x7e0094
@@ -310,17 +314,19 @@ end
 local preventItemPopup = false
 -- apply various cheats that work in Level
 function smwApplyLevelCheats()
-    -- power-ups
-    if not smwPause and pad_press[smwPlayer].up and pad_down[smwPlayer].select then
-        smwDoPowerUp()
-        preventItemPopup = true
-    end
-    -- moving method
-    if not smwPause and pad_press[smwPlayer].L and not pad_press[smwPlayer].R and pad_down[smwPlayer].A then
-        smwSetMoveMethod(smwMoveMethod + 1)
-    end
-    if not smwPause then
-        smwMoveMethodProc[smwMoveMethod+1]()
+    if smwRegularDebugFuncOn then
+        -- power-ups
+        if not smwPause and pad_press[smwPlayer].up and pad_down[smwPlayer].select then
+            smwDoPowerUp()
+            preventItemPopup = true
+        end
+        -- moving method
+        if not smwPause and pad_press[smwPlayer].L and not pad_press[smwPlayer].R and pad_down[smwPlayer].A then
+            smwSetMoveMethod(smwMoveMethod + 1)
+        end
+        if not smwPause then
+            smwMoveMethodProc[smwMoveMethod+1]()
+        end
     end
 
     -- prevent item popup
@@ -340,17 +346,13 @@ function smwApplyLevelCheats()
     end
 
     -- allow escape
-    smwAllowEscape()
+    if smwRegularDebugFuncOn then
+        smwAllowEscape()
+    end
 end
 
 -- apply various cheats
 function smwApplyCheats()
-    -- switch info display
-    local pressLenLR = math.min(pad_presstime[smwPlayer].L, pad_presstime[smwPlayer].R)
-    if smwShowInfoMoreKeySw and pressLenLR == 30 then
-        smwShowInfoMore = not smwShowInfoMore
-    end
-
     if smwGameMode == gameMode_level then
         smwApplyLevelCheats()
     elseif smwGameMode == gameMode_ow then
@@ -394,18 +396,52 @@ function smwDrawPMeter()
     end
 end
 
+-- draw sprite info on screen
+function smwDrawSpriteInfo()
+    if not (smwGameMode == gameMode_level) then return end
+
+    gui.opacity(guiOpacity)
+    local cameraX = memory.readwordsigned(RAM_cameraX)
+    local cameraY = memory.readwordsigned(RAM_cameraY)
+    local spriteCount = 0
+    local colorTable = {
+        "#ffffff",
+        "#ff9090",
+        "#80ff80",
+        "#a0a0ff",
+        "#ffff80",
+        "#ff80ff",
+        "#80ffff"
+    }
+    for id = 0, 11 do
+        local stat = memory.readbyte(0x7e14c8+id)
+        local hOffscreen = (memory.readbyte(0x7e15a0+id) ~= 0)
+        local vOffscreen = (memory.readbyte(0x7e186c+id) ~= 0)
+        local x = memory.readbyte(0x7e14e0+id) * 0x100 + memory.readbyte(0x7e00e4+id)
+        local y = memory.readbyte(0x7e14d4+id) * 0x100 + memory.readbyte(0x7e00d8+id)
+        local xsub = memory.readbyte(0x7e14f8+id)
+        local ysub = memory.readbyte(0x7e14ec+id)
+        local xspeed = memory.readbyte(0x7e00b6+id)
+        local yspeed = memory.readbyte(0x7e00aa+id)
+
+        if stat ~= 0 then -- not hOffscreen and not vOffscreen then
+            local dispString = string.format("#%02d (%d.%02x, %d.%02x)", id, x, xsub, y, ysub)
+            local colorString = colorTable[1 + spriteCount % #colorTable]
+            gui.text(x - cameraX, -8 + y - cameraY, string.format("#%02d", id), colorString)
+            gui.text(172, 36 + spriteCount * 8, dispString, colorString)
+            spriteCount = spriteCount + 1
+        end
+    end
+    gui.text(254-24, 2, string.format("SPR:%02d", spriteCount))
+end
+
 -- display some useful information
 function smwDisplayInfo()
-
-    smwDrawPMeter()
-
-    if not smwShowInfoMore then return end
-
-    if smwGameMode == gameMode_level then
-        -- show Mario's position
-        gui.text(120, 40, string.format("%4d.%03d,%3d.%03d",
-            memory.readword(RAM_xPos), memory.readbyte(RAM_xSubPos),
-            memory.readword(RAM_yPos), memory.readbyte(RAM_ySubPos)))
+    if showPMeter then
+        smwDrawPMeter()
+    end
+    if showSpriteInfo then
+        smwDrawSpriteInfo()
     end
 end
 
