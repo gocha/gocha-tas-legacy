@@ -1,6 +1,6 @@
 --[[
 
- Super Mario World (U) Cheat Script by gocha
+ Super Mario World (U) Utility Script by gocha
  Operation check done by using snes9x-rr 1.43 v17 svn
  http://code.google.com/p/snes9x-rr/
 
@@ -18,8 +18,7 @@
  === Other Features ===
 
  - Cut powerup / powerdown animation
- - Display sprite id/position
- - Display P-meter
+ - Display P-meter, sprite info, and some other useful info
 
  All of these features can be enabled / disabled by modifying the following option settings.
 
