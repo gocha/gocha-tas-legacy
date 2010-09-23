@@ -356,23 +356,48 @@ function smwCutPowerdownAnimation()
     end
 end
 
-local smwDragTarget
+local smwDragTargets = {}
 function smwDragAndDrop()
-    if dev_down["leftclick"] then
-        smwDragTarget = getSpriteByMousePos(dev_press["xmouse"], dev_press["ymouse"])
-    end
-    if dev_press["leftclick"] and smwDragTarget then
+    if dev_press["leftclick"] then
+        local x, y = dev_press["xmouse"], dev_press["ymouse"]
         local cameraX = memory.readwordsigned(RAM_cameraX)
         local cameraY = memory.readwordsigned(RAM_cameraY)
-        local spriteX = cameraX + dev_press["xmouse"] - 8
-        local spriteY = cameraY + dev_press["ymouse"] - 8
-        memory.writebyte(0x7e14e0+smwDragTarget, math.floor(spriteX / 0x100))
-        memory.writebyte(0x7e00e4+smwDragTarget, spriteX % 0x100)
-        memory.writebyte(0x7e14d4+smwDragTarget, math.floor(spriteY / 0x100))
-        memory.writebyte(0x7e00d8+smwDragTarget, spriteY % 0x100)
+        for id = 0, smwSpriteMaxCount - 1 do
+            local stat = memory.readbyte(0x7e14c8+id)
+            local spriteX = memory.readbytesigned(0x7e14e0+id) * 0x100 + memory.readbyte(0x7e00e4+id)
+            local spriteY = memory.readbytesigned(0x7e14d4+id) * 0x100 + memory.readbyte(0x7e00d8+id)
+
+            if stat ~= 0 then
+                local width, height = 16, 16
+                local spriteRect = {
+                    left = spriteX - cameraX,
+                    top = spriteY - cameraY,
+                    right = spriteX - cameraX + width,
+                    bottom = spriteY - cameraY + height
+                }
+                if smwDragTargets[id] or (x >= spriteRect.left and x <= spriteRect.right and
+                    y >= spriteRect.top and y <= spriteRect.bottom) then
+                        local spriteX = cameraX + x - 8
+                        local spriteY = cameraY + y - 8
+                        memory.writebyte(0x7e14e0+id, math.floor(spriteX / 0x100))
+                        memory.writebyte(0x7e00e4+id, spriteX % 0x100)
+                        memory.writebyte(0x7e14d4+id, math.floor(spriteY / 0x100))
+                        memory.writebyte(0x7e00d8+id, spriteY % 0x100)
+                        smwDragTargets[id] = true
+                end
+            end
+        end
     end
     if dev_up["leftclick"] then
-        smwDragTarget = nil
+        -- for id = 0, smwSpriteMaxCount - 1 do
+        --     local xvel = dev_press["mousex"] - dev_prev["mousex"]
+        --     local yvel = dev_press["mousey"] - dev_prev["mousey"]
+        --     if smwDragTargets[id] then
+        --         memory.writebyte(0x7e00b6+id, xvel)
+        --         memory.writebyte(0x7e00aa+id, yvel)
+        --     end
+        -- end
+        smwDragTargets = {}
     end
 end
 
