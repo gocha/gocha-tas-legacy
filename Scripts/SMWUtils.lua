@@ -1,8 +1,10 @@
 --[[
 
- Super Mario World (U) Utility Script by gocha
+ Super Mario World (U) Utility Script
  Operation check done by using snes9x-rr 1.43 v17 svn
  http://code.google.com/p/snes9x-rr/
+
+ Contributers: gocha, Mr.
 
  === Cheat Keys ===
 
@@ -29,6 +31,7 @@
 local smwRegularDebugFuncOn = true
 local smwCutPowerupAnimationOn = false
 local smwCutPowerdownAnimationOn = false
+local smwDragAndDropOn = true
 
 -- Move speed definitions for free move mode.
 -- I guess you usually won't need to modify these.
@@ -70,6 +73,9 @@ for player = 1, pad_max do
     pad_presstime[player] = { start=0, select=0, up=0, down=0, left=0, right=0, A=0, B=0, X=0, Y=0, L=0, R=0 }
 end
 
+local dev_press, dev_down, dev_up, dev_prev = input.get(), {}, {}, {}
+local dev_presstime = {}
+
 -- scan button presses
 function scanJoypad()
     for i = 1, pad_max do
@@ -90,6 +96,29 @@ function scanJoypad()
             else
                 pad_presstime[i][k] = pad_presstime[i][k] + 1
             end
+        end
+    end
+end
+-- scan keyboard/mouse input
+function scanInputDevs()
+    dev_prev = copytable(dev_press)
+    dev_press = input.get()
+    -- scan keydowns, keyups
+    dev_down = {}
+    dev_up = {}
+    for k in pairs(dev_press) do
+        dev_down[k] = (dev_press[k] and not dev_prev[k])
+        dev_up[k] = (dev_prev[k] and not dev_press[k])
+    end
+    -- count press length
+    for k in pairs(dev_press) do
+        if not dev_press[k] then
+            dev_presstime[k] = 0
+        else
+            if dev_presstime[k] == nil then
+                dev_presstime[k] = 0
+            end
+            dev_presstime[k] = dev_presstime[k] + 1
         end
     end
 end
@@ -158,6 +187,8 @@ local takeOffMeter_max = 80
 
 local gameMode_ow  = 14
 local gameMode_level = 20
+
+local smwSpriteMaxCount = 12
 
 local smwPlayerPrev, smwPlayer, smwPlayerChanged
 local smwGameModePrev, smwGameMode, smwGameModeChanged
@@ -325,6 +356,53 @@ function smwCutPowerdownAnimation()
     end
 end
 
+local smwDragTarget
+function smwDragAndDrop()
+    if dev_down["leftclick"] then
+        smwDragTarget = getSpriteByMousePos(dev_press["xmouse"], dev_press["ymouse"])
+    end
+    if dev_press["leftclick"] and smwDragTarget then
+        local cameraX = memory.readwordsigned(RAM_cameraX)
+        local cameraY = memory.readwordsigned(RAM_cameraY)
+        local spriteX = cameraX + dev_press["xmouse"] - 8
+        local spriteY = cameraY + dev_press["ymouse"] - 8
+        memory.writebyte(0x7e14e0+smwDragTarget, math.floor(spriteX / 0x100))
+        memory.writebyte(0x7e00e4+smwDragTarget, spriteX % 0x100)
+        memory.writebyte(0x7e14d4+smwDragTarget, math.floor(spriteY / 0x100))
+        memory.writebyte(0x7e00d8+smwDragTarget, spriteY % 0x100)
+    end
+    if dev_up["leftclick"] then
+        smwDragTarget = nil
+    end
+end
+
+function getSpriteByMousePos(x, y)
+    local spriteId = nil
+    local cameraX = memory.readwordsigned(RAM_cameraX)
+    local cameraY = memory.readwordsigned(RAM_cameraY)
+    for id = 0, smwSpriteMaxCount - 1 do
+        local stat = memory.readbyte(0x7e14c8+id)
+        local spriteX = memory.readbytesigned(0x7e14e0+id) * 0x100 + memory.readbyte(0x7e00e4+id)
+        local spriteY = memory.readbytesigned(0x7e14d4+id) * 0x100 + memory.readbyte(0x7e00d8+id)
+
+        if stat ~= 0 then
+            local width, height = 16, 16
+            local spriteRect = {
+                left = spriteX - cameraX,
+                top = spriteY - cameraY,
+                right = spriteX - cameraX + width,
+                bottom = spriteY - cameraY + height
+            }
+            if x >= spriteRect.left and x <= spriteRect.right and
+                y >= spriteRect.top and y <= spriteRect.bottom then
+                spriteId = id
+                break
+            end
+        end
+    end
+    return spriteId
+end
+
 -- [ game-specific main ] ------------------------------------------------------
 
 local preventItemPopup = false
@@ -364,6 +442,11 @@ function smwApplyLevelCheats()
     -- allow escape
     if smwRegularDebugFuncOn then
         smwAllowEscape()
+    end
+
+    -- sprite drag and drop
+    if smwDragAndDropOn then
+        smwDragAndDrop()
     end
 end
 
@@ -429,7 +512,7 @@ function smwDrawSpriteInfo()
         "#ff80ff",
         "#80ffff"
     }
-    for id = 0, 11 do
+    for id = 0, smwSpriteMaxCount - 1 do
         local stat = memory.readbyte(0x7e14c8+id)
         local hOffscreen = (memory.readbyte(0x7e15a0+id) ~= 0)
         local vOffscreen = (memory.readbyte(0x7e186c+id) ~= 0)
@@ -452,7 +535,6 @@ function smwDrawSpriteInfo()
 end
 
 -- draw main info on screen
-
 function smwDrawMainInfo()
     if not (smwGameMode == gameMode_level) then return end
 
@@ -565,6 +647,7 @@ end
 
 emu.registerbefore(function()
     scanJoypad()
+    scanInputDevs()
     smwScanStatus()
     if not movie.active() then
        if smwPlayer <= pad_max then
