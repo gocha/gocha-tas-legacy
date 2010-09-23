@@ -40,6 +40,7 @@ local smwFreeMovePMeterLength = 1 -- frame(s)
 local guiOpacity = 0.8
 local showPMeter = false
 local showSpriteInfo = true
+local showMainInfo = true
 
 -- << options end here
 
@@ -110,6 +111,7 @@ local moveMethod_max = 3
 local smwMoveMethod = moveMethod_normal
 local smwFreeMovePMeter = 0
 
+local RAM_frameCount = 0x7e0013
 local RAM_frameCountAlt = 0x7e0014
 local RAM_gameMode = 0x7e0100
 local RAM_player = 0x7e0db3
@@ -122,13 +124,28 @@ local RAM_cameraX = 0x7e001a
 local RAM_cameraY = 0x7e001c
 local RAM_xSpeed = 0x7e007b
 local RAM_ySpeed = 0x7e007d
+local RAM_xSubSpeed = 0x7e007a
 local RAM_xPos = 0x7e0094
 local RAM_yPos = 0x7e0096
 local RAM_xSubPos = 0x7e13da
 local RAM_ySubPos = 0x7e13dc
+local RAM_facingDirection = 0x7e0076
+local RAM_flightAnimation = 0x7e1407
+local RAM_capeSlowFallCount = 0x7e14a5
+local RAM_capeSpinTimer = 0x7e14a6
 local RAM_movement = 0x7e0071
 local RAM_lockSpritesTimer = 0x7e009d
 local RAM_marioFrameCount = 0x7e1496
+
+local RAM_bluePOW = 0x7e14ad
+local RAM_grayPOW = 0x7e14ae
+local RAM_multipleCoinBlockTimer = 0x7e186b
+local RAM_directionalCoinTimer = 0x7e190c
+local RAM_pBalloonTimer = 0x7e1891
+local RAM_pBalloonTimerAlt = 0x7e13f3
+
+local RAM_ropeClimbingFlag = 0x7e18be
+
 local RAM_frozen = 0x7e13fb
 local RAM_paused = 0x7e13d4
 local RAM_levelIndex = 0x7e13bf
@@ -138,7 +155,7 @@ local RAM_midwayPoint = 0x7e13ce
 local RAM_activateNextLevel = 0x7e13ce
 
 local pMeter_max = 112
-local takeOffMeter_max = 112
+local takeOffMeter_max = 80
 
 local gameMode_ow  = 14
 local gameMode_level = 20
@@ -321,7 +338,7 @@ function smwApplyLevelCheats()
             preventItemPopup = true
         end
         -- moving method
-        if not smwPause and pad_press[smwPlayer].L and not pad_press[smwPlayer].R and pad_down[smwPlayer].A then
+        if not smwPause and pad_press[smwPlayer].L and pad_down[smwPlayer].A then
             smwSetMoveMethod(smwMoveMethod + 1)
         end
         if not smwPause then
@@ -417,8 +434,8 @@ function smwDrawSpriteInfo()
         local stat = memory.readbyte(0x7e14c8+id)
         local hOffscreen = (memory.readbyte(0x7e15a0+id) ~= 0)
         local vOffscreen = (memory.readbyte(0x7e186c+id) ~= 0)
-        local x = memory.readbyte(0x7e14e0+id) * 0x100 + memory.readbyte(0x7e00e4+id)
-        local y = memory.readbyte(0x7e14d4+id) * 0x100 + memory.readbyte(0x7e00d8+id)
+        local x = memory.readbytesigned(0x7e14e0+id) * 0x100 + memory.readbyte(0x7e00e4+id)
+        local y = memory.readbytesigned(0x7e14d4+id) * 0x100 + memory.readbyte(0x7e00d8+id)
         local xsub = memory.readbyte(0x7e14f8+id)
         local ysub = memory.readbyte(0x7e14ec+id)
         local xspeed = memory.readbyte(0x7e00b6+id)
@@ -426,13 +443,110 @@ function smwDrawSpriteInfo()
 
         if stat ~= 0 then -- not hOffscreen and not vOffscreen then
             local dispString = string.format("#%02d (%d.%02x, %d.%02x)", id, x, xsub, y, ysub)
-            local colorString = colorTable[1 + spriteCount % #colorTable]
+            local colorString = colorTable[1 + id % #colorTable]
             gui.text(x - cameraX, -8 + y - cameraY, string.format("#%02d", id), colorString)
             gui.text(172, 36 + spriteCount * 8, dispString, colorString)
             spriteCount = spriteCount + 1
         end
     end
     gui.text(254-24, 2, string.format("SPR:%02d", spriteCount))
+end
+
+-- draw main info on screen
+
+function smwDrawMainInfo()
+    if not (smwGameMode == gameMode_level) then return end
+
+    gui.opacity(guiOpacity)
+    local timerCount = 1
+
+    local frameCount = memory.readbyte(RAM_frameCount)
+    local frameCountAlt = memory.readbyte(RAM_frameCountAlt)
+    local powerup = memory.readbyte(RAM_powerup)
+    local pMeter = memory.readbyte(RAM_pMeter)
+    local takeOffMeter = memory.readbyte(RAM_takeOffMeter)
+    local starInvCount = memory.readbyte(RAM_starInvCount)
+    local hurtInvCount = memory.readbyte(RAM_hurtInvCount)
+    local cameraX = memory.readword(RAM_cameraX)
+    local cameraY = memory.readword(RAM_cameraY)
+    local xSpeed = memory.readbytesigned(RAM_xSpeed)
+    local ySpeed = memory.readbytesigned(RAM_ySpeed)
+    local xSubSpeed = memory.readbyte(RAM_xSubSpeed)
+    local xPos = memory.readwordsigned(RAM_xPos)
+    local yPos = memory.readwordsigned(RAM_yPos)
+    local xSubPos = memory.readbyte(RAM_xSubPos)
+    local ySubPos = memory.readbyte(RAM_ySubPos)
+    local facingDirection = memory.readbyte(RAM_facingDirection)
+    local flightAnimation = memory.readbyte(RAM_flightAnimation)
+    local capeSlowFallCount = memory.readbyte(RAM_capeSlowFallCount)
+    local capeSpinTimer = memory.readbyte(RAM_capeSpinTimer)
+    local bluePOW = memory.readbyte(RAM_bluePOW)
+    local grayPOW = memory.readbyte(RAM_grayPOW)
+    local multipleCoinBlockTimer = memory.readbyte(RAM_multipleCoinBlockTimer)
+    local directionalCoinTimer = memory.readbyte(RAM_directionalCoinTimer)
+    local pBalloonTimer = memory.readbyte(RAM_pBalloonTimer)
+    local pBalloonTimerAlt = memory.readbyte(RAM_pBalloonTimerAlt)
+    local ropeClimbingFlag = memory.readbyte(RAM_ropeClimbingFlag)
+
+    if ropeClimbingFlag == 8 then
+        gui.text(1, 2, string.format("rope flag: ON"))
+    end
+
+    function timerCountPlus()
+        timerCount = timerCount + 1
+    end
+
+    if multipleCoinBlockTimer ~= 0 then
+        gui.text(1, 128 - timerCount * 8, string.format("multiCoin: %d", multipleCoinBlockTimer))
+        timerCountPlus()
+    end
+
+    if grayPOW ~= 0 then
+        gui.text(1, 128 - timerCount * 8, string.format("grayPOW: %d", (grayPOW) * 4 - frameCountAlt % 4))
+        timerCountPlus()
+    end
+
+    if bluePOW ~= 0 then
+        gui.text(1, 128 - timerCount * 8, string.format("bluePOW: %d", (bluePOW) * 4 - frameCountAlt % 4))
+        timerCountPlus()
+    end
+
+    if directionalCoinTimer ~= 0 then
+        gui.text(1, 128 - timerCount * 8, string.format("dirCoin: %d", directionalCoinTimer * 4 - frameCount % 4))
+        timerCountPlus()
+    end
+
+    if starInvCount ~= 0 then
+        gui.text(1, 128 - timerCount * 8, string.format("star: %d", starInvCount * 4 - (frameCountAlt - 3) % 4))
+        timerCountPlus()
+    end
+
+    if hurtInvCount ~= 0 then
+        gui.text(1, 128 - timerCount * 8, string.format("invinc: %d", hurtInvCount))
+        timerCountPlus()
+    end
+
+    if pBalloonTimerAlt ~= 0 then
+        gui.text(1, 128 - timerCount * 8, string.format("P-balloon: %d", pBalloonTimer * 4 - frameCount % 4))
+        timerCountPlus()
+    end
+
+    if powerup == 2 then
+        gui.text(1, 128, string.format("%d, %d", capeSpinTimer, capeSlowFallCount))
+    end
+
+    if pMeter ~= 0 or takeOffMeter ~= 0 then
+        gui.text(1, 136, string.format("%d, %d", pMeter, takeOffMeter))
+    end
+
+    if flightAnimation == 0 then
+        gui.text(1, 144, string.format("%d", facingDirection))
+    else
+        gui.text(1, 144, string.format("%d, %d", facingDirection, flightAnimation))
+    end
+    
+    gui.text(1, 160, string.format("(%d.%02x, %d.%02x)", xPos, xSubPos, yPos, ySubPos))
+    gui.text(1, 168, string.format("(%d(%02x), %d)", xSpeed, xSubSpeed, ySpeed))
 end
 
 -- display some useful information
@@ -442,6 +556,9 @@ function smwDisplayInfo()
     end
     if showSpriteInfo then
         smwDrawSpriteInfo()
+    end
+    if showMainInfo then
+        smwDrawMainInfo()
     end
 end
 
