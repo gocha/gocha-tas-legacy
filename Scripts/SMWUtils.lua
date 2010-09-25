@@ -573,8 +573,6 @@ function smwDrawMainInfo()
     if not (smwGameMode == gameMode_level) then return end
 
     gui.opacity(guiOpacity)
-    local timerCount = 1
-
     local frameCount = memory.readbyte(RAM_frameCount)
     local frameCountAlt = memory.readbyte(RAM_frameCountAlt)
     local powerup = memory.readbyte(RAM_powerup)
@@ -602,13 +600,14 @@ function smwDrawMainInfo()
     local pBalloonTimer = memory.readbyte(RAM_pBalloonTimer)
     local pBalloonTimerAlt = memory.readbyte(RAM_pBalloonTimerAlt)
     local ropeClimbingFlag = memory.readbyte(RAM_ropeClimbingFlag)
+    
+    local timerCount = 1
+    function timerCountPlus()
+        timerCount = timerCount + 1
+    end
 
     if ropeClimbingFlag == 8 then
         gui.text(1, 2, string.format("rope flag: ON"))
-    end
-
-    function timerCountPlus()
-        timerCount = timerCount + 1
     end
 
     if multipleCoinBlockTimer ~= 0 then
@@ -659,9 +658,12 @@ function smwDrawMainInfo()
     else
         gui.text(1, 144, string.format("%d, %d", facingDirection, flightAnimation))
     end
-    
     gui.text(1, 160, string.format("(%d.%02x, %d.%02x)", xPos, xSubPos, yPos, ySubPos))
-    gui.text(1, 168, string.format("(%d(%02x), %d)", xSpeed, xSubSpeed, ySpeed))
+    if xSpeed >= 0 or xSubSpeed == 0 then
+        gui.text(1, 168, string.format("(%d(%d.%02x), %d)", xSpeed, xSpeed, xSubSpeed, ySpeed))
+    else
+        gui.text(1, 168, string.format("(%d(-%d.%02x), %d)", xSpeed, - xSpeed - 1, 0x100 - xSubSpeed, ySpeed))
+    end
 end
 
 -- display some useful information
