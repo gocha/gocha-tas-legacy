@@ -43,6 +43,7 @@ local guiOpacity = 0.8
 local showPMeter = false
 local showSpriteInfo = true
 local showMainInfo = true
+local showYoshiInfo = false
 
 -- << options end here
 
@@ -600,7 +601,9 @@ function smwDrawMainInfo()
     local pBalloonTimer = memory.readbyte(RAM_pBalloonTimer)
     local pBalloonTimerAlt = memory.readbyte(RAM_pBalloonTimerAlt)
     local ropeClimbingFlag = memory.readbyte(RAM_ropeClimbingFlag)
-    
+
+    local timerPosition = 128
+    if showYoshiInfo then timerPosition = 120 end
     local timerCount = 1
     function timerCountPlus()
         timerCount = timerCount + 1
@@ -611,37 +614,37 @@ function smwDrawMainInfo()
     end
 
     if multipleCoinBlockTimer ~= 0 then
-        gui.text(1, 128 - timerCount * 8, string.format("multiCoin: %d", multipleCoinBlockTimer))
+        gui.text(1, timerPosition - timerCount * 8, string.format("multiCoin: %d", multipleCoinBlockTimer))
         timerCountPlus()
     end
 
     if grayPOW ~= 0 then
-        gui.text(1, 128 - timerCount * 8, string.format("grayPOW: %d", grayPOW * 4 - frameCountAlt % 4))
+        gui.text(1, timerPosition - timerCount * 8, string.format("grayPOW: %d", grayPOW * 4 - frameCountAlt % 4))
         timerCountPlus()
     end
 
     if bluePOW ~= 0 then
-        gui.text(1, 128 - timerCount * 8, string.format("bluePOW: %d", bluePOW * 4 - frameCountAlt % 4))
+        gui.text(1, timerPosition - timerCount * 8, string.format("bluePOW: %d", bluePOW * 4 - frameCountAlt % 4))
         timerCountPlus()
     end
 
     if directionalCoinTimer ~= 0 then
-        gui.text(1, 128 - timerCount * 8, string.format("dirCoin: %d", directionalCoinTimer * 4 - frameCount % 4))
+        gui.text(1, timerPosition - timerCount * 8, string.format("dirCoin: %d", directionalCoinTimer * 4 - frameCount % 4))
         timerCountPlus()
     end
 
     if starInvCount ~= 0 then
-        gui.text(1, 128 - timerCount * 8, string.format("star: %d", starInvCount * 4 - (frameCountAlt - 3) % 4))
+        gui.text(1, timerPosition - timerCount * 8, string.format("star: %d", starInvCount * 4 - (frameCountAlt - 3) % 4))
         timerCountPlus()
     end
 
     if hurtInvCount ~= 0 then
-        gui.text(1, 128 - timerCount * 8, string.format("invinc: %d", hurtInvCount))
+        gui.text(1, timerPosition - timerCount * 8, string.format("invinc: %d", hurtInvCount))
         timerCountPlus()
     end
 
     if pBalloonTimerAlt ~= 0 then
-        gui.text(1, 128 - timerCount * 8, string.format("P-balloon: %d", pBalloonTimer * 4 - frameCount % 4))
+        gui.text(1, timerPosition - timerCount * 8, string.format("P-balloon: %d", pBalloonTimer * 4 - frameCount % 4))
         timerCountPlus()
     end
 
@@ -666,6 +669,33 @@ function smwDrawMainInfo()
     end
 end
 
+-- draw yoshi info on screen
+function smwDrawYoshiInfo()
+    if not (smwGameMode == gameMode_level) then return end
+
+    gui.opacity(guiOpacity)
+    local yoshiId = 0
+
+    -- search for yoshi's ID
+    while memory.readbyte(0x7e009e + yoshiId) ~= 53 do
+        yoshiId = yoshiId +1
+        if yoshiId >= 12 then return end
+    end
+
+    local yoshiStat = memory.readbyte(0x7e14c8 + yoshiId)
+    local spriteIdYoshiEat = memory.readbyte(0x7e160e + yoshiId)
+    local spriteTypeYoshiEat = memory.readbyte(0x009e + spriteIdYoshiEat)
+    local yoshiTongueLength = memory.readbyte(0x7e151c + yoshiId)
+    local yoshiTongueStopTimer = memory.readbyte(0x7e1558 + yoshiId)
+
+    local factor1 = spriteIdYoshiEat == 255 and "OFF" or string.format("#%02d", spriteIdYoshiEat)
+    local factor2 = spriteIdYoshiEat == 255 and "OFF" or spriteTypeYoshiEat
+
+    if yoshiStat ~= 0 then
+        gui.text(1, 120, string.format("%s, %s, %d, %d", factor1, factor2, yoshiTongueLength, yoshiTongueStopTimer, ppp))
+    end
+end
+
 -- display some useful information
 function smwDisplayInfo()
     if showPMeter then
@@ -676,6 +706,9 @@ function smwDisplayInfo()
     end
     if showMainInfo then
         smwDrawMainInfo()
+    end
+    if showYoshiInfo then
+        smwDrawYoshiInfo()
     end
 end
 
