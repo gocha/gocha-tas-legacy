@@ -571,7 +571,6 @@ function smwDrawSpriteInfo()
         end
     end
     gui.text(254-24, 2, string.format("SPR:%02d", spriteCount))
-    gui.text(2, 2, string.format("%d, %d", cameraX, cameraY))
 end
 
 -- draw main info on screen
