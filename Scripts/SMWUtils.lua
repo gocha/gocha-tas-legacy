@@ -43,7 +43,7 @@ local guiOpacity = 0.8
 local showPMeter = false
 local showSpriteInfo = true
 local showMainInfo = true
-local showYoshiInfo = false
+local showYoshiInfo = true
 
 -- << options end here
 
@@ -557,16 +557,21 @@ function smwDrawSpriteInfo()
         local ysub = memory.readbyte(0x7e14ec+id)
         local xspeed = memory.readbyte(0x7e00b6+id)
         local yspeed = memory.readbyte(0x7e00aa+id)
+        local hOffscreenAlt = (math.abs(cameraX - x + 112) > 176)
+        local vOffscreenAlt = (math.abs(cameraY - y + 88) > 208)
 
         if stat ~= 0 then -- not hOffscreen and not vOffscreen then
             local dispString = string.format("#%02d (%d.%02x, %d.%02x)", id, x, xsub, y, ysub)
             local colorString = colorTable[1 + id % #colorTable]
-            gui.text(x - cameraX, -8 + y - cameraY, string.format("#%02d", id), colorString)
+            if not vOffscreenAlt and not hOffscreenAlt then
+                gui.text(math.min(242, math.max(2, 2 + x - cameraX)), math.min(216, math.max(2, -8 + y - cameraY)), string.format("#%02d", id), colorString)
+            end
             gui.text(172, 36 + spriteCount * 8, dispString, colorString)
             spriteCount = spriteCount + 1
         end
     end
     gui.text(254-24, 2, string.format("SPR:%02d", spriteCount))
+    gui.text(2, 2, string.format("%d, %d", cameraX, cameraY))
 end
 
 -- draw main info on screen
@@ -662,11 +667,9 @@ function smwDrawMainInfo()
         gui.text(1, 144, string.format("%d, %d", facingDirection, flightAnimation))
     end
     gui.text(1, 160, string.format("(%d.%02x, %d.%02x)", xPos, xSubPos, yPos, ySubPos))
-    if xSpeed >= 0 or xSubSpeed == 0 then
-        gui.text(1, 168, string.format("(%d(%d.%02x), %d)", xSpeed, xSpeed, xSubSpeed, ySpeed))
-    else
-        gui.text(1, 168, string.format("(%d(-%d.%02x), %d)", xSpeed, - xSpeed - 1, 0x100 - xSubSpeed, ySpeed))
-    end
+    local xSpeedComposite = xSpeed + (xSubSpeed / 0x100)
+    local xSpeedInt, xSpeedFrac = math.modf(xSpeedComposite)
+    gui.text(1, 168, string.format("(%d(%.0f.%02x), %d)", xSpeed, xSpeedInt, math.abs(xSpeedFrac * 0x100), ySpeed))
 end
 
 -- draw yoshi info on screen
