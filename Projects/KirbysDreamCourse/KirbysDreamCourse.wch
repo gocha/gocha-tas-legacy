@@ -1,20 +1,23 @@
 
-18
+21
 00000	7E0086	w	s	0	Camera X
 00001	7E0088	w	s	0	Camera Y
-00002	7ED9D4	w	s	0	X velocity
-00003	7ED9D6	w	s	0	Y velocity
-00004	7ED9D8	w	s	0	Z velocity
-00005	7ED9DA	w	s	0	Direction
-00006	7ED9EC	w	u	0	Fly/Ground flag
-00007	7EDA78	b	u	0	Go For It cooldown time
-00008	7EDA7A	b	u	0	Go For It remaining time
-00009	7EDA04	b	h	0	Floor type now on
-0000A	7EDA0A	b	h	0	Object type now on
-0000B	7E6ADE	b	u	0	L/R hold amount
-0000C	7ED9B4	w	s	0	Selected direction
-0000D	7E6B3A	b	u	0	Selected power meter
-0000E	7E6B7E	w	h	0	Attraction of cup
-0000F	7E69DC	w	s	0	Waterjump left
-00010	7EED2D	b	u	0	Dedede HP
-00011	7E69C4	b	u	0	Dedede level
+00002	7ED9F0	d	h	0	X position
+00003	7ED9F4	d	h	0	Y position
+00004	7ED9F8	d	h	0	Z position
+00005	7ED9D4	w	s	0	X velocity
+00006	7ED9D6	w	s	0	Y velocity
+00007	7ED9D8	w	s	0	Z velocity
+00008	7ED9DA	w	s	0	Direction
+00009	7ED9EC	w	u	0	Fly/Ground flag
+0000A	7EDA78	b	u	0	Go For It cooldown time
+0000B	7EDA7A	b	u	0	Go For It remaining time
+0000C	7EDA04	b	h	0	Floor type now on
+0000D	7EDA0A	b	h	0	Object type now on
+0000E	7E6ADE	b	u	0	L/R hold amount
+0000F	7ED9B4	w	s	0	Selected direction
+00010	7E6B3A	b	u	0	Selected power meter
+00011	7E6B7E	w	h	0	Attraction of cup
+00012	7E69DC	w	s	0	Waterjump left
+00013	7EED2D	b	u	0	Dedede HP
+00014	7E69C4	b	u	0	Dedede level
