@@ -2,7 +2,7 @@
 9
 00000	02000468	d	s	0	X Velocity
 00001	0200046C	d	s	0	Y Velocity
-00002	02000470	d	s	0	Friction (whip launch velocity)
+00002	02000470	d	s	0	Deceleration (whip launch velocity)
 00003	02000008	d	h	0	Random Number
 00004	0200A444	d	h	0	Camera X Position
 00005	0200A448	d	h	0	Camera Y Position
