@@ -1,10 +1,11 @@
 
-8
+9
 00000	02000468	d	s	0	X Velocity
 00001	0200046C	d	s	0	Y Velocity
-00002	02000008	d	h	0	Random Number
-00003	0200A444	d	h	0	Camera X Position
-00004	0200A448	d	h	0	Camera Y Position
-00005	02000460	d	h	0	X Position (relative)
-00006	02000464	d	h	0	Y Position (relative)
-00007	02000458	w	u	0	Invulnerability
+00002	02000470	d	s	0	Friction (whip launch velocity)
+00003	02000008	d	h	0	Random Number
+00004	0200A444	d	h	0	Camera X Position
+00005	0200A448	d	h	0	Camera Y Position
+00006	02000460	d	h	0	X Position (relative)
+00007	02000464	d	h	0	Y Position (relative)
+00008	02000458	w	u	0	Invulnerability
