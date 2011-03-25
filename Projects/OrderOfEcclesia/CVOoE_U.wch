@@ -1,9 +1,9 @@
 
-20
+22
 00000	02109850	d	h	0	X position (next)
 00001	02109854	d	h	0	Y position (next)
-00002	0210985C	d	s	0	X velocity
-00003	02109860	d	s	0	Y velocity
+00002	0210985C	d	s	0	X velocity (basic)
+00003	02109860	d	s	0	Y velocity (basic)
 00004	02109868	d	s	0	Deceleration
 00005	02100374	d	u	0	Ingame frame
 00006	021002B4	w	u	0	Current HP value
@@ -18,5 +18,7 @@
 0000F	02128C32	w	h	0	Shanoa's hitbox right
 00010	02128C34	w	h	0	Shanoa's hitbox bottom
 00011	021389C0	d	h	0	Random Number
-00012	02109958	d	s	0	Magnes X velocity
-00013	0210995C	d	s	0	Magnes Y velocity
+00012	020FFF50	d	s	0	Magnes X velocity
+00013	020FFF54	d	s	0	Magnes Y Velocity
+00014	02109958	d	s	0	Total X velocity
+00015	0210995C	d	s	0	Total Y velocity
