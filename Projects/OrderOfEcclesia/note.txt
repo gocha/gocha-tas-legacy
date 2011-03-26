@@ -10,6 +10,8 @@ Our test run uses 0.9.6.
 
 == Methods of Move ==
 
+Note: Shanoa's maximum x/y speed is clipped at 28672 (7px/f)
+
 w/o inertia:
 * Rapidus+kick (jump 6,1): (6144+16384*8+28672*6)/15 = 20616.5333
 w/  inertia:
