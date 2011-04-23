@@ -89,5 +89,30 @@ gui.register(function()
 			local bottom = memory.readwordsigned(0x02128c34) - camy
 			gui.box(left, top, right, bottom, "clear", "#00ff00aa")
 		end
+
+		-- Glyph absorb timer
+		local absorbTimerStr = ""
+		for i = 0, 15 do
+			local baseaddr = 0x02101000 + (i * 0x100)
+			local timer = memory.readdwordsigned(baseaddr + 0x144)
+			if timer > 0 and (
+				memory.readdwordsigned(baseaddr + 0x38) == 0x10000 or
+				memory.readdwordsigned(baseaddr + 0x60) == 0x10000 or
+				memory.readdwordsigned(baseaddr + 0x88) == 0x10000 or
+				memory.readdwordsigned(baseaddr + 0xb0) == 0x10000 or
+				memory.readdwordsigned(baseaddr + 0xbc) == 0x10000 or
+				memory.readdwordsigned(baseaddr + 0xc4) == 0x10000 or
+				memory.readdwordsigned(baseaddr + 0xcc) == 0x10000 or
+				memory.readdwordsigned(baseaddr + 0xd4) == 0x10000 or
+				memory.readdwordsigned(baseaddr + 0xd8) == 0x10000 or
+				memory.readdwordsigned(baseaddr + 0xdc) == 0x10000
+			) then
+				-- absorbTimerStr = absorbTimerStr .. i .. ":"
+				absorbTimerStr = absorbTimerStr .. string.format("%05X", timer) .. " "
+			end
+		end
+		if absorbTimerStr ~= "" then
+			gui.text(1, 183, "(Glyph) " .. absorbTimerStr)
+		end
 	end
 end)

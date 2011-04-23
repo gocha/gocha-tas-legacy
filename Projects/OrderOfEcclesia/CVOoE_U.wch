@@ -1,5 +1,5 @@
 
-23
+25
 00000	02109850	d	h	0	X position (next)
 00001	02109854	d	h	0	Y position (next)
 00002	0210985C	d	s	0	X velocity (basic)
@@ -23,3 +23,5 @@
 00014	02109958	d	s	0	Total X velocity
 00015	0210995C	d	s	0	Total Y velocity
 00016	02109932	b	u	0	Double jump
+00017	0210983A	w	u	0	Glyph Absorb #1
+00018	0210983C	w	u	0	Glyph Absorb #2
