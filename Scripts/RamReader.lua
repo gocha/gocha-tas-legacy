@@ -11,7 +11,7 @@ end
 ----------------------------------------------------------
 local frame
 -- TODO: modify the file paths below
-local basedir = "C:/full_path_to/"
+local basedir = ""
 local frameDataPath = basedir.."framedata.txt"
 function importFrameData(path)
 	local file = io.open(path, "r")
@@ -38,6 +38,7 @@ function importFrameData(path)
 		frame[f].xv = file:read("*n")
 		frame[f].yv = file:read("*n")
 		frame[f].time = file:read("*n")
+		-- i = file:read("*n"); frame[f].A = ((i ~= 0) and true or false)
 
 		f = f + 1
 	end
