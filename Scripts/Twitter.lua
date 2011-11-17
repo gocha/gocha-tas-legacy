@@ -1,5 +1,5 @@
 local OAuth = require "OAuth" -- http://github.com/ignacio/LuaOAuth
-local Json = require "Json" -- http://www.chipmunkav.com/downloads/Json.lua
+local json = require "dkjson" -- http://chiselapp.com/user/dhkolf/repository/dkjson/home
 local ic = require "iconv"
 local consumer_key = "(set your app's consumer key, which is displayed in the detail page of your app)"
 local consumer_secret = "(set your app's consumer key secret, which is displayed in the detail page of your app)"
@@ -29,7 +29,7 @@ function Post(status)
 		client:PerformRequest("POST", "http://api.twitter.com/1/statuses/update.json", {status = ic.iconv(charToUTF8, status)})
 
 	if response_code >= 400 then -- client/server error?
-		local response_json = Json.Decode(response_body)
+		local response_json = json.decode(response_body)
 		print(response_status_line .. " - " .. ic.iconv(utf8ToChar, response_json.error))
 		--[[
 		print("response_code", response_code)
