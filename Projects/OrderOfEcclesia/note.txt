@@ -6,7 +6,7 @@ DO NOT ASK HOW TO DOWNLOAD THE ROM.
 
 To record a movie, you need to download DeSmuME first.
 http://tasvideos.org/forum/t/8008
-Our test run uses 0.9.6.
+Our test run uses 0.9.6/0.9.7
 
 == Methods of Move ==
 
