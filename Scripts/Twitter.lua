@@ -21,9 +21,9 @@ local client = OAuth.new(consumer_key, consumer_secret, {
 	OAuthToken = oauth_token,
 	OAuthTokenSecret = oauth_token_secret
 })
-
 local charToUTF8 = ic.open("utf-8", "char")
 local utf8ToChar = ic.open("char", "utf-8")
+
 function Post(status)
 	local response_code, response_headers, response_status_line, response_body = 
 		client:PerformRequest("POST", "http://api.twitter.com/1/statuses/update.json", {status = ic.iconv(charToUTF8, status)})
