@@ -8,7 +8,7 @@ local oauth_token_secret = "(set your oauth token secret, which is displayed aft
 
 local table, string, os, print = table, string, os, print
 local error, assert = error, assert
-local pairs, tostring, type, next, setmetatable = pairs, tostring, type, next, setmetatable
+local pairs, tostring, tonumber, type, next, setmetatable = pairs, tostring, tonumber, type, next, setmetatable
 local math = math
 
 module((...))
@@ -28,7 +28,7 @@ function Post(status)
 	local response_code, response_headers, response_status_line, response_body = 
 		client:PerformRequest("POST", "http://api.twitter.com/1/statuses/update.json", {status = ic.iconv(charToUTF8, status)})
 
-	if response_code >= 400 then -- client/server error?
+	if tonumber(response_code) >= 400 then -- client/server error (note that response_code can be string when the client machine is offline)
 		local response_json = json.decode(response_body)
 		print(response_status_line .. " - " .. ic.iconv(utf8ToChar, response_json.error))
 		--[[
