@@ -1,5 +1,5 @@
 
-23
+59
 00000	7E1C44	b	u	0	Room transition cooldown
 00001	7E197E	w	h	0	Door glitch status
 00002	7E0086	w	h	0	Random number
@@ -23,3 +23,39 @@
 00014	7E0512	b	h	0	2P invulnerable
 00015	7E04EC	b	u	0	2P mermaid dash timer
 00016	7E050E	b	s	0	2P subweapon charge
+00017	7E0042	w	h	0	RNG parameter #1
+00018	7E1C38	w	h	0	RNG parameter #2
+00019	s008EF	b	h	0	Ingame time (hours)
+0001A	s008EE	b	h	0	Ingame time (minutes)
+0001B	s008F1	b	u	0	Ingame time (seconds)
+0001C	s008F0	b	u	0	Ingame time (frames)
+0001D	7E008E	w	h	0	Room #
+0001E	7E00BA	b	u	0	Life
+0001F	7E00BE	w	h	0	Gold
+00020	s00296	b	h	0	Makimono
+00021	s002E2	w	h	0	Walker EN
+00022	7E00E4	w	u	0	Dialog flag
+00023	7E0076	w	u	0	Room transition flag
+00024	7E1662	w	h	0	Camera X (BG1 scroll X)
+00025	7E1672	w	h	0	Camera Y (BG1 scroll Y)
+00026	7E0408	w	h	0	1P X position
+00027	7E040C	w	h	0	1P Y position
+00028	7E0410	w	h	0	1P Z position
+00029	7E042A	w	s	0	1P Z speed
+0002A	7E0480	b	h	0	1P return position X
+0002B	7E0482	b	h	0	1P return position Y
+0002C	7E04BC	b	u	0	1P falldown counter X
+0002D	7E04BD	b	u	0	1P falldown counter Y
+0002E	7E0438	w	u	0	1P invulnerable flag
+0002F	7E0444	w	s	0	1P push counter
+00030	7E04C8	w	h	0	2P X position
+00031	7E04CC	w	h	0	2P Y position
+00032	7E04D0	w	h	0	2P Z position
+00033	7E04EA	w	s	0	2P Z speed
+00034	7E0540	b	h	0	2P return position X
+00035	7E0542	b	h	0	2P return position Y
+00036	7E057C	b	h	0	2P falldown counter X
+00037	7E057D	b	h	0	2P falldown counter Y
+00038	7E04F8	w	u	0	2P invulnerable flag
+00039	7E0502	w	s	0	2P push counter
+0003A	7E042C	b	s	0	Karakuri Walker jump timer
