@@ -53,7 +53,7 @@ gui.register(function()
 		return
 	end
 
-	gui.opacity(opacityScale * fadeLevel)
+	gui.opacity(opacityScale)
 	for player = 1, 2 do
 		local base = 0x7e0400 + ((player-1)*0xc0)
 		local lineofs = (player-1) * (1*gui.fontheight)
