@@ -43,6 +43,49 @@ local RAM = {
 	fadeLevel = 0x7e1fa0
 }
 
+local xposprev = { 0, 0 }
+local yposprev = { 0, 0 }
+local hudString = { "", "" }
+
+-- Set up saves
+savestate.registersave(function()
+	-- print("save", xposprev[1], yposprev[1], xposprev[2], yposprev[2])
+	return xposprev[1], yposprev[1], xposprev[2], yposprev[2]
+end)
+savestate.registerload(function(_,x1,y1,x2,y2)
+	xposprev[1] = x1
+	yposprev[1] = y1
+	xposprev[2] = x2
+	yposprev[2] = y2
+	-- print("load", xposprev[1], yposprev[1], xposprev[2], yposprev[2])
+end)
+
+emu.registerafter(function()
+	for player = 1, 2 do
+		local base = 0x7e0400 + ((player-1)*0xc0)
+		local lineofs = (player-1) * (1*gui.fontheight)
+		local xcam = bit.lshift(memory.readword(0x7e1662), 8)
+		local ycam = bit.lshift(memory.readword(0x7e1672), 8)
+		local x = xcam + memory.readword(base+0x08)
+		local y = ycam + memory.readword(base+0x0c)
+		local xret = xcam + bit.lshift(memory.readword(base+0x80), 8)
+		local yret = ycam + bit.lshift(memory.readword(base+0x82), 8)
+		local xposdiff = x - xposprev[player]
+		local yposdiff = y - yposprev[player]
+		local walkerjump = memory.readbyte(0x7e042c)
+
+		local dump = string.format("%dP: P(%06X,%06X) %4d,%4d", player, x, y, xposdiff, yposdiff)
+		if showReturnPos and xret >= xcam and xret < (xcam + 0x10000) and yret >= ycam and yret < (ycam + 0x10000) then
+			dump = dump .. string.format(" R(%06X,%06X)", xret, yret)
+		end
+		dump = dump .. string.format(" %d", walkerjump)
+		hudString[player] = dump
+
+		xposprev[player] = x
+		yposprev[player] = y
+	end
+end)
+
 gui.register(function()
 	local fadeLevel = memory.readbyte(RAM.fadeLevel)
 	if fadeLevel > 15 then fadeLevel = 0 end
@@ -55,20 +98,8 @@ gui.register(function()
 
 	gui.opacity(opacityScale)
 	for player = 1, 2 do
-		local base = 0x7e0400 + ((player-1)*0xc0)
 		local lineofs = (player-1) * (1*gui.fontheight)
-		local xcam = bit.lshift(memory.readword(0x7e1662), 8)
-		local ycam = bit.lshift(memory.readword(0x7e1672), 8)
-		local x = xcam + memory.readword(base+0x08)
-		local y = ycam + memory.readword(base+0x0c)
-		local xret = xcam + bit.lshift(memory.readword(base+0x80), 8)
-		local yret = ycam + bit.lshift(memory.readword(base+0x82), 8)
-
-		local dump = string.format("%dP: P(%06X,%06X)", player, x, y)
-		if showReturnPos and xret >= xcam and xret < (xcam + 0x10000) and yret >= ycam and yret < (ycam + 0x10000) then
-			dump = dump .. string.format(" R(%06X,%06X)", xret, yret)
-		end
-		gui.text(1, 163+lineofs, dump)
+		gui.text(1, 163+lineofs, hudString[player])
 	end
 end)
 
