@@ -1,6 +1,8 @@
 -- Ganbare Goemon 3 (J) Simple Memory Display for TAS work
 
 local showReturnPos = true
+local showPlayerStatus = true
+local showSpriteStatus = true
 
 local opacityScale = 0.61803
 local textcolor = "#ffffff"
@@ -53,10 +55,13 @@ savestate.registersave(function()
 	return xposprev[1], yposprev[1], xposprev[2], yposprev[2]
 end)
 savestate.registerload(function(_,x1,y1,x2,y2)
-	xposprev[1] = x1
-	yposprev[1] = y1
-	xposprev[2] = x2
-	yposprev[2] = y2
+	xposprev = { 0, 0 }
+	yposprev = { 0, 0 }
+
+	if x1 ~= nil then xposprev[1] = x1 end
+	if y1 ~= nil then yposprev[1] = y1 end
+	if x2 ~= nil then xposprev[2] = x2 end
+	if y2 ~= nil then yposprev[2] = y2 end
 	-- print("load", xposprev[1], yposprev[1], xposprev[2], yposprev[2])
 end)
 
@@ -97,9 +102,47 @@ gui.register(function()
 	end
 
 	gui.opacity(opacityScale)
-	for player = 1, 2 do
-		local lineofs = (player-1) * (1*gui.fontheight)
-		gui.text(1, 163+lineofs, hudString[player])
+	if showPlayerStatus then
+		for player = 1, 2 do
+			local lineofs = (player-1) * (1*gui.fontheight)
+			gui.text(1, 163+lineofs, hudString[player])
+		end
+	end
+
+	if showSpriteStatus then
+		for spriteId = 0, 63 do
+			local spriteBase = 0x7e0300 + (spriteId * 0x50)
+			if memory.readword(spriteBase) ~= 0 then
+				local spriteAttr = memory.readbyte(spriteBase + 0x04)
+				local spriteX = memory.readdword(spriteBase + 0x08)
+				local spriteY = memory.readdword(spriteBase + 0x0c)
+				local spriteZ = memory.readdword(spriteBase + 0x10)
+				local spriteFlag1 = memory.readbyte(spriteBase + 0x14) -- shadow size etc?
+				local spriteShadowOffset = memory.readbytesigned(spriteBase + 0x15)
+				local spriteTypeId = memory.readword(spriteBase + 0x18)
+				local spriteNextAddr = memory.readword(spriteBase + 0x16)
+				local spriteActionId = memory.readword(spriteBase + 0x1a)
+				local spriteTimer =  memory.readword(spriteBase + 0x20)
+				local spriteXVel = memory.readwordsigned(spriteBase + 0x26)
+				local spriteYVel = memory.readwordsigned(spriteBase + 0x28)
+				local spriteZVel = memory.readwordsigned(spriteBase + 0x2a)
+				local spriteHitboxW = memory.readword(spriteBase + 0x2e)
+				local spriteHitboxH = memory.readword(spriteBase + 0x30)
+				local spriteHitAttr = memory.readword(spriteBase + 0x34)
+				local spriteHP = memory.readbyte(spriteBase + 0x36)
+				local spriteInfoString = string.format("%02X($%04X)\n%03X/%04X/%d", spriteId, spriteBase % 65536, spriteTypeId, spriteHitAttr, spriteHP)
+
+				local x = math.floor(spriteX / 256)
+				local y = math.floor(spriteY / 256)
+				gui.text(x - (#spriteInfoString * 2), y, spriteInfoString)
+				if (x + spriteHitboxW) >= 0 and (y - spriteHitboxH) < 224 and spriteHitboxW <= 32 and spriteHitboxH <= 64 then
+					gui.box(x - spriteHitboxW, y - spriteHitboxH, x + spriteHitboxW, y)
+				else
+					-- hmmm...
+					-- print(string.format("%04X %04X", spriteHitboxW, spriteHitboxH))
+				end
+			end
+		end
 	end
 end)
 
