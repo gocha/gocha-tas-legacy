@@ -110,6 +110,18 @@ gui.register(function()
 	end
 
 	if showSpriteStatus then
+		for playerId = 0, 1 do
+			local playerBase = 0x7e0400 + (playerId * 0xc0)
+			local playerX = memory.readword(playerBase + 0x08)
+			local playerY = memory.readword(playerBase + 0x0c)
+			local playerHitboxW = memory.readword(playerBase + 0x2e)
+			local playerHitboxH = memory.readword(playerBase + 0x30)
+
+			local x = bit.rshift(playerX, 8)
+			local y = bit.rshift(playerY, 8)
+			gui.box(x - playerHitboxW, y - playerHitboxH, x + playerHitboxW, y, "#00000080", "#ff0000")
+		end
+
 		for spriteId = 0, 63 do
 			local spriteBase = 0x7e0300 + (spriteId * 0x50)
 			if memory.readword(spriteBase) ~= 0 then
@@ -132,8 +144,8 @@ gui.register(function()
 				local spriteHP = memory.readbyte(spriteBase + 0x36)
 				local spriteInfoString = string.format("%02X($%04X)\n%03X/%04X/%d", spriteId, spriteBase % 65536, spriteTypeId, spriteHitAttr, spriteHP)
 
-				local x = math.floor(spriteX / 256)
-				local y = math.floor(spriteY / 256)
+				local x = bit.rshift(spriteX, 8)
+				local y = bit.rshift(spriteY, 8)
 				gui.text(x - (#spriteInfoString * 2), y, spriteInfoString)
 				if (x + spriteHitboxW) >= 0 and (y - spriteHitboxH) < 224 and spriteHitboxW <= 32 and spriteHitboxH <= 64 then
 					gui.box(x - spriteHitboxW, y - spriteHitboxH, x + spriteHitboxW, y)
