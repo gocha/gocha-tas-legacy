@@ -2,7 +2,8 @@
 
 local showReturnPos = true
 local showPlayerStatus = true
-local showSpriteStatus = true
+local showSpriteStatus = false
+local showFireworksInfo = true
 
 local opacityScale = 0.61803
 local textcolor = "#ffffff"
@@ -100,6 +101,8 @@ gui.register(function()
 	if gameState == 2 or gameState == 4 then
 		return
 	end
+	
+	local room = memory.readword(0x7e008e)
 
 	gui.opacity(opacityScale)
 	if showPlayerStatus then
@@ -155,6 +158,43 @@ gui.register(function()
 				end
 			end
 		end
+	end
+
+	local fwNum = memory.readbyte(0x7e0cae)
+	local fwFiredNum = memory.readbyte(0x7e0c9a)
+	if showFireworksInfo and room == 0x0170 and fwNum > 0 then
+		local fireworks = {}
+		for fwIndex = 0, fwNum - 1 do
+			local base = 0x7e0ca0 + (fwIndex * 0x50)
+			local index = memory.readbyte(base + 0x4a)
+			fireworks[index + 1] = {}
+			fireworks[index + 1].x = memory.readbyte(base + 0x19)
+			fireworks[index + 1].y = memory.readbyte(base + 0x1d)
+			fireworks[index + 1].index = fwIndex + 1
+		end
+
+		local disciple = { x = 192, y = 92 }
+		local score = 0 -- smaller score is better
+		for fwIndex = 1, #fireworks do
+			if fwIndex == 1 then
+				score = score + math.abs(fireworks[fwIndex].x - disciple.x) + math.abs(fireworks[fwIndex].y - disciple.y)
+			else
+				score = score + math.abs(fireworks[fwIndex].x - fireworks[fwIndex - 1].x) + math.abs(fireworks[fwIndex].y - fireworks[fwIndex - 1].y)
+			end
+		end
+		score = score + math.abs(disciple.x - fireworks[#fireworks].x) + math.abs(disciple.y - fireworks[#fireworks].y)
+
+		for fwIndex = 1, #fireworks do
+			local x = fireworks[fwIndex].x
+			local y = fireworks[fwIndex].y
+			local text = string.format("%d", fwIndex)
+			local color, borderColor = "#cccccce0", "#333333e0"
+			if fwIndex == (fwFiredNum + 1) then
+				color, borderColor = "#ffffff", "#000000"
+			end
+			gui.text(x - (#text * 2) + 1, y - 18, text, color, borderColor)
+		end
+		gui.text(184, 36, string.format("%04d", score))
 	end
 end)
 
