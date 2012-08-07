@@ -1,0 +1,1804 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<title>Gens Lua Documentation 日本語訳</title>
+<style type="text/css">
+body { color: #000000 ; background-color: #FFFFFF ; font-family: 'Meiryo', sans-serif ; text-align: justify ; margin-right: 20px ; margin-left: 20px ; line-height: 168%; }
+h1, h2, h3, h4 { font-weight: bold /*normal*/ ; /* font-style: italic ; */ }
+a:link { color: #000080 ; text-decoration: none ; }
+a:visited { text-decoration: none ; }
+a:link:hover, a:visited:hover { color: #000080 ; background-color: #E0E0FF ; }
+a:link:active, a:visited:active { color: #FF0000 ; }
+hr { border: 0 ; height: 1px ; color: #a0a0a0 ; background-color: #a0a0a0 ; }
+pre { font-size: 93% ; line-height: 120%; }
+span.apii { float: right ; }
+ul { list-style-type: none ; list-style-position: outside ; }
+.translatorsNote { color: #003300 ; }
+p.translatorsNote, div.translatorsNote { background: #E8FFFF ; border: 1px solid #B0E0E6 ; padding: 0.3em ; }
+div.translatorsNote p:first-child { margin-top: 0; }
+div.translatorsNote p:last-child { margin-bottom: 0; }
+</style>
+</head><body>
+
+<h1>Gens Lua Documentation 日本語訳</h1>
+
+<h2 id="TOC">目次</h2>
+
+<ul style="padding: 0">
+<li><a href="#translationinfo">日本語訳について</a></li>
+
+<li><a href="#intro">はじめに</a></li>
+
+<li><a href="#techniques">テクニカルQ&amp;A</a>
+<ul>
+<li><a href="#gettingstarted">GensでLuaスクリプトを動作させるには？</a></li>
+<li><a href="#editingscripts">GensでLuaスクリプトを編集するには？</a></li>
+<li><a href="#multiframe">スクリプトを1フレーム以上動作させるには？</a></li>
+<li><a href="#makeitstop">スクリプトが自らを強制的に停止させるには？</a></li>
+<li><a href="#interactivepause">ポーズ中にGUIを更新するには？</a></li>
+<li><a href="#multiscript">スクリプトは相互間でどう影響するのか？</a></li>
+</ul></li>
+
+<li><a href="#Global_Functions">グローバル関数</a>
+<ul>
+<table width="45%">
+<tr valign="top">
+<td>
+<li><a href="#AND">AND</a></li>
+<li><a href="#OR">OR</a></li>
+<li><a href="#XOR">XOR</a></li>
+<li><a href="#SHIFT">SHIFT</a></li>
+<li><a href="#BIT">BIT</a></li>
+</td>
+<td>
+<li><a href="#print">print</a></li>
+<li><a href="#tostring">tostring</a></li>
+<li><a href="#addressof">addressof</a></li>
+<li><a href="#copytable">copytable</a></li>
+</td>
+</tr>
+</table>
+</ul></li>
+
+<li><a href="#gens">gensライブラリ</a>
+<ul>
+<table width="100%">
+<tr valign="top">
+<td>
+<li><a href="#gens.framecount">framecount</a></li>
+<li><a href="#gens.lagcount">lagcount</a></li>
+<li><a href="#gens.lagged">lagged</a></li>
+<li><a href="#gens.emulating">emulating</a></li>
+<li><a href="#gens.speedmode">speedmode</a></li>
+</td>
+<td>
+<li><a href="#gens.frameadvance">frameadvance</a></li>
+<li><a href="#gens.pause">pause</a></li>
+<li><a href="#gens.wait">wait</a></li>
+<li><a href="#gens.redraw">redraw</a></li>
+<li><a href="#gens.message">message</a></li>
+</td>
+<td>
+<li><a href="#gens.persistglobalvariables">persistglobalvariables</a></li>
+<li><a href="#gens.registerbefore">registerbefore</a></li>
+<li><a href="#gens.registerafter">registerafter</a></li>
+<li><a href="#gens.registerexit">registerexit</a></li>
+<li><a href="#gens.registerstart">registerstart</a></li>
+</td>
+<td>
+<li><a href="#gens.atframeboundary">atframeboundary</a></li>
+<li><a href="#gens.emulateframe">emulateframe</a></li>
+<li><a href="#gens.emulateframefast">emulateframefast</a></li>
+<li><a href="#gens.emulateframeinvisible">emulateframeinvisible</a></li>
+<li><a href="#gens.openscript">openscript</a></li>
+<li><a href="#gens.loadrom">loadrom</a></li>
+</td>
+</tr>
+</table>
+</ul></li>
+
+<li><a href="#savestate">savestateライブラリ</a>
+<ul>
+<table width="49%">
+<tr valign="top">
+<td>
+<li><a href="#savestate.save">save</a></li>
+<li><a href="#savestate.savescriptdata">savescriptdata</a></li>
+<li><a href="#savestate.registersave">registersave</a></li>
+</td>
+<td>
+<li><a href="#savestate.load">load</a></li>
+<li><a href="#savestate.loadscriptdata">loadscriptdata</a></li>
+<li><a href="#savestate.registerload">registerload</a></li>
+</td>
+<td>
+<li><a href="#savestate.create">create</a></li>
+</td>
+</tr>
+</table>
+</ul></li>
+
+<li><a href="#memory">memoryライブラリ</a>
+<ul>
+<table width="60%">
+<tr valign="top">
+<td>
+<li><a href="#memory.readbyte">readbyte</a></li>
+<li><a href="#memory.readbytesigned">readbytesigned</a></li>
+<li><a href="#memory.writebyte">writebyte</a></li>
+<li><a href="#memory.isvalid">isvalid</a></li>
+<li><a href="#memory.registerexec">registerexec</a></li>
+<li><a href="#memory.readbyterange">readbyterange</a></li>
+</td>
+<td>
+<li><a href="#memory.readword">readword</a></li>
+<li><a href="#memory.readwordsigned">readwordsigned</a></li>
+<li><a href="#memory.writeword">writeword</a></li>
+<li><a href="#memory.getregister">getregister</a></li>
+<li><a href="#memory.registerread">registerread</a></li>
+</td>
+<td>
+<li><a href="#memory.readlong">readlong</a></li>
+<li><a href="#memory.readlongsigned">readlongsigned</a></li>
+<li><a href="#memory.writelong">writelong</a></li>
+<li><a href="#memory.setregister">setregister</a></li>
+<li><a href="#memory.register">register</a></li>
+</td>
+</tr>
+</table>
+</ul></li>
+
+<li><a href="#gui">guiライブラリ</a>
+<ul>
+<table width="56%">
+<tr valign="top">
+<td>
+<li><a href="#gui.register">register</a></li>
+<li><a href="#gui.text">text</a></li>
+<li><a href="#gui.parsecolor">parsecolor</a></li>
+<li><a href="#gui.gdoverlay">gdoverlay</a></li>
+</td>
+<td>
+<li>&nbsp;</li>
+<li><a href="#gui.box">box</a></li>
+<li><a href="#gui.opacity">opacity</a></li>
+<li><a href="#gui.gdscreenshot">gdscreenshot</a></li>
+</td>
+<td>
+<li>&nbsp;</li>
+<li><a href="#gui.line">line</a></li>
+<li><a href="#gui.transparency">transparency</a></li>
+</td>
+<td>
+<li><a href="#gui.getpixel">getpixel</a></li>
+<li><a href="#gui.pixel">pixel</a></li>
+<li><a href="#gui.popup">popup</a></li>
+</td>
+</tr>
+</table>
+</ul></li>
+
+
+<li><a href="#joypad">joypadライブラリ</a>
+<ul>
+<table width="49%">
+<tr valign="top">
+<td>
+<li><a href="#joypad.get">get</a></li>
+<li><a href="#joypad.getdown">getdown</a></li>
+<li><a href="#joypad.getup">getup</a></li>
+</td>
+<td>
+<li><a href="#joypad.peek">peek</a></li>
+<li><a href="#joypad.peekdown">peekdown</a></li>
+<li><a href="#joypad.peekup">peekup</a></li>
+</td>
+<td>
+<li><a href="#joypad.set">set</a></li>
+</td>
+</tr>
+</table>
+</ul></li>
+
+
+<li><a href="#input">inputライブラリ</a>
+<ul>
+<table width="95%">
+<tr valign="top">
+<td>
+<li><a href="#input.get">get</a></li>
+</td>
+<td>
+<li><a href="#input.registerhotkey">registerhotkey</a></li>
+</td>
+</tr>
+</table>
+</ul></li>
+
+
+<li><a href="#movie">movieライブラリ</a>
+<ul>
+<table width="100%">
+<tr valign="top">
+<td>
+<li><a href="#movie.active">active</a></li>
+<li><a href="#movie.recording">recording</a></li>
+<li><a href="#movie.playing">playing</a></li>
+<li><a href="#movie.mode">mode</a></li>
+</td>
+<td>
+<li><a href="#movie.length">length</a></li>
+<li><a href="#movie.name">name</a></li>
+<li><a href="#movie.rerecordcount">rerecordcount</a></li>
+<li><a href="#movie.setrerecordcount">setrerecordcount</a></li>
+</td>
+<td>
+<li><a href="#movie.rerecordcounting">rerecordcounting</a></li>
+<li><a href="#movie.readonly">readonly</a></li>
+<li><a href="#movie.setreadonly">setreadonly</a></li>
+<li><a href="#movie.framecount">framecount</a></li>
+</td>
+<td>
+<li><a href="#movie.play">play</a></li>
+<li><a href="#movie.replay">replay</a></li>
+<li><a href="#movie.stop">stop</a></li>
+</td>
+</tr>
+</table>
+</ul></li>
+
+
+<li><a href="#sound">soundライブラリ</a>
+<ul>
+<table width="100%">
+<tr valign="top">
+<td>
+<li><a href="#sound.clear">clear</a></li>
+</td>
+</tr>
+</table>
+</ul></li>
+
+
+</ul>
+
+<h2 id="translationinfo">日本語訳について</h2>
+
+<p>
+この文書は、<a href="http://code.google.com/p/gens-rerecording/downloads/detail?name=Gens11_Lua_Docs.zip">Gens Rerecording 11 Lua Documentation</a>の内容を<a title="gochaism - Project Hosting on Google Code" href="http://code.google.com/u/gochaism/">gocha</a>が非公式に日本語へと翻訳したものです。最新の情報は<a title="Google Code - Gens Rerecording" href="http://code.google.com/p/gens-rerecording/">Gens Rerecording プロジェクト</a>をご覧ください。
+</p>
+
+<p>
+各エミュレータの実装状況はそれぞれに異なっており、次々に実装が変化する状況下でドキュメントも十分でない状態です。ですがその目指すところの多くはGensの持つ実装であり、Gensのリファレンスに目を通すことは十分に意味があると言えます。ドキュメント不備のエミュレータがどのような関数を持っているかは、ソースコード中の lua-engine.cpp（またはそれに類似した名前のファイル）に書かれている配列を見ることで参照できます。
+</p>
+
+<p>
+この翻訳ではマニュアルの翻訳であることを意識し、原文の表現を簡素化および変更している箇所が随所にあります。また一部、最新のバージョンや他のエミュレータとの互換性を意識した訳者注を記しました。誤訳や過剰な省略への指摘は歓迎します。
+</p>
+
+<h2 id="intro">はじめに</h2>
+
+<p>
+GensではLuaスクリプトを動作させることができます。スクリプトを書くことでエミュレータの機能を拡張することができます。Luaのデフォルトライブラリで提供される関数に加え、GensはLuaから呼び出すことができるさらなる関数を提供します。これはスクリプトを書くほとんどの場合に必要です。この文書では、これらの便利な関数の実態と利用方法を示します。Luaそのものに関する一般的なヘルプは、<a href="http://sugarpot.sakura.ne.jp/yuno/html/lua51_manual_ja.html">Lua 5.1 リファレンスマニュアル</a><span class="translatorsNote">（訳者注: 非公式日本語版。リファレンスマニュアルは入門向けではありませんので、初めてであれば初学者向けの講座形式のサイトや書籍も併せて見るとよいでしょう。例: <a href="http://karetta.jp/book-cover/lua">Karetta|Luaプログラミング入門</a>）</span>をご覧ください。
+</p>
+
+<h2 id="techniques">テクニカルQ&amp;A</h2>
+
+<h3 id="gettingstarted">GensでLuaスクリプトを動作させるには？</h3>
+
+<p>
+まず、メニューから「Tools → Lua Scripting → New Lua Script Window...」と選択します。ウィンドウが開きますので、Browseをクリックして .lua ファイルを選択してください。これだけで、スクリプトは自動的に開始されます。
+</p>
+
+<p>
+（より簡単な方法はGensのメインウィンドウに .lua ファイルをドラッグアンドドロップすることです）
+</p>
+
+<p>
+Gens は最近読み込まれたスクリプトの一覧を、メニュー「Tools → Lua Scripting」に保持しています。これをメニューから選択するか、あるいは最近使ったスクリプトを読み込むショートカットキー<span class="translatorsNote">（訳者注: hotkey）</span>を割り当てておくことで、あとから再度スクリプトを読み込むことができます。新しいスクリプトを使い始めるのでなければ、わざわざ「New Lua Script Window」を選ぶ必要はありません。
+</p>
+
+<h3 id="editingscripts">GensでLuaスクリプトを編集するには？</h3>
+
+<p>
+GensそのものはLuaスクリプトを編集することができません。Luaスクリプトを編集するには、外部のテキストエディタでファイルを開かなければなりません。エディタの関連づけがなされていれば、Gensでは「Edit」ボタンをクリックすることで、手早くスクリプトの編集を開始できます。
+</p>
+
+<div class="translatorsNote">
+<p>訳者注: Gens11の「Edit」ボタンの実装では、スクリプトファイルを "open" アクションで開くような実装がなされていました。関連づけされていない場合にファイルが開けないのはもちろん、<a title="Lua for Windows: A batteries included Lua installation on Windows." href="http://luaforwindows.luaforge.net/">Lua for Windows</a>で一般のLua環境をインストールしていた場合、エディタを開かずスクリプトの実行を試みるため編集できませんました。最新の実装では "edit", "open" の順でファイルへのアクセスを試み、どちらも失敗した場合には「メモ帳」で開くような実装になっているため、このような問題はありません。よって「Edit」ボタンでスクリプトが編集できないようであれば、"open" で編集できるような関連づけをするか、手動でスクリプトを開くかで対処してください。</p>
+</div>
+
+<p>
+テキストエディタが準備済みではない場合: まず、使用するエディタを決めてください。これは個人の好みで結構ですが、すでに開いているファイルを複数個開かないような賢いエディタをおすすめします。そうでないと、複数のエディタで同じファイルを開いてしまい、誤った上書き操作で作業内容を失ってしまう可能性があります。たとえば、Notepad++やNotepad2（「Single File Instance」オプションがオンの場合）などは妥当な選択ですが、通常の「メモ帳」は多重オープン抑止機能を持たないので避けるべきです。使用するエディタを決めたら、それを .lua ファイルに関連づけします。Windowsで関連づけをおこなう一つの方法を示します。関連づけされていない .lua ファイルを開いて、現れるウィンドウから「一覧からプログラムを選択する」を選びOKを押します。使用したいプログラムを一覧または参照から選び、「この種類のファイルを開くときは、選択したプログラムをいつも使う」にチェックを入れてOKを押しましょう。
+</p>
+
+<p>
+Gensによって開かれた状態でLuaファイルが編集された場合、Gensはファイルへの変更を自動的に反映しようとします。具体的には、スクリプトファイルが保存されるたびに、瞬時にスクリプトの再読み込みと再実行をおこないます。編集が<a href="#gui">GUI</a>の描写や<a href="#print">コンソールへの出力</a>に関わるものであれば、多くの場合、Gensのウィンドウへの切り替えを必要とすることさえなく、編集結果を目にすることができるはずです（使用中のテキストエディタがエミュレータの画面を覆い尽くしてはいないものとします）。ただし、編集しているスクリプトの内容によっては、エミュレータがバックグラウンドで<b>非ポーズ状態</b>であることを確認する必要があるかもしれません（そのためにはGeneral Option中の「Auto Pause」が無効にされている必要があります）。再読み込みで初期化されたくない変数がスクリプト中に含まれている場合、<a href="#gens.persistglobalvariables">gens.persistglobalvariables</a>を使って再実行時の初期化を防ぐことができます。
+</p>
+
+<h3 id="multiframe">スクリプトを1フレーム以上動作させるには？</h3>
+
+<p>
+Luaのコードを動作させるとき、Gensは一時的にその実行を停止してからすべてのコードを実行し、そしてエミュレーションを再開します。これらはすべて1フレームの間におこなわれます。しかしながら、通常多くの人々が望むのは、多数のフレームをエミュレーションと並行して動作できるスクリプトでしょう。これを実現する方法はいくつか存在します。
+</p>
+
+<p>
+一つの方法は、スクリプトの実行中にエミュレータのメインループを実行できる「フレームアドバンス<span class="translatorsNote">（訳者注: frame advance; コマ送り）</span>のループ」を書くことでしょう。
+</p>
+
+<div class="translatorsNote">
+<p>訳者注: 最新のバージョンではエミュレータの固有名（<code>gens</code>）の代わりに<code>emu</code>という名前を使うことが推奨されます。これに関する詳細は<a href="#gens">gensライブラリ</a>の項で述べます。</p>
+</div>
+
+<hr />
+
+<pre><code>-- 必要であれば、ここに初期化コードを書いてください
+
+while true do
+  -- ここに毎フレーム実行されるコードを書いてください（完了したら繰り返しを止める）
+  <a href="#gens.frameadvance">gens.frameadvance</a>() -- これによってGensが次のフレームへと進みます
+end
+
+-- 必要であれば、ここに終了処理を書いてください</code></pre>
+
+<hr />
+
+<p>
+この種のスクリプトはbotを作るのに適しており、また最も簡単に動作させることができるのですが、いくつかの欠点があります。具体的には、同種の他のスクリプトと安全に共存することができません（両方のコードがメインループを支配下に置こうとするため、どちらか一方しか動作することができません）。また、gens.frameadvance() の作用により、呼び出されるGUI描画関数は1フレーム遅れます。
+</p>
+
+<p id="multiframeadvice">
+Gensにコードを呼び出すタイミングを伝えつつ、メインループ制御下から動作させる別の方法を以下に示します。
+</p>
+
+<hr />
+
+<pre><code>-- 必要であれば、ここに初期化コードを書いてください
+
+<a href="#gui.register">gui.register</a>( function()
+  -- ここに必要な描画コードを書いてください
+end)
+
+<a href="#gens.registerbefore">gens.registerbefore</a>( function()
+  -- ここにフレーム処理の直前に実行させたい処理を書いてください
+  -- （次フレームでの入力の取得・設定、<a href="#memory.writebyte">メモリへの書き込み</a>など）
+end)
+
+<a href="#gens.registerafter">gens.registerafter</a>( function()
+  -- ここにフレーム処理の直後に実行させたい処理を書いてください
+  -- （直前のフレームでの入力の取得、<a href="#memory.readbyte">メモリの読み込み</a>など）
+end)
+
+<a href="#gens.registerexit">gens.registerexit</a>( function()
+  -- 必要であれば、ここに終了処理を書いてください
+end)</code></pre>
+
+<hr />
+
+<p>
+この種のスクリプトは画面上への情報の表示、ゲームの解析・部分的な改変などに適しています。また、他のスクリプトと並行して動作させることも簡単です。一見、先ほどの例よりも複雑なように思えますが、各セクションは必須ではありませんし、じつはこちらの方がより簡潔になることが多いです。この方法の不利な点は、フレーム中のタイミングをより詳細に制御できるようになる反面、フレーム中の全体的な処理を把握することが難しくなることです。botの作成には不向きだと言えるでしょう。
+</p>
+
+<p>
+上記の例を組み合わせた方法を用いることもできます。たとえば、一方でbotを動作させ、一方で画面に進捗状況を表示させたいような場合、次のように書くことができます。
+</p>
+
+<hr />
+
+<pre><code><a href="#gui.register">gui.register</a>( function ()
+  -- ここにbotの進捗状況を描くコードを書いてください
+end)
+
+while true do
+  -- ここに毎フレームのbotの動作を書いてください（完了したら繰り返しを止める）
+  <a href="#gens.frameadvance">gens.frameadvance</a>()
+end</code></pre>
+
+<hr />
+
+<p>
+ちなみに、Luaにおけるループを抜けるための命令は<code>break</code>です。
+</p>
+
+<h3 id="makeitstop">スクリプトが自らを強制的に停止させるには？</h3>
+
+<p>
+Gensではスクリプトが<code>return</code>（あるいは終端に到達）しても、その動作は必ずしも停止しません。コールバック関数が登録されている場合があるからです。登録されたコールバック関数がある限り、Gensはそれらのコールバック関数を呼び出し続け、スクリプトを適切に動作させます。たいていこれは望みどおりの挙動でしょう。しかし、一定の条件下で本当にスクリプトを終了させたいとしたらどうでしょうか。Gensは実行を中止するための関数をとくに提供していません。その理由は、Luaのデフォルトライブラリには少なくとも一つ、そのための非常に優秀で簡潔な機構がすでに存在しているからです。
+</p>
+
+<pre>error("～を理由にスクリプトは停止しました")</pre>
+
+<p>
+もう一つの方法は、すべてのコールバック関数の登録を解除してから<code>return</code>することです。ただ、スクリプトは手動で停止（「Stop」ボタンをクリック、あるいはエミュレータを閉じる）することもできるため、どちらも必要としないことも多いです。
+</p>
+
+<h3 id="interactivepause">ポーズ中にGUIを更新するには？</h3>
+
+<p>
+<code><a href="#gens.pause">gens.pause</a></code>ではエミュレーションとスクリプトの両方が止まってしまいます。では、エミュレーションのみを中断して、スクリプトの実行と画面の更新を続けるにはどうすればよいでしょうか。例を挙げると、エミュレーションを一時的に停止させて画面上にオプションを表示、ユーザがその一つをクリックしたらエミュレーションを再開するような場合です。Gensでは、画面を更新しながらもエミュレーションの状態を進めないような「フレームアドバンスのループ」の応用でこれを実現することができます。
+</p>
+
+<hr />
+
+<pre><code>while true do
+  -- ここに繰り返しごとに実行されるコードを書いてください（完了したら繰り返しを止める）
+  <a href="#gens.redraw">gens.redraw</a>()
+  <a href="#gens.wait">gens.wait</a>()
+end</code></pre>
+
+<hr />
+
+<p>
+<a href="#gui.register"><code>gui.register</code></a>のコールバック中での使用をおすすめしますが、必須ではありません。また、この方法はフレームを進めることがないので、エミュレーション開始前であっても動作します。
+</p>
+
+<h3 id="multiscript">スクリプトは相互間でどう影響するのか？</h3>
+
+<p>
+Gensでは複数のLuaスクリプトを同時に実行することができます。スクリプトは独立して動作するので、異なったふるまいをする別々のスクリプトを、特別な修正なしにつなぎ合わせることができます。
+</p>
+
+<p>
+ただしいくつかの制限があります。最も重要なことは、フレームアドバンスのループを支配下におけるスクリプトは一つだけだということです。これを正常に取り扱うためのアドバイスは<a href="#multiframeadvice">「スクリプトを1フレーム以上動作させるには？」の二つ目のコード</a>をご覧ください。同時実行を試みるスクリプトが適切に書かれているのであれば、この制限の実質的な意味は「複数のbotを同時に動かすことはできない」ということに落ち着きます（実際に動作を試してみると、おそらくは一方が他方の完了を待つ形になるでしょう）。
+</p>
+
+<p>
+ほとんどの場合、同時実行されるスクリプトは完全に独立して動作します。各スクリプトは個別に動作するので、互いに影響を及ぼすことはありません。具体的には、スクリプトをまたいでグローバル変数を覗いたり、変化させたりすることはできません。加えて、各スクリプトはそれぞれに登録されたコールバック関数を保持します。その他、描画の透明度情報などの、スクリプトから変更可能な多数の状態も個別に保持されます。
+</p>
+
+<p>
+同じ種類のコールバックが複数のスクリプトによって登録された場合、エミュレータはそれらを順番に呼び出します。呼び出しの順序はスクリプトの開始順に基づきます。多くの場合において順序は重要ではありません。何らかの理由でスクリプトから順序を制御したい場合、<a href="#gens.openscript">gens.openscript</a>を用いることで、スクリプトを特定の順番で開始することができます。
+</p>
+
+<p>
+個別に動作するスクリプトが間接的に互いに影響を及ぼす方法としては、ファイル操作あるいはエミュレーション状態の変更が考えられます。どちらも（望まない場合も含めて）相互作用を起こす可能性のある手段です。番号つきステートの利用が「ファイル操作」に含まれることに注意が必要です。そのため、スクリプトでは可能な限り匿名の（メモリに格納される）ステートを利用することが推奨されます。もちろん、あらゆるステートの読み込みは「エミュレーション状態の変更」に含まれます。
+</p>
+
+<h2 id="Global_Functions">グローバル関数</h2>
+
+<p>
+どのライブラリにも含まれない、若干の追加関数群です。
+</p>
+
+<div class="translatorsNote">
+<p>訳者注: Luaのランタイムがビット演算機能を提供していないため、Gensでは<code>AND</code>や<code>OR</code>といった名前のビット演算関数が提供されています。後のバージョンではこれを強化する形で<a title="Lua Bit Operations Module" href="http://bitop.luajit.org/">LuaBitOp</a>が内包されるようになりました。Lua 5.2ではビット演算のための関数群が提供されるようなので、将来的にはそれらを利用するのが最も望ましいと言えるかもしれません（詳細は lbitlib.c などを参照）。</p>
+</div>
+
+<hr />
+
+<h3 id="print">print (...)</h3>
+
+<p>
+あらゆる値を表示します。主にデバッグを支援します。デフォルトの実装と違い、テーブルの内容を表示することもできます。また、値は標準出力ではなくスクリプトの出力ウィンドウに出力されます。メモリアドレスを出力する場合、<code>print(address)</code> の代わりに <code>print(</code><a href="http://www.lua.org/manual/5.1/manual.html#pdf-string.format"><code>string.format</code></a><code>("0x%X",address))</code> とすべきことに注意してください。
+</p>
+
+<p>
+この関数はテキストをゲーム画面上に表示させるためのものではありません（<code><a href="#gui.text">gui.text</a></code>や<code><a href="#gens.message">gens.message</a></code>をご覧ください）。<code>print</code>の動作は<code>gui.text</code>に比べてはるかに遅いので、毎フレーム情報を表示させる目的には<code>gui.text</code>の方が適しています。
+</p>
+
+<p>
+<code>print</code>はLuaの状態を観測することを簡単にします。たとえば、グローバル変数のテーブルを丸ごと表示したり（ <code>print(_G)</code> ）、特定のライブラリが定義する関数の一覧を表示させたり（ <code>print(<a href="#gens">gens</a>)</code> ）することができます。<code>_G</code>以上に完全なテーブルとして、<code>print(debug.getregistry())</code> を使うこともできます。テーブルの表示において、内容表示ではなく旧来のID表示が必要な場合、<code><a href="#addressof">addressof</a>(table)</code> で表示させることができます。<code>print</code>の書式をカスタマイズしたい場合は、<code><a href="#tostring">tostring</a></code>にも目を通すとよいでしょう。
+</p>
+
+<hr />
+
+<h3 id="AND">AND (...)</h3>
+
+<div class="translatorsNote">
+<p>訳者注: <a title="Lua Bit Operations Module" href="http://bitop.luajit.org/">LuaBitOp</a>では、<code>bit.band</code>にあたります。</p>
+</div>
+
+<p>
+すべての引数のビット積を返します。0個以上の引数（整数扱い）を指定することができます。演算結果の各ビットは、<b>すべて</b>の入力が1の場合に1、その他の場合に0となります。
+</p>
+
+<hr />
+
+<h3 id="OR">OR (...)</h3>
+
+<div class="translatorsNote">
+<p>訳者注: <a title="Lua Bit Operations Module" href="http://bitop.luajit.org/">LuaBitOp</a>では、<code>bit.bor</code>にあたります。</p>
+</div>
+
+<p>
+すべての引数のビット和を返します。0個以上の引数（整数扱い）を指定することができます。演算結果の各ビットは、<b>いずれか</b>の入力が1の場合に1、その他の場合に0となります。
+</p>
+
+<hr />
+
+<h3 id="XOR">XOR (...)</h3>
+
+<div class="translatorsNote">
+<p>訳者注: <a title="Lua Bit Operations Module" href="http://bitop.luajit.org/">LuaBitOp</a>では、<code>bit.bxor</code>にあたります。</p>
+</div>
+
+<p>
+すべての引数の排他的ビット和を返します。0個以上の引数（整数扱い）を指定することができます。演算結果の各ビットは、入力の<b>奇数個</b>のビットが1の場合に1、その他の場合に0となります。
+</p>
+
+<hr />
+
+<h3 id="SHIFT">SHIFT (num, shift)</h3>
+
+<div class="translatorsNote">
+<p>訳者注: <a title="Lua Bit Operations Module" href="http://bitop.luajit.org/">LuaBitOp</a>では、<code>bit.lshift</code>、<code>bit.rshift</code>、<code>bit.arshift</code>にあたります。</p>
+</div>
+
+<p>
+指定されたビット数だけビットシフトした数を返します。<code>shift</code>が負のときは「左シフト」、正のときは「右シフト」を意味します。引数は整数として扱われるため、当然、結果も整数になります。
+</p>
+
+<hr />
+
+<h3 id="BIT">BIT (bit)</h3>
+
+<div class="translatorsNote">
+<p>訳者注: <a title="Lua Bit Operations Module" href="http://bitop.luajit.org/">LuaBitOp</a>では、<code>bit.lshift(1, bit)</code> で表現可能です。</p>
+</div>
+
+<p>
+指定されたビットのみを含む数を返します。0～31までの32個のビットを指定可能です。範囲であれば巻き戻されます。
+</p>
+
+<hr />
+
+<h3 id="tostring">tostring (arg)</h3>
+
+<p>
+引数を文字列にして返します。この関数は<a href="#print"><code>print</code></a>が値を文字列として表示するのに使っているものです。そのため、<code>print</code>の表示と同じ文字列を得るのに使うことができます。現在のところ、結果は65536文字に制限されており、以降に内容が続く場合は代わりに「...」が付加されることに注意してください。ただし、通常この制約を超えてしまうことはまずありません。
+</p>
+
+<p>
+文字列の書式を変更したい場合（上級ユーザ向け）: Luaにおける他の関数と同様に、<code>tostring</code>を自前の関数によって置き換えることができます。そうした場合、結果として<code>print</code>関数の出力も同様に変化します。ただし、この<code>tostring</code>（結果的には<code>print</code>を含む）の実装は<code>__tostring</code>メタメソッドを尊重します。特定のものの表示をカスタマイズしたいだけであれば、グローバルの<code>tostring</code>を置き換えるよりも、そちらの仕組みを使う方がよいでしょう。
+</p>
+
+<hr />
+
+<h3 id="addressof">addressof (value)</h3>
+
+<p>
+参照型の値が指し示すアドレスを返します。とくにテーブルや関数のアドレスを見るのに用いることができます。アドレスを表示させてそれが他のものと異なるかどうかを見るくらいしか、おそらく利用法はありません。ハッシュや論理比較のためにアドレスを格納することはしないでください。Luaではそれらの目的に対し、アドレスの代わりに実際のオブジェクトを用いることができるため、アドレスの格納はまったく必要ありません。引数が参照型でない場合、この関数は0を返します。
+</p>
+
+<hr />
+
+<h3 id="copytable">copytable (original)</h3>
+
+<p>
+与えられたテーブルの浅いコピー<span class="translatorsNote">（訳者注: shallow copy; フィールドの内容をそのまま複写するコピー方式。たとえば複製対象がさらにテーブルを持つような場合、そのテーブルの実体は複製されずに参照だけが複製されます）</span>を返します。言い換えると、この関数は与えられたテーブルとまったく同じ値を持つ別のテーブルを作成します。これはテーブルの単純な代入（元のテーブルの参照を複製するだけ）とは異なります。これをおこなう関数をLuaで書くこともできますが、定義済み関数として利用可能である価値がありそうなほどの一般的な処理です。
+</p>
+
+<p>
+参考までに、こちらが同等のふるまいをするLuaの関数です。
+</p>
+
+<pre><code>copytable = function(t)
+ if t == nil then return nil end
+ local c = {}
+ for k,v in pairs(t) do
+  c[k] = v
+ end
+ setmetatable(c,debug.getmetatable(t))
+ return c
+end</code></pre>
+
+<hr />
+
+<h2 id="gens">gensライブラリ</h2>
+
+<p>
+エミュレータ関連の基本的な関数は<code>gens</code>ライブラリに収録されています。
+</p>
+
+<div class="translatorsNote">
+<p>訳者注: 最新の実装では、エミュレータの固有名（<code>gens</code>）の代わりに<code>emu</code>という名前でライブラリにアクセスできます（例: <code>emu.frameadvance</code>）。これにより、個別にエミュレータの名前を覚える必要もなくなり、また複数のエミュレータで動作するスクリプトも書きやすくなります。よって、新しいスクリプトでは固有名ではなく<code>emu</code>を使うことが推奨されます。また、スクリプトの冒頭に <code>emu = emu or gens</code> などと記すことで、古いバージョンでも<code>emu</code>を通じてライブラリにアクセスすることができるようになります。</p>
+</div>
+
+<hr />
+
+<h3 id="gens.framecount">gens.framecount ()</h3>
+
+<p>
+エミュレーションの経過フレーム数を返します。
+</p>
+
+<hr />
+
+<h3 id="gens.lagcount">gens.lagcount ()</h3>
+
+<p>
+エミュレーション中のジョイパッドの入力を受け付けなかったフレームの数を返します。ユーザが「Reset Lag Count」ショートカットキーを押しても、この数値は<b>リセットされない</b>ことに注意してください。
+</p>
+
+<hr />
+
+<h3 id="gens.lagged">gens.lagged ()</h3>
+
+<p>
+システムが前回のフレームでジョイパッドの入力を受け付けなかった場合には<b>true</b>を、そうでない場合には<b>false</b>を返します。
+</p>
+
+<hr />
+
+<h3 id="gens.emulating">gens.emulating ()</h3>
+
+<p>
+エミュレーションが開始されている場合には<b>true</b>を、そうでない場合には<b>false</b>を返します。ステート利用などの特定の処理はエミュレーション開始前においては無効です。スクリプトの開始が早過ぎても大丈夫なように対策するのでもなければ、おそらくこの関数を必要とすることはありません。
+</p>
+
+<hr />
+
+<h3 id="gens.speedmode">gens.speedmode (mode)</h3>
+
+<p>
+以降の<a href="#gens.frameadvance"><code>gens.frameadvance</code></a>の呼び出しで使われる速度モードを設定します。
+</p>
+
+<p>
+<code>mode</code>は以下のいずれかとなります:
+</p>
+
+<ul>
+<li><code>"normal"</code> または 0: 通常速、ユーザの速度設定に影響されます（デフォルト）。</li>
+<li><code>"nothrottle"</code> または 1: 高速、フレームスキップなしで可能な限り早く動作します。</li>
+<li><code>"turbo"</code> または 2: 超高速、フレームスキップあり。Fast-forwardとほぼ同等。</li>
+<li><code>"maximum"</code> または 3: 最大速、すべてのフレームとサウンド出力を省略します。</li>
+</ul>
+
+<hr />
+
+<h3 id="gens.frameadvance">gens.frameadvance ()</h3>
+
+<p>
+<a href="#gens.speedmode"><code>gens.speedmode</code></a>による設定に基づいて、1フレームのエミュレーションと描画をおこないます。
+</p>
+
+<p>
+また、関数から制御が戻る前にOSのイベントが処理されるため、ユーザはショートカットキーを押したり、メニューにアクセスしたりウィンドウを移動したり、プログラムを閉じたりすることができます。
+</p>
+
+<p>
+この関数はコルーチンや大部分のコールバック関数を含む、好きなタイミングで呼び出されることが出来ます。ただし、この関数自身がコールバック呼び出しのきっかけとなるので、後者の場合は再帰呼び出しに注意してください。<a href="#gens.atframeboundary">フレーム境界にいない</a>状態でこの関数を呼び出すと、警告メッセージを伴って失敗します（スクリプトの実行は停止されません）。<a href="#gens.emulating">エミュレーション開始前</a>にこの関数を呼び出すと、何もすることなく静かに制御を返します。
+</p>
+
+<hr />
+
+<h3 id="gens.pause">gens.pause ()</h3>
+
+<p>
+エミュレーションとスクリプトをポーズ状態にして、ユーザが解除（EscやPauseなどのPauseショートカットキーを押す）するまで待機します。この関数は即座に動作します。また、いつ呼び出しても問題ありません（メモリフックのコールバックからの呼び出しでさえ動作します）。
+</p>
+
+<hr />
+
+<h3 id="gens.wait">gens.wait ()</h3>
+
+<p>
+Gensに継続中のスクリプトの処理を待つように伝えます。具体的には、GensにOSのイベントを処理させることで応答性を向上させます。
+</p>
+
+<p>
+スクリプトが<code>gens.wait</code>あるいは<code>gens.frameadvance</code>を長い間呼び出さなかった場合、スクリプトは&lt;BUSY&gt;とみなされます。これは最低限の応答性を保つために、Gensが時折許可なく自動的に<code>gens.wait</code>を呼び出すことを意味します。長時間にわたる計算中に<code>gens.wait</code>を呼び出さなかったことで&lt;BUSY&gt;モードに陥ってしまったとしても八方塞がりではありませんが、この表示はしばしばずさんなプログラミングの兆候としてWindowsプログラムに現れる「応答なし」の表示に似たものだと覚えておいてください。とはいうものの、それほど気にする必要はありません。とくに自分用に小さなスクリプトを書くときには、<code>gens.wait</code>を呼び出す必要はおそらくありません。
+</p>
+
+<hr />
+
+<h3 id="gens.redraw">gens.redraw ()<br />
+<small>or</small> <span id="gui.redraw">gui.redraw ()</span></h3>
+
+<p>
+グラフィックの更新処理を即座にシミュレートすることで、現在のフレームの描画を試みます。
+
+Attempts to draw the current frame by immediately simulating a graphics processor update. This will not change the state of the emulation, although it will trigger any callbacks that have been registered by <a href="#gui.register"><code>gui.register</code></a>. If you want to update or animate a GUI drawn on top of the screen without advancing the emulation frame, then this may be the only way to do that. Note that the redrawn screen is not guaranteed to render exactly what the system would normally render, especially in games that change the palette at certain scanlines, but most of the time it is "close enough".
+</p>
+
+<hr />
+
+<h3 id="gens.message">gens.message (msg)</h3>
+
+<p>
+Displays the given string (or <a href="#tostring"><code>tostring</code></a><code>(msg)</code>) in the status region on the user's emulator screen, for some number of frames. Emulation should be running at normal speed if you want the user to actually see the message.
+</p>
+
+<p>
+If you want control over things like where the message appears, what color it is, and how long it stays visible, then you should use the <a href="#gui.text"><code>gui.text</code></a> function instead of this.
+</p>
+
+<hr />
+
+<h3 id="gens.persistglobalvariables">gens.persistglobalvariables (variabletable)</h3>
+
+<p>
+Lets you define global variables that automatically have their values saved across restarts of the script.
+</p>
+
+<pre><code>gens.persistglobalvariables({
+  mystring = "hello",
+  mynumber = 42,
+  mytable = {1,2,3},
+  -- and so on
+})
+-- now you can use them like normal variables and they will be saved for you</code></pre>
+
+<p>
+You can pick whatever names and default values you want. The default values are only used the first time, after that each variable starts with the value it had the last time the script exited, even if you close and reopen Gens. However, for convenience, you can "reset" any variable simply by changing its default value.
+</p>
+
+<p>
+As a special case, if you need the default value for a variable to be <b>nil</b>, 
+then put the variable name alone <b>in quotes</b> as an entry in the table without saying "<code>= nil</code>". 
+This special case is because tables in Lua don't store nil-valued entries.
+</p>
+
+<p>
+Currently only the following types are supported: boolean, number, string, table, nil.
+</p>
+
+<hr />
+
+<h3 id="gens.registerbefore">gens.registerbefore (func)</h3>
+
+<p>
+Registers a callback function to run immediately before each frame gets emulated. This runs
+after the next frame's input is known but before it's used, so this is your only
+chance to set the next frame's input using the next frame's would-be input. For
+example, if you want to make a script that filters or modifies ongoing user input,
+such as making the game think "left" is pressed whenever you press "right", you can
+do it easily with this.
+</p>
+
+<p>
+Note that this is not quite the same as code that's placed before a call to <a href="#gens.frameadvance"><code>gens.frameadvance</code></a>. This callback runs a little later than that. Also, you cannot safely assume that this will only be called once per frame. Depending on the emulator's options, every frame may be simulated multiple times and your callback will be called once per simulation. If for some reason you need to use this callback to keep track of a stateful linear progression of things across frames then you may need to key your calculations to the results of <a href="#gens.framecount"><code>gens.framecount</code></a>.
+</p>
+
+<p>
+Like other callback-registering functions provided by Gens, there is only one registered callback at a time per registering function per script. If you register two callbacks, the second one will replace the first, and the call to <code>gens.registerbefore</code> will return the old callback. You may register <b>nil</b> instead of a function to clear a previously-registered callback. If a script returns while it still has registered callbacks, Gens will keep it alive to call those callbacks when appropriate, until either the script is stopped by the user or all of the callbacks are de-registered.
+</p>
+
+<hr />
+
+<h3 id="gens.registerafter">gens.registerafter (func)</h3>
+
+<p>
+Registers a callback function to run immediately after each frame gets emulated. It runs at
+a similar time as (and slightly before) <a href="#gui.register"><code>gui.register</code></a> callbacks, except unlike with <code>gui.register</code> it doesn't also get called again whenever the screen gets redrawn. Similar caveats as those mentioned in <a href="#gens.registerbefore"><code>gens.registerbefore</code></a> apply.
+</p>
+
+<hr />
+
+<h3 id="gens.registerexit">gens.registerexit (func)</h3>
+
+<p>
+Registers a callback function that runs when the script stops. Whether the script stops on
+its own or the user tells it to stop, or even if the script crashes or the user tries
+to close the emulator, Gens will try to run whatever Lua code you put in here
+first. So if you want to make sure some code runs that cleans up some external
+resources or saves your progress to a file or just says some last words, you could
+put it here. (Of course, a forceful termination of the application or a crash from
+inside the registered exit function will still prevent the code from running.)
+</p>
+
+<p>
+Suppose you write a script that registers an exit function and then enters an infinite loop.
+If the user clicks "Stop" your script will be forcefully stopped, but then it will start
+running its exit function. If your exit function enters an infinite loop too, then the user
+will have to click "Stop" a second time to really stop your script. That would be annoying. So try to avoid doing too much
+inside the exit function.
+</p>
+
+<p>
+Note that restarting a script counts as stopping it and then starting it again, so doing so (either by clicking "Restart" or by editing the script while it is running) will trigger the callback. Note also that returning from a script generally does NOT count as stopping (because your script is still running or waiting to run its callback functions and thus does not stop... see <a href="#makeitstop">here</a> for more information), even if the exit callback is the only one you have registered.
+</p>
+
+<hr />
+
+<h3 id="gens.registerstart">gens.registerstart (func)</h3>
+
+<p>
+Registers a function that runs once immediately if emulation has already started, and also runs again whenever the game is reset. A soft reset or movie playback will not cause the entire script to restart, so if you have some code that needs to run when the game starts in addition to when the script starts, then register it with this.
+</p>
+
+<hr />
+
+<h3 id="gens.atframeboundary">gens.atframeboundary ()</h3>
+
+<p>
+Returns <b>true</b> if Gens is at a frame boundary, or <b>false</b> otherwise. Certain operations such as advancing the frame or using savestates are invalid to attempt when not at a frame boundary. Generally Gens will always be at a frame boundary while your script has control and so you don't need to worry about checking this, except possibly in memory callback functions which usually get called while not at a frame boundary.
+</p>
+
+<hr />
+
+<h3 id="gens.emulateframe">gens.emulateframe ()</h3>
+
+<p>
+Emulates and renders one frame, with properties similar to the "nothrottle" speed mode, but without handling OS events or allowing pauses.
+</p>
+
+<p>
+Don't use this in place of <a href="#gens.frameadvance"><code>gens.frameadvance</code></a> or the emulator will become unresponsive (unless you also call <a href="#gens.wait"><code>gens.wait</code></a>) and the user won't feel "in control" of the emulation (unless you add manual delays). An appropriate place to use this might be a short loop that automatically replays a small input macro, or if for some reason you want to prevent the user from pausing normally.
+</p>
+
+<hr />
+
+<h3 id="gens.emulateframefast">gens.emulateframefast ()</h3>
+
+<p>
+Emulates and renders one frame, with properties similar to the "turbo" speed mode, but without handling OS events or allowing pauses.
+</p>
+
+<hr />
+
+<h3 id="gens.emulateframeinvisible">gens.emulateframeinvisible ()</h3>
+
+<p>
+Emulates and renders one frame, with properties similar to the "maximum" speed mode, but without handling OS events or allowing pauses. Also, it is safe to call this from inside a <a href="#gui.register"><code>gui.register</code></a>'d function.
+</p>
+
+<p>
+This acts as an extremely fast emulation update that also doesn't render any graphics or generate any sounds. If you load a savestate after calling this function, it should leave no trace of having been called, so you can do things like generate future emulation states every frame while the user continues to see and hear normal emulation. Note that non-GUI callbacks can still trigger during "invisible" emulation frames, though, and that saving/loading savestates every frame can be quite taxing on the CPU if you choose to do that.
+</p>
+
+<hr />
+
+<h3 id="gens.openscript">gens.openscript (filename)</h3>
+
+<p>
+Opens a new script window and starts it running the given script file. If that file is already running in an existing window, then this function restarts that script instead of opening a new one.
+</p>
+
+<p>
+You can use this to create a "hub script" that automates the process of opening multiple other scripts you want to use together. Note that there cannot be more than 16 script windows open simultaneously (although there is no reason this arbitrary limit couldn't be increased).
+</p>
+
+<hr />
+
+<h3 id="gens.loadrom">gens.loadrom ([filename])<br />
+<small>or</small> <span id="gens.openrom">gens.openrom ([filename])</span></h3>
+
+<p>
+Loads a ROM or CD image from the given file location. If <code>filename</code> is omitted, the user will be asked to choose which file to load. Unlike when the user loads a ROM normally, this function does not restart any running scripts. It does trigger callbacks that have been registered with <a href="#gens.registerstart"><code>gens.registerstart</code></a>, however.
+</p>
+
+<p>
+If this function fails to load a ROM for whatever reason (user cancelled, file not found, etc.), it will <a href="http://www.lua.org/pil/8.4.html">throw an error</a>.
+</p>
+
+<hr />
+
+<h2 id="savestate">savestateライブラリ</h2>
+
+<p>
+Functions for saving and loading the state of emulation are in the <code>savestate</code> library.
+</p>
+
+<hr />
+
+<h3 id="savestate.create">savestate.create ([location])</h3>
+
+<p>
+Creates a savestate object, but doesn't save anything in it yet. By default this creates an anonymous savestate object (allocated in memory) and returns it. However, if <code>location</code> is a number, this function will instead return a handle to the non-anonymous savestate file that has the given save slot number.
+</p>
+
+<p>
+You may use and reuse the returned object many times, so normally you would only call this function at most a few times when your script is starting up. Savestates can eat a lot of memory so try not to make too many of them. Even if you're writing a bot that loads millions of savestates, you could probably get away with only creating 2 savestate objects for it to use to do that.
+</p>
+
+<p>
+Note that non-anonymous savestate objects are actually represented by the savestate number alone, and they do not need to be created, so it's kind of pointless to use this function for anything except anonymous savestates.
+</p>
+
+<hr />
+
+<h3 id="savestate.save">savestate.save (location[, option])</h3>
+
+<p>
+Saves the current emulation state to the given location. <code>location</code> should be a savestate object that was returned by <code>savestate.create</code>.
+</p>
+
+<p>
+To "play nice", a script should only use this function with anonymous savestates. Saving to numbered slots is fully supported, but doing so can clash with what the user was trying to use those save slots for, and it can clash with what other scripts might try to use those same slots for, and nothing cleans them up when you're done with them, and it's slower than saving to (recycled) anonymous savestates. That being said, you are allowed to use slot numbers outside of the normal 0 to 9 range (including negative numbers) and you may pass a number directly into this function without calling <code>savestate.create</code> first.
+</p>
+
+<p>
+<code>option</code> is an optional string that modifies how the save is done:
+</p>
+
+<ul>
+<li><code>"quiet"</code>: Same as normal, except warning messages (if any) will be suppressed.</li>
+<li><code>"scriptdataonly"</code>: The state will not actually be saved, but any callbacks registered by <code>savestate.registersave</code> will still be called and their return values will be saved. Only useful for numbered savestates, because anonymous savestates can't activate callbacks.</li>
+</ul>
+
+<hr />
+
+<h3 id="savestate.load">savestate.load (location[, option])</h3>
+
+<p>
+Loads an emulation state from the given location. <code>location</code> should be a savestate object that was returned by <code>savestate.create</code> that has also already been saved to with <code>savestate.save</code>, or (this is not required) for non-anonymous savestates it is allowed to be an integer save slot number instead.
+</p>
+
+<p>
+<code>option</code> is an optional string that modifies how the load is done:
+</p>
+
+<ul>
+<li><code>"quiet"</code>: Same as normal, except warning messages (if any) will be suppressed. For example, this will make it impossible for a "desync detected" warning messagebox to appear.</li>
+<li><code>"scriptdataonly"</code>: The state will not actually be loaded, but any callbacks registered by <code>savestate.registerload</code> will still be called and supplied the applicable loaded scriptdata if any exists.</li>
+</ul>
+
+<hr />
+
+<h3 id="savestate.registersave">savestate.registersave (func[, savekey])</h3>
+
+<p>
+Registers a function to get called whenever the emulation state is saved to any numbered save slot (either by the user or by a script). In addition, whatever your callback function returns will get saved alongside the savestate file, so you can use this to effectively save extra data of your choosing with each savestate the user saves.
+</p>
+
+<p>
+Currently the following types are allowed to be saved (returned by your callback): boolean, number, string, table, nil. If your callback returns multiple values they will all be saved, although you don't technically need to use this because you could also put them all inside a table and return that as a single value.
+</p>
+
+<p>
+The callback function <code>func</code> will receive the save slot number as an argument when it is called, although you can make the callback take no arguments if you don't care what number slot it is.
+</p>
+
+<p>
+<code>savekey</code> is used to associate your returned data with the current script, so that other scripts don't accidentally get your data or vise-versa. The default value is the filename of the current script file, which normally is good enough. But if it bothers you that changing the filename of your script will cause it to be unable to load data it has previously saved, or if you think you'll need to run scripts that are different but have the same filename as each other, then you can supply your own unique string for <code>savekey</code>. (Note that you can still only register one callback at a time per script with <code>savestate.registersave</code>, after which you will displace the previous callback.)
+</p>
+
+<hr />
+
+<h3 id="savestate.registerload">savestate.registerload (func[, loadkey])</h3>
+
+<p>
+Registers a function to get called whenever the emulation state is loaded from any numbered save slot (either by the user or by a script). 
+</p>
+
+<p>
+The callback function <code>func</code> will receive the save slot number as its first argument when it is called. It will also receive as additional arguments whatever data was returned by a callback registered by <code>savestate.registersave</code> when the state being loaded was last saved. If you don't need to use that data now then don't define your load callback with any additional arguments.
+</p>
+
+<p>
+Normally you don't need to supply a <code>loadkey</code>, but if you are using a custom <code>savekey</code> with <code>savestate.registersave</code> then you should pass the same string into <code>loadkey</code> as well (unless you're doing something really unusual like spying on the data saved by a different script...)
+</p>
+
+<hr />
+
+<h3 id="savestate.savescriptdata">savestate.savescriptdata (location)</h3>
+
+<p>
+Calls any registered save callbacks and saves the return values alongside the savestate that's at the given location. <code>location</code> should be a save slot number.
+</p>
+
+<p>
+This is equivalent to calling <a href="#savestate.save"><code>savestate.save</code></a><code>(location, "scriptdataonly")</code>.
+</p>
+
+<hr />
+
+<h3 id="savestate.loadscriptdata">savestate.loadscriptdata (location)</h3>
+
+<p>
+Returns the data associated with the given savestate (data that was earlier returned by a registered save callback) without actually loading the rest of that savestate or calling any callbacks. <code>location</code> should be a save slot number.
+</p>
+
+<p>
+This is <b>not</b> equivalent to calling <a href="#savestate.save"><code>savestate.load</code></a><code>(location, "scriptdataonly")</code>, which passes the data into registered load callbacks rather than returning it.
+</p>
+
+<hr />
+
+<h2 id="memory">memoryライブラリ</h2>
+
+<p>
+Functions for accessing and editing the emulated system's memory are in the <code>memory</code> library.
+</p>
+
+<h3 id="addresses">Addresses</h3>
+
+<p>
+Most of the memory functions take an integer argument called <code>address</code>. A typical address looks like this: <code>0xFFD010</code>. The address refers to a specific location in the Genesis's memory. Here is a map of the memory as recognized by the memory functions:
+</p>
+
+<ul style="padding: 0">
+<li>0xFF0000 to 0xFFFFFF: Main 68k RAM</li>
+<li>0x000000 to 0x5FFFFF: Genesis Cartridge ROM</li>
+<li>0xA00000 to 0xA01FFF: Z80 RAM</li>
+<li>0x020000 to 0x09FFFF: Sega CD PRG RAM</li>
+<li>0x200000 to 0x23FFFF: Sega CD 1M or 2M RAM</li>
+<li>0x6000000 to 0x603FFFF: 32X RAM</li>
+</ul>
+
+<p>
+The above addresses generally correspond with the main68k's view of memory, which is the default view. Support for alternate views of the memory (such as the sub68k CPU for SegaCD games) is currently limited, and is only supported for functions that take a <code>cpuname</code> argument.
+</p>
+
+<p>
+The unit scale of an address is always 1 byte. For example, 0xFF0003 is exactly 1 byte away from 0xFF0002.
+</p>
+
+<hr />
+
+<h3 id="memory.readbyte">memory.readbyte (address)<br />
+<small>or</small> <span id="memory.readbyteunsigned">memory.readbyteunsigned (address)</span></h3>
+
+<p>
+Reads 1 byte of memory and returns the result as an integer between 0 and 255.
+</p>
+
+<hr />
+
+<h3 id="memory.readbytesigned">memory.readbytesigned (address)</h3>
+
+<p>
+Reads 1 byte of memory and returns the result as an integer between -128 and 127.<br />
+(0 to 127 stay the same as <code>memory.readbyte</code> would return, but [128 to 255] shifts to [-128 to -1].)
+</p>
+
+<hr />
+
+<h3 id="memory.readword">memory.readword (address)<br />
+<small>or</small> <span id="memory.readwordunsigned">memory.readwordunsigned (address)</span><br />
+<small>or</small> <span id="memory.readshort">memory.readshort (address)</span><br />
+<small>or</small> <span id="memory.readshortunsigned">memory.readshortunsigned (address)</span></h3>
+
+<p>
+Reads 2 bytes of memory (big-endian) and returns the result as an integer between 0 and 65535.
+</p>
+
+<hr />
+
+<h3 id="memory.readwordsigned">memory.readwordsigned (address)<br />
+<small>or</small> <span id="memory.readshortsigned">memory.readshortsigned (address)</span></h3>
+
+<p>
+Reads 2 bytes of memory (big-endian) and returns the result as an integer between -32768 and 32767.
+</p>
+
+<hr />
+
+<h3 id="memory.readdword">memory.readdword (address)<br />
+<small>or</small> <span id="memory.readdwordunsigned">memory.readdwordunsigned (address)</span><br />
+<small>or</small> <span id="memory.readlong">memory.readlong (address)</span><br />
+<small>or</small> <span id="memory.readlongunsigned">memory.readlongunsigned (address)</span></h3>
+
+<p>
+Reads 4 bytes of memory (big-endian) and returns the result as an integer between 0 and 4294967295.
+</p>
+
+<hr />
+
+<h3 id="memory.readdwordsigned">memory.readdwordsigned (address)<br />
+<small>or</small> <span id="memory.readlongsigned">memory.readlongsigned (address)</span></h3>
+
+<p>
+Reads 4 bytes of memory (big-endian) and returns the result as an integer between -2147483648 and 2147483647.
+</p>
+
+<hr />
+
+<h3 id="memory.readbyterange">memory.readbyterange (address, size)</h3>
+
+<p>
+Reads <code>size</code> bytes of memory and returns the result as an array of integers that are each between 0 and 255, or <b>nil</b> for any bytes in the range you specified that are at <a href="memory.isvalid">invalid</a> addresses. Recall that arrays in Lua are tables that have integer keys (indices) starting at 1.
+</p>
+
+<hr />
+
+<h3 id="memory.writebyte">memory.writebyte (address, value)</h3>
+
+<p>
+Writes 1 byte of memory to the given address, placing the lowest byte of the given integer value there. Any attempts to write to ROM will be ignored, however. There is no need for "signed" variations of any of the memory.write functions, since you can use a <code>value</code> that has whatever sign you want.
+</p>
+
+<hr />
+
+<h3 id="memory.writeword">memory.writeword (address, value)<br />
+<small>or</small> <span id="memory.writeshort">memory.writeshort (address, value)</span></h3>
+
+<p>
+Writes 2 bytes of memory (big-endian) to the given address, placing the lowest 2 bytes of the given integer value there. Any attempts to write to ROM will be ignored, however.
+</p>
+
+<hr />
+
+<h3 id="memory.writedword">memory.writedword (address, value)<br />
+<small>or</small> <span id="memory.writelong">memory.writelong (address, value)</span></h3>
+
+<p>
+Writes 4 bytes of memory (big-endian) to the given address, placing the lowest 4 bytes of the given integer value there. Any attempts to write to ROM will be ignored, however.
+</p>
+
+<hr />
+
+<h3 id="memory.register">memory.register (address, [size,] [cpuname,] func)<br />
+<small>or</small> <span id="memory.registerwrite">memory.registerwrite (address, [size,] [cpuname,] func)</span></h3>
+
+<p>
+Registers a function to be called immediately whenever the given memory address range is written to (either by the emulation or by a memory.write function).
+</p>
+
+<p>
+<code>size</code> is the number of bytes to "watch". For example, if <code>size</code> is 100 and <code>address</code> is 0xFF0000, then you will register the function across all 100 bytes from 0xFF0000 to 0xFF0063. A write to any of those bytes will trigger the function. Having callbacks on a large range of memory addresses can be expensive, so try to use the smallest range that's necessary for whatever it is you're trying to do. If you don't specify any <code>size</code> then it defaults to 1.
+</p>
+
+<p>
+The callback function will receive two arguments, <code>(address, size)</code> indicating what write operation triggered the callback. If you don't care about that extra information then you can ignore it and define your callback function to not take any arguments. The value that was written is NOT passed into the callback function, but you can easily use any of the memory.read functions to retrieve it.
+</p>
+
+<p>
+You may use a memory.write function from inside the callback to change the value that just got written. However, keep in mind that doing so will trigger your callback again, so you must have a "base case" such as checking to make sure that the value is not already what you want it to be before writing it. Another, more drastic option is to de-register the current callback before performing the write.
+</p>
+
+<p>
+If <code>func</code> is <b>nil</b> that means to de-register any memory write callbacks that the current script has already registered on the given range of bytes.
+</p>
+
+<p>
+Normally you won't need to provide the <code>cpuname</code> argument. It defaults to <code>"main"</code> which indicates the main68k's view of memory. You can specify <code>"sub"</code> or <code>"s68k"</code> to refer to the sub68k's address space, but keep in mind that support for this elsewhere in the memory library is currently limited or nonexistent so it will be difficult to accomplish much using the sub68k view.
+</p>
+
+<p>
+A single memory operation will trigger no more than one registered memory callback per script. For example, if a game writes 4 bytes with a single assembly instruction and you have a callback on more than one of those bytes, only the one on the lowest address will be called. Usually this won't be a problem.
+</p>
+
+<hr />
+
+<h3 id="memory.registerread">memory.registerread (address, [size,] [cpuname,] func)</h3>
+
+<p>
+Registers a function to be called immediately whenever the given memory address range is <b>read</b> by the emulation.
+</p>
+
+<p>
+Besides that, most of the information about <code>memory.register</code> applies to this function as well.
+</p>
+
+<hr />
+
+<h3 id="memory.registerexec">memory.registerexec (address, [size,] [cpuname,] func)<br />
+<small>or</small> <span id="memory.registerexecute">memory.registerexecute (address, [size,] [cpuname,] func)</span><br />
+<small>or</small> <span id="memory.registerrun">memory.registerrun (address, [size,] [cpuname,] func)</span></h3>
+
+<p>
+Registers a function to be called immediately whenever the emulated system runs code located in the given memory address range.
+</p>
+
+<p>
+The Genesis can run code directly from ROM, but it can also run code that is in RAM as well. You can specify either ROM or RAM locations depending on what your <code>address</code> is. Typically, RAM starts at 0xFF0000 and ROM starts at 0, but especially on the Sega CD the majority of running code may not be near either of those addresses.
+</p>
+
+<p>
+Besides that, most of the information about <code>memory.register</code> applies to this function as well.
+</p>
+
+<hr />
+
+<h3 id="memory.isvalid">memory.isvalid (address)</h3>
+
+<p>
+Returns <b>true</b> if the byte at the given address is in a range of memory <a href="#addresses">recognized as valid by the memory library</a>, or returns <b>false</b> otherwise.
+</p>
+
+<hr />
+
+<h3 id="memory.getregister">memory.getregister (cpuregistername)</h3>
+
+<p>
+Returns the current value of the given hardware register.<br />For example, <code>memory.getregister("pc")</code> will return the main CPU's current Program Counter.
+</p>
+
+<p>
+Valid registers are: "a0", "a1", "a2", "a3", "a4", "a5", "a6", "a7", "d0", "d1", "d2", "d3", "d4", "d5", "d6", "d7", "pc", and "sr".
+</p>
+
+<p>
+You can prefix the string with "sub." or "s68k." to retrieve registers from the sub68k CPU instead of the main68k, or you can explicitly use "main." or "m68k." if you want. For example, <code>memory.getregister("sub.a0")</code> will return the value stored in the sub CPU's first Address Register.
+</p>
+
+<hr />
+
+<h3 id="memory.setregister">memory.setregister (cpuregistername, value)</h3>
+
+<p>
+Sets the current value of the given hardware register.<br />For example, <code>memory.setregister("pc",0x200)</code> will change the main CPU's current Program Counter to 0x200.
+</p>
+
+<p>
+Valid registers are: "a0", "a1", "a2", "a3", "a4", "a5", "a6", "a7", "d0", "d1", "d2", "d3", "d4", "d5", "d6", "d7", "pc", and "sr".
+</p>
+
+<p>
+You can prefix the string with "sub." or "s68k." to set registers on the sub68k CPU instead of the main68k, or you can explicitly use "main." or "m68k." if you want.
+</p>
+
+<p>
+You had better know exactly what you're doing or you're probably just going to crash the game if you try to use this function. That applies to the other memory.write functions as well, but to a lesser extent.
+</p>
+
+<hr />
+
+<h2 id="gui">guiライブラリ</h2>
+
+<p>
+Functions mainly for drawing on the screen are in the <code>gui</code> library.
+</p>
+
+<h3 id="coordinates">Coordinates</h3>
+
+<p>
+For GUI functions that use x and y coordinates, x is a number that increases from 0 at the left side of the screen to 319 at the right side of the screen, and y is a number that increases from 0 at the top of the screen to 223 at the bottom of the screen. (The Genesis can switch to other output resolutions, but they are much less common and are not yet well-supported by the GUI library.) You are allowed to specify offscreen coordinates, and doing so will <b>not</b> cause errors.
+</p>
+
+<h3 id="colors">Colors</h3>
+
+<p>
+Although the Genesis outputs 16-bit color, the Gens GUI library uses full 32-bit RGBA color to give you greater flexibility. 32-bit RGBA means there are four color channels (red, green, blue, and alpha) each with values between 0 and 255. Many of the GUI functions take one or two color arguments, and you have several options for specifying what color you want:
+</p>
+
+<ul>
+<li><b>Preset color name</b>: Example: <code>'orange'</code> means {red=255, green=127, blue=0, alpha=255}</li>
+<li><b>RGBA number</b>: Example: <code>0xFF703060</code> means {red=255, green=112, blue=48, alpha=96}</li>
+<li><b>RGB web color</b>: Example: <code>'#FF7030'</code> means {red=255, green=112, blue=48, alpha=255}</li>
+<li><b>"RGBA web color"</b>: Example: <code>'#FF703060'</code> means {red=255, green=112, blue=48, alpha=96}</li>
+<li><b>RGB[A] array</b>: Example: <code>{255,112,48,96}</code> means {red=255, green=112, blue=48, alpha=96}</li>
+<li><b>RGB[A] table</b>: Example: <code>{r=255,g=112,b=48,a=96}</code> means {red=255, green=112, blue=48, alpha=96}</li>
+</ul>
+
+<p>
+The red, green, and blue values determine the color's brightness (0=empty, 255=full), and the alpha value determines the color's transparency (0=invisible, 255=solid).
+</p>
+
+<p>
+The following preset color names are recognized: 'white', <span style="color: #FFFFFF ; background-color: #000000">'black'</span>, 'clear', <span style="background-color: #7F7F7F">'gray'</span>, <span style="background-color: #7F7F7F">'grey'</span>, <span style="background-color: #FF0000">'red'</span>, <span style="background-color: #FF7F00">'orange'</span>, <span style="background-color: #FFFF00">'yellow'</span>, <span style="background-color: #7FFF00">'chartreuse'</span>, <span style="background-color: #00FF00">'green'</span>, <span style="background-color: #00FF7F">'teal'</span>, <span style="background-color: #00FFFF">'cyan'</span>, <span style="color: #FFFFFF ; background-color: #0000FF">'blue'</span>, <span style="color: #FFFFFF ; background-color: #7F00FF">'purple'</span>, <span style="background-color: #FF00FF">'magenta'</span>. Obviously, if you want a color that isn't one of those (or if you want some control over the transparency you draw colors at), you'll have to use one of the other, non-preset color representations. Also, note that <code>'clear'</code> does not mean "erase" or "undo" (there is no such color that does that), it simply means "invisible".
+</p>
+
+<p>
+If you choose to use one of the RGB[A] array/table color representations, beware that there is a hidden cost: Lua is not smart enough to automatically "recycle" temporary tables, so if you create colors with Lua's built-in <code>{}</code> operator every time, it will cause extreme slowdown if you do that too many hundreds of times per frame. You can work around this by recycling color tables yourself, although it may be easier to simply use the "RGBA number" representation instead which is the fastest one and will definitely never give you any performance problems. But...
+</p>
+
+<p>
+If you use the "RGBA number" representation, keep in mind that unlike the other representations you <b>must</b> supply the alpha value as part of the number. For example, solid yellow is 0xFFFF00FF, but if you use 0xFFFF00 instead it will <b>not</b> work.
+</p>
+
+<p>
+For RGBA numbers, you may find the bitwise "operators" such as <a href="#OR">OR</a> and <a href="#AND">AND</a> are useful for combining components of colors that are stored in numbers. For example, <code>OR(color,0xFF)</code> returns a completely opaque version <code>color</code>, and <code>OR(AND(color,0xFFFFFF00),AND(color,0xFF)/2)</code> returns a version of <code>color</code> that is twice as transparent as the original.
+</p>
+
+<hr />
+
+<h3 id="gui.register">gui.register (func)</h3>
+
+<p>
+Registers a callback function to get called whenever the screen is drawn.
+</p>
+
+<p>
+It is recommended that you make this callback the only place that you call GUI drawing functions (such as <a href="#gui.text"><code>gui.text</code></a>) from, otherwise they will execute 1 frame late and also run slower.
+</p>
+
+<hr />
+
+<h3 id="gui.getpixel">gui.getpixel (x, y)<br />
+<small>or</small> <span id="gui.readpixel">gui.readpixel (x, y)</span></h3>
+
+<p>
+Returns the RGB color at the given onscreen pixel location. You can say <code>local r,g,b = gui.getpixel(x,y)</code>. r,g,b are the red/green/blue color components of that pixel, each ranging from 0 to 255. If the coordinate you give is offscreen, you will receive the color values of the nearest onscreen pixel instead.
+</p>
+
+<p>
+Note that this function can return colors that have already been written to the screen by GUI drawing functions. If for some reason you want to make sure that you only get the clean untampered-with colors the emulation drew onscreen, then you'll have to call this function before any GUI drawing functions have written to the screen for the current frame. Probably the most reliable way to do that is to call <code>gui.getpixel</code> inside of a callback function that you register with <a href="#gens.registerafter"><code>gens.registerafter</code></a>.
+</p>
+
+<hr />
+
+<h3 id="gui.text">gui.text (x, y, str [, color [, outlinecolor]])<br />
+<small>or</small> <span id="gui.drawtext">gui.drawtext (x, y, str [, color [, outlinecolor]])</span></h3>
+
+<p>
+Displays the given string (or <a href="#tostring"><code>tostring</code></a><code>(str)</code>) at the given coordinate of the emulator screen for one frame. The <code>x,y</code> coordinate specifies the top-left corner of where the text should go, but the text may be shifted somewhat from there to ensure it fits onscreen. The string is allowed to contain newlines (which should function as you'd expect), and very long strings will automatically wrap around as well.
+</p>
+
+<p>
+The default color for the text is solid white with a solid black outline, but you may optionally override those using <a href="#colors">colors of your choice</a> (including separate transparency levels for the two if you wish).
+</p>
+
+<hr />
+
+<h3 id="gui.box">gui.box (x1, y1, x2, y2 [, fillcolor [, outlinecolor]])<br />
+<small>or</small> <span id="gui.drawbox">gui.drawbox (x1, y1, x2, y2 [, fillcolor [, outlinecolor]])</span><br />
+<small>or</small> <span id="gui.rect">gui.rect (x1, y1, x2, y2 [, fillcolor [, outlinecolor]])</span><br />
+<small>or</small> <span id="gui.drawrect">gui.drawrect (x1, y1, x2, y2 [, fillcolor [, outlinecolor]])</span></h3>
+
+<p>
+Draws a rectangle between the given coordinates of the emulator screen for one frame. The <code>x1,y1</code> coordinate specifies any corner of the rectangle (preferably the top-left corner), and the <code>x2,y2</code> coordinate specifies the opposite corner.
+</p>
+
+<p>
+The default color for the box is transparent white with a solid white outline, but you may optionally override those using <a href="#colors">colors of your choice</a>. In addition, you may supply a color transformation function (which takes r,g,b numbers as input and returns a new r,g,b as output) instead of a color for either or both of the colors. This can be used to achieve special blending modes such as additive or subtractive blending or inversion of a large region of pixels. See the "blendmodes.lua" sample for a working example.
+</p>
+
+<hr />
+
+<h3 id="gui.line">gui.line (x1, y1, x2, y2 [, color [, skipfirst]])<br />
+<small>or</small> <span id="gui.drawline">gui.drawline (x1, y1, x2, y2 [, color [, skipfirst]])</span></h3>
+
+<p>
+Draws a line segment between the given coordinates of the emulator screen for one frame. The <code>x1,y1</code> coordinate specifies one end of the line segment, and the <code>x2,y2</code> coordinate specifies the other end. If <code>skipfirst</code> is <b>true</b> then this function will not draw anything at the pixel <code>x1,y1</code>, otherwise it will. <code>skipfirst</code> is optional and defaults to <b>false</b>. The default color for the line is solid white, but you may optionally override that using a <a href="#colors">color of your choice</a>.
+</p>
+
+<hr />
+
+<h3 id="gui.pixel">gui.pixel (x, y [, color])<br />
+<small>or</small> <span id="gui.setpixel">gui.setpixel (x, y [, color])</span><br />
+<small>or</small> <span id="gui.drawpixel">gui.drawpixel (x, y [, color])</span><br />
+<small>or</small> <span id="gui.writepixel">gui.writepixel (x, y [, color])</span></h3>
+
+<p>
+Draws a single pixel at the given <code>x,y</code> coordinate of the emulator screen for one frame. The default color is solid white, but you may optionally override that using a <a href="#colors">color of your choice</a>.
+</p>
+
+<hr />
+
+<h3 id="gui.parsecolor">gui.parsecolor (color)</h3>
+
+<p>
+Returns the separate RGBA components of the given color.<br />
+For example, you can say <code>local&nbsp;r,g,b,a&nbsp;=&nbsp;gui.parsecolor('orange')</code> to retrieve the red/green/blue values of the <a href="#colors">preset color</a> orange. (You could also omit the <code>a</code> in cases like this.) This uses the same conversion method that Gens uses internally to support <a href="#colors">the different representations of colors</a> that the GUI library uses. Overriding this function will not change how Gens interprets color values, however.
+</p>
+
+<hr />
+
+<h3 id="gui.opacity">gui.opacity (alpha)</h3>
+
+<p>
+Scales the transparency of subsequent draw calls. An <code>alpha</code> of 0.0 means completely transparent, and an <code>alpha</code> of 1.0 means completely unchanged (opaque). Non-integer values are supported and meaningful, as are values greater than 1.0. It is not necessary to use this function (or the less-recommended <code>gui.transparency</code>) to perform drawing with transparency, because you can provide an alpha value in the color argument of each draw call. However, it can sometimes be convenient to be able to globally modify the drawing transparency.
+</p>
+
+<hr />
+
+<h3 id="gui.transparency">gui.transparency (trans)</h3>
+
+<p>
+Scales the transparency of subsequent draw calls. Exactly the same as <a href="#gui.opacity"><code>gui.opacity</code></a>, except the range is different: A <code>trans</code> of 4.0 means completely transparent, and a <code>trans</code> of 0.0 means completely unchanged (opaque).
+</p>
+
+<hr />
+
+<h3 id="gui.popup">gui.popup (msg [, type [, icon]])<br />
+<small>or</small> <span id="input.popup">input.popup (msg [, type [, icon]])</span></h3>
+
+<p>
+Brings up a modal popup dialog box (everything stops until the user dismisses it). The box displays the message <a href="#tostring"><code>tostring</code></a><code>(msg)</code>. This function returns the name of the button the user clicked on (as a string).
+</p>
+
+<p>
+<code>type</code> determines which buttons are on the dialog box, and it can be one of the following: 'ok', 'yesno', 'yesnocancel', 'okcancel', 'abortretryignore'.<br /><code>type</code> defaults to <code>'ok'</code> for <code>gui.popup</code>, or to <code>'yesno'</code> for <code>input.popup</code>.
+</p>
+
+<p>
+<code>icon</code> indicates the purpose of the dialog box (or more specifically it dictates which title and icon is displayed in the box), and it can be one of the following: 'message', 'question', 'warning', 'error'.<br /><code>icon</code> defaults to <code>'message'</code> for <code>gui.popup</code>, or to <code>'question'</code> for <code>input.popup</code>.
+</p>
+
+<p>
+Try to avoid using this function much if at all, because modal dialog boxes can be irritating.
+</p>
+
+<hr />
+
+<h3 id="gui.gdscreenshot">gui.gdscreenshot ()</h3>
+
+<p>
+Takes a screenshot of the current screen and returns it in a string format that can be used by <a href="#aboutgd">gd</a>.
+</p>
+
+<p>
+Here is an example that takes a screenshot, creates a gd image from it, and saves it out to a PNG file on the hard drive:
+</p>
+
+<pre><code>local gdstr = gui.gdscreenshot()
+gd.createFromGdStr(gdstr):png("outputimage.png")</code></pre>
+
+<hr />
+
+<h3 id="gui.gdoverlay">gui.gdoverlay ([x, y,] gdimage[, alphamul])<br />
+<small>or</small> <span id="gui.drawimage">gui.drawimage ([x, y,] gdimage[, alphamul])</span><br />
+<small>or</small> <span id="gui.image">gui.image ([x, y,] gdimage[, alphamul])</span></h3>
+
+<p>
+Draws an image on the screen. <code>gdimage</code> must be in truecolor <a href="#aboutgd">gd</a> string format.
+</p>
+
+<p>
+Transparency is fully supported. Also, if <code>alphamul</code> is specified then it will modulate the transparency of the image even if it's originally fully opaque. (<code>alphamul</code>=1.0 is normal, <code>alphamul</code>=0.5 is doubly transparent, <code>alphamul</code>=3.0 is triply opaque, etc.)
+</p>
+
+<p>
+<code>x,y</code> determines the top-left corner of where the image should draw. If they are omitted, the image will draw starting at the top-left corner of the screen.
+</p>
+
+<p>
+<code>gui.gdoverlay</code> is an actual drawing function (like <a href="#gui.box"><code>gui.box</code></a> and friends) and thus must be called every frame, preferably inside a <a href="#gui.register"><code>gui.register</code></a>'d function, if you want it to appear as a persistent image onscreen.
+</p>
+
+<p>
+Here is an example that loads a PNG from file, converts it to gd string format, and draws it once on the screen:
+</p>
+
+<pre><code>local gdstr = gd.createFromPng("myimage.png"):gdStr()
+gui.gdoverlay(gdstr)</code></pre>
+
+<hr />
+
+<h3 id="aboutgd">What is gd and how can I install it?</h3>
+
+<p>
+GD is a library for image manipulation. The library you can use in Gens with Lua is more specifically called <a href="http://lua-gd.luaforge.net/">Lua-GD</a>. With it you can do things like load an image file (which Gens can then draw on the screen), convert between image formats, save image files, or perform relatively advanced drawing operations on images. You can read more about it at its home page.
+</p>
+
+<p>
+Listed here are the steps I followed to install Lua-GD for Win32. They worked for me, but they might not exactly match up with your environment, so I'd suggest following the official installation instructions if these don't help:
+</p>
+
+<ol>
+<li>I downloaded a package called <b><a href="http://luaforge.net/frs/download.php/1594/lua-gd-2.0.33r2-win32.zip">lua-gd-2.0.33r2-win32</a></b> at the <a href="http://luaforge.net/projects/lua-gd/">one of the Lua-GD download pages</a>, and extracted it.</li>
+<li>I copied <b>gd.dll</b> to where my Gens .exe was located.</li>
+<li>I copied <b>freetype6.dll</b>, <b>jpeg62.dll</b>, <b>libgd2.dll</b>, <b>libiconv2.dll</b>, <b>libpng13.dll</b>, <b>xpm4.dll</b>, and <b>zlib1.dll</b> to C:\WINDOWS\system32</li>
+<li>I downloaded a package called <b><a href="http://luaforge.net/frs/download.php/3677/lua5_1_4_Win32_bin.zip">lua5_1_4_Win32_bin</a></b> at the <a href="http://luabinaries.luaforge.net/download.html">Lua Binaries download page</a>, and extracted it.</li>
+<li>I copied both <b>lua51.dll</b> and <b>lua5.1.dll</b> to C:\WINDOWS\system32</li>
+</ol>
+
+<p>
+After that I was able to use gd in any Lua script simply by putting the following code at the top:
+</p>
+
+<pre><code>require "gd"</code></pre>
+
+<p>
+It is not necessary to install or use GD. Gens Lua does not use it directly for anything, not even for <a href="#gui.gdscreenshot"><code>gui.gdscreenshot</code></a> or <a href="#gui.gdoverlay"><code>gui.gdoverlay</code></a>. And it is possible to do anything that GD does without using GD. It is a convenient library, however.
+</p>
+
+<hr />
+
+<h2 id="joypad">joypadライブラリ</h2>
+
+<p>
+Functions for examining or changing the controller input that can be received by the emulation are in the <code>joypad</code> library.
+</p>
+
+<hr />
+
+<h3 id="joypad.get">joypad.get ([whichcontroller])<br />
+<small>or</small> <span id="joypad.read">joypad.read ([whichcontroller])</span></h3>
+
+<p>
+Returns a table of every game button, where each entry is <b>true</b> if that button is currently held (as of the last time the emulation checked), or <b>false</b> if it is not held. If a movie is playing, this will read the input actually being received from the movie instead of what the user is pressing. By default this only checks controller 1's input, but the optional <code>whichcontroller</code> argument lets you choose (valid choices are <code>1</code>, <code>2</code>, <code>'1B'</code> (or <code>0x1B</code>), or <code>'1C'</code> (or <code>0x1C</code>)).
+</p>
+
+<p>
+For example, <code>joypad.get()</code> might return the table <code>{up=false, down=false, left=false, right=true, A=true, B=false, C=false, start=false, X=false, Y=false, Z=false, mode=false}</code>, meaning that player 1's last input sent to the game had the A and Right buttons held and everything else unheld.
+</p>
+
+<p>
+You could check whether a particular button is held like so:<br /><code>local buttons = joypad.get()<br />if buttons.B then print("the B button is held!") end</code>
+</p>
+
+<hr />
+
+<h3 id="joypad.getdown">joypad.getdown ([whichcontroller])<br />
+<small>or</small> <span id="joypad.readdown">joypad.readdown ([whichcontroller])</span></h3>
+
+<p>
+Returns a table of only the game buttons that are currently held. Each entry is <b>true</b> if that button is currently held (as of the last time the emulation checked), or <b>nil</b> if it is not held. If a movie is playing, this will read the input actually being received from the movie instead of what the user is pressing. By default this only checks controller 1's input, but the optional <code>whichcontroller</code> argument lets you choose (valid choices are <code>1</code>, <code>2</code>, <code>'1B'</code>, or <code>'1C'</code>).
+</p>
+
+<p>
+For example, <code>joypad.getdown()</code> might return the table <code>{right=true, A=true}</code>, meaning that player 1's last input sent to the game had the A and Right buttons held and everything else unheld.
+</p>
+
+<hr />
+
+<h3 id="joypad.getup">joypad.getup ([whichcontroller])<br />
+<small>or</small> <span id="joypad.readup">joypad.readup ([whichcontroller])</span></h3>
+
+<p>
+Returns a table of only the game buttons that are not currently held. Each entry is <b>nil</b> if that button is currently held (as of the last time the emulation checked), or <b>false</b> if it is not held. If a movie is playing, this will read the input actually being received from the movie instead of what the user is pressing. By default this only checks controller 1's input, but the optional <code>whichcontroller</code> argument lets you choose (valid choices are <code>1</code>, <code>2</code>, <code>'1B'</code>, or <code>'1C'</code>).
+</p>
+
+<p>
+For example, <code>joypad.getup()</code> might return the table <code>{up=false, down=false, left=false, B=false, C=false, start=false, X=false, Y=false, Z=false, mode=false}</code>, meaning that player 1's last input sent to the game had the A and Right buttons held and everything else unheld.
+</p>
+
+<hr />
+
+<h3 id="joypad.peek">joypad.peek ([whichcontroller])</h3>
+
+<p>
+Same as <a href="#joypad.get"><code>joypad.get</code></a> except it checks the buttons that are currently being held by the user instead of the buttons that were last received by the game. In other words, this is an asynchronous version of <code>joypad.get</code>, and if a movie is playing, this will ignore the movie's input and look at what the user is trying to press instead.
+</p>
+
+<hr />
+
+<h3 id="joypad.peekdown">joypad.peekdown ([whichcontroller])</h3>
+
+<p>
+Same as <a href="#joypad.getdown"><code>joypad.getdown</code></a> except it checks the buttons that are currently being held by the user instead of the buttons that were last received by the game. In other words, this is an asynchronous version of <code>joypad.getdown</code>, and if a movie is playing, this will ignore the movie's input and look at what the user is trying to press instead.
+</p>
+
+<hr />
+
+<h3 id="joypad.peekup">joypad.peekup ([whichcontroller])</h3>
+
+<p>
+Same as <a href="#joypad.getup"><code>joypad.getup</code></a> except it checks the buttons that are currently being held by the user instead of the buttons that were last received by the game. In other words, this is an asynchronous version of <code>joypad.getup</code>, and if a movie is playing, this will ignore the movie's input and look at what the user is trying to press instead.
+</p>
+
+<hr />
+
+
+<h3 id="joypad.set">joypad.set ([whichcontroller,] input)<br />
+<small>or</small> <span id="joypad.write">joypad.write ([whichcontroller,] input)</span></h3>
+
+<p>
+Modifies the input that the next frame of emulation receives. <code>input</code> must be a table of zero or more buttons (valid buttons are <code>up</code>, <code>down</code>, <code>left</code>, <code>right</code>, <code>A</code>, <code>B</code>, <code>C</code>, <code>start</code>, <code>X</code>, <code>Y</code>, <code>Z</code>, <code>mode</code>) each with values of <b>true</b>, <b>false</b>, or <b>nil</b>.
+</p>
+
+<p>
+A value of <b>true</b> means "force this button to be held next frame". A value of <b>false</b> means "force this button to be unheld next frame". A value of <b>nil</b> (or no entry for the button) means "don't modify this button next frame, let it be whatever it would have been normally".
+</p>
+
+<p>
+A consequence of this is that you can call <code>joypad.set</code> multiple times to piece together the next frame's input. For example:
+</p>
+
+<pre><code>joypad.set({A=true})
+joypad.set({B=true, up=false})
+</code></pre>
+
+<p>
+Running the above code would force the player to press both A and B on the next frame, prevent the player from pressing Up on the next frame, and the other buttons like Left and Right are the user's choice to press or not press (they would be unheld on the next frame unless the user presses them in which case they would be held).
+</p>
+
+<p>
+For just one example of how it might be useful to leave buttons <b>nil</b>, consider a script that calls <code>joypad.set</code> each frame to make the player jump in a certain pattern (i.e. a custom macro). If you make the macro only control the jump button, that leaves you free to press the other buttons yourself, so you can do things like guide your character left/right while the macro is handling the jump height and timing. This sort of "partial automation" can be handy, so don't override more buttons than you need to.
+</p>
+
+<p>
+By default this function only sets controller 1's input, but the optional <code>whichcontroller</code> argument lets you choose (valid choices are <code>1</code>, <code>2</code>, <code>'1B'</code> (or <code>0x1B</code>), or <code>'1C'</code> (or <code>0x1C</code>)). Also, if an input movie is currently playing then this function will not do anything. It will work fine if a movie is recording, of course, but not if it's playing.
+</p>
+
+<hr />
+
+<h2 id="input">inputライブラリ</h2>
+
+<p>
+Functions for getting non-game-controller user input are in the <code>input</code> library.
+</p>
+
+<hr />
+
+<h3 id="input.get">input.get ()<br />
+<small>or</small> <span id="input.read">input.read ()</span></h3>
+
+<p>
+Returns a table that represents the state of the mouse and keyboard.
+</p>
+
+<p>
+Entries for the mouse are:
+</p>
+<ul>
+<li><code>xmouse</code>: mouse cursor horizontal position in <a href="#coordinates">emulator screen coordinates</a> from 0 to 319</li>
+<li><code>ymouse</code>: mouse cursor vertical position in <a href="#coordinates">emulator screen coordinates</a> from 0 to 223</li>
+<li><code>leftclick</code>: true if the left mouse button is held, nil otherwise</li>
+<li><code>rightclick</code>: true if the right mouse button is held, nil otherwise</li>
+<li><code>middleclick</code>: true if the middle mouse button is held, nil otherwise</li>
+</ul>
+
+<p>
+<code>xmouse</code> and <code>ymouse</code> will always be numbers in the returned table (never <b>nil</b>). If the cursor is not positioned in the emulator screen then these numbers will be outside of the normal range, for example they will be negative if the cursor is past the top-left corner of the emulator screen.
+</p>
+
+<p>
+Entries for the keyboard each represent a key and can be <b>true</b> if the key is held or <b>nil</b> otherwise. Possible keyboard entries are:
+</p>
+
+<ul>
+<li><code>shift, control, alt, capslock, numlock, scrolllock,</code></li>
+<li><code>0, 1, 2, 3, 4, 5, 6, 7, 8, 9,</code></li>
+<li><code>A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z,</code></li>
+<li><code>F1, F2, F3, F4, F5, F6, F7, F8, F9, F10, F11, F12,</code></li>
+<li><code>F13, F14, F15, F16, F17, F18, F19, F20, F21, F22, F23, F24,</code></li>
+<li><code>backspace, tab, enter, pause, escape, space,</code></li>
+<li><code>pageup, pagedown, end, home, insert, delete,</code></li>
+<li><code>left, up, right, down,</code></li>
+<li><code>numpad0, numpad1, numpad2, numpad3, numpad4, numpad5, numpad6, numpad7, numpad8, numpad9,</code></li>
+<li><code>numpad*, numpad+, numpad-, numpad., numpad/,</code></li>
+<li><code>tilde, plus, minus, leftbracket, rightbracket,</code></li>
+<li><code>semicolon, quote, comma, period, slash, backslash</code></li>
+</ul>
+
+<p>
+It's generally somewhat bad practice to check keyboard keys at all because any user could easily have configured those keys to do some other more important emulator functions. However, it's still useful: Sometimes you just want to check an extra button quickly, for example if you're testing something or if you're writing a little throw-away script and you know it. On the other side of the spectrum, although it seems unlikely for anyone to bother doing this, it would be possible to write a script that checks specific keys but also provides its own key configuration mechanism to prevent it from clashing with the user's other keys.
+</p>
+
+<hr />
+
+<h3 id="input.registerhotkey">input.registerhotkey (which, func)</h3>
+
+<p>
+Registers a callback function to run when a certain hotkey is pressed. <code>which</code> is the hotkey number, and currently must be a number between 1 and 16. This range corresponds with the user-configurable hotkeys "Lua&nbsp;Custom&nbsp;Hotkey&nbsp;1" through "Lua&nbsp;Custom&nbsp;Hotkey&nbsp;16", which will do nothing when pressed except trigger the aforementioned callback. These hotkeys must be configured by the user in the input settings beforehand.
+</p>
+
+<p>
+The only real advantage this has over other methods of checking input is that it works even if Gens is paused. There is no alternative way of allowing user-controlled activation of script code during a pause except for making Gens enter into a <a href="#interactivepause">fake pause</a> instead of really pausing. (Although, depending on the situation, a fake pause might be the better option.)
+</p>
+
+<hr />
+
+<h2 id="movie">movieライブラリ</h2>
+
+<p>
+Functions for dealing with recorded input movies are in the <code>movie</code> library.
+</p>
+
+<hr />
+
+<h3 id="movie.active">movie.active ()</h3>
+
+<p>
+Returns <b>true</b> if any movie file is open, or <b>false</b> otherwise.
+</p>
+
+<hr />
+
+<h3 id="movie.recording">movie.recording ()</h3>
+
+<p>
+Returns <b>true</b> if a movie file is currently recording, or <b>false</b> otherwise.
+</p>
+
+<hr />
+
+<h3 id="movie.playing">movie.playing ()</h3>
+
+<p>
+Returns <b>true</b> if a movie file is currently playing, or <b>false</b> otherwise.
+</p>
+
+<hr />
+
+<h3 id="movie.mode">movie.mode ()</h3>
+
+<p>
+Returns one of the following:
+</p>
+<ul>
+<li><b>"playback"</b>: a movie file is currently playing</li>
+<li><b>"record"</b>: a movie file is currently recording</li>
+<li><b>"finished"</b>: a movie file is done playing but still open</li>
+<li><b>nil</b>: there is no movie file open</li>
+</ul>
+
+<hr />
+
+<h3 id="movie.length">movie.length ()</h3>
+
+<p>
+Returns the total number of frames in the current movie.
+</p>
+
+<hr />
+
+<h3 id="movie.name">movie.name ()<br />
+<small>or</small> <span id="movie.getname">movie.getname ()</span></h3>
+
+<p>
+Returns a string containing the full filename (path) of the current movie file.
+</p>
+
+<hr />
+
+<h3 id="movie.rerecordcount">movie.rerecordcount ()</h3>
+
+<p>
+Returns the count of re-records that is stored in the current movie file.
+</p>
+
+<hr />
+
+<h3 id="movie.setrerecordcount">movie.setrerecordcount (number)</h3>
+
+<p>
+Sets the re-record count of the current movie file to the given number.
+</p>
+
+<hr />
+
+<h3 id="movie.rerecordcounting">movie.rerecordcounting ([enabled])</h3>
+
+<p>
+If <code>enabled</code> is <b>false</b>, this causes <a href="#savestate.load"><code>savestate.load</code></a> to never increment the re-record count. If <code>enabled</code> is <b>true</b> (or otherwise non-<b>nil</b>), this causes <a href="#savestate.load"><code>savestate.load</code></a> to increment the re-record count when loading numbered savestates only (the default behavior). If <code>enabled</code> is not provided, this returns the current re-record counting setting (<b>true</b> if enabled, <b>false</b> otherwise) instead of changing it.
+</p>
+
+<hr />
+
+<h3 id="movie.readonly">movie.readonly ()<br />
+<small>or</small> <span id="movie.getreadonly">movie.getreadonly ()</span></h3>
+
+<p>
+Returns <b>true</b> if the current movie is in read-only mode (which means that loading a savestate would switch to playback), or returns <b>false</b> if the current movie is in non-read-only mode (which means that loading a savestate would switch to recording).
+</p>
+
+<hr />
+
+<h3 id="movie.setreadonly">movie.setreadonly (readonly)</h3>
+
+<p>
+Sets the current movie's read-only state. This does not change the movie's mode between recording and playback or vice-versa, but it will determine which of those to switch to the next time a savestate is loaded (either by the user or by script code).
+</p>
+
+<p>
+If the currently-loaded movie is actually a read-only file on disk (which is always the case if the movie file is still compressed in a zip archive) then calling this function can <a href="http://www.lua.org/pil/8.4.html">throw an error</a>.
+</p>
+
+<hr />
+
+<h3 id="movie.framecount">movie.framecount ()</h3>
+
+<p>
+Same as <a href="#gens.framecount"><code>gens.framecount</code></a>. Returns the number of elapsed emulation frames. This actually has nothing to do with movies and will return a valid number even if there is no movie playing. (In the future there might be some difference between the two functions if a from-savestate movie is playing, but currently they are exactly identical.)
+</p>
+
+<hr />
+
+<h3 id="movie.play">movie.play ([filename])<br />
+<small>or</small> <span id="movie.open">movie.open ([filename])</span><br />
+<small>or</small> <span id="movie.playback">movie.playback ([filename])</span></h3>
+
+<p>
+Starts playing a movie file. If <code>filename</code> is not provided, the user will be prompted to choose which file to load from a dialog, otherwise the given movie file will be loaded. The movie is loaded in read-only mode (if you want to change that then simply call <a href="#movie.setreadonly"><code>movie.setreadonly</code></a><code>(false)</code> afterward).
+</p>
+
+<p>
+If this function fails to play a movie for whatever reason (user cancelled, file not found, etc.), this will <a href="http://www.lua.org/pil/8.4.html">throw an error</a> with a description of why the movie couldn't be played.
+</p>
+
+<hr />
+
+<h3 id="movie.replay">movie.replay ()</h3>
+
+<p>
+Starts playing the currently open movie file from the first frame. This switches to playback if necessary but does not change the read-only mode. If there is no movie <a href="#movie.active">currently loaded</a>, this function will <a href="http://www.lua.org/pil/8.4.html">throw an error</a>.
+</p>
+
+<hr />
+
+<h3 id="movie.stop">movie.stop ()<br />
+<small>or</small> <span id="movie.close">movie.close ()</span></h3>
+
+<p>
+Stops and unloads the currently active movie. If no movie is open then this function does nothing.
+</p>
+
+<hr />
+
+<h2 id="sound">soundライブラリ</h2>
+
+<p>
+Functions for doing audio-related things are in the <code>sound</code> library. Presumably things like recording channels of sound or mixing in your own sound effects or changing the CD track would go here, but currently this library is a little on the skimpy side.
+</p>
+
+<hr />
+
+<h3 id="sound.clear">sound.clear ()</h3>
+
+<p>
+Clears the sound buffer (instantaneous silence). If you ever notice the sound looping annoyingly when you do some lengthy operation, you can call <code>sound.clear</code> beforehand to fix it. You could also call this every frame during a certain range of frames to "blank out" audio that annoys you.
+</p>
+
+<hr />
+
+</body></html>
