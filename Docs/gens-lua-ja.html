@@ -690,9 +690,7 @@ Gensに継続中のスクリプトの処理を待つように伝えます。具�
 <small>or</small> <span id="gui.redraw">gui.redraw ()</span></h3>
 
 <p>
-グラフィックの更新処理を即座にシミュレートすることで、現在のフレームの描画を試みます。
-
-Attempts to draw the current frame by immediately simulating a graphics processor update. This will not change the state of the emulation, although it will trigger any callbacks that have been registered by <a href="#gui.register"><code>gui.register</code></a>. If you want to update or animate a GUI drawn on top of the screen without advancing the emulation frame, then this may be the only way to do that. Note that the redrawn screen is not guaranteed to render exactly what the system would normally render, especially in games that change the palette at certain scanlines, but most of the time it is "close enough".
+グラフィックの更新処理を即座にシミュレートすることで、現在のフレームの描画を試みます。エミュレーションの状態は変更しませんが、<a href="#gui.register"><code>gui.register</code></a>により登録されたすべてのコールバックを呼び出します。これはエミュレーションフレームを進めることなく、スクリーンの上に描かれたGUIを更新あるいはアニメーションさせる唯一の手段である場合があります<span class="translatorsNote">（訳者注: フレーム境界で定期的にGUIの更新を行うエミュレータではこの限りではありません。そうでない場合に「<a href="#interactivepause">ポーズ中にGUIを更新するには？</a>」のような処理が必要となります）</span>。再描画される画面がシステムが通常生成するものと厳密に同じであると保証されないことに注意してください。これはとくに特定のスキャンラインでパレットを変更するゲームに関して言えることですが、それでもほとんどの場合は「十分に近い」ものになります。
 </p>
 
 <hr />
@@ -700,11 +698,11 @@ Attempts to draw the current frame by immediately simulating a graphics processo
 <h3 id="gens.message">gens.message (msg)</h3>
 
 <p>
-Displays the given string (or <a href="#tostring"><code>tostring</code></a><code>(msg)</code>) in the status region on the user's emulator screen, for some number of frames. Emulation should be running at normal speed if you want the user to actually see the message.
+与えられた文字列（あるいは <a href="#tostring"><code>tostring</code></a><code>(msg)</code>）を数フレームにわたってエミュレータの画面のステータス領域に表示します。
 </p>
 
 <p>
-If you want control over things like where the message appears, what color it is, and how long it stays visible, then you should use the <a href="#gui.text"><code>gui.text</code></a> function instead of this.
+メッセージの表示位置、色、表示時間などを制御したい場合は、代わりに<a href="#gui.text"><code>gui.text</code></a>を使用するとよいでしょう。
 </p>
 
 <hr />
