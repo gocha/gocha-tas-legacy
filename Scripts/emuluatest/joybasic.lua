@@ -1,10 +1,14 @@
-local joyget = joypad.getdown
+local joyget = joypad.get
 -- get, getdown, getup
 -- peek, peekdown, peekup
 
 emu.registerbefore(function()
 	local t = joyget()
 	emu.message(t)
+
+	--for k in pairs(t) do
+	--	t[k] = false
+	--end
 
 	-- redirect test
 	joypad.set(t)
