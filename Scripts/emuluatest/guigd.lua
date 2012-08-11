@@ -1,0 +1,5 @@
+require("gd")
+local gdstr = gui.gdscreenshot()
+gui.register(function()
+	gui.gdoverlay(0, 0, gdstr, 0.5)
+end)
