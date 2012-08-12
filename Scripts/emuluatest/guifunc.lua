@@ -27,15 +27,15 @@ gui.register(function()
 	end
 
 	if gui.text then
-		local s = ""
+		local s = "!\"#$%&'()*+,-./\n0123456789:;<=>?\n@ABCDEFGHIJKlMNO\nPQRSTUVWXYZ[\\]^_\n`abcdefghijklmno\npqrstuvwxyz{|}~\nA\tBCDEFG\nAB\tCDEFG\nABC\tDEFG\nABCD\tEFG\nABCDE\tFG\nABCDEF\tG\nABCDEFG\tH\nABCDEFGHABCDEFG H\nABCDEFG\t\tH\nLOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOONG\n"
 		if emu.framecount then
-			s = s .. " " .. emu.framecount()
+			s = s .. emu.framecount()
 		end
 		if gui.getpixel then
 			local r, g, b = gui.getpixel(0, 0)
 			s = s .. "\n" .. string.format("RGB(%d,%d,%d)", r, g, b)
 		end
-		gui.text(20, 20, "GUI test" .. s)
+		gui.text(88, 20, s)
 	else
 		showAlert("gui.text")
 	end
