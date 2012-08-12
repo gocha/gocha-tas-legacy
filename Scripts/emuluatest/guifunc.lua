@@ -27,7 +27,15 @@ gui.register(function()
 	end
 
 	if gui.text then
-		gui.text(20, 20, "GUI test")
+		local s = ""
+		if emu.framecount then
+			s = s .. " " .. emu.framecount()
+		end
+		if gui.getpixel then
+			local r, g, b = gui.getpixel(0, 0)
+			s = s .. "\n" .. string.format("RGB(%d,%d,%d)", r, g, b)
+		end
+		gui.text(20, 20, "GUI test" .. s)
 	else
 		showAlert("gui.text")
 	end
@@ -54,5 +62,3 @@ gui.register(function()
 		showAlert("gui.box")
 	end
 end)
-
--- TODO gui.getpixel

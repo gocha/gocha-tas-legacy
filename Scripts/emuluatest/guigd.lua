@@ -1,5 +1,6 @@
 require("gd")
 local gdstr = gui.gdscreenshot()
+gd.createFromGdStr(gdstr):png("gdscreenshot.png")
 gui.register(function()
 	gui.gdoverlay(0, 0, gdstr, 0.5)
 end)
