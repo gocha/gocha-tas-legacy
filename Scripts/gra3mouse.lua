@@ -1,6 +1,6 @@
 --[[
 
- Gradius 3 + Mouse Control for Snes9x 1.43-rr v16
+ Gradius 3 + Mouse Control for Snes9x 1.43-rr
  This script looks working good on both (U) and (J) ROM.
 
  SHOT/MISSILE   LEFT CLICK
@@ -63,7 +63,7 @@ local gra3RewriteBehavior = false
 local gra3Paused = false
 emu.registerbefore(function()
 	key = input.get()
-	mouse = { x = key.xmouse, y = key.ymouse }
+	mouse = { x = math.max(0, math.min(255, key.xmouse)), y = math.max(0, math.min(223, key.ymouse)) }
 	key.xmouse, key.ymouse = nil, nil
 
 	gra3RewriteBehavior = false
@@ -122,5 +122,3 @@ gui.register(function()
 		gui.drawarrowcursorwithshadow(mouse.x, mouse.y)
 	end
 end)
-
-while true do emu.frameadvance() end
