@@ -1,7 +1,7 @@
 local mode = "get"
-local registerprefix = "" -- e.g. sub.
+local registerprefix = "main." -- e.g. sub.
 local registernames = {
-	"a0", "a1", "a2", "a3"
+	"db", "p", "e", "a", "d", "s", "x", "y", "pb", "pc", "pbpc"
 }
 
 if not memory.getregister then
