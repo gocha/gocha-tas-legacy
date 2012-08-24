@@ -18,7 +18,7 @@
 -- checkpoint #4: emulator switches movie mode from PLAYING to FINISHED [reaches the end]
 -- checkpoint #5: user can input if movie has been finished
 -- checkpoint #6: user can close movie if movie has been finished (check the menu)
--- frame advance for 100 frames (to verify checkpoint #5 and checkpoint #6)
+-- frame advance if needed (to verify checkpoint #5 and checkpoint #6)
 -- save savestate #3
 -- close movie_1.mov (movie mode becomes INACTIVE)
 -- save savestate #4
@@ -38,7 +38,7 @@
 -- start playing movie_1.mov (movie mode becomes PLAYING)
 -- switch from read-only to read+write
 -- load savestate #1 (movie mode becomes RECORDING)
--- press X button for 50 frames
+-- press X button for 150 frames
 -- switch from read+write to read-only
 -- load savestate #2
 -- checkpoint #10: emulator raises movie timeline inconsistent error
@@ -62,14 +62,12 @@
 -- load savestate #1 (movie mode becomes RECORDING)
 -- load savestate #3 (movie mode becomes FINISHED)
 -- checkpoint #14: emulator switches movie mode from RECORDING to FINISHED [load 'finished' movie snapshot while RECORDING]
--- frame advance for 100 frames (to verify checkpoint #14)
+-- frame advance if needed (to verify checkpoint #14)
 -- switch from read+write to read-only
 -- load savestate #2 (movie mode becomes PLAYING)
 -- checkpoint #15: 'finished' movie snapshot contains the entire movie (i.e. emulator switches movie mode from FINISHED to PLAYING, movie length = 200 frames)
 -- frame advance if needed (to verify checkpoint #15)
--- switch from read-only to read+write
--- load savestate #1 (movie mode becomes RECORDING)
--- switch from read+write to read-only
+-- load savestate #1 (movie mode becomes PLAYING)
 -- load savestate #3 (movie mode becomes FINISHED)
 -- checkpoint #16: emulator switches movie mode from PLAYING to FINISHED [load 'finished' movie snapshot while PLAYING]
 -- finish
