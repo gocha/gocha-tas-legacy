@@ -1,5 +1,7 @@
 
-3
+5
 00000	s058A4	b	u	0	Mouse level (Stage 1)
 00001	s05868	b	u	0	Mouse timer (Stage 1)
 00002	s043E9	b	u	0	Teamwork
+00003	i03053	b	s	0	X Velocity
+00004	i03054	b	s	0	Y Velocity
