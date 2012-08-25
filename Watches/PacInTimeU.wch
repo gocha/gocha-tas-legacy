@@ -1,0 +1,12 @@
+
+10
+00000	7E007D	w	s	0	X Velocity
+00001	7E007F	w	s	0	Y Velocity
+00002	7E003C	w	h	0	X Position
+00003	7E0040	w	h	0	Y Position
+00004	7E0A67	w	s	0	X Velocity (wire)
+00005	7E0A69	w	s	0	Y Velocity (wire)
+00006	7E0A6B	w	s	0	Velocity (wire)
+00007	7E1533	b	u	0	Health
+00008	7E0B4F	b	s	0	Invincibility
+00009	7E0B03	b	s	0	Dots
