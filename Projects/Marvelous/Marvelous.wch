@@ -1,7 +1,13 @@
 
-5
-00000	s058A4	b	u	0	Mouse level (Stage 1)
-00001	s05868	b	u	0	Mouse timer (Stage 1)
-00002	s043E9	b	u	0	Teamwork
-00003	i03053	b	s	0	X Velocity
-00004	i03054	b	s	0	Y Velocity
+11
+00000	s043E9	b	u	0	Teamwork (fire A)
+00001	i03053	b	s	0	X Velocity
+00002	i03054	b	s	0	Y Velocity
+00003	i03040	w	x	0	X Position
+00004	i03042	w	x	0	Y Position
+00005	s04018	b	u	0	Falldown Timer
+00006	s05160	b	u	0	Whistle Timer
+00007	s0418D	w	u	0	Partner 1 Steps
+00008	s0418F	w	u	0	Partner 2 Steps
+00009	s058A4	b	u	0	Mouse level (Chapter 1)
+0000A	s05868	b	u	0	Mouse timer (Chapter 1)
