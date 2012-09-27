@@ -4,7 +4,7 @@ local joyget = joypad.get
 
 emu.registerbefore(function()
 	local t = joyget()
-	emu.message(t)
+	emu.message(tostring(t))
 
 	--for k in pairs(t) do
 	--	t[k] = false
