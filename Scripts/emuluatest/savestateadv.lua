@@ -82,7 +82,7 @@ gui.register(function()
 	local str = string.format("frame = %d", emu.framecount())
 	str = str .. "\n" .. "movie.length() = " .. movie.length()
 	str = str .. "\n" .. "movie.mode() = " .. movie.mode()
-	str = str .. "\n" .. "movie.readonly() = " .. movie.readonly()
+	str = str .. "\n" .. "movie.readonly() = " .. tostring(movie.readonly())
 	str = str .. "\n" .. "movie.name() = " .. movie.name()
 	str = str .. "\n" .. string.format("step,frame = %d,%d", step, frame)
 	if gui.text then
