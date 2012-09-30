@@ -10,6 +10,6 @@ savestate.registersave(function()
 end)
 
 savestate.registerload(function(_,a)
-	count = a
+	count = tostring(a)
 	print("load", count)
 end)
