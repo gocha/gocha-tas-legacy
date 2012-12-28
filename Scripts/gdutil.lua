@@ -1,7 +1,7 @@
 -- small utility functions for lua-gd
 
 if not gd then
-	require "gd"
+	gd = require("gd")
 end
 
 -- return if an image is a truecolor one
@@ -19,7 +19,8 @@ gd.createTrueColorBlank = function(x, y)
 	local trans = im:colorAllocateAlpha(255, 255, 255, 127)
 	im:alphaBlending(false)
 	im:filledRectangle(0, 0, im:sizeX() - 1, im:sizeY() - 1, trans)
-	im:alphaBlending(true) -- TODO: restore the blending mode to default
+	im:alphaBlending(true)
+	im:saveAlpha(true)
 	return im
 end
 -- return a converted image (source image won't be changed)
@@ -34,7 +35,8 @@ gd.convertToTrueColor = function(imsrc)
 	local trans = im:colorAllocateAlpha(255, 255, 255, 127)
 	im:filledRectangle(0, 0, im:sizeX() - 1, im:sizeY() - 1, trans)
 	im:copy(imsrc, 0, 0, 0, 0, im:sizeX(), im:sizeY())
-	im:alphaBlending(true) -- TODO: set the mode which imsrc uses
+	im:alphaBlending(true)
+	im:saveAlpha(true)
 
 	return im
 end
@@ -71,4 +73,58 @@ gd.flipBoth = function(im)
 	gd.flipVertical(im)
 	gd.flipHorizontal(im)
 	return im
+end
+-- compare two images and extract only different pixels between two images
+-- return value is a truecolor gd image with alpha channel
+gd.createDiff = function(imFG, imBG, ...)
+	local arg = { ... }
+	local xOffsetFG, yOffsetFG = 0, 0
+	local xOffsetBG, yOffsetBG = 0, 0
+	local width, height = math.min(imFG:sizeX(), imBG:sizeX()), math.min(imFG:sizeY(), imBG:sizeY())
+
+	-- parse argument array
+	if #arg == 4 then
+		-- xOffset, yOffset, width, height
+		xOffsetFG, yOffsetFG = arg[1], arg[2]
+		xOffsetBG, yOffsetBG = xOffsetFG, yOffsetFG
+		width, height = arg[3], arg[4]
+	elseif #arg == 6 then
+		-- xOffsetFG, yOffsetFG, xOffsetBG, yOffsetBG, width, height
+		xOffsetFG, yOffsetFG = arg[1], arg[2]
+		xOffsetBG, yOffsetBG = arg[3], arg[4]
+		width, height = arg[5], arg[6]
+	elseif #arg > 0 then
+		error("too few/much arguments")
+	end
+
+	-- range check
+	if (xOffsetFG + width > imFG:sizeX()) or (yOffsetFG + height > imFG:sizeY()) then
+		error("foreground image (argument #1) is too small, or illegal offset. " .. width .. "x" .. height .. " from (" .. xOffsetFG .. "," .. yOffsetFG .. ")")
+	end
+	if (xOffsetBG + width > imBG:sizeX()) or (yOffsetBG + height > imBG:sizeY()) then
+		error("background image (argument #2) is too small, or illegal offset. " .. width .. "x" .. height .. " from (" .. xOffsetBG .. "," .. yOffsetBG .. ")")
+	end
+
+	-- create new gd image
+	local imDiff = gd.createTrueColorBlank(width, height)
+	imDiff:alphaBlending(false)
+	imDiff:copy(imFG, 0, 0, xOffsetFG, yOffsetFG, width, height)
+
+	-- pixel-by-pixel processing
+	local colTrans = imDiff:colorAllocateAlpha(255, 255, 255, 127)
+	for y = 0, height - 1 do
+		for x = 0, width - 1 do
+			local colFG = imFG:getPixel(x + xOffsetFG, y + yOffsetFG)
+			local colBG = imBG:getPixel(x + xOffsetBG, y + yOffsetBG)
+			if imFG:red(colFG) == imBG:red(colBG) and
+			   imFG:green(colFG) == imBG:green(colBG) and
+			   imFG:blue(colFG) == imBG:blue(colBG)
+			then
+				imDiff:setPixel(x, y, colTrans)
+			end
+		end
+	end
+	imDiff:alphaBlending(true)
+	imDiff:saveAlpha(true)
+	return imDiff
 end
