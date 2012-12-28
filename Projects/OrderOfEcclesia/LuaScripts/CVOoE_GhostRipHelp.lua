@@ -102,17 +102,18 @@ gui.register(function()
 	ch_hity1 = memory.readwordsigned(0x02128c30)
 	ch_hitx2 = memory.readwordsigned(0x02128c32)
 	ch_hity2 = memory.readwordsigned(0x02128c34)
+	-- fade_in = memory.readwordsigned(0x02100ab2) > 0
+	fade = math.floor(math.abs(memory.readdwordsigned(0x02100b00)/0x1000))
+	if fade > 16 then fade = 16 end
+	fade = (16 - fade) / 16.0
+	if memory.readbyte(0x020d88d0) ~= 0 then
+		return
+	end
+	gui.opacity(0.5 * fade + 0.5)
 	gui.text(164, 0, string.format("cams: %d %d", camx, camy))
 	gui.text(164, 10, string.format("area: %d %d %d", area, room_x, room_y))
 	gui.text(164, 20, string.format("SP: %d %04X", ch_spr_timer, ch_spr))
 	gui.text(164, 30, string.format("DB: %d, %d", (ch_spr%0x10)*sprw, math.floor(ch_spr/0x10)*sprh))
-	if memory.readbyte(0x020d88d0) ~= 0 then
-		return
-	end
-	-- fade = math.abs(memory.readbytesigned(0x020c0768)) -- 16=white -16=black?
-	-- if fade > 16 then fade = 16 end
-	-- fade = (16 - fade) / 16.0
-	fade = 1.0
 
 	gui.opacity(0.68*1 * fade)
 	chDrawSprite( sprw + ch_x - camx - sprox, ch_y - camy - sproy, ch_spr, ch_dir >= 0)
