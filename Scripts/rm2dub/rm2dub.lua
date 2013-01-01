@@ -45,9 +45,20 @@ function writeAVS(line)
 		print(line)
 	end
 end
+local audioDubTable = {}
 function writeAudioDubAVS(frame, audioName)
-	writeAVS(string.format("a = %s.DelayAudio(f2s(%d, last))", audioName, frame))
-	writeAVS(string.format("MixAudio(last, a, 1.0, 1.0)"))
+	table.insert(audioDubTable, { frame = frame, name = audioName })
+end
+function flushAudioDubAVS()
+	for i = 1, #audioDubTable do
+		local dubInfo = audioDubTable[i]
+		local audioTrimStr = ""
+		if i < #audioDubTable then
+			audioTrimStr = string.format(".AudioTrim(0, End = f2s(%d, last))", audioDubTable[i + 1].frame - dubInfo.frame)
+		end
+		writeAVS(string.format("a = %s%s.DelayAudio(f2s(%d, last))", dubInfo.name, audioTrimStr, dubInfo.frame))
+		writeAVS(string.format("MixAudio(last, a, 1.0, 1.0)"))
+	end
 end
 -- and its first header part
 writeAVS("AviSource(\"filename.avi\")")
@@ -101,5 +112,6 @@ emu.registerafter(function()
 end)
 
 emu.registerexit(function()
+	flushAudioDubAVS()
 	proAudio.destroy()
 end)
