@@ -111,7 +111,8 @@ emu.registerafter(function()
 
 	if isScreenAvailable() then
 		local newRoomId = getRoomId()
-		if newRoomId ~= "" and newRoomId ~= curRoomId then
+		local roomSizeX, roomSizeY = getRoomSize()
+		if newRoomId ~= "" and (newRoomId ~= curRoomId or gdMap:sizeX() ~= roomSizeX or gdMap:sizeY() ~= roomSizeY) then
 			if curRoomId ~= "" and gdMap then
 				-- save the last image
 				--gdMap:png(getRoomId() .. ".png")
@@ -120,14 +121,16 @@ emu.registerafter(function()
 			curRoomId = newRoomId
 
 			-- create a new canvas
-			gdMap = gd.createTrueColorBlank(getRoomSize())
+			gdMap = gd.createTrueColorBlank(roomSizeX, roomSizeY)
 			gdMap:saveAlpha(false)
 			gdMap:alphaBlending(false)
 		end
 	end
 end)
 
+local keys = { {}, {} }
 gui.register(function()
+	keys[1] = input.get()
 	if isScreenAvailable() then
 		local igframe = memory.readdword(0x02100374)
 		local camerax, cameray = getCameraPosition()
@@ -141,17 +144,19 @@ gui.register(function()
 		gui.text(4, 44, string.format("%d,%d", getRoomSize()))
 		gui.text(4, 54, string.format("%d,%d", getCameraPosition()))
 
-		if gdMap and not screenmoving then
+		local captureThisFrame = gdMap and not screenmoving and keys[1].F11
+		if captureThisFrame then
 			local gdSrc = gd.createFromGdStr(gui.gdscreenshot())
 			gdSrc:saveAlpha(false)
 			gdSrc:alphaBlending(false)
 			gd.copy(gdMap, gdSrc, camerax + cappt.x, cameray + cappt.y, 0 + cappt.x, 192 + cappt.y, capsx, capsy)
 			-- save the last image
 		end
-		if gdMap and igframe % 60 == 0 then
+		if captureThisFrame then
 			gdMap:png(getRoomId() .. ".png")
 		end
 	end
+	keys[2] = keys[1]
 end)
 
 emu.registerexit(function()
