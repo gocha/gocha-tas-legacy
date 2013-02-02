@@ -6,11 +6,9 @@ AD2J,0009AA88,"0005 - Mr. Driller 2 (J).gba","",0009AA4C
 ACRJ,00029904,"0006 - Chu Chu Rocket! (J).gba","",000298D4
 AAMJ,00108A3C,"0007 - Akumajou Dracula - Circle of the Moon (J).gba","",001089D0
 AG7J,0001D4D4,"0008 - Advance GTA (J).gba","",0001D4A4
-AKWJ,00057674,"0009 - Konami Wai Wai Racing Advance (J).gba","",
 ADFJ,0005D6E0,"0010 - Bakunetsu Dodge Ball Fighters (J).gba","",0005D6BC
 APBJ,00126A20,"0011 - Pinobee no Daibouken (J).gba","",001269D8
-AP3J,004281B4,"0012 - Power Pro Kun Pocket 3 (J).gba","",
-ANPJ,00105278,"0013 - Napoleon (J).gba","",
+ANPJ,00105278,"0013 - Napoleon (J).gba","",0010523C
 AGTJ,00388818,"0014 - Zen-Nippon GT Senshuken (J).gba","",003887E8
 AMJJ,0032D148,"0016 - Tweety to Hearty Party (J).gba","",0032D118
 AGRJ,0060D7FC,"0017 - JGTO Golf Master - Japan Tour Golf Game (J).gba","",0060D790
@@ -18,7 +16,6 @@ AWPJ,0010FE58,"0018 - Winning Post (J).gba","",0010FD80
 ASHJ,001A6008,"0019 - Play Novel - Silent Hill (J).gba","",001A5FD8
 ABCJ,003CCBFC,"0021 - Boku wa Koukuu Kanseikan (J).gba","",003CCB9C
 AMMJ,000514D0,"0023 - Momotarou Matsuri (J).gba","",000514A0
-AMNJ,000F4428,"0024 - Monster Guardians (J).gba","",
 AMZE,000F40D4,"0025 - Super Mario Advance (U).gba","",000F3F54
 AFFJ,000C1C1C,"0026 - Final Fight One (J).gba","",000C1BEC
 ABSJ,0031ABFC,"0027 - Bomberman Story (J).gba","",0031ABCC
@@ -26,115 +23,95 @@ APBE,001377F0,"0029 - Pinobee - Wings of Adventure (U).gba","",001377A8
 AAMP,00106E38,"0032 - Castlevania - Circle of the Moon (E).gba","",00106DCC
 ACAE,0001E654,"0034 - GT Advance - Championship Racing (U).gba","",0001E624
 ACRE,00029858,"0036 - Chu Chu Rocket! (U).gba","",00029828
-AEJE,003C9BA4,"0037 - Earthworm Jim (U).gba","",
-ASAE,003183E0,"0039 - Army Men Advance (U).gba","",
+ASAE,003183E0,"0039 - Army Men Advance (U).gba","",0031838C
 ADFE,0005D1AC,"0040 - Super Dodge Ball Advance (U).gba","",0005D188
 AFZE,00054BF8,"0041 - F-Zero - Maximum Velocity (U).gba","",00054BB0
 AAME,00106E38,"0045 - Castlevania - Circle of the Moon (U).gba","",00106DCC
-ATOJ,00165438,"0047 - Tactics Ogre Gaiden - The Knight of Lodis (J).gba","",00165426
+ATOJ,0016A92C,"0047 - Tactics Ogre Gaiden - The Knight of Lodis (J).gba","",0016A8FC
 AKRP,00021088,"0048 - Kuru Kuru Kururin (E).gba","",00021058
 ATCP,0036BC48,"0049 - Top Gear GT Championship (E).gba","",0036BC18
 AMAE,000F4368,"0050 - Super Mario Advance (E).gba","",000F41E8
 ATMP,0032C8A4,"0052 - Tweety & The Magic Gems (E).gba","",0032C874
-AYRJ,00067518,"0054 - Yushun Rhapsody (J).gba","",
+AYRJ,00067518,"0054 - Yushun Rhapsody (J).gba","",000674D0
 AQAJ,00361A08,"0055 - Choro Q Advance (J).gba","",003619C0
 ATRJ,002BE080,"0056 - Toy Robot Force (J).gba","",002BE05C
 ABSE,0031C890,"0058 - Bomberman Tournament (U).gba","",0031C860
 ABFJ,000BC52C,"0060 - Breath of Fire (J).gba","",000BC4C0
 AXRJ,0030143C,"0062 - Super Street Fighter II X Revival (J).gba","",00301388
-AMPJ,000E5EB0,"0063 - Mahjong Detective (J).gba","",
+AMPJ,000E5EB0,"0063 - Mahjong Detective (J).gba","",000E5E74
 ATMF,0032CCE0,"0065 - Titi et Les Bijoux Magiques (F).gba","",0032CCB0
 AMOJ,00053968,"0066 - EX Monopoly (J).gba","",00053938
-AGBJ,00071080,"0068 - Get Backers - Jigoku no Sukaramushu (J).gba","",
 AJSJ,002B5E78,"0069 - Space Hexcite X (J).gba","",002B5E60
 AKLJ,00118B50,"0070 - Klonoa - Empire of Dreams (J).gba","",00118B20
 AMKJ,001245C8,"0071 - Mario Kart Advance (J).gba","",00124544
-ADNE,006B7CD4,"0073 - Jurassic Park III - The DNA Factor (U).gba","",006B9324
 AK4J,00530E50,"0074 - Muscular Ranking (J).gba","",00530E2C
 AGMJ,0060D778,"0075 - JGTO Golf Master Mobile (J).gba","",0060D70C
-AZTJ,003E448C,"0076 - Mugen Kikou Zero Tours (J).gba","",000714F1
+AZTJ,002047FC,"0076 - Mugen Kikou Zero Tours (J).gba","",002047CC
 AMBJ,002E0BD8,"0078 - Mobile Pro Baseball (J).gba","",002E0BA8
-AGSJ,000F3684,"0079 - Ougon no Taiyo (J).gba","",
+AGSJ,000F3684,"0079 - Ougon no Taiyo (J).gba","",000F3618
 ADQJ,004A9560,"0080 - Dokapon Q Monster Hunter (J).gba","",004A9530
 AJ3J,000D3F0C,"0082 - Jurassic Park III - Park Builder (J).gba","",000D3E10
 AFFP,000A52A4,"0083 - Final Fight One (E).gba","",000A5274
-AABJ,0022C4BC,"0084 - Super Black Bass Advance (J).gba","",
+AABJ,0022C4BC,"0084 - Super Black Bass Advance (J).gba","",0022C474
 AYMJ,0002214C,"0085 - Meine Liebe (Angel League) (J).gba","",0002211C
 AMKE,00102498,"0086 - Mario Kart - Super Circuit (U).gba","",00102414
-AKMJ,00091F68,"0087 - Extreme Mahjong Deluxe - Terminator 21 (J).gba","",
-ADNP,006DEB10,"0089 - Jurassic Park III - The DNA Factor (E).gba","",006E0160
+AKMJ,00091F68,"0087 - Extreme Mahjong Deluxe - Terminator 21 (J).gba","",00091F2C
 AWAJ,00098028,"0090 - Wario Land 4 (J).gba","",00097FC8
 ATMD,0032E488,"0091 - Tweety and The Magic Gems (G).gba","",0032E458
 AJQJ,0007B308,"0092 - Jurassic Park III - Advanced Action (J).gba","",0007B2CC
 AGRE,005C0B48,"0093 - ESPN Final Round Golf 2002 (U).gba","",005C0ADC
 AWRE,0014379C,"0095 - Advance Wars (U).gba","",00143730
-ALHJ,00011454,"0097 - Love Hina Advance (J).gba","",
+ALHJ,00011454,"0097 - Love Hina Advance (J).gba","",0001140C
 AGRP,005C0F70,"0099 - ESPN Final Round Golf (E).gba","",005C0F04
 ATLE,003B4F80,"0102 - Atlantis - The Lost Empire (U).gba","",003B4F50
 AJ3P,0011DEDC,"0103 - Jurassic Park III - Park Builder (E).gba","",0011DDE0
-ATWE,00340E5C,"0104 - Tetris Worlds (U).gba","",
+ATWE,00340E5C,"0104 - Tetris Worlds (U).gba","",00340E20
 AMKP,00102498,"0105 - Mario Kart - Super Circuit (E).gba","",00102414
 ABZE,0003A758,"0108 - NFL Blitz 2002 (U).gba","",0003A6F8
 AGKJ,000CAAC8,"0109 - Gensou Suikoden Card Stories (J).gba","",000CAA98
-AXSE,0030223C,"0110 - ESPN X-Games - Skateboarding (U).gba","",00302214
-ARKE,00174DD0,"0112 - Rocket Power - Dream Scheme (U).gba","",
 AKLE,00118AE4,"0113 - Klonoa - Empire of Dreams (U).gba","",00118AB4
 AJ3E,000C8690,"0114 - Jurassic Park III - Park Builder (U).gba","",000C8594
-ASEE,004C2834,"0115 - Spider-Man - Mysterio's Menace (U).gba","",
 AF9J,000632AC,"0117 - Field of Nine Digital Edition 2001 (J).gba","",00063264
 AMSJ,000E5DD8,"0119 - Morita Shogi Advance (J).gba","",000E5DA8
 AZEJ,004E6218,"0122 - Z.O.E. 2173 Testament (J).gba","",004E61E8
-ALDP,00046620,"0123 - Lady Sia (E).gba","",
 AFFE,000A2CE0,"0128 - Final Fight One (U).gba","",000A2CB0
-ANBJ,00258534,"0129 - Nobunaga no Yabou (J).gba","",
+ANBJ,00258534,"0129 - Nobunaga no Yabou (J).gba","",0025851C
 ALBE,0075A6D4,"0130 - Lego Bionicle (U).gba","",0075A698
-AL2E,00300BCC,"0131 - Lego Island 2 - The Brickster's Revenge (U).gba","",
 AKIJ,002505E0,"0132 - Kiki Kaikai Advance (J).gba","",0025052C
-AKBE,0037F884,"0134 - Sports Illustrated For Kids - Baseball (U).gba","",
 AHSJ,0005CCAC,"0135 - Hatena Satena (J).gba","",0005CC7C
-AWTE,000F751C,"0136 - The Wild Thornberrys - Chimp Chase (U)(Venom).gba","",0002C0E8
-AKFE,0030ADB0,"0138 - Sports Illustrated For Kids - Football (U).gba","",
 ABOE,00528DCC,"0139 - Boxing Fever (U).gba","",00528D9C
 ASBJ,0004132C,"0140 - Gyakuten Saiban (J).gba","",000412FC
-AL2P,00206A3A,"0141 - Lego Island 2 - The Brickster's Revenge (E).gba","",
-ALDE,0005BD68,"0142 - Lady Sia (U).gba","",
 APYJ,002C105C,"0143 - Minna de Puyo Puyo (J).gba","",002C102C
-ATUP,00141F28,"0144 - Steven Gerrard's Total Soccer 2002 (E).gba","",
-APHE,00101FFC,"0146 - Prehistorik Man (E).gba","",
+APHE,00044B54,"0146 - Prehistorik Man (E).gba","",00044B18
 AKTJ,0045D6B4,"0147 - Hello Kitty Collection Miracle (J).gba","",0045D690
 APXJ,002B6194,"0149 - Phalanx - The Enforce Fighter A-144 (J).gba","",002B6164
 AKPJ,0024380C,"0150 - Nakayoshi Mahjan Kaburiichi (J).gba","",002437E8
 AHBJ,000B2050,"0151 - Hamster Monogatari 2 (J).gba","",000B202C
-AXSJ,00301E00,"0152 - ESPN X-Games - Skateboarding (J).gba","",00301DD8
 ALBE,0075A6D4,"0153 - Lego Bionicle (E).gba","",0075A698
 AYAJ,00270B40,"0156 - Dokodemo Taikyoku Yakuman Advance (J).gba","",00270B10
-ASYP,001AEF10,"0159 - Spyro - Season of Ice (E).gba","",
-ASYE,001AB848,"0160 - Spyro - Season of Ice (U).gba","",
+ASYP,000DB230,"0159 - Spyro - Season of Ice (E).gba","",000DB1F4
+ASYE,000DB16C,"0160 - Spyro - Season of Ice (U).gba","",000DB130
 ABTE,0007F79C,"0161 - Batman Vengeance (U).gba","",0007F76C
 AXRP,0030177C,"0162 - Super Street Fighter II Turbo Revival (E).gba","",003016C8
 AKKE,000245B0,"0163 - Kao the Kangaroo (U).gba","",00024580
 AREE,000A111C,"0165 - MegaMan Battle Network (U).gba","",000A0F9C
 AQAE,0035EE54,"0166 - Gadget Racers (U).gba","",0035EE0C
-AGAP,000A5E7C,"0167 - Gradius Advance (E).gba","",
-AMLE,0048D7D8,"0168 - M&M's Blast! (U).gba","",0048D788
+AGAP,000A5E7C,"0167 - Gradius Advance (E).gba","",000A5E34
 AWAE,00098028,"0169 - Wario Land 4 (E).gba","",00097FC8
-AGSE,000FC684,"0171 - Golden Sun (U).gba","",
+AGSE,000FC684,"0171 - Golden Sun (U).gba","",000FC618
 ADKP,00046BF0,"0172 - Donald Duck Advance (E).gba","",00046BC0
 ABTP,0007F710,"0174 - Batman Vengeance (E).gba","",0007F6E0
 ASPE,0001FC88,"0177 - SpongeBob SquarePants - SuperSponge (U).gba","",0001FC70
 AJNE,00069470,"0178 - Jimmy Neutron - Boy Genius (U).gba","",0006941C
 ATME,0032C8D0,"0180 - Tweety and The Magic Gems (U).gba","",0032C8A0
-ASWE,006D2BAC,"0181 - Star Wars - Jedi Power Battles (U).gba","",006D2C74
 ARFE,0014BE08,"0184 - Razor Freestyle Scooter (U).gba","",0014BDD8
 ABMP,003932F4,"0185 - Super Bust-A-Move (E).gba","",003932AC
 ADQE,004B6A30,"0186 - Dokapon - Monster Hunter (U).gba","",004B6A00
 ATLX,003D0850,"0188 - Atlantis - The Lost Empire (E).gba","",003D0820
 A4VJ,0040A9EC,"0189 - 4V4 Arashi Get The Goal (J).gba","",0040A98C
-APTE,003EFA54,"0191 - The Powerpuff Girls - Mojo Jojo A-Go-Go (U).gba","",0036E480
 A2ME,0000B52C,"0192 - Madden NFL 2002 (U).gba","",0000B4CC
-AFRE,00307174,"0193 - Frogger's Adventures - Temple of the Frog (U).gba","",003070B4
 ADEJ,0002B044,"0195 - Adventure of Tokyo Disney Sea (J).gba","",0002B014
-ATWX,0034F220,"0197 - Tetris Worlds (E).gba","",
+ATWX,0034F220,"0197 - Tetris Worlds (E).gba","",0034F1E4
 AM3E,00210DB0,"0199 - Midway's Greatest Arcade Hits (U).gba","",00210D80
 AJQE,000A521C,"0200 - Jurassic Park III - Island Attack (U).gba","",000A51E0
 ADFP,0005D1D0,"0201 - Super Dodge Ball Advance (E).gba","",0005D1AC
@@ -142,12 +119,12 @@ AESE,00029C6C,"0204 - Ecks vs. Sever (U).gba","",00029C3C
 AHWE,00030308,"0205 - Hot Wheels - Burnin' Rubber (U).gba","",000302D8
 AKGP,000B0910,"0206 - Mech Platoon (E).gba","",000B08E0
 APXP,002B6494,"0207 - Phalanx - The Enforce Fighter A-144 (E).gba","",002B6464
-ASCE,003A0F84,"0210 - Shaun Palmer's Pro Snowboarder (U).gba","",
-ASXJ,00107D54,"0212 - San Goku Shi (J).gba","",
+ASCE,003A0F84,"0210 - Shaun Palmer's Pro Snowboarder (U).gba","",003A0F48
+ASXJ,00107D54,"0212 - San Goku Shi (J).gba","",00107D3C
 ARWP,003792FC,"0214 - Robot Wars - Advanced Destruction (E).gba","",003792B4
-AMFE,002E674C,"0217 - Monster Rancher Advance (U).gba","",
+AMFE,002E674C,"0217 - Monster Rancher Advance (U).gba","",002E6710
 ADSJ,004631EC,"0219 - Daisenryaku (J).gba","",004631BC
-AGAE,000A5E7C,"0220 - Gradius Galaxies (U).gba","",
+AGAE,000A5E7C,"0220 - Gradius Galaxies (U).gba","",000A5E34
 A22J,0006AFB4,"0221 - EZ-Talk 1 (J).gba","",0006AF84
 A23J,0006B588,"0222 - EZ-Talk 2 (J).gba","",0006B558
 AMEE,001E07A4,"0223 - Army Men - Operation Green (U).gba","",001E0768
@@ -155,25 +132,24 @@ ADVE,00027F44,"0224 - Driven (U).gba","",00027F14
 ABME,00392FC4,"0226 - Super Bust-A-Move (U).gba","",00392F7C
 ACGP,005430F4,"0228 - Columns Crown (E).gba","",00542F74
 AR7J,0009E558,"0231 - Advance Rally (J).gba","",0009E528
-AYSJ,0011AA40,"0232 - Gakkou o Tsukurou!! Advance (J).gba","",
-AMFJ,002DAFBC,"0233 - Monster Farm Advance (J).gba","",
-ASCD,003A146C,"0238 - Shaun Palmer's Pro Snowboarder (G).gba","",
+AYSJ,0011AA40,"0232 - Gakkou o Tsukurou!! Advance (J).gba","",0011AA04
+AMFJ,002DAFBC,"0233 - Monster Farm Advance (J).gba","",002DAF80
+ASCD,003A146C,"0238 - Shaun Palmer's Pro Snowboarder (G).gba","",003A1430
 AASJ,0058DF24,"0239 - World Advance Soccer - Road to Win (J).gba","",0058DEE8
-AE2J,00020874,"0243 - Battle Network RockMan EXE 2 (J).gba","",00020820
+AE2J,000F36F4,"0243 - Battle Network RockMan EXE 2 (J).gba","",000F3574
 ABFE,000BB858,"0245 - Breath of Fire (U).gba","",000BB7EC
 ACGJ,00541278,"0246 - Columns Crown (J).gba","",005410F8
 AREP,000A1268,"0249 - MegaMan Battle Network (E).gba","",000A10E8
-AABE,0022E888,"0250 - American Bass Challenge (U).gba","",
+AABE,0022E888,"0250 - American Bass Challenge (U).gba","",0022E840
 ASOJ,006D76B4,"0252 - Sonic Advance (J).gba","",006D7684
 AK5J,000559A0,"0253 - Kinniku Banduke - Muscle Ranking 2 (J).gba","",00055970
 AHEJ,00048030,"0254 - Bakuten Shoot Beyblade - Gekitou! Saikyou Blade (J).gba","",00120AB4
-AFSE,0007AB28,"0255 - The Flintstones - Big Trouble in Bedrock (U).gba","",00077BBC
 ATKJ,000534D8,"0256 - Tekken Advance (J).gba","",000534A8
 AB2J,000CE4E0,"0257 - Breath of Fire 2 - Shimei no Ko (J).gba","",000CE45C
-AT2J,00070504,"0258 - Dragon Quest - Torneko's Adventure 2 Advance (J).gba","",
+AT2J,00070504,"0258 - Dragon Quest - Torneko's Adventure 2 Advance (J).gba","",000704B0
 ATZJ,005675C4,"0259 - Zoids Saga (J).gba","",00567594
 ARHJ,002DD144,"0260 - Flame of Recca (J).gba","",002DCFC4
-AWXJ,00199DB8,"0261 - ESPN Winter X-Games - Snowboarding 2002 (J).gba","",
+AWXJ,0001473C,"0261 - ESPN Winter X-Games - Snowboarding 2002 (J).gba","",000146E8
 AWRP,001BA35C,"0263 - Advance Wars (E).gba","",001BA2F0
 AKKP,000245B0,"0264 - Kao the Kangaroo (E).gba","",00024580
 AKOJ,00737F20,"0265 - The King Of Fighters EX - NeoBlood (J).gba","",00737EF0
@@ -182,174 +158,195 @@ ASNJ,00037324,"0267 - Sansara Saga 1x2 (J).gba","",000372F4
 A24J,0006B564,"0268 - EZ-Talk 3 (J).gba","",0006B534
 A25J,0006B754,"0269 - EZ-Talk 4 (J).gba","",0006B724
 AKGE,00088174,"0272 - Mech Platoon (U).gba","",00088144
-ACTX,000E91BC,"0274 - Creatures (E).gba","",
-AFSP,0014DF88,"0276 - The Flintstones - Big Trouble in Bedrock (E).gba","",
+ACTX,000E91BC,"0274 - Creatures (E).gba","",000E9180
 AEAJ,00D428E0,"0277 - Snap Kids (J).gba","",00D42874
-AOBP,000F343C,"0278 - Asterix & Obelix - PAF! Them All! (E).gba","",
-AWXE,00199DD0,"0279 - ESPN Winter X-Games - Snowboarding 2002 (U).gba","",
+AWXE,00014754,"0279 - ESPN Winter X-Games - Snowboarding 2002 (U).gba","",00014700
 AGXJ,00741410,"0280 - Guilty Gear X - Advance Editon (J).gba","",007413F8
-AGAJ,000AA35C,"0281 - Gradius Generation (J).gba","",
-AGLJ,00140180,"0282 - Tomato Adventure (J).gba","",
+AGAJ,000AA35C,"0281 - Gradius Generation (J).gba","",000AA314
+AGLJ,004B11A4,"0282 - Tomato Adventure (J).gba","",004B115C
 ATKE,0005337C,"0284 - Tekken Advance (U).gba","",0005334C
 AWZJ,00075C4C,"0288 - Wizardry Summoner (J).gba","",00075C1C
-ASVJ,0000C538,"0289 - Shanghai Advance (J).gba","",0000C508
 ASOE,006D76AC,"0290 - Sonic Advance (U).gba","",006D767C
 AIBJ,000AEC20,"0291 - Granbo (J).gba","",000AEB84
 APYE,002C1104,"0293 - Puyo Pop (U).gba","",002C10D4
 AOKJ,000731AC,"0294 - Okuman Chouja Game (J).gba","",0007317C
-APNJ,001A984C,"0295 - Pinky Monkey Town (J).gba","",
+APNJ,001A984C,"0295 - Pinky Monkey Town (J).gba","",001A9804
 AJQP,000A416C,"0298 - Jurassic Park III - Dino Attack (E).gba","",000A4130
-AWRE,003B9F94,"0299 - Advance Wars (U).gba","",
+AWRE,00143800,"0299 - Advance Wars (U).gba","",00143794
 ACGE,00543230,"0300 - Columns Crown (U).gba","",005430B0
+ACIJ,00243C00,"0301 - WTA Tour Tennis Pocket (J).gba","",00243BA0
+APPE,005AF9F8,"0303 - Peter Pan - Return to Neverland (U).gba","",005AF9C8
+AGSF,000FEE84,"0304 - Golden Sun (F).gba","",000FEE18
+A26J,0006B768,"0306 - EZ-Talk 5 (J).gba","",0006B738
+A27J,0006B940,"0307 - EZ-Talk 6 (J).gba","",0006B910
+AVKP,00064258,"0311 - Virtual Kasparov (E).gba","",00064240
+AHWP,000317F8,"0312 - Hot Wheels - Burnin' Rubber (E).gba","",000317C8
+AJNX,0006FD28,"0315 - Jimmy Neutron - Boy Genius (E).gba","",0006FCD4
+ACRP,000298AC,"0316 - Chu Chu Rocket! (E).gba","",0002987C
+AMHJ,00175228,"0318 - Bomberman Max 2 - Bomberman Version (J).gba","",00175204
+APXE,002B78F0,"0325 - Phalanx - The Enforce Fighter A-144 (U).gba","",002B78C0
+AZEE,00555E94,"0326 - Zone of the Enders - The Fist of Mars (U).gba","",00555E64
+AWEJ,0005EA74,"0328 - Black Black (J).gba","",0005EA44
+AXRE,003015DC,"0329 - Super Street Fighter II Turbo Revival (U).gba","",00301528
+AUYJ,0034A054,"0330 - Yuure Yashiki no Nijuuyon Jikan (J).gba","",0034A024
+ADOJ,000DB104,"0331 - Domo-Kun no Fushigi Terebi (J).gba","",000DB0BC
+AMYJ,00175370,"0333 - Bomberman Max 2 - Max Version (J).gba","",0017534C
+ANLE,00009D4C,"0337 - NHL 2002 (U).gba","",00009D04
+ASOP,006DD790,"0339 - Sonic Advance (E).gba","",006DD760
+ATCE,0036B148,"0342 - Top Gear GT Championship (U).gba","",0036B118
+AADJ,00046C1C,"0343 - Donald Duck Advance (J).gba","",00046BEC
+AGDJ,000D44F4,"0344 - Estopolis Densetsu (J).gba","",000D44AC
+ADVP,00027F44,"0351 - Driven (E).gba","",00027F14
+AGCJ,000714E8,"0353 - Guru Logic Champ (J).gba","",0007147C
+ADKE,00046DFC,"0354 - Donald Duck Advance (U).gba","",00046DCC
+ABPE,000806F4,"0357 - Baseball Advance (U).gba","",00080694
+AAMJ,00108A3C,"0361 - Akumajou Dracula - Circle of the Moon (C).gba","",001089D0
+ABJE,0001D70C,"0362 - Broken Sword - The Shadow of the Templars (E).gba","",0001D6DC
+AGSD,000FD484,"0367 - Golden Sun (G).gba","",000FD418
+AKVJ,00016E00,"0368 - K-1 Pocket Grand Prix (J).gba","",00016DD0
+ABMJ,003890BC,"0369 - Super Puzzle Bobble Advance (J).gba","",00389074
+ASFJ,0021D18C,"0370 - Slot-Pro Advance - Takarafune & Oedoshima Fubuki 2 (J).gba","",0021D150
+ASMJ,00061554,"0371 - Nishihara Rieko no Tendou Maajan (J).gba","",00061530
+AKGJ,000885C0,"0372 - Kikaika Gunta - Mech Platoon (J).gba","",00088590
+ADDJ,0032B434,"0373 - Diadroids World (J).gba","",0032B3EC
+AJUJ,00149FC0,"0374 - Jitsutou Pachislo Hisshouhou - Juuoh Advance (J).gba","",00149F90
+AHMJ,0002D350,"0375 - Daimaajan (J).gba","",0002D320
+ABJE,0001D70C,"0376 - Broken Sword - The Shadow of the Templars (U).gba","",0001D6DC
+AFEJ,003994D8,"0378 - Fire Emblem - Sealed Sword (J).gba","",00399460
+AHUJ,00053E8C,"0379 - Shining Soul (J).gba","",00053E5C
+ABYE,002512A0,"0381 - Britney's Dance Beat (U).gba","",0025127C
+AGSS,000FEE84,"0383 - Golden Sun (S).gba","",000FEE18
+AIEJ,0017A05C,"0389 - Ikkoku Hattori - Kore 1 Hon de 8 Shurui! (J).gba","",0017A008
+APPP,005CD2C0,"0390 - Peter Pan - Return to Neverland (E).gba","",005CD290
+AABP,0022E418,"0391 - Super Black Bass Advance (E).gba","",0022E3D0
+ABFX,00142BC8,"0392 - Breath of Fire (E).gba","",00142B5C
+AKLP,00118AF8,"0394 - Klonoa - Empire of Dreams (E).gba","",00118AC8
+A3TE,0027BC24,"0395 - The Three Stooges (U).gba","",0027BBE8
+AVKE,00064258,"0397 - Virtual Kasparov (U).gba","",00064240
+A54J,0001D7BC,"0398 - Eigo Kubunhen (J).gba","",0001D75C
+AWOE,003DDA08,"0399 - Wolfenstein 3D (U).gba","",003DD9D8
+PEAJ,00047AF4,"0400 - Card e-Reader (J).gba","",00047AB8
 ALNJ,006B0E80,"0401 - Lunar Legend (J).gba","",006B0E44
 AB2E,000CE890,"0403 - Breath of Fire 2 (U).gba","",000CE80C
-AKXE,00646A7C,"0404 - Spider-Man - The Movie (U).gba","",
-ATWJ,003A7974,"0407 - Tetris Worlds (J).gba","",
-ASEJ,00383784,"0408 - Spider-Man - Mysterio's Menace (J).gba","",
+ATWJ,003A7974,"0407 - Tetris Worlds (J).gba","",003A7938
 ARZJ,000D2D10,"0410 - RockMan Zero (J).gba","",000D2C68
-A2GJ,00061F04,"0411 - Advance GT2 (J).gba","",
+A2GJ,00061F04,"0411 - Advance GT2 (J).gba","",00061EC8
 AEWJ,001D8114,"0412 - Winning Eleven World Soccer (J).gba","",001D80F0
-AINJ,0063F6EC,"0414 - Kashiramoji D - Another Story (J).gba","",
+AINJ,00648B38,"0414 - Kashiramoji D - Another Story (J).gba","",00648B08
 AQAP,0035EA9C,"0415 - Penny Racers (E).gba","",0035EA54
 ABGJ,00066D88,"0416 - Sweet Cookie Pie (J).gba","",00066D64
-AD3E,000561B0,"0417 - Dinotopia - The Timestone Pirates (U).gba","",
-KHPJ,000C4B10,"0418 - Koro Koro Puzzle Happy Panechu! (J).gba","",
+KHPJ,000C4B10,"0418 - Koro Koro Puzzle Happy Panechu! (J).gba","",000C4AD4
 AGOJ,000CACEC,"0419 - Kurohige no Golf Shiyouyo (J).gba","",000CACD4
 AKDJ,0003018C,"0422 - Kaeru B Back (J).gba","",00030150
 ADIE,00009834,"0423 - Desert Strike Advance (U).gba","",000097EC
 ANHE,0001DACC,"0425 - NASCAR Heat 2002 (U).gba","",0001DA90
 AFMJ,0004D998,"0426 - Formation Soccer 2002 (J).gba","",0004D944
-ADPJ,00054554,"0427 - Doraemon Board Game (J).gba","",
+ADPJ,00054554,"0427 - Doraemon Board Game (J).gba","",00054518
 AANJ,00189B80,"0428 - Animal Mania (J).gba","",00189B50
 AN5J,0004C930,"0430 - Kawa no Nushi Tsuri 5 (J).gba","",0004C8F4
 ACBJ,00061908,"0431 - Gekitou! Card Battler Go! (J).gba","",000618D8
-ATOE,001626CC,"0432 - Tactics Ogre - The Knight of Lodis (U).gba","",001626BA
-ALGE,00542CD8,"0434 - Dragon Ball Z - The Legacy Of Goku (U).gba","",00542CB4
+ATOE,00167BB8,"0432 - Tactics Ogre - The Knight of Lodis (U).gba","",00167B88
 AHIJ,00201590,"0435 - Hitsuji no Kimochi (J).gba","",00201578
 AZGJ,0023AEBC,"0436 - Jinsei Game Advance (J).gba","",0023AE8C
 AHNE,006388F4,"0437 - Spy Hunter (U).gba","",006388AC
-ATFP,0022A7DC,"0439 - Total Soccer Manager (E).gba","",
 AFUJ,0008B6BC,"0441 - Youkaidou (J).gba","",0008B68C
 ACKE,000CC240,"0442 - Backyard Baseball (U).gba","",000CC210
-AGSI,000FC684,"0443 - Golden Sun (I).gba","",
+AGSI,000FC684,"0443 - Golden Sun (I).gba","",000FC618
 ATCX,0036BC48,"0444 - GT Championship (E).gba","",0036BC18
 AEPP,002083EC,"0445 - Sheep (E).gba","",002083D4
-AH3J,004A1318,"0448 - Tottoko Ham Tarou 3 (J).gba","",
-AC6E,003A9BBC,"0450 - Spirit - Stallion Of The Cimarron (U).gba","",
+AH3J,004A1318,"0448 - Tottoko Ham Tarou 3 (J).gba","",004A12C4
 AMHE,0017681C,"0452 - Bomberman Max 2 Blue Advance (U).gba","",001767F8
 AMYE,00176974,"0453 - Bomberman Max 2 Red Advance (U).gba","",00176950
 AAEE,0024F348,"0456 - Hey Arnold! The Movie (U).gba","",0024F294
 ACHJ,0019E1DC,"0460 - Castlevania - White Night Concerto (J).gba","",0019E1AC
 ALTE,006530F0,"0462 - Disney's Lilo & Stitch (U).gba","",006530B4
-AP8E,000B8404,"0463 - Scooby-Doo - The Motion Picture (U).gba","",0003FB14
 AZEP,005532D8,"0464 - Zone of the Enders - The Fist of Mars (E).gba","",005532A8
-AT3F,00162B34,"0467 - Tony Hawk's Pro Skater 3 (F).gba","",
-AE2E,000209E8,"0468 - MegaMan Battle Network 2 (U).gba","",00020994
-AMRJ,002B1774,"0470 - Motocross Maniacs Advance (J).gba","",002B1760
+AE2E,000F3898,"0468 - MegaMan Battle Network 2 (U).gba","",000F3718
 ANQE,0036F3F8,"0472 - Nicktoons Racing (U).gba","",0036F3BC
-ABYX,0025B338,"0474 - Britney's Dance Beat (E).gba","",
+ABYX,0025B338,"0474 - Britney's Dance Beat (E).gba","",0025B314
 AD7P,0002D6B0,"0478 - Droopys Tennis Open (E).gba","",0002D680
 APDE,0002596C,"0480 - The Pinball of the Dead (U).gba","",00025930
 AGWE,0009ED00,"0481 - GT Advance 2 - Rally Racing (U).gba","",0009ECD0
-AMRP,0027C68C,"0484 - Maniac Racers Advance (E).gba","",0027C678
 ADQP,0056B9A0,"0486 - Dokapon - Monster Hunter (E).gba","",0056B970
 ATEP,00242D20,"0487 - Pro Tennis WTA Tour (E).gba","",00242CC0
 ALTP,0065588C,"0488 - Disney's Lilo & Stitch (E).gba","",00655850
-AGFJ,001C4530,"0489 - Ougon no Taiyou - Shitsu Warate Jidai (J).gba","",
+AGFJ,001C4530,"0489 - Ougon no Taiyou - Shitsu Warate Jidai (J).gba","",001C44C4
 AY7J,009E19A8,"0493 - Yu-Gi-Oh! Duel Monsters 7 - Kettou Toshi Densetsu (J).gba","",009E1924
 AZOJ,00025A20,"0494 - The Pinball of the Dead (J).gba","",000259E4
 AB8J,000582F4,"0495 - Beyblade - Ikuze! Gekitou! Chou Jiryoku Battle! (J).gba","",001769A4
-APLP,003C8BD8,"0496 - Pinball Challenge Deluxe (E).gba","",
 ANFJ,00126CEC,"0499 - Monster Gate (J).gba","",00126B6C
-A6DJ,004842F4,"0502 - Disney Sports Soccer (J).gba","",004822F4
 ACJJ,000A26AC,"0503 - Choh Makai-Mura R (J).gba","",000A267C
 AFWJ,000E59D4,"0504 - Final Fire Pro Wrestling (J).gba","",000E598C
 A2BJ,002926E0,"0505 - Bubble Bobble - Old & New (J).gba","",00292680
-ATTP,00281154,"0507 - Tiny Toon Adventures - Busters Bad Dream (E).gba","",
-ARJJ,000451B8,"0509 - Custom Robo GX (J).gba","",
+ATTP,00281154,"0507 - Tiny Toon Adventures - Busters Bad Dream (E).gba","",00281028
+ARJJ,000451B8,"0509 - Custom Robo GX (J).gba","",0004514C
 AB2P,000CE9CC,"0510 - Breath of Fire 2 (E).gba","",000CE948
-AKAJ,00050710,"0511 - Shaman King 2 (J).gba","",
+AKAJ,00050710,"0511 - Shaman King 2 (J).gba","",000506EC
 AGVJ,00042F90,"0512 - Ghost Trap (J).gba","",00042F3C
-AX3E,00715CF0,"0517 - xXx (U).gba","",
-AWTF,000F91B4,"0518 - La Famille De La Jungle - A La Poursuite De Darwin (F).gba","",0002DDF4
-AXSP,003022B4,"0520 - ESPN X-Games - Skateboarding (E).gba","",0030228C
 AP6J,0006419C,"0521 - Pinobee & Phoebee (J).gba","",00064154
 AFAJ,001AA530,"0522 - Fushigi no Kuni no Angelique (J).gba","",001AA464
 AHWJ,000307C0,"0523 - Hot Wheels Advance (J).gba","",00030790
 AKUJ,00053EB4,"0524 - Kurohige no Kurutto Jintori (J).gba","",00053E90
 AN6J,00155AC8,"0525 - Kaze no Klonoa 2 G2 - Dream Champ Tournament (J).gba","",00155A74
 AKZJ,00081684,"0529 - Kamaitachi no Yoru Advance (J).gba","",000815F4
-ASXJ,00107D54,"0530 - San Goku Shi (C).gba","",
+ASXJ,00107D54,"0530 - San Goku Shi (C).gba","",00107D3C
 AG9J,000806E0,"0531 - Greatest Nine (J).gba","",00080674
 AVMJ,001A99D8,"0532 - V-Master Cross (J).gba","",001A9978
 AKOE,0073EC98,"0533 - The King Of Fighters EX - Neo Blood (U).gba","",0073EC68
-ACXE,0007C86C,"0534 - Cubix - Robots for Everyone - Clash 'n Bash (U).gba","",
+ACXE,0007C86C,"0534 - Cubix - Robots for Everyone - Clash 'n Bash (U).gba","",0007C80C
 A3MJ,00167F64,"0535 - Disney's Magical Quest Starring Mickey and Minnie (J).gba","",00167EA4
-AFCJ,00504120,"0536 - RockMan & Forte (J).gba","",
+AFCJ,00067600,"0536 - RockMan & Forte (J).gba","",0006757C
 AAEE,00266240,"0537 - Hey Arnold! The Movie (E).gba","",0026618C
-AYIE,00209B90,"0539 - Urban Yeti! (U).gba","",00207870
 ANJE,0000AC28,"0540 - Madden NFL 2003 (U).gba","",0000ABC8
 A3ME,00167178,"0541 - Disney's Magical Quest Starring Mickey and Minnie (U).gba","",001670B8
 A2KE,003903D0,"0542 - Spy Kids Challenger (U).gba","",00390394
 ANKE,000EAFBC,"0543 - NFL Blitz 20-03 (U).gba","",000EAF5C
 AQCJ,0009F3C4,"0544 - Combat Choro Q - Advance Battle (J).gba","",0009F3A0
-ACUJ,0016EF78,"0545 - Crash Bandicoot Advance (J).gba","",
 AN7J,0012D770,"0546 - Famista Advance (J).gba","",0012D728
 AM8E,006BED40,"0550 - Monster Force (U).gba","",006BED04
-AHCJ,00178344,"0551 - Minimoni - Mika no Happy Morning Chatty (J).gba","",
-ATYJ,0021C97C,"0553 - Tetsuya Yomigaeru Densetsu (J).gba","",
+AHCJ,00178344,"0551 - Minimoni - Mika no Happy Morning Chatty (J).gba","",0017832C
+ATYJ,0021C97C,"0553 - Tetsuya Yomigaeru Densetsu (J).gba","",0021C940
 AQRE,001D32B8,"0554 - ATV - Quad Power Racing (U).gba","",001D327C
 AD5J,002116A4,"0555 - Mr. Driller Ace - Strange Bacteria (J).gba","",00211668
 ALMJ,002F60E4,"0556 - Yakyutsuku Advance (J).gba","",002F60B4
-AT4P,00080964,"0557 - Turok Evolution (E).gba","",
 AMUJ,0002B43C,"0559 - Mutsu Water Looper (J).gba","",0002B40C
-ARKF,00085B14,"0562 - Rocket Power - Le Cauchemar d'Otto (F).gba","",
-AXBJ,00417CA8,"0564 - Black Matrix Zero (J).gba","",
+AXBJ,00417CA8,"0564 - Black Matrix Zero (J).gba","",00417C84
 A3BE,00060F08,"0565 - Sabrina The Teenage Witch - Potion Commotion (U).gba","",00060ED8
 AM7J,001DC3DC,"0567 - Hamepane Tokyo Myumyu (J).gba","",001DC3AC
-APIP,0014EDB0,"0570 - Pinky And The Brain - The Master Plan (E).gba","",
-ANOJ,00348D6C,"0572 - Nobunaga Ibun (J).gba","",
-ADNJ,006DF714,"0574 - Jurassic Park 3 - DNA Factor (J).gba","",006E0D64
+ANOJ,00348D6C,"0572 - Nobunaga Ibun (J).gba","",00348D18
 ACHP,001A6B5C,"0576 - Castlevania - Harmony of Dissonance (E).gba","",001A6B2C
-AC2J,00103368,"0577 - J League Pro Soccer Club o Tsukurou Advance (J).gba","",
+AC2J,00103368,"0577 - J League Pro Soccer Club o Tsukurou Advance (J).gba","",00103308
 ANQP,00370224,"0578 - Nicktoons Racing (E).gba","",003701E8
 ASTJ,0007704C,"0579 - Densetsu no Stafy (J).gba","",00077004
 AIPE,0065ED70,"0585 - Silent Scope (U).gba","",0065ED28
 AS6P,00223D14,"0587 - Speedball 2 (E).gba","",00223CCC
 AZCE,000D2C04,"0588 - MegaMan Zero (U).gba","",000D2B5C
-AN2J,00152E28,"0590 - Natural 2 Duo (J).gba","",000A659C
+AN2J,00152E28,"0590 - Natural 2 Duo (J).gba","",00152DEC
 A3BP,00060F20,"0591 - Sabrina The Teenage Witch - Potion Commotion (E).gba","",00060EF0
-AQ3E,004EC394,"0592 - SpongeBob SquarePants - Revenge of The Flying Dutchman (U).gba","",004EC192
-A3AJ,001A6740,"0595 - Yossy Island - Super Mario Advance 3 (J).gba","",001A61C8
 AAKE,00090BAC,"0596 - AirForce Delta Storm (U).gba","",00090B70
-ABDE,001436C0,"0597 - Boulder Dash EX (U).gba","",
+ABDE,001436C0,"0597 - Boulder Dash EX (U).gba","",0014366C
 AGWP,0009ED00,"0600 - GT Advance 2 - Rally Racing (E).gba","",0009ECD0
 ADYJ,002DDB18,"0601 - Hanafuda Trump Mahjong Depachika Wayouchuu (J).gba","",002DDAE8
 AG5E,000A2A38,"0603 - Super Ghouls N Ghosts (U).gba","",000A2A08
 AZUJ,000E74FC,"0608 - Street Fighter Zero 3 Upper (J).gba","",000E74CC
 AECJ,0006D2D4,"0609 - Samurai Evolution - Oukoku Geist (J).gba","",0006D298
-A3PE,0026BD40,"0610 - Sega Smash Pack (U).gba","",0026BD30
-ADUP,00086280,"0611 - Driver 2 Advance (E).gba","",00063080
 ACHE,001A6B5C,"0612 - Castlevania - Harmony of Dissonance (U).gba","",001A6B2C
 ALOE,003E7228,"0613 - The Lord of the Rings - The Fellowship of the Ring (U).gba","",003E71F8
-A2SE,001790D4,"0615 - Spyro 2 - Season of Flame (U).gba","",
-AJXE,0005FB0C,"0616 - Jimmy Neutron vs. Jimmy Negatron (U).gba","",
+A2SE,00067BA0,"0615 - Spyro 2 - Season of Flame (U).gba","",00067B58
+AJXE,0005FB0C,"0616 - Jimmy Neutron vs. Jimmy Negatron (U).gba","",0005FAAC
 A3MP,001B6734,"0617 - Disney's Magical Quest Starring Mickey and Minnie (E).gba","",001B6674
 AF7J,00047E48,"0618 - Ohanaya-san ni narou! (J).gba","",00047E18
 PSAE,0004EDBC,"0619 - Card e-Reader (U).gba","",0004ED80
 AOCJ,0004B824,"0623 - Chobits (J).gba","",0004B7F4
-ATDJ,00027538,"0625 - Daisuki Teddy (J).gba","",
-AP8F,000B85C0,"0626 - Scooby-Doo - The Motion Picture (F).gba","",
+ATDJ,00027538,"0625 - Daisuki Teddy (J).gba","",000274E4
 AH7J,0002294C,"0631 - Nakayoshi Pet Advance Series 1 Kawaii Hamster (J).gba","",0002291C
 AI7J,0002DDDC,"0632 - Nakayoshi Pet Advance Series 2 Kawaii Koinu (J).gba","",0002DDAC
 AN3J,00033854,"0633 - Nakayoshi Pet Advance Series 3 Kawaii Koneko (J).gba","",00033818
 A3HJ,001738A0,"0635 - Hime Kishi Monogatari - Princess Blue (J).gba","",00173870
 AGXP,00744CBC,"0636 - Guilty Gear X - Advance Edition (E).gba","",00744CA4
 AEEE,0003B02C,"0638 - Ballistic - Ecks vs. Sever (U).gba","",0003AFF0
-ALGP,00569244,"0639 - Dragon Ball Z - The Legacy of Goku (E).gba","",00569230
 AESP,00029CE4,"0640 - Ecks vs. Sever (E).gba","",00029CB4
 AFYE,000B3E54,"0641 - Fire Pro Wrestling 2 (U).gba","",000B3E0C
-AY3E,000B107C,"0644 - Army Men - Turf Wars (U).gba","",
 AAPJ,0005DBB8,"0645 - Metalgun Slinger (J).gba","",0005DB88
 AAKJ,00090BA8,"0646 - AirForce Delta II (J).gba","",00090B6C
 AK3E,00230224,"0647 - Turbo Turtle Adventure (U).gba","",002301F4
@@ -361,69 +358,60 @@ ADHE,00387C80,"0653 - Defender of the Crown (U).gba","",00387C20
 AB9E,00315030,"0654 - Dual Blades (U).gba","",00315000
 A2JJ,0022CAAC,"0656 - J-League Winning Eleven Advance 2002 (J).gba","",0022CA7C
 AVTE,0007BAD4,"0658 - Virtua Tennis (U).gba","",0007BA38
-AQWP,000D4E84,"0659 - Game & Watch Gallery Advance (E).gba","",000CA8B8
+AQWP,000D4E84,"0659 - Game & Watch Gallery Advance (E).gba","",000D4E18
 AOPJ,0008AD98,"0660 - Oshare Princess (J).gba","",0008AD74
 AH4E,0003A2E4,"0661 - Shrek Hassle at the Castle (U).gba","",0003A278
-AGZJ,0010F9F4,"0662 - Galaxy Angel (J).gba","",
+AGZJ,0010F9F4,"0662 - Galaxy Angel (J).gba","",0010F964
 AHAJ,00082660,"0665 - Hamster Paradise Advance (J).gba","",00082624
 APUJ,000778FC,"0667 - PukuPuku Tennen Kairanban (J).gba","",000778CC
-ANYJ,001AFDE4,"0668 - Gachinko Pro Yakyuu (J).gba","",
-ARBE,0006344C,"0671 - Robotech - The Macross Saga (U).gba","",00063424
-AX3F,00718600,"0672 - xXx (F).gba","",
+ANYJ,001AFDE4,"0668 - Gachinko Pro Yakyuu (J).gba","",001AFDA8
 A3GJ,0002E584,"0674 - Gyakuten Saiban 2 (J).gba","",0002E554
 AICJ,00051BC8,"0675 - Oshaberi Inco Club (J).gba","",00051B98
 ACCP,002C7CC0,"0676 - Crazy Chase (E).gba","",002C7C90
 AHVJ,0033B664,"0678 - Nakayoshi Youchien (J).gba","",0033B640
-ARSP,003E163C,"0679 - Robot Wars - Extreme Destruction (E).gba","",
 A7KJ,0060F36C,"0682 - Hoshi no Kirby - Yume no Izumi Deluxe (J).gba","",0060F33C
 AJGE,003914F4,"0683 - Disney's Tarzan - Return to the Jungle (U).gba","",003914AC
-A2SP,001793E4,"0687 - Spyro 2 - Season of Flame (E).gba","",
+A2SP,00067ECC,"0687 - Spyro 2 - Season of Flame (E).gba","",00067E84
 AJZJ,00307F58,"0688 - Bomberman Jetters (J).gba","",00307F10
 AN9J,000CD9FC,"0689 - Tales of the World - Narikiri Dungeon 2 (J).gba","",000CD9A8
 AMTE,000A8D3C,"0690 - Metroid - Fusion (U).gba","",000A8CDC
-AM2P,000209F4,"0694 - MegaMan Battle Network 2 (E).gba","",000209A0
+AM2P,000F3A00,"0694 - MegaMan Battle Network 2 (E).gba","",000F3880
 ACBE,00062CF8,"0697 - Car Battler Joe (U).gba","",00062CC8
 AAKP,00090BC8,"0698 - Deadly Skies (E).gba","",00090B8C
 AH5J,0005E41C,"0699 - Beast Shooter - Mezase Beast King (J).gba","",0005E3EC
 A7IJ,001BBD78,"0700 - Silk to Cotton (J).gba","",001BBD3C
 A8YJ,00222D20,"0701 - Best Play Pro Yakyuu (J).gba","",00222CF0
 AODJ,00345B4C,"0702 - Minami no Umi no Odyssey (J).gba","",00345B04
-A2QJ,003CB51C,"0703 - Monster Farm Advance 2 (J).gba","",
+A2QJ,001FA538,"0703 - Monster Farm Advance 2 (J).gba","",001FA4F0
 AD4E,00034550,"0706 - Dungeons and Dragons - Eye of the Beholder (U).gba","",00034520
 AR9E,003DB664,"0708 - Reign Of Fire (U).gba","",003DB628
 APKE,0025694C,"0709 - Pocky & Rocky with Becky (U).gba","",00256898
-AP5E,0003E1BC,"0710 - The Powerpuff Girls - Him and Seek (U).gba","",
 ACCE,002C7C8C,"0713 - Crazy Chase (U).gba","",002C7C5C
 ALOP,003E503C,"0715 - The Lord of the Rings - The Fellowship of the Ring (E).gba","",003E500C
 AJLE,006C44A4,"0718 - Justice League - Injustice for All (U).gba","",006C4468
 AFVE,00247168,"0720 - The Fairly OddParents - Enter The Cleft (U).gba","",002470A8
-A7HE,00089D50,"0721 - Harry Potter and the Chamber of Secrets (U).gba","",
 AAWE,0006AEFC,"0722 - Contra Advance - The Alien Wars EX (U).gba","",0006AECC
-AFBE,007307D4,"0723 - Frogger's Adventure 2 - The Lost Wand (U).gba","",0076324C
 A63J,000431FC,"0724 - Kawaii Pet Shop Monogatari 3 (J).gba","",000431CC
 AZDP,00276238,"0728 - Zidane Football Generation 2002 (E).gba","",00276208
-A2FE,00084E50,"0729 - Defender (U).gba","",
-A2WE,0004AD58,"0730 - Star Wars - The New Droid Army (U).gba","",
+A2FE,0037A380,"0729 - Defender (U).gba","",0037A308
 AXHJ,00051DB8,"0732 - Dan Doh!! Xi (J).gba","",00051D88
 AAWJ,0006AEF8,"0735 - Contra Hard Spirits (J).gba","",0006AEC8
 AC5J,0014FC74,"0737 - Shin Megami Tensei - Devil Children - Yami no Sho (J).gba","",0014FC44
 AO7J,000FE4E8,"0738 - One Piece - Nanatsu Shima no Daihihou (J).gba","",000FE4C4
 A3RE,00157D38,"0740 - The Revenge of Shinobi (U).gba","",00157D08
-A6CJ,000B3960,"0742 - Korokke Yume no Bunker Survival (J).gba","",001A24B8
-AH8E,006F93E4,"0743 - Hot Wheels - Velocity X (U).gba","",00014EDD
+A6CJ,00660DDC,"0742 - Korokke Yume no Bunker Survival (J).gba","",00660DA0
+AH8E,00599454,"0743 - Hot Wheels - Velocity X (U).gba","",005993E8
 AJHJ,00646DDC,"0746 - Hamster Gurakubu 3 (J).gba","",00646DAC
 AOGJ,00336330,"0747 - Super Robot Taisen Original Generation (J).gba","",00336300
 A2QE,00220668,"0748 - Monster Rancher Advance 2 (U).gba","",00220620
-AXTE,002AF3A0,"0749 - Island Xtreme Stunts (U).gba","",
-AR4E,000D6E54,"0751 - Rocket Power - Beach Bandits (U).gba","",
-AWLE,0007B118,"0752 - The Wild Thornberrys - The Movie (U).gba","",
+AWLE,0007B118,"0752 - The Wild Thornberrys - The Movie (U).gba","",0007B088
 AXDE,00C5CD3C,"0753 - Mortal Kombat - Deadly Alliance (U).gba","",00C5CD00
 AH4P,0003A2E4,"0754 - Shrek Hassle at the Castle (E).gba","",0003A278
 AMTP,000A9398,"0755 - Metroid - Fusion (E).gba","",000A9338
 AL4J,00151B9C,"0756 - Shin Megami Tensei - Devil Children - Hikari no Sho (J).gba","",00151B6C
 AXPJ,00416ECC,"0757 - Pokemon Sapphire (J).gba","",00416E9C
 AD4P,00041D24,"0758 - Dungeons and Dragons - Eye of the Beholder (E).gba","",00041CF4
-ANPF,0011F4F0,"0759 - Napoleon - L'Aigle de Guerre (F).gba","",
+ANPF,0011F4F0,"0759 - Napoleon - L'Aigle de Guerre (F).gba","",0011F4B4
 AXVJ,00416EE4,"0760 - Pokemon Ruby (J).gba","",00416EB4
 AAXJ,000B0EB4,"0761 - Fantasic Marchen Keekiyasan Monogatari and Doubutsu CharaNavi Uranai Koseishinrigaku (J).gba","",000B0E90
 A57J,005B9BE4,"0762 - Scan Hunter (J).gba","",005B9B78
@@ -437,29 +425,24 @@ A7KE,0060B460,"0775 - Kirby - Nightmare in Dreamland (U).gba","",0060B430
 AZLE,003C3BBC,"0776 - The Legend Of Zelda - A Link To The Past (U).gba","",003C3A3C
 AZUP,000E7D54,"0778 - Street Fighter Alpha 3 (E).gba","",000E7D24
 AQ2J,003422F8,"0781 - Choro Q Advance 2 (J).gba","",003422B0
-A2WP,0004AD58,"0784 - Star Wars - The New Droid Army (E).gba","",
 A6BJ,00149390,"0787 - RockMan EXE 3 (J).gba","",00149210
 AEEP,0003B1D4,"0792 - Ballistic - Ecks vs. Sever 2 (E).gba","",0003B198
-AT4E,00052D5C,"0793 - Turok Evolution (U).gba","",
 A8PJ,00352CC0,"0795 - Derby Stallion Advance (J).gba","",00352C90
 AK2J,00E5AD10,"0796 - Kinnnikuman Nisei Seigi Choujin he no Michi (J).gba","",00E5ACE0
-A7HJ,00078288,"0797 - Harry Potter to Himitsu no Heya (J).gba","",
-AL3J,00302E88,"0798 - Shaman King Chou Senjiryokketsu 3 (J).gba","",
+AL3J,00302E88,"0798 - Shaman King Chou Senjiryokketsu 3 (J).gba","",00302E58
 AWWP,0036B060,"0799 - Woody Woodpecker In Crazy Castle 5 (E).gba","",0036B030
-ATVP,0010FEB0,"0800 - Tir Et But (F).gba","",
+ATVP,0004FE38,"0800 - Tir Et But (F).gba","",0004FE20
 AA4J,000AF3D0,"0801 - Monster Maker 4 - Flash Card (J).gba","",000AF3A0
 AA5J,000AF3D0,"0802 - Monster Maker 4 - Kira Dice (J).gba","",000AF3A0
 A2DJ,0007370C,"0803 - Darius R (J).gba","",000736C4
-A2IJ,0006F5C0,"0804 - Magi Nation (J).gba","",
-AK7J,0006D420,"0805 - Klonoa Heroes - Densetsu no Star Medal (J).gba","",
+AK7J,0006D420,"0805 - Klonoa Heroes - Densetsu no Star Medal (J).gba","",0006D390
 A2HJ,00553D30,"0807 - Hajime no Ippo - The Fighting (J).gba","",00553BC8
 ALNE,006C0CB0,"0808 - Lunar Legend (U).gba","",006C0C74
 A2TE,00062D8C,"0809 - Pinball Tycoon (U).gba","",00062D5C
 A4BE,000318D4,"0810 - Monster Bass Fishing (U).gba","",000318A4
-A2NJ,00AD4B14,"0815 - Sonic Advance 2 (J).gba","",
-AYLJ,000338FC,"0816 - Sega Rally Championship (J).gba","",
-AERE,0020E290,"0817 - Dora the Explorer - The Search for Pirate Pig's Treasure (U).gba","",
-AUCJ,000664A0,"0821 - Uchuu Daisakusen Chocovader - Uchuu kara no Shinryakusha (J).gba","",
+A2NJ,00AD4B14,"0815 - Sonic Advance 2 (J).gba","",00AD4AD8
+AYLJ,000338FC,"0816 - Sega Rally Championship (J).gba","",000338C0
+AUCJ,000664A0,"0821 - Uchuu Daisakusen Chocovader - Uchuu kara no Shinryakusha (J).gba","",000663C8
 A59J,002A1E5C,"0822 - Toukon Heat (J).gba","",002A1E2C
 ANWJ,00257C78,"0823 - Elevator Action - Old & New (J).gba","",00257C24
 A5BJ,002FD8C4,"0824 - Chocobo Land - Game de Dice (J).gba","",002F5630
@@ -467,9 +450,8 @@ A8HE,005BA924,"0825 - Cabela's Big Game Hunter (U).gba","",005BA918
 A3RP,00142E88,"0829 - The Revenge of Shinobi (E).gba","",00142E58
 A87J,0006093C,"0830 - Ohanaya-san Monogatari (J).gba","",00060900
 AB9J,003120D0,"0831 - Dual Blades (J).gba","",003120A0
-AEXJ,006007CC,"0832 - The King Of Fighters EX2 - Howling Blood (J).gba","",0076A168
+AEXJ,006007CC,"0832 - The King Of Fighters EX2 - Howling Blood (J).gba","",00600784
 A8VJ,0012396C,"0835 - Bobobohbo Bohbobo Ougi 87.5 Bakuretsu Hanage Shinken (J).gba","",0012393C
-AVAJ,0008040B,"0836 - Tennis no Ouji-sama - Aim at The Victory (J).gba","",00060404
 AJGD,003914F4,"0837 - Disney's Tarzan - Ruckkehr in den Dschungel (G).gba","",003914AC
 A3EJ,0007F82C,"0838 - Bakuten Shoot Beyblade 2002 Team Battle! Daichi Hen (J).gba","",0019180C
 A3WJ,0007F82C,"0839 - Bakuten Shoot Beyblade 2002 Team Battle! Takao Hen (J).gba","",0019180C
@@ -479,16 +461,16 @@ AIRP,0002B438,"0843 - Inspector Gadget Racing (E).gba","",0002B408
 A2OJ,000234DC,"0846 - K-1 Pocket Grand Prix 2 (J).gba","",000234AC
 A9QJ,0056B4F0,"0847 - Kururin Paradise (J).gba","",0056B4B4
 A8MJ,00632D64,"0850 - Kotoba no Puzzle Mojipittan Advance (J).gba","",00632D10
-ALQJ,005F52B0,"0852 - Little Buster Q (J).gba","",
-A8SE,0009D958,"0854 - Digimon Battle Spirit (U).gba","",
+ALQJ,001A0304,"0852 - Little Buster Q (J).gba","",001A02D4
+A8SE,0037FC20,"0854 - Digimon Battle Spirit (U).gba","",0037FBB4
 ANSJ,000686A0,"0858 - Marie, Elie & Anis No Atelier - Soyokaze Kara No Dengon (J).gba","",00068670
-ABDJ,00143870,"0859 - Boulder Dash EX (J).gba","",
+ABDJ,00143870,"0859 - Boulder Dash EX (J).gba","",0014381C
 AIYJ,006FBA44,"0860 - Inuyasha Naraku no Wana Mayoi no Mori no Shoutaijou (J).gba","",006FBA14
 AEKJ,003790F0,"0861 - Elemix (J).gba","",003790C0
-A2GE,00061FA4,"0863 - GT Advance 3 - Pro Concept Racing (U).gba","",
-AOHJ,000619B8,"0864 - Minimoni - Onegai Ohoshi-sama (J).gba","",
+A2GE,00061FA4,"0863 - GT Advance 3 - Pro Concept Racing (U).gba","",00061F68
+AOHJ,000619B8,"0864 - Minimoni - Onegai Ohoshi-sama (J).gba","",00061958
 A3XJ,00149518,"0865 - Battle Network RockMan EXE 3 Black (J).gba","",00149398
-AFXJ,001401A8,"0866 - Final Fantasy Tactics Advance (J).gba","",
+AFXJ,001401A8,"0866 - Final Fantasy Tactics Advance (J).gba","",00140178
 AHUP,000556E4,"0868 - Shining Soul (E).gba","",000556B4
 A9AP,00053C58,"0870 - Demon Driver (E).gba","",00053C28
 A9GP,00016320,"0872 - Stadium Games (E).gba","",000162E4
@@ -497,75 +479,66 @@ AYZP,000EFA94,"0875 - Rayman 3 - Hoodlum Havoc (E).gba","",000EFA64
 AMTJ,000AB0A0,"0877 - Metroid - Fusion (J).gba","",000AB040
 ACOJ,002CAACC,"0878 - Manga-ka Debut Monogatari (J).gba","",002CAAA8
 AF4J,0037EF40,"0879 - Fushigi no Kuni no Alice (J).gba","",0037EEF8
-A4SJ,001B0FCC,"0880 - Spyro Advance (J).gba","",
+A4SJ,000DD374,"0880 - Spyro Advance (J).gba","",000DD338
 AONP,002A5B88,"0881 - Bubble Bobble - Old & New (E).gba","",002A5B28
 AG6J,00128B04,"0882 - Mugenborg (J).gba","",00128AB0
 AZLP,0043F8AC,"0883 - The Legend Of Zelda - A Link To The Past (E).gba","",0043F72C
-ATUJ,0014BDC4,"0886 - Total Soccer Advance (J).gba","",
 A39J,0011EF90,"0887 - Lode Runner (J).gba","",0011EF30
 AYCP,0002EA14,"0890 - Phantasy Star Collection (E).gba","",0002E9FC
 AWQE,006EB38C,"0891 - Wings (U)).gba","",006EB344
-AWKJ,00018BF4,"0892 - Wagamama Fairy Mirumo de Pon Ougon Maracas no Densetsu (J).gba","",
-AZPP,003C433C,"0893 - Zapper (E).gba","",003C33A8
+AWKJ,00018BF4,"0892 - Wagamama Fairy Mirumo de Pon Ougon Maracas no Densetsu (J).gba","",00018BB8
 AVTP,0007F5D4,"0894 - Virtua Tennis (E).gba","",0007F538
 A9PJ,00316E7C,"0895 - Tales of the World - Summoner's Lineage (J).gba","",00316E4C
 A52J,0001D094,"0897 - Eitangohen - 2000 Words (J).gba","",0001D034
 AXPE,004554E8,"0898 - Pokemon Sapphire (U).gba","",004554B8
 AZUE,000E7D2C,"0899 - Street Fighter Alpha 3 (U).gba","",000E7CFC
 AZLJ,003E7A54,"0900 - Zelda no Densetsu GBA (J).gba","",003E78D4
-AIFE,00057690,"0901 - Tom and Jerry - Infurnal Escape (U).gba","",000444DC
 A6ME,0006A4F4,"0902 - MegaMan & Bass (U).gba","",0006A470
-AYLE,00033F64,"0903 - Sega Rally Championship (U).gba","",
-A2FP,0008A8BC,"0904 - Defender (E).gba","",
-A2NE,00AD4F4C,"0906 - Sonic Advance 2 (U).gba","",
+AYLE,00033F64,"0903 - Sega Rally Championship (U).gba","",00033F28
+A2FP,0039EEEC,"0904 - Defender (E).gba","",0039EE74
+A2NE,00AD4F4C,"0906 - Sonic Advance 2 (U).gba","",00AD4F10
 AXVE,0045548C,"0907 - Pokemon Ruby (U).gba","",0045545C
 AY8J,00AE59D8,"0908 - Yu-Gi-Oh! Duel Monsters 8 (J).gba","",00AE5900
-AZWJ,003B0984,"0909 - Made in Wario (J).gba","",
-A2NP,00AD4F4C,"0916 - Sonic Advance 2 (E).gba","",
+A2NP,00AD4F4C,"0916 - Sonic Advance 2 (E).gba","",00AD4F10
 AUSJ,007302BC,"0919 - One Piece - Mezase! King of Paris (J).gba","",0073028C
-ALEP,0002C2C0,"0921 - Bruce Lee - Return of the Legend (E).gba","",00029200
-A4PJ,0002263C,"0924 - Sister Princess Re Pure (J).gba","",
+A4PJ,0002263C,"0924 - Sister Princess Re Pure (J).gba","",0002260C
 ASUE,00050528,"0926 - Superman - Countdown to Apokolips (U).gba","",000504E0
 A64J,00034BF8,"0928 - Shimura Ken no Bakatonosama (J).gba","",00034BB0
 AI9J,002CA7A4,"0929 - Inukko Club Fukumaru no Bouken (J).gba","",002CA78C
 A9HJ,000FA5FC,"0930 - Dragon Quest Monsters - Caravan Heart (J).gba","",000FA5CC
-AJXD,00063638,"0931 - Jimmy Neutron vs. Jimmy Negatron (G).gba","",
-AAUJ,0000069C,"0933 - Shin Megami Tensei (J).gba","",
-ADUE,0008BD7C,"0935 - Driver 2 Advance (U).gba","",00075FE4
+AJXD,00063638,"0931 - Jimmy Neutron vs. Jimmy Negatron (G).gba","",000635D8
+AAUJ,005FCFE4,"0933 - Shin Megami Tensei (J).gba","",005FCFB4
 AE3E,00037540,"0936 - Ed, Edd n Eddy - Jawbreakers! (U).gba","",00037528
 AUZE,002DE564,"0938 - Santa Claus Saves the Earth (E).gba","",002DE528
-AGFE,001C4530,"0940 - Golden Sun 2 - The Lost Age (U).gba","",
-ANXP,00339EA0,"0941 - Ninja Cop (E).gba","",
-AQPE,00136F6C,"0942 - Disney Princess (U).gba","",
+AGFE,001C4530,"0940 - Golden Sun 2 - The Lost Age (U).gba","",001C44C4
+ANXP,00339EA0,"0941 - Ninja Cop (E).gba","",00339E58
+AQPE,00136F6C,"0942 - Disney Princess (U).gba","",00136F54
 AMHP,001960EC,"0943 - Bomberman Max 2 Blue (E).gba","",001960C8
 AMYP,00196290,"0944 - Bomberman Max 2 Red (E).gba","",0019626C
 A73J,000400E0,"0945 - Whistle (J).gba","",000400B0
 AAZJ,000513BC,"0946 - Aozoora to Nakamatachi - Yume no Bouken (J).gba","",00051380
-AH3E,004B996C,"0947 - Hamtaro - Ham-Ham Heartbreak (U).gba","",
+AH3E,004B996C,"0947 - Hamtaro - Ham-Ham Heartbreak (U).gba","",004B9918
 ARFP,0014A7BC,"0950 - Freestyle Scooter (E).gba","",0014A78C
 A9SJ,00645278,"0952 - Dancing Sword (J).gba","",00645230
-AWVE,000359A8,"0955 - X-Men 2 - Wolverines Revenge (U).gba","",000359A0
-A4NJ,0013BD34,"0956 - Bokujou Monogatari - Mineral Town no Nakama Tachi (J).gba","",
+A4NJ,0013BD34,"0956 - Bokujou Monogatari - Mineral Town no Nakama Tachi (J).gba","",0013BCEC
 A7GJ,0042FF54,"0959 - Sengoku Kakumei Gaiden (J).gba","",0042FE64
 ATBJ,000E847C,"0962 - SLOT!PRO 2 Advance GoGo Juggler (J).gba","",000E8440
-A4LJ,00040D4C,"0963 - Sylvania Family 4 (J).gba","",
+A4LJ,000443FC,"0963 - Sylvania Family 4 (J).gba","",000443C0
 ANTJ,0004C1E8,"0964 - Japan Pro Mahjong Tetsuman Advance (J).gba","",0004C1B8
 AW3J,00036230,"0965 - Watashi No Make Salon (J).gba","",0003620C
 A53J,0001D0B0,"0967 - Eigo Kobuhen Eijukugo Hen 650 Phrases Blue Edition (J).gba","",0001D050
 AZ2J,0068958C,"0968 - Zoid's Saga II (J).gba","",0068955C
-A2VJ,0001D75C,"0969 - Kisekko Gurumi (J).gba","",
+A2VJ,0001D75C,"0969 - Kisekko Gurumi (J).gba","",0001D708
 ARAJ,0003BD38,"0971 - Shin Nihon Pro Wrestling Toukon Retsuden Advance (J).gba","",0003BCFC
 AZ9J,000D12D8,"0972 - Simple 2960 Vol. 2 - The Block Kuzushi (J).gba","",000D12B4
 AJEJ,001C4928,"0975 - Fancy Pocket (J).gba","",001C4910
 AO2J,000D984C,"0976 - Oshare Princess 2 And Doubutsu Kyaranabi (J).gba","",000D9828
 ASUP,0005050C,"0977 - Superman - Countdown to Apokolips (E).gba","",000504C4
-AYLP,00033F64,"0978 - Sega Rally Championship (E).gba","",
-AE7J,006EA8D0,"0979 - Fire Emblem - Rekka no Ken (J).gba","",
+AYLP,00033F64,"0978 - Sega Rally Championship (E).gba","",00033F28
 AB4J,00073CCC,"0980 - Summon Night (J).gba","",00073CB4
-A8TJ,000EEE98,"0981 - RPG Tsukuru Advance (J).gba","",
+A8TJ,00137118,"0981 - RPG Tsukuru Advance (J).gba","",00137100
 AYZE,000EFD04,"0985 - Rayman 3 - Hoodlum Havoc (U).gba","",000EFCD4
 AZAJ,00032054,"0986 - Azumanga Daioh Advance (J).gba","",00032024
-AOME,00651D04,"0987 - Disney Sports Motocross (U).gba","",00651CB0
 AF3J,000D51E4,"0989 - Zero One (J).gba","",000D51B4
 A62J,000FFC6C,"0990 - RockMan Zero 2 (J).gba","",000FFBC4
 AZKJ,00047D40,"0991 - Simple 2960 Vol. 1 - The Table Game Collection (J).gba","",00047D1C
@@ -575,158 +548,127 @@ A2CJ,00248C9C,"0996 - Castlevania - Minuet Of Dawn (J).gba","",00248C3C
 A2CP,0027CD4C,"0997 - Castlevania - Aria of Sorrow (E).gba","",0027CCEC
 AGDE,000D5740,"0998 - Lufia - The Ruins Of Lore (U).gba","",000D56F8
 A2CE,0027CD38,"0999 - Castlevania - Aria of Sorrow (U).gba","",0027CCD8
-AIFP,0005C890,"1001 - Tom and Jerry - Infurnal Escape (E).gba","",00046BC4
 A8OJ,00067740,"1003 - Sutekina Obentou (J).gba","",00067710
-AZIE,0002C44C,"1004 - Finding Nemo (U).gba","",
-AZWE,0033AF30,"1005 - Wario Ware Inc (U).gba","",003A4A7C
-AC6D,003B1B34,"1007 - Spirit - Der Wilde Mustang (G).gba","",
-AZID,0002C60C,"1008 - Findet Nemo (G).gba","",
-AZWP,00348324,"1012 - Wario Ware Inc (E).gba","",003B2F5C
-ABYY,0025B40C,"1015 - Britney's Dance Beat (E).gba","",
-A84J,003E8F22,"1023 - Tottoko Hamutaro 4 - Nijiiro Daikoushin Dechu (J).gba","",
-A5DP,00179E44,"1024 - Disney Sports Snowboarding (E).gba","",0014A674
-AC6P,003A9BBC,"1026 - Spirit - Stallion Of The Cimarron (E).gba","",
+ABYY,0025B40C,"1015 - Britney's Dance Beat (E).gba","",0025B3E8
 A83J,000C39DC,"1027 - Hamster Monogatari 3 (J).gba","",000C39B8
 AWWJ,00363DE0,"1028 - Woody Woodpecker In Crazy Castle 5 (J).gba","",00363DB0
 AEHJ,0009C1E8,"1029 - Okaitoku Series 5 - Puzzle & Tantei Collection (J).gba","",0009C1C4
 A8GJ,001DB920,"1030 - Getbackers Dakkanoku - Metropolis Dakkan Sakusen (J).gba","",001DB8F0
-AT3D,00162E44,"1031 - Tony Hawk's Pro Skater 3 (G).gba","",
-AW9E,003D92E4,"1034 - Wing Commander Prophecy (U).gba","",
+AW9E,0003AC90,"1034 - Wing Commander Prophecy (U).gba","",0003AC48
 A2ZJ,006094F8,"1038 - Zen-Nippon Shounen Soccer Taikai 2 - Mezase Nippon-ichi! (J).gba","",006094BC
-AP8D,000B84CC,"1039 - Scooby-Doo - Das Spiel zum Film (G).gba","",
-A2GP,00061FA4,"1040 - GT Advance 3 - Pro Concept Racing (E).gba","",
+A2GP,00061FA4,"1040 - GT Advance 3 - Pro Concept Racing (E).gba","",00061F68
 A3VE,000F9F74,"1041 - Sonic Pinball Party (U).gba","",000F9F44
 AO4P,000B80B0,"1043 - Tom Clancy's Splinter Cell (E).gba","",000B8080
 AWOP,003DDA08,"1045 - Wolfenstein 3D (E).gba","",003DD9D8
 A6MP,0006A4E8,"1046 - MegaMan & Bass (E).gba","",0006A464
 ANA5,0006CD4C,"1047 - Gekitou Densetsu Noah - Dream Management (J).gba","",0006CD1C
 AK2E,00E569B8,"1048 - Ultimate Muscle - The Path of the Superhero (U).gba","",00E56988
-AFNJ,0007B090,"1051 - Angel Collection - Mezase! Gakuen no Fashion Leader (J).gba","",
-AFBP,0072F9D0,"1054 - Frogger's Adventures 2 - The Lost Wand (E).gba","",0076551C
-ALFP,0002B2F8,"1056 - Dragon Ball Z - The Legacy of Goku II (E).gba","",
-A3PP,0026BD20,"1057 - Sega Smash Pack (E).gba","",0026BD10
-AOMJ,0063EC7C,"1058 - Disney Sports Motocross (J).gba","",0063EC2C
+AFNJ,0007B090,"1051 - Angel Collection - Mezase! Gakuen no Fashion Leader (J).gba","",0007B048
 AW2E,0024238C,"1060 - Advance Wars 2 - Black Hole Rising (U).gba","",00242308
-ANXE,0033DEA4,"1062 - Ninja Five-0 (U).gba","",
+ANXE,0033DEA4,"1062 - Ninja Five-0 (U).gba","",0033DE5C
 A6GJ,002BA3D0,"1063 - Monster Gate 2 - Dai Inaru Dungeon (J).gba","",002BA250
-AOMP,0067F7A4,"1068 - Disney Sports Motocross (E).gba","",
 A2UJ,0010B530,"1069 - Mother 1+2 (J).gba","",0010B50C
-A9TJ,0020DFAC,"1070 - Metal Max 2 Kai (J).gba","",
-A5UE,002A9014,"1071 - Space Channel 5 - Ulala's Cosmic Attack (U).gba","",
-AEXE,006078E0,"1073 - The King of Fighters EX2 - Howling Blood (E).gba","",0077127C
+A9TJ,000E4A14,"1070 - Metal Max 2 Kai (J).gba","",000E49F0
+A5UE,002A9014,"1071 - Space Channel 5 - Ulala's Cosmic Attack (U).gba","",002A8FFC
+AEXE,006078E0,"1073 - The King of Fighters EX2 - Howling Blood (E).gba","",00607898
 AJLP,006C49E0,"1074 - Justice League - Injustice for All (E).gba","",006C49A4
-AH3P,006EAE34,"1075 - Hamtaro - Ham-Ham Heartbreak (E).gba","",
+AH3P,006EAE34,"1075 - Hamtaro - Ham-Ham Heartbreak (E).gba","",006EADE0
 A3XE,00148C6C,"1078 - MegaMan Battle Network 3 Blue Version (U).gba","",00148AEC
 A6BE,00148B6C,"1080 - MegaMan Battle Network 3 White Version (U).gba","",001489EC
 A4AE,00125FD8,"1083 - The Simpson's Road Rage (U).gba","",00125F3C
-ALFE,001D8FD4,"1085 - Dragon Ball Z - The Legacy of Goku II (U).gba","",
-AQPD,001365DC,"1086 - Disney's Prinzessinnen (G).gba","",
-AFBJ,0072A660,"1087 - Frogger Mahou No Kuni No Daibouken (J).gba","",00749C30
+AQPD,001365DC,"1086 - Disney's Prinzessinnen (G).gba","",001365C4
 BHCJ,00111D04,"1089 - Hamster Monogatari Collection (J).gba","",00111CE0
-BKKJ,00059B40,"1090 - Boku No Kuwagata 3 (J).gba","",
-AXPD,00407888,"1092 - Pokemon Saphir (G).gba","",
+BKKJ,00059B40,"1090 - Boku No Kuwagata 3 (J).gba","",00059AF8
+AXPD,00463394,"1092 - Pokemon Saphir (G).gba","",00463364
 AV3E,007437A4,"1094 - Spy Kids 3-D Game Over (U).gba","",00743774
 A29J,000744A8,"1096 - Disneys Magical Quest 2 (J).gba","",00074424
-BK2J,007A2BB8,"1097 - Croket! 2 Kindan no Bank To Banjyu (J).gba","",
+BK2J,00B11B5C,"1097 - Croket! 2 Kindan no Bank To Banjyu (J).gba","",00B11AFC
 BKIJ,000327F8,"1098 - Nakayoshi Pet Advance Series 4 - Kawaii Koinu Kogatainuhen (J).gba","",000327C8
-BGBJ,0010279C,"1099 - Get! Boku no Mushitsu (J).gba","",
+BGBJ,0003A9E0,"1099 - Get! Boku no Mushitsu (J).gba","",0003A9BC
 A82J,0011700C,"1100 - Hamster Paradise - Pure Heart (J).gba","",00116FD0
 AW9P,0004681C,"1101 - Wing Commander Prophecy (E).gba","",000467D4
-U3IJ,001EB96C,"1102 - Bokura no Taiyo (J).gba","",
+U3IJ,001EB96C,"1102 - Bokura no Taiyo (J).gba","",001EB8D0
 A86J,000F9F78,"1103 - Sonic Pinball Party (J).gba","",000F9F48
 AXVI,00457810,"1104 - Pokemon Rubino (I).gba","",004577E0
-AXPI,003CE5E8,"1105 - Pokemon Zaffiro (I).gba","",
+AXPI,004574B4,"1105 - Pokemon Zaffiro (I).gba","",00457484
 AXVD,00463428,"1106 - Pokemon Rubin (G).gba","",004633F8
 A6OJ,0075E488,"1107 - Onimusha Tactics (J).gba","",0075E3BC
 A4KJ,006ED744,"1108 - Hamster Club 4 (J).gba","",006ED714
-AXPS,003E8144,"1109 - Pokemon Zafiro (S).gba","",
+AXPS,0045A660,"1109 - Pokemon Zafiro (S).gba","",0045A630
 AXVS,0045A924,"1110 - Pokemon Rubi (S).gba","",0045A8F4
 AXPF,0045E094,"1111 - Pokemon Saphir (F).gba","",0045E064
-A5GJ,00153230,"1112 - Dragon Drive (J).gba","",
+A5GJ,00153230,"1112 - Dragon Drive (J).gba","",0015320C
 AU2J,000BDB3C,"1113 - Shining Soul II (J).gba","",000BDB0C
-AXVF,003EC238,"1114 - Pokemon Rubis (F).gba","",
-AJ6J,0005AE40,"1115 - Disney's Aladdin (J).gba","",
+AXVF,0045E564,"1114 - Pokemon Rubis (F).gba","",0045E534
+AJ6J,0005CD28,"1115 - Disney's Aladdin (J).gba","",0005CCA4
 AN8J,000C0BB8,"1117 - Tales of Phantasia (J).gba","",000C0B7C
 BPPJ,0051B9BC,"1118 - Pokemon Pinball - Ruby & Sapphire (J).gba","",0051B98C
 AC4J,000C2200,"1119 - Detective Conan (J).gba","",000C217C
 A89J,00160658,"1121 - Rockman EXE Battlechip GP (J).gba","",00160604
 PSAJ,00060220,"1123 - Card e-Reader + (J).gba","",000601E4
 A8ZJ,002B3DEC,"1124 - Shin Megami Tensei - Devil Children - Puzzle de Call (J).gba","",002B3DB0
-AWTD,000F9290,"1125 - Expedition Der Stachelbeeren Zoff Im Zoo (G).gba","",0002DDC4
 AOIE,002B1AB8,"1126 - Shrek Reekin' Havoc (U).gba","",002B1A34
 AZ3J,00130DC4,"1127 - Cyberdrive Zoids (J).gba","",00130DA0
 AA9J,00322A00,"1128 - Duel Masters (J).gba","",003229A0
 BGMJ,0005C944,"1129 - Genso Maden Saiyuki (J).gba","",0005C908
 BWDJ,00300790,"1130 - Wannyan Doubutsu Byouin (J).gba","",0030076C
 BMDE,0000B6C8,"1131 - Madden 2004 (U).gba","",0000B668
-A8SP,000B88D4,"1133 - Digimon Battle Spirit (E).gba","",
+A8SP,003ADB6C,"1133 - Digimon Battle Spirit (E).gba","",003ADB00
 BPPE,00534E04,"1135 - Pokemon Pinball - Ruby & Sapphire (U).gba","",00534DD4
 BOBJ,004040AC,"1137 - Boboboubo Boubobo 2 (J).gba","",0040407C
 AW4E,00D70014,"1138 - Mortal Kombat - Tournament Edition (U).gba","",00D6FFD8
 AQMP,000743E4,"1139 - Disney's Magical Quest 2 Starring Mickey and Minnie (E).gba","",00074360
-AFXE,0014BB48,"1141 - Final Fantasy Tactics Advance (U).gba","",
-AVFJ,0099DF2C,"1143 - Densetsu no Stafi 2 (J).gba","",0014DF3C
+AFXE,0014BB48,"1141 - Final Fantasy Tactics Advance (U).gba","",0014BB18
+AVFJ,0099DF2C,"1143 - Densetsu no Stafi 2 (J).gba","",0099DEF0
 BGFJ,00A937C8,"1144 - Get Backers - Dakkanoku Jagan Fuuin (J).gba","",00A93798
 AZZE,000467FC,"1146 - Rocket Power - Zero Gravity Zone (U).gba","",00046778
-AYHP,001FBA50,"1148 - Starsky And Hutch (E).gba","",
 AZSE,000523C8,"1149 - Gem Smashers (U).gba","",00052398
 AUEJ,00465B70,"1151 - Naruto - Konoha Senki (J).gba","",00465B40
-BIOE,000873D0,"1152 - Bionicle (U).gba","",
-BMME,0010CCC0,"1153 - Scooby-Doo - Mystery Mayhem (U).gba","",
 AW2P,002C5638,"1155 - Advance Wars 2 - Black Hole Rising (E).gba","",002C55B4
-AGFD,001C4530,"1156 - Golden Sun 2 - Die Vergessene Epoche (G).gba","",
+AGFD,001C4530,"1156 - Golden Sun 2 - Die Vergessene Epoche (G).gba","",001C44C4
 BO3J,000FB100,"1157 - Oshare Princess 3 (J).gba","",000FB0DC
-U3IE,001EC904,"1161 - Boktai - The Sun is in Your Hand (U).gba","",
-AGFS,001C4530,"1162 - Golden Sun 2 - La Edad Perdida (S).gba","",
-AGFF,001C4530,"1163 - Golden Sun 2 - L'age perdu (F).gba","",
+U3IE,001EC904,"1161 - Boktai - The Sun is in Your Hand (U).gba","",001EC868
+AGFS,001C4530,"1162 - Golden Sun 2 - La Edad Perdida (S).gba","",001C44C4
+AGFF,001C4530,"1163 - Golden Sun 2 - L'age perdu (F).gba","",001C44C4
 AAJJ,000ACD84,"1164 - Shin Kisekae Monogatari (J).gba","",000ACD54
 BOJJ,000498F4,"1165 - Ojaru Maru - Tsuki Hikari Machi Tour de Ojaru (J).gba","",000498C4
-BD8E,0014AA64,"1167 - Disney's Party (U).gba","",
+BD8E,0014AA64,"1167 - Disney's Party (U).gba","",0014AA28
 BTQJ,0042440C,"1169 - Tantei Gakuen Q (J).gba","",004243DC
 BDYJ,0015DE68,"1170 - Shin Megami Tensei - Devil Children 2 - Koori no Sho (J).gba","",0015DE38
 BDHJ,0015CDA4,"1171 - Shin Megami Tensei - Devil Children 2 - Honoo no Sho (J).gba","",0015CD74
 A4AX,001281D0,"1174 - The Simpson's Road Rage (E).gba","",00128134
-AGFI,001C4530,"1175 - Golden Sun 2 - L'era Perduta (I).gba","",
+AGFI,001C4530,"1175 - Golden Sun 2 - L'era Perduta (I).gba","",001C44C4
 BDIJ,00070850,"1176 - Koinu to Issho - Aijou Monogatari (J).gba","",0007082C
 A7KP,00843B50,"1179 - Kirby - Nightmare in Dreamland (E).gba","",00843B20
-BJNE,00045744,"1180 - Jimmy Neutron - Jet Fusion (U).gba","",
-A5WF,000F1408,"1181 - Les Razmoket rencontrent les Delajungle (F).gba","",
-BDSE,000150A4,"1182 - Digimon Battle Spirit 2 (U).gba","",
+BDSE,0036C64C,"1182 - Digimon Battle Spirit 2 (U).gba","",0036C5E0
 AJ8J,0001F728,"1184 - Jurassic Park Institute Tour (J).gba","",0001F6E0
-BODE,001C04F4,"1185 - Oddworld - Munch's Oddysee (U).gba","",
-ABDP,00143628,"1186 - Boulder Dash EX (E).gba","",
+BODE,001C04F4,"1185 - Oddworld - Munch's Oddysee (U).gba","",001C04DC
+ABDP,00143628,"1186 - Boulder Dash EX (E).gba","",001435D4
 A6BP,00148B6C,"1187 - MegaMan Battle Network 3 White Version (E).gba","",001489EC
 BZDJ,0004BB2C,"1188 - Zettaizetsumei Dangerous Jiisan - Shijou Saikyou no Dogeza (J).gba","",0004BB14
-A5TJ,00000508,"1189 - Shin Megami Tensei 2 (J).gba","",
+A5TJ,0058D384,"1189 - Shin Megami Tensei 2 (J).gba","",0058D354
 AH9P,0063C278,"1191 - The Hobbit (E).gba","",0063C20C
-BBFJ,00097D70,"1192 - Battle X Battle - Kyoudai Ou Densetsu (J).gba","",
-AFXP,003954F0,"1194 - Final Fantasy Tactics Advance (E).gba","",
-BLKE,00036EEC,"1195 - Disney's Lion King (U).gba","",00036DA0
+BBFJ,00097D70,"1192 - Battle X Battle - Kyoudai Ou Densetsu (J).gba","",00097D34
+AFXP,0014F540,"1194 - Final Fantasy Tactics Advance (E).gba","",0014F510
 AQDE,0008AA04,"1200 - Crouching Tiger Hidden Dragon (U).gba","",0008A9D4
 AC5E,001519BC,"1201 - Demikids Dark Version (U).gba","",0015198C
 AL4E,00153774,"1202 - Demikids Light Version (U).gba","",00153744
 A3XP,00148C6C,"1204 - MegaMan Battle Network 3 Blue Version (E).gba","",00148AEC
-BOMJ,00039B28,"1206 - Bomberman Jetters Game Collection (J).gba","",
+BOMJ,00039B28,"1206 - Bomberman Jetters Game Collection (J).gba","",00039AEC
 A62E,00100A24,"1207 - Megaman Zero 2 (U).gba","",0010097C
-BMPJ,00036104,"1209 - Wagamama Fairy Mirumo De Pon Taisen Mahoudrama (J).gba","",
+BMPJ,00036104,"1209 - Wagamama Fairy Mirumo De Pon Taisen Mahoudrama (J).gba","",000360BC
 BKGJ,000B0C74,"1210 - Kawaii Pet Game Gallery (J).gba","",000B0C50
 BMRJ,0001F444,"1211 - Matantei Loki Ragnarok (J).gba","",0001F414
-BNTE,00632D6C,"1213 - Teenage Mutant Ninja Turtles (U).gba","",
-AORJ,000CC9F0,"1214 - Oriental Blue - Ao no Tengai (J).gba","",
-BIOP,00087530,"1219 - Bionicle (E).gba","",
-AQPF,0013668C,"1220 - Disney Princesse (F).gba","",
+BNTE,00632D6C,"1213 - Teenage Mutant Ninja Turtles (U).gba","",00632D0C
+AORJ,000CC9F0,"1214 - Oriental Blue - Ao no Tengai (J).gba","",000CC9B4
+AQPF,0013668C,"1220 - Disney Princesse (F).gba","",00136674
 BATE,000B24F4,"1223 - Batman Rise of Sin Tzu (U).gba","",000B24C4
 AOWE,00071068,"1225 - Spyro Attack of The Rhynocs (U).gba","",00071014
-BTOE,0005C0E4,"1226 - Tony Hawk's Underground (U).gba","",000CC19C
 A62P,00100A24,"1228 - MegaMan Zero 2 (E).gba","",0010097C
-BFJE,0077396C,"1229 - Frogger's Journey - The Forgotten Relic (U).gba","",0077395C
 BPYE,000ACFE8,"1232 - Prince of Persia - The Sands of Time (U).gba","",000ACFB8
-BSQE,0004C65C,"1233 - SpongeBob SquarePants - Battle for Bikini Bottom (U).gba","",
-AE7E,0069D6E0,"1235 - Fire Emblem (U).gba","",
 AXPE,00455500,"1237 - Pokemon Sapphire (E).gba","",004554D0
 A3VP,000F9F74,"1239 - Sonic Pinball Party (E).gba","",000F9F44
 AY7E,009F42C0,"1240 - Yu-Gi-Oh! - The Sacred Cards (U).gba","",009F423C
-BBRE,000310DC,"1241 - Disney's Brother Bear (U).gba","",
 AXVE,004554A0,"1242 - Pokemon Ruby (E).gba","",00455470
 AQTE,000367F8,"1244 - Dr. Seuss' - The Cat in the Hat (U).gba","",000367BC
 BPPP,007C67A4,"1245 - Pokemon Pinball - Ruby & Sapphire (E).gba","",007C6774
@@ -741,100 +683,45 @@ BMZJ,001328FC,"1257 - Zooo (J).gba","",001328A8
 A6OE,007839C0,"1258 - Onimusha Tactics (U).gba","",007838F4
 AQME,000743E4,"1261 - Disney's Magical Quest 2 Starring Mickey and Minnie (U).gba","",00074360
 AH9E,0063A8B8,"1264 - The Hobbit (U).gba","",0063A84C
-BDDE,002B6488,"1266 - Double Dragon Advance (U).gba","",
-A4NE,0013ABF0,"1268 - Harvest Moon - Friends of Mineral Town (U).gba","",
-AZIX,0002C6D0,"1269 - Finding Nemo (E).gba","",
+BDDE,002B6488,"1266 - Double Dragon Advance (U).gba","",002B644C
+A4NE,0013ABF0,"1268 - Harvest Moon - Friends of Mineral Town (U).gba","",0013ABA8
 AOWP,000658F8,"1270 - Spyro Adventures (E).gba","",000658A4
 BM3J,0011EFE0,"1272 - Disney's Magical Quest 3 Starring Mickey and Donald (J).gba","",0011EF5C
 AV3P,007434E0,"1273 - Spy Kids 3D (E).gba","",007434B0
 AEYP,00709D4C,"1274 - Disney's Kim Possible (E).gba","",00709D10
-BMHE,0090C924,"1276 - Medal of Honor - Infiltrator (U).gba","",0090C91C
 A88E,00FB5DA4,"1277 - Mario And Luigi Superstar Saga (U).gba","",00FB5C24
-BCME,000EAE64,"1281 - CIMA The Enemy (U).gba","",
-A88J,003A6EAC,"1283 - Mario and Luigi RPG (J).gba","",003A6EA8
-BNTP,0067D724,"1290 - Teenage Mutant Ninja Turtles (E).gba","",
-BHWE,0009C970,"1291 - Hot Wheels - World Race (U).gba","",
-BFZJ,000A3BEC,"1292 - F-Zero - Falcon Densetsu (J).gba","",000A3B74
-BCNP,00036334,"1293 - Crash Nitro Kart (E).gba","",
-BGAJ,00D5B1BC,"1294 - SD Gundam G Generation Advance (J).gba","",
-BHWP,0009C690,"1295 - Hot Wheels - World Race (E).gba","",
-BODD,001BE8D0,"1296 - Oddworld - Munch's Oddysee (G).gba","",
-AQDP,0008FF94,"1298 - Crouching Tiger Hidden Dragon (E).gba","",0008FF64
-BERE,001CC168,"1300 - Dora the Explorer - Super Spies (U).gba","",
-A4XJ,0007B320,"1303 - Gachasta! Dino Device 2 Dragon (J).gba","",001D5A24
-A4WJ,0007B320,"1304 - Gachasta! Dino Device 2 Phoenix (J).gba","",001D5A24
-A6OP,007839B0,"1305 - Onimusha Tactics (E).gba","",007838E4
-BYYE,00036858,"1308 - Yu Yu Hakusho - Spirit Detective (U).gba","",0003681C
-BSBJ,00B7D370,"1309 - Sonic Battle (J).gba","",00B7D328
-BPZJ,00051C70,"1310 - Pazunin - Uminin No Puzzle de Nimu (J).gba","",00051C40
-AQWE,000D4E84,"1315 - Game & Watch Gallery 4 (U).gba","",000CA8B8
-BISJ,002B0ECC,"1316 - Koinu-Chan no Hajimete no Osanpo - Koino no Kokoro Ikusei Game (J).gba","",002B0E84
-BPSJ,0002B464,"1317 - Cinnamoroll Kokoniiruyo (J).gba","",000B1948
-B4BJ,00155DFC,"1319 - RockMan EXE 4 Tournament Blue Moon (J).gba","",00155C7C
-B4WJ,00155DE8,"1320 - RockMan EXE 4 Tournament Red Sun (J).gba","",00155C68
-BPTE,002CF144,"1321 - Peter Pan The Movie (U).gba","",002CF0D8
-BK3J,0003CC48,"1322 - Card Captor Sakura - Sakura Card de Mini Game (J).gba","",0003CBE8
-A4GJ,001DAB0C,"1323 - Konjiki no Gashbell (J).gba","",001DAAC4
-BFGJ,00146A64,"1324 - Bokujou Monogatari - Mineral Town for Girls (J).gba","",
-B3KJ,0072010C,"1326 - Croket 3 Guranyuoukoku No Nazo (J).gba","",
-AEXE,006078E0,"1328 - The King of Fighters EX2 - Howling Blood (U).gba","",0077127C
-BMYJ,00038674,"1329 - Wagamama Fairy Mirumo De Pon - 8 Nin no Toki no Yousei (J).gba","",
-BFNJ,0002EAD0,"1331 - Finding Nemo (J).gba","",
-BTAJ,0063BDC0,"1332 - Astro Boy - Tetsuwan Atom (J).gba","",
-A5DE,000CEF20,"1333 - Disney Sports Snowboarding (U).gba","",00215EBC
-BMEE,0006CCF4,"1335 - Max Payne (U).gba","",
-BTTJ,00021418,"1336 - Tetris Advance (J).gba","",000213F4
-BDRJ,0004D6C8,"1337 - Ochaken No Heya (J).gba","",0004D6A4
-BS5J,00054854,"1339 - Silvanian Family Yousei no Stick to Fushigi no Marroine no Onnanoko (J).gba","",00054588
-BS4J,00049CD0,"1340 - Simple 2960 Vol. 4 - The Trump (J).gba","",00049CAC
-BWMJ,00089F68,"1341 - WanWan Meitantei (J).gba","",00089F44
-BAMJ,00DAF494,"1342 - Ashita No Joe (J).gba","",
-AARP,001C9694,"1345 - Altered Beast - Guardian of the Realms (E).gba","",001C9664
-ATKP,000533B0,"1346 - Tekken Advance (E).gba","",00053380
-BSBE,00BF7244,"1351 - Sonic Battle (U).gba","",00BF71FC
-BHYJ,00039EAC,"1352 - Hyokkori Hyotanjima Don Gabacho Daikatsuyaku no Maki (J).gba","",00039E7C
-AHUE,00055450,"1353 - Shining Soul (U).gba","",00055420
-A3JJ,00054824,"1357 - Gyakuten Saiban 3 (J).gba","",000547F4
 BPRJ,00467F0C,"1360 - Pokemon Fire Red (J).gba","",00467EDC
 BPGJ,00467D50,"1362 - Pokemon Leaf Green (J).gba","",00467D20
-BMMP,0010CCD0,"1363 - Scooby-Doo - Mystery Mayhem (E).gba","",
 AY7P,009FCB18,"1364 - Yu-Gi-Oh! - The Sacred Cards (E).gba","",009FCA94
-BBRX,00030800,"1365 - Disney's Brother Bear (E).gba","",
 AD2P,00095890,"1369 - Mr. Driller 2 (E).gba","",00095854
 BMXE,0008F2C0,"1370 - Metroid - Zero Mission (U).gba","",0008F254
 APYP,002C1104,"1371 - Puyo Pop (E).gba","",002C10D4
-AQPI,001363EC,"1372 - Disney Principesse (I).gba","",
+AQPI,001363EC,"1372 - Disney Principesse (I).gba","",001363D4
 BOZE,003FB2A4,"1374 - Ozzy & Drix (U).gba","",003FB25C
 BM8J,00051068,"1375 - Mermaid Melody - PichiPichi Pitch - PichiPichi Party (J).gba","",00051020
-ALEE,0002C0A8,"1380 - Bruce Lee - Return of the Legend (U).gba","",00028FE8
-A4ND,0013CC70,"1389 - Harvest Moon - Friends of Mineral Town (G).gba","",
+A4ND,0013CC70,"1389 - Harvest Moon - Friends of Mineral Town (G).gba","",0013CC28
 BPTP,002DBE80,"1394 - Peter Pan - The Motion Picture (E).gba","",002DBE14
-AZIY,0002C6D0,"1396 - Finding Nemo (E).gba","",
 BGSJ,000721CC,"1397 - Gakuen Senki Muryou (J).gba","",00072190
-BDTJ,002DEAAC,"1400 - River City Ransom EX (J).gba","",001C3460
+BDTJ,002DEAAC,"1400 - River City Ransom EX (J).gba","",002DEA70
 A89E,00106DD0,"1403 - Megaman Battle Chip Challenge (U).gba","",00106D7C
 BU6J,0040E17C,"1404 - Taiketsu Ultra Hero (J).gba","",0040E140
 AGXE,00744CBC,"1406 - Guilty Gear X - Advance Edition (U).gba","",00744CA4
 AU2P,000BC60C,"1407 - Shining Soul II (E).gba","",000BC5DC
 BSLP,000CC738,"1408 - Tom Clancy's Splinter Cell - Pandora Tommorow (E).gba","",000CC708
-B08J,00498844,"1409 - One Piece Going Baseball (J).gba","",
-BADP,0005AF4C,"1410 - Disney's Aladdin (E).gba","",
-BJUP,000B463C,"1413 - Tak And The Power Of JuJu (E).gba","",000B4624
+B08J,003A8034,"1409 - One Piece Going Baseball (J).gba","",003A7FF8
+BADP,0005CE34,"1410 - Disney's Aladdin (E).gba","",0005CDB0
 AQTP,00031724,"1414 - Dr. Seuss' - The Cat in the Hat (E).gba","",000316E8
 BYSJ,0020EDE4,"1416 - Yu-Gi-Oh! - Sugoroku no Sugoroku (J).gba","",0020EDA8
 BMUE,001B8A34,"1417 - Scooby-Doo 2 - Monsters Unleashed (U).gba","",001B8980
-BR3E,0035AAC8,"1418 - R-Type III (U).gba","",
+BR3E,000CF6C0,"1418 - R-Type III (U).gba","",000CF618
 A89P,00106DD0,"1419 - Megaman Battle Chip Challenge (E).gba","",00106D7C
-BMEP,0006E6D8,"1421 - Max Payne Advance (E).gba","",
 BMQP,00122E1C,"1423 - Disney's Magical Quest 3 Starring Mickey and Donald (E).gba","",00122D98
 BTIJ,002CF504,"1425 - Tantei Gakuen Q - Kyukyoku Trick ni Idome (J).gba","",002CF4D4
 AZJJ,0008C4A4,"1427 - Dragon Ball Z - Bukuu Tougeki (J).gba","",0008C468
-BDDJ,002B6E1C,"1428 - Double Dragon Advance (J).gba","",
+BDDJ,002B6E1C,"1428 - Double Dragon Advance (J).gba","",002B6DE0
 BS3J,0002020C,"1429 - Simple 2960 Vol. 3 - The Itsudemo Puzzle (J).gba","",000201DC
 BHRJ,0008F650,"1430 - Full Metal Alchemist (J).gba","",0008F620
-A4NP,0013AC48,"1432 - Harvest Moon - Friends of Mineral Town (E).gba","",
-APTP,003EFA54,"1433 - The Powerpuff Girls - Mojo JoJo A-Go-Go (E).gba","",0036E480
-ADLP,0004FC10,"1434 - Dexter's Laboratory - Deesaster Strikes (E).gba","",
+A4NP,0013AC48,"1432 - Harvest Moon - Friends of Mineral Town (E).gba","",0013AC00
 A3ZE,0004774C,"1437 - Street Jam Basketball (U).gba","",0004771C
 BD2J,007530A8,"1438 - Duel Masters 2 (J).gba","",0075303C
 BRPJ,0004A59C,"1439 - Liliput Oukoku (J).gba","",0004A584
@@ -845,7 +732,7 @@ BMXP,0008FF4C,"1452 - Metroid - Zero Mission (E).gba","",0008FEE0
 BPNJ,00334980,"1453 - Pikapika Nurse Monogatari (J).gba","",0033495C
 B8KJ,00B253E0,"1454 - Hoshi no Kirby - Kagami no Daimeikyuu (J).gba","",00D2C43C
 BZ3J,0010F810,"1457 - Rockman Zero 3 (J).gba","",0010F75C
-BMGJ,002054CC,"1458 - Mario Golf - Advance Tour (J).gba","",
+BMGJ,002054CC,"1458 - Mario Golf - Advance Tour (J).gba","",00205460
 A6RE,0033FF80,"1459 - Shifting Gears - Road Trip (U).gba","",0033FF38
 AU2E,000BC09C,"1460 - Shining Soul II (U).gba","",000BC06C
 BKSJ,0006DF58,"1461 - Card Captor - Sakura Card Friends (J).gba","",0006DF1C
@@ -853,168 +740,131 @@ BZGJ,0005B95C,"1462 - Zettai Zetsumei Dangerous Jiisan 2 (J).gba","",0005B944
 BUVJ,0002F70C,"1463 - Uchu No Stellvia (J).gba","",0002F6E8
 BP3J,00619594,"1464 - Pia Carrot e Youkoso!! 3.3 (J).gba","",00619564
 AENE,003E9974,"1465 - Serious Sam Advance (U).gba","",003E9944
-BTPE,000D85F0,"1466 - Ten Pin Alley 2 (U).gba","",000D862C
 BN2J,0040F330,"1469 - Naruto Saikyou Ninja Daikessyu 2 (J).gba","",0040F300
 AF5P,0007DAF4,"1470 - Shining Force - Resurrection of the Dark Dragon (E).gba","",0007DAC4
 ANVJ,00C3781C,"1472 - Shiren Monsters Netsal (J).gba","",00C377BC
-BPBJ,002663A0,"1475 - Pyuu to Fuku! Jogger Byuu to Deru! Megane-Kun (J).gba","",
+BPBJ,00066458,"1475 - Pyuu to Fuku! Jogger Byuu to Deru! Megane-Kun (J).gba","",00066428
 AO7K,000F1A34,"1476 - Ilgop Seomui Daebomul (K).gba","",000F1A10
-BSEE,0004A594,"1477 - Shrek 2 (U).gba","",
 BANE,003082F8,"1478 - Van Helsing (U).gba","",00308298
 BKCJ,000D89D8,"1479 - Crayon Shin-Chan - Arashi no Yobu Cinema-Land no Daibouken! (J).gba","",000D8960
 AENP,003E99D0,"1480 - Serious Sam Advance (E).gba","",003E99A0
 BKTJ,00131170,"1481 - Kootetsu Teikoku from Hot-B (J).gba","",00131128
 BGNJ,000744AC,"1482 - Gundam Seed Battle Assault (J).gba","",0007447C
-U3IP,001E7604,"1483 - Boktai - The Sun is in your Hand (E).gba","",
+U3IP,001E7604,"1483 - Boktai - The Sun is in your Hand (E).gba","",001E7568
 BANP,00308230,"1484 - Van Helsing (E).gba","",003081D0
-BM5E,007140B8,"1489 - Mario Vs. Donkey Kong (U).gba","",
-B3SE,000EB420,"1490 - Sonic Advance 3 (U).gba","",
+B3SE,000EB420,"1490 - Sonic Advance 3 (U).gba","",000EB3E4
 AQ2P,00361534,"1491 - Gadget Racers (E).gba","",003614EC
-BDTE,002C6084,"1502 - River City - Ransom EX (U).gba","",001AABD8
+BDTE,002C6084,"1502 - River City - Ransom EX (U).gba","",002C6048
 BTFJ,00067160,"1504 - Tokyo Majin Gakuen - Fuju Houroku (J).gba","",00067124
 BFZP,000A21D4,"1508 - F-Zero GP Legend (E).gba","",000A215C
-BD4E,00075274,"1509 - Crash Bandicoot - Purple Ripto's Rampage (U).gba","",00075268
-BSTE,00258318,"1510 - Spyro Orange - The Cortex Conspiracy (U).gba","",0020CE48
 BSBP,00BF8370,"1513 - Sonic Battle (E).gba","",00BF8328
 BNJJ,0014D234,"1525 - Jajamaru Jr. Denshouki - Jaleco Memorial (J).gba","",0014D1EC
-BM5J,006C3508,"1526 - Mario Vs. Donkey Kong (J).gba","",
 BMXJ,0008F31C,"1527 - Metroid - Zero Mission (J).gba","",0008F2B0
-BMHJ,00EEB550,"1528 - Medal of Honor - Infiltrator (J).gba","",
 AF5E,0007DAF8,"1530 - Shining Force - Resurrection of the Dark Dragon (U).gba","",0007DAC8
-BM4J,0011E11C,"1531 - Mickey no Pocket Resort (J).gba","",
+BM4J,0011E11C,"1531 - Mickey no Pocket Resort (J).gba","",0011E0E0
 AWAC,00098CB8,"1532 - Wario Land Advance (C).gba","",00098C58
 AWWE,00368F0C,"1533 - Woody Woodpecker In Crazy Castle 5 (U).gba","",00368EDC
-BTHE,00061D84,"1535 - Thunder Alley (U).gba","",
-B3SJ,000EB94C,"1536 - Sonic Advance 3 (J).gba","",
-BSEX,00062BF0,"1538 - Shrek 2 (E).gba","",
-B3SP,000EB7AC,"1541 - Sonic Advance 3 (E).gba","",
-BSTP,0005DD0C,"1542 - Spyro Fusion (E).gba","",002F1DE8
-BD4P,0006BAE4,"1543 - Crash Bandicoot Fusion (E).gba","",
-BMGE,002054CC,"1544 - Mario Golf - Advance Tour (U).gba","",
-BD3J,00D0525C,"1545 - Dragon Quest Characters - Toruneko no Daibouken 3 Advance - Fushigi no Dungeon (J).gba","",
+B3SJ,000EB94C,"1536 - Sonic Advance 3 (J).gba","",000EB910
+B3SP,000EB7AC,"1541 - Sonic Advance 3 (E).gba","",000EB770
+BMGE,002054CC,"1544 - Mario Golf - Advance Tour (U).gba","",00205460
+BD3J,00D0525C,"1545 - Dragon Quest Characters - Toruneko no Daibouken 3 Advance - Fushigi no Dungeon (J).gba","",00D051F0
 BSAJ,000B2780,"1547 - Super Chinese 1 and 2 Advance (J).gba","",000B275C
 AZJE,000F5490,"1548 - DragonBall Z - Supersonic Warriors (U).gba","",000F5454
 A8LJ,00057A88,"1551 - BB Ball (J).gba","",00057A70
 A5SJ,00051E34,"1552 - Oshare Wanko (J).gba","",00051DF8
-BSPE,00E47CB4,"1553 - Spider-Man 2 (U).gba","",00E47A14
 B4WE,00155FF8,"1554 - MegaMan Battle Network 4 Red Sun (U).gba","",00155E78
 B4BE,0015600C,"1555 - MegaMan Battle Network 4 Blue Moon (U).gba","",00155E8C
 AY8E,00AFBDE4,"1556 - Yu-Gi-Oh! Reshef of Destruction (U).gba","",00AFBD0C
 B8KP,00B64334,"1560 - Kirby And The Amazing Mirror (E).gba","",00D6B404
 B8DE,002D4BD0,"1562 - Around The World In 80 Days (U).gba","",002D4B64
-BKME,00123ADC,"1563 - Disney's Kim Possible 2 - Drakken's Demise (U).gba","",0005CAFC
-BSPX,00E47F14,"1565 - Spider-Man 2 (E).gba","",00E47C74
-BMGU,002054CC,"1566 - Mario Golf - Advance Tour (A).gba","",
-A9CE,007DAE04,"1568 - CT Special Forces 2 - Back in The Trenches (U).gba","",00019729
-BTAE,0061F3B8,"1569 - Astro Boy - Omega Factor (U).gba","",
+BMGU,002054CC,"1566 - Mario Golf - Advance Tour (A).gba","",00205460
+BTAE,0061F3B8,"1569 - Astro Boy - Omega Factor (U).gba","",0061F238
 BKOJ,00149138,"1571 - Kaiketsu Zorori to Mahou no Yuuenchi (J).gba","",001490F0
 BZ2J,0004BEF8,"1572 - Zettai Zetsumei Den Chara Suji-San (J).gba","",0004BEE0
-BDKJ,000995BC,"1573 - Digi Communication 2 in 1 Datou! Black Gemagema Dan (J).gba","",000995B4
-AE7X,00680600,"1574 - Fire Emblem (E).gba","",
-AE7Y,0067F200,"1575 - Fire Emblem (E).gba","",
 BWFJ,00610150,"1576 - Wagamama Fairy Miruro de Pon! Yume no Kakera (J).gba","",00610120
 BKBJ,000C4240,"1580 - Konjiki no Gashbell!! Makai no Bookmark (J).gba","",000C4210
-A3NJ,004DC7C0,"1581 - Monster Summoner (J).gba","",
-BNRJ,004578CC,"1583 - Naruto RPG - Uketsugareshi Hi no Ishi (J).gba","",
-BCWE,007FB40C,"1584 - Catwoman (U).gba","",
-U32J,0025E4C0,"1585 - Zoku Bokura no Taiyou - Taiyou Shounen Django (J).gba","",
+A3NJ,002B0E5C,"1581 - Monster Summoner (J).gba","",002B0DD8
+BNRJ,00382F48,"1583 - Naruto RPG - Uketsugareshi Hi no Ishi (J).gba","",00382EE8
+U32J,0025E4C0,"1585 - Zoku Bokura no Taiyou - Taiyou Shounen Django (J).gba","",0025E424
 BD5J,0076E238,"1586 - Duel Masters 2 - Kirifuda Shoubu Version (J).gba","",0076E1CC
 BH2J,000B567C,"1587 - Hagane no Renkinjutsushi - Omoide no Soumeikyoku (J).gba","",000B564C
-BK4J,008501FC,"1588 - Croket! 4 - Bank no Mori no Mamorigami (J).gba","",
+BK4J,008501FC,"1588 - Croket! 4 - Bank no Mori no Mamorigami (J).gba","",0085019C
 BGIJ,00802FDC,"1589 - Get Ride AMDriver - Senkou no Hero Tanjou (J).gba","",00802F4C
 AMAC,000F64C4,"1590 - Chaoji Maliou (C).gba","",000F6344
-ALFJ,0021C258,"1591 - Dragon Ball Z - The Legacy of Goku II International (J).gba","",
 BPFJ,000A4B64,"1592 - Puyo Puyo Fever (J).gba","",000A4B28
 BGHJ,0041B9E8,"1593 - Gakkou no Kaidan - Hyakuyobako no Fuuin (J).gba","",0041B9D0
 BZOJ,00117BB0,"1594 - Zero One SP (J).gba","",00117B80
 BLJJ,0077060C,"1596 - Legions - Yomigaeru Shiren no Shima (J).gba","",007705B8
-BFFJ,008F7BA8,"1597 - Final Fantasy I & II Advance (J).gba","",
-BJUX,00496D98,"1599 - Tak and the Power of JuJu (E).gba","",00496F9A
+BFFJ,008F7BA8,"1597 - Final Fantasy I & II Advance (J).gba","",008F7B54
 BDAJ,003C1FFC,"1600 - Don-Chan Puzzle - Hanabi de Don (J).gba","",003C1FD8
 BHAJ,0006E5C8,"1601 - Hanabi Hyakkei Advance (J).gba","",0006E598
-BG4J,006AC92C,"1602 - SD Gundam Force (J).gba","",
+BG4J,00070420,"1602 - SD Gundam Force (J).gba","",000703F0
 AF5J,0007C478,"1603 - Shining Force - Kuroki Ryuu no Fukkatsu (J).gba","",0007C448
 BR4J,00135214,"1604 - Rockman EXE 4.5 Real Operation (J).gba","",00135094
 BDCJ,00072E50,"1605 - Doubutsu Shima no Chubi Gurumi 2 (J).gba","",00072E20
-BDXJ,000E5724,"1606 - B-Densetsu! Battle B-Daman Moero! B-Kon (J).gba","",
+BDXJ,000E5724,"1606 - B-Densetsu! Battle B-Daman Moero! B-Kon (J).gba","",000E56DC
 BNBJ,005520A8,"1607 - Himawari Doubutsu Byouin (J).gba","",00552084
 BUTJ,0005E33C,"1608 - Ultra Keibitai - Monster Attack (J).gba","",00190100
-B3DJ,00BC52A4,"1609 - Densetsu no Stafi 3 (J).gba","",00187AC4
-AC9E,003E306C,"1611 - Cartoon Network - Block Party (U).gba","",003E303C
+B3DJ,00BC52A4,"1609 - Densetsu no Stafi 3 (J).gba","",00BC5268
 BTBE,002D1F64,"1614 - Thunderbirds (U).gba","",002D1F04
 BSLE,000CC6E0,"1626 - Tom Clancy's Splinter Cell - Pandora Tommorow (U).gba","",000CC6B0
 AZJP,000F8124,"1628 - DragonBall Z - Supersonic Warriors (E).gba","",000F80E8
 BSKJ,000970FC,"1629 - Summon Night - Craft Sword Monogatari 2 (J).gba","",000970C0
 BMVJ,005E9014,"1630 - Super Mario Ball (J).gba","",005E8FE4
-BCNJ,003A4210,"1632 - Crash Bandicoot Bakusou! Nitro Kart (J).gba","",0032BCCC
 BPRE,004A32CC,"1636 - Pokemon Fire Red (U).gba","",004A329C
-BPGE,003BF938,"1637 - Pokemon Leaf Green (U).gba","",
+BPGE,004A2BA8,"1637 - Pokemon Leaf Green (U).gba","",004A2B78
 BZ3P,0010BF94,"1639 - MegaMan Zero 3 (E).gba","",0010BEE0
-ATWY,0034E124,"1640 - Tetris Worlds (E).gba","",
+ATWY,0034E124,"1640 - Tetris Worlds (E).gba","",0034E0E8
 BZIE,0007C854,"1641 - Finding Nemo - The Continuing Adventures (U).gba","",0007C7B8
 AY8P,00B067AC,"1642 - Yu-Gi-Oh! Reshef of Destruction (E).gba","",00B066D4
 BOSJ,00569810,"1643 - Boboboubo Boubobo - Bakuten Hajike Taisen (J).gba","",005697EC
 AZJK,000A24C8,"1644 - Dragon Ball Z - Supersonic Warriors (K).gba","",000A248C
-BG3E,0077CD88,"1646 - Dragon Ball Z - Buu's Fury (U).gba","",
 AZ2E,006A46C4,"1647 - Zoids - Legacy (U).gba","",006A4694
 BPEJ,0063C2AC,"1649 - Pokemon Emerald (J).gba","",0063C27C
-BGCE,004908B0,"1653 - Advance Guardian Heroes (U).gba","",
-BMGD,002054CC,"1654 - Mario Golf - Advance Tour (G).gba","",
-BMGI,002054CC,"1655 - Mario Golf - Advance Tour (I).gba","",
-BMGF,002054CC,"1656 - Mario Golf - Advance Tour (F).gba","",
-BSPI,00E47CAC,"1657 - Spider-Man 2 (I).gba","",00E47A0C
+BGCE,004908B0,"1653 - Advance Guardian Heroes (U).gba","",00490730
+BMGD,002054CC,"1654 - Mario Golf - Advance Tour (G).gba","",00205460
+BMGI,002054CC,"1655 - Mario Golf - Advance Tour (I).gba","",00205460
+BMGF,002054CC,"1656 - Mario Golf - Advance Tour (F).gba","",00205460
 BCKP,000E13EC,"1658 - Star Wars Trilogy - Apprentice of the Force (E).gba","",000E13BC
 BCKE,000E1458,"1659 - Star Wars Trilogy - Apprentice of the Force (U).gba","",000E1428
 A4BP,000318C0,"1660 - Monster Bass Fishing (E).gba","",00031890
 BFZE,00097B44,"1661 - F-Zero GP Legend (U).gba","",00097ACC
-BAGJ,00490658,"1662 - Advance Guardian Heroes (J).gba","",
+BAGJ,00490658,"1662 - Advance Guardian Heroes (J).gba","",004904D8
 BECJ,00106BB8,"1663 - Angel Collection 2 - Pichimo ni Narou (J).gba","",00106B7C
 BDNJ,0005AAE4,"1664 - Dan Doh!! (J).gba","",0005AAB4
 BSGJ,001180BC,"1665 - Minna no Soft Series - Minna no Shogi (J).gba","",0011808C
 B8DP,002E7084,"1669 - Around The World In 80 Days (E).gba","",002E7018
 AONE,002A5AE8,"1670 - Bubble Bobble - Old & New (U).gba","",002A5A88
-BF2E,00307F14,"1671 - The Fairly OddParents - Shadow Showdown (U).gba","",
-BSUE,00050910,"1672 - Shark Tale (U).gba","",
-BPRS,00455638,"1675 - Pokemon Rojo Fuego (S).gba","",
+BPRS,00499BC8,"1675 - Pokemon Rojo Fuego (S).gba","",00499B98
 BPGS,004992C0,"1676 - Pokemon Verde Hoja (S).gba","",00499290
 BPGD,004A0A5C,"1677 - Pokemon Blattgrune (G).gba","",004A0A2C
-BPRD,0041412C,"1678 - Pokemon Feuerrote (G).gba","",00412768
-BPRF,0040CB30,"1679 - Pokemon Rouge Feu (F).gba","",0040B16C
+BPRD,004A18F0,"1678 - Pokemon Feuerrote (G).gba","",004A18C0
+BPRF,00499394,"1679 - Pokemon Rouge Feu (F).gba","",00499364
 BPGF,004980BC,"1680 - Pokemon Vert Feuille (F).gba","",0049808C
 BCCE,00215770,"1682 - Nicktoons - Freeze Frame Frenzy (U).gba","",002156E0
-BPRI,0046E680,"1685 - Pokemon Rosso Fuoco (I).gba","",
-BPGI,003B8940,"1686 - Pokemon Verde Foglia (I).gba","",
-BMGS,002054CC,"1690 - Mario Golf - Advance Tour (S).gba","",
-BPGE,00462D34,"1691 - Pokemon Leaf Green (U).gba","",
-BE8J,00214120,"1692 - Fire Emblem - Seima no Kouseki (J).gba","",
-B2TE,000712C0,"1693 - Tony Hawk's Underground 2 (U).gba","",000DF284
+BPRI,00496D20,"1685 - Pokemon Rosso Fuoco (I).gba","",00496CF0
+BPGI,004964B8,"1686 - Pokemon Verde Foglia (I).gba","",00496488
+BMGS,002054CC,"1690 - Mario Golf - Advance Tour (S).gba","",00205460
+BPGE,004A2C18,"1691 - Pokemon Leaf Green (U).gba","",004A2BE8
+BE8J,00214120,"1692 - Fire Emblem - Seima no Kouseki (J).gba","",002140A8
 BMVE,005E63A0,"1694 - Mario Pinball Land (U).gba","",005E6370
-BPRE,00456D94,"1695 - Pokemon Fire Red (U).gba","",
-BKNE,00345160,"1696 - Lego Knights' Kingdom (U).gba","",00345144
-AYHE,00272D00,"1697 - Starsky & Hutch (U).gba","",
+BPRE,004A332C,"1695 - Pokemon Fire Red (U).gba","",004A32FC
 BZ3E,0010BFE8,"1702 - MegaMan Zero 3 (U).gba","",0010BF34
 RZWJ,0018BDF8,"1703 - Mawaru Made in Wario (J).gba","",0018BD80
-BT9E,0004BB0C,"1704 - Tak 2 - The Staff of Dreams (U).gba","",00007641
 BLSE,0067D100,"1705 - Disney's Lilo & Stitch 2 - Hamsterveil Havoc (U).gba","",0067D0D0
-BSUX,0005BE00,"1706 - Shark Tale (E).gba","",
-BRVE,0004CD80,"1708 - That's So Raven (U).gba","",
 BGEE,000704A4,"1714 - SD Gundam Force (U).gba","",00070474
-BWWE,0032ECCC,"1715 - WWE Survivor Series (U).gba","",0032ECA0
-B8KE,00B59ED0,"1716 - Kirby And The Amazing Mirror (U).gba","",00D60FA4
-BT2E,006D82AC,"1717 - Teenage Mutant Ninja Turtles 2 - Battle Nexus (U).gba","",
+B8KE,00B59ED0,"1716 - Kirby And The Amazing Mirror (U).gba","",00B59EA0
+BT2E,006D82AC,"1717 - Teenage Mutant Ninja Turtles 2 - Battle Nexus (U).gba","",006D8234
 BFTJ,0009EE84,"1718 - F-Zero Climax (J).gba","",0009EE0C
-U32E,0025EEA8,"1719 - Boktai 2 - Solar Boy Django (U).gba","",
+U32E,0025EEA8,"1719 - Boktai 2 - Solar Boy Django (U).gba","",0025EE0C
 BALE,000EF014,"1720 - Rugrats - All Grown Up (U).gba","",000EEF78
-BKNP,00345160,"1721 - Lego Knights' Kingdom (E).gba","",00345144
-BHZP,0009C660,"1722 - Hot Wheels Gamepack 1 (E).gba","",
+BHZP,0009C660,"1722 - Hot Wheels Gamepack 1 (E).gba","",0009C600
 BSYJ,0003CCC0,"1724 - Sentouin - Yamada Hajime (J).gba","",0003CCA8
-A84P,0043B29C,"1727 - Hamtaro - Rainbow Rescue (E).gba","",
 BYDE,00251820,"1729 - Yu-Gi-Oh! Destiny Board Traveler (U).gba","",002517E4
 BFDJ,000ECFBC,"1730 - Fruits Mura no Doubutsu Tachi (J).gba","",000ECF98
 BOPJ,000D92B0,"1731 - Oshare Princess EX Primo Debut Monogatari & Renai Uranai Daisakusen (J).gba","",000D928C
 BAZJ,002E0A90,"1732 - Akachan Doubutsuen (J).gba","",002E0A6C
 BIKJ,00066A0C,"1733 - Ochainu Kururin (J).gba","",000669D0
-BSIE,000AF3FC,"1734 - Shrek 2 - Beg for Mercy (U).gba","",
 BE2J,0009D7AC,"1736 - Kisekae Angel (J).gba","",0009D788
 BWKJ,000567F8,"1737 - Wanko de Kururin Wancle (J).gba","",000567BC
 BWAJ,0005BDE0,"1738 - Wannyan Idol Gakuen (J).gba","",0005BDBC
@@ -1023,71 +873,54 @@ BRNJ,000B0AB8,"1740 - Licca-Chan no Oshare Nikki (J).gba","",000B0A88
 BI2J,000AA890,"1741 - Koinu to Issho 2 (J).gba","",000AA86C
 BZMJ,009F3D3C,"1743 - Zelda no Densetsu - Fushigi no Boushi (J).gba","",009F3BBC
 BXAE,00208B68,"1744 - Texas Hold 'Em Poker (U).gba","",00208B38
-BICE,005EF4EC,"1749 - The Incredibles (U).gba","",
-BELE,0002FD30,"1750 - Elf - The Movie (U).gba","",
-BSIX,000B6608,"1752 - Shrek 2 - Beg for Mercy (E).gba","",
-BSME,000A3798,"1755 - Metal Slug Advance (U).gba","",
+BELE,0002FD30,"1750 - Elf - The Movie (U).gba","",0002FCD0
+BSME,000A3798,"1755 - Metal Slug Advance (U).gba","",000A3744
 BSVE,00538EB0,"1756 - Smashing Drive (U).gba","",00538E44
-BOCE,0148F560,"1757 - The Urbz - Sims in the City (E).gba","",
 BZMP,00B1D414,"1758 - The Legend of Zelda - The Minish Cap (E).gba","",00B1D294
-BF2D,00302D74,"1759 - The Fairly OddParents - Shadow Showdown (G).gba","",
 BZIY,00080030,"1761 - Finding Nemo - The Continuing Adventures (E).gba","",0007FF94
-B8CJ,01D48C50,"1764 - Kingdom Hearts - Chain of Memories (J).gba","",
+B8CJ,01D48C50,"1764 - Kingdom Hearts - Chain of Memories (J).gba","",01D48BCC
 AXVS,0045A924,"1765 - Pokemon Rubi (S).gba","",0045A8F4
-AXPS,003E8144,"1766 - Pokemon Zafiro (S).gba","",
+AXPS,0045A660,"1766 - Pokemon Zafiro (S).gba","",0045A630
 BDMJ,0004AC18,"1767 - Super Real Mahjong Dousoukai (J).gba","",00205258
-BDLJ,000DA3DC,"1768 - Shin Megami Tensei - Devil Children Messiah Riser (J).gba","",
-BLYE,00064D9C,"1769 - Lemony Snicket's A Series of Unfortunate Events (U).gba","",
+BDLJ,000DA3DC,"1768 - Shin Megami Tensei - Devil Children Messiah Riser (J).gba","",000DA3AC
 BCCX,00216384,"1770 - Nicktoons - Freeze Frame Frenzy (E).gba","",002162F4
-BICX,005F09F4,"1771 - Les Indestructibles (E).gba","",
 BP9E,00041B78,"1774 - World Championship Poker (U).gba","",00041B48
-BKHP,00080BCC,"1778 - Kill.Switch (E).gba","",0002B0CC
 ADHP,0038B3C4,"1779 - Defender of the Crown (E).gba","",0038B364
-BT2P,0071CAE0,"1780 - Teenage Mutant Ninja Turtles 2 - Battle Nexus (E).gba","",
+BT2P,0071CAE0,"1780 - Teenage Mutant Ninja Turtles 2 - Battle Nexus (E).gba","",0071CA68
 BDVJ,00A9C324,"1782 - Dragon Ball - Advance Adventure (J).gba","",00D6CF0C
 BRGE,0003B98C,"1783 - Yu Yu Hakusho - Tournament Tactics (U).gba","",0003B95C
-BSMJ,000A3798,"1784 - Metal Slug Advance (J).gba","",
-ACTY,000E9704,"1785 - Creatures (E).gba","",
-BARP,00061FA4,"1787 - Moto GP & GT Advance 3 Double Pack (E).gba","",
-BFJJ,00782708,"1788 - Frogger Kodaibunmei no Nazo (J).gba","",007826F8
-BDZD,0042E334,"1790 - Disney Pixar Pack (G).gba","",
+BSMJ,000A3798,"1784 - Metal Slug Advance (J).gba","",000A3744
+ACTY,000E9704,"1785 - Creatures (E).gba","",000E96C8
+BARP,00061FA4,"1787 - Moto GP & GT Advance 3 Double Pack (E).gba","",00061F68
 A9GE,00021D54,"1791 - Stadium Games (U).gba","",00021D18
-BICD,005ED1F0,"1793 - Die Unglaublichen (G).gba","",
 BASJ,0004603C,"1794 - Gakuen Alice - DokiDoki Fushigi Taiken (J).gba","",00046024
 BZIJ,00085904,"1795 - Finding Nemo - Arata na Bouken (J).gba","",00085868
 BLSP,00680D2C,"1797 - Disney's Lilo & Stitch 2 (E).gba","",00680CFC
-BB2P,00095340,"1798 - Beyblade G-Revolution (E).gba","",00001D0C
-BLYX,00064E58,"1799 - Lemony Snicket's A Series of Unfortunate Events (E).gba","",
 BMVP,005E6F84,"1800 - Super Mario Ball (E).gba","",005E6F54
 BGWJ,0003A74C,"1802 - Gameboy Wars Advance 1+2 (J).gba","",0003A6C8
-BREJ,000946C0,"1803 - Yakusoku no Chi Riviera (J).gba","",
-BFFE,008D3058,"1805 - Final Fantasy I & II - Dawn of Souls (U).gba","",
-BICI,005ED7F0,"1806 - Gli Incredibili (I).gba","",
+BREJ,000946C0,"1803 - Yakusoku no Chi Riviera (J).gba","",000945C4
+BFFE,008D3058,"1805 - Final Fantasy I & II - Dawn of Souls (U).gba","",008D3004
 BJCJ,0022F2F4,"1809 - Moero Jaleco Collection (J).gba","",0022F2AC
-BFFP,00974660,"1810 - Final Fantasy I & II - Dawn of Souls (E).gba","",
-BP7J,0060E4CC,"1811 - Power Pro Kun Pocket 7 (J).gba","",0060E4BC
-BOCJ,01353888,"1812 - The Urbz - Sims in the City (J).gba","",
-BSFJ,0004BC6C,"1813 - Sylvania Family - Fashion Designer Ninaritai! (J).gba","",0004B9C8
-B2SJ,0003E5B8,"1814 - Cinnamon - Yume no Daibouken (J).gba","",
-BLPD,001365DC,"1815 - Disney's Girls Pack (G).gba","",
+BFFP,00974660,"1810 - Final Fantasy I & II - Dawn of Souls (E).gba","",0097460C
+BSFJ,0004F28C,"1813 - Sylvania Family - Fashion Designer Ninaritai! (J).gba","",0004F244
+B2SJ,0003E5B8,"1814 - Cinnamon - Yume no Daibouken (J).gba","",0003E57C
+BLPD,001365DC,"1815 - Disney's Girls Pack (G).gba","",001365C4
 BDOE,0006BA74,"1818 - Dora the Explorer - Super Star Adventures (U).gba","",0006BA44
 KYGJ,004A79D8,"1821 - Yoshi no Banyu Inryoku (J).gba","",004A7984
-BDFP,004EC394,"1824 - SpongeBob SquarePants Gamepack 1 (E).gba","",004EC192
+BDFP,0081FC88,"1824 - SpongeBob SquarePants Gamepack 1 (E).gba","",0081FC70
 BSZX,0081FBC8,"1825 - SpongeBob SquarePants Gamepack 2 (E).gba","",0081FBB0
-BR3P,00366C20,"1826 - R-Type III (E).gba","",
-BLPF,0013668C,"1827 - Disney's Girls Pack (F).gba","",
-B8CE,01D6F744,"1828 - Kingdom Hearts - Chain of Memories (U).gba","",
+BR3P,000D27B0,"1826 - R-Type III (E).gba","",000D2708
+BLPF,0013668C,"1827 - Disney's Girls Pack (F).gba","",00136674
+B8CE,01D6F744,"1828 - Kingdom Hearts - Chain of Memories (U).gba","",01D6F6C0
 BFPJ,0003A8F0,"1829 - Futari ha Precure Arienaai Yume no Kuni ha Daimeikyuu (J).gba","",0003A8A8
-BK5J,00076048,"1830 - Korokke Great Toki no Boukensha (J).gba","",
+BK5J,00076048,"1830 - Korokke Great Toki no Boukensha (J).gba","",0007600C
 B3PJ,001416A8,"1831 - Pukupuku Tennen Kairanban Youkoso Illusion Land he (J).gba","",00141678
 BRBJ,00155674,"1832 - Rockman EXE 5 - Team of Blues (J).gba","",001554F4
 BITJ,006944C0,"1833 - Onmyou Taisenki Zeroshiki (J).gba","",00694484
-BS8J,000DF730,"1834 - Spyro Advance - Wakuwaku Tomodachi Daisakusen (J).gba","",
-BKJJ,0026B64C,"1835 - Keroro Gunsou Taiketsu! Keroro Cart de Arimasu!! (J).gba","",
+BKJJ,0026B64C,"1835 - Keroro Gunsou Taiketsu! Keroro Cart de Arimasu!! (J).gba","",0026B604
 BHDJ,005920BC,"1836 - Hello Idol Debut (J).gba","",00592098
-BKDJ,0007050C,"1837 - Crash Bandicoot Advance - Wakuwaku Tomodachi Daisakusen (J).gba","",
-BBSJ,001E0A70,"1838 - Boukyaku no Senritsu (J).gba","",001E09EC
-BSMP,000A3798,"1840 - Metal Slug Advance (E).gba","",
+BBSJ,0002FAD0,"1838 - Boukyaku no Senritsu (J).gba","",0002FAA0
+BSMP,000A3798,"1840 - Metal Slug Advance (E).gba","",000A3744
 BDUJ,0073FC44,"1842 - Duel Master 3 (J).gba","",0073FC08
 BLIJ,00111920,"1843 - Little Patissier Cake no Oshiro (J).gba","",001118E4
 BKVJ,000C4150,"1844 - Shingata Medarot - Kabuto Version (J).gba","",000C4120
@@ -1096,26 +929,22 @@ BWPJ,0007D4F8,"1846 - Wagamama Fairy Mirumo de Pon Nazo no Kagi to Shinjitsu no 
 BJ3J,000555BC,"1847 - Zettai Zetsumei Dangerous Jiisan 3 Hateshinaki Mamonogatari (J).gba","",000555A4
 BGJJ,008C322C,"1848 - Genseishin Justirisers - Souchaku Chikyuu no Senshitachi (J).gba","",008C3154
 BGYJ,00E22D98,"1849 - Konjiki no Gashbell - Unare Yuujou no Zakeru 2 (J).gba","",00E22D50
-B3TJ,00D3D5D0,"1855 - Tales of the World - Narikiri Dungeon 3 (J).gba","",
-AJDP,00062CA0,"1856 - James Pond - Codename Robocod (E).gba","",00062C10
+B3TJ,001C834C,"1855 - Tales of the World - Narikiri Dungeon 3 (J).gba","",001C81CC
 B2KJ,002BC3F0,"1858 - Kiss x Kiss Seirei Gakuen (J).gba","",002BC3C0
 ATEE,00242CA4,"1860 - WTA Tour Tennis (U).gba","",00242C44
-AFGE,00327330,"1861 - An American Tale - Fievel's Gold Rush (E).gba","",
 BZME,00A11DBC,"1865 - The Legend of Zelda - The Minish Cap (U).gba","",00A11C3C
-B8MJ,00145FD0,"1866 - Mario Party Advance (J).gba","",00145FD8
-BLBX,00030A14,"1867 - Disney's Young Pack (E).gba","",00030A0C
+B8MJ,001B6128,"1866 - Mario Party Advance (J).gba","",001B60D4
 BRXJ,0007CC40,"1868 - Vattroller X (J).gba","",0007CC04
 AH9J,005DEA50,"1869 - Hobbit no Bouken (J).gba","",005DE9E4
 BOVJ,001291CC,"1870 - Bouken-Ou Beet - Busters Road (J).gba","",00129154
-BLYD,00064D9C,"1871 - Lemony Snicket's A Series of Unfortunate Events (G).gba","",
-BADE,0005AF4C,"1872 - Disney's Aladdin (U).gba","",
+BADE,0005CE34,"1872 - Disney's Aladdin (U).gba","",0005CDB0
 BT3J,000803A0,"1873 - Tantei Jinguuji Saburou Shiroi Kage no Syoujyo (J).gba","",0008037C
 B3QJ,0009A94C,"1874 - Sangokushi Koumeiden (J).gba","",0009A934
 B3EJ,00083960,"1875 - Sangokushi Eiketsuden (J).gba","",00083948
 BG8J,00033680,"1876 - Ganbare Dodge Fighters (J).gba","",00033644
-A5UP,002A8E90,"1878 - Space Channel 5 - Ulala's Cosmic Attack (E).gba","",
+A5UP,002A8E90,"1878 - Space Channel 5 - Ulala's Cosmic Attack (E).gba","",002A8E78
 B2RJ,003FA1AC,"1879 - Super Robot Wars Original Generation 2 (J).gba","",003FA17C
-BBKP,005B642C,"1880 - Donkey Kong - King of Swing (E).gba","",005B7BE4
+BBKP,009FFF54,"1880 - Donkey Kong - King of Swing (E).gba","",009FFEDC
 AR9P,003DB664,"1882 - Reign Of Fire (E).gba","",003DB628
 B4WP,00155FD8,"1884 - MegaMan Battle Network 4 Red Sun (E).gba","",00155E58
 BHLE,006A04A0,"1885 - Shaman King - Legacy of the Spirits - Soaring Hawk (U).gba","",006A0458
@@ -1123,220 +952,167 @@ BWSE,006A0498,"1886 - Shaman King - Legacy of the Spirits - Sprinting Wolf (U).g
 AFHE,00378568,"1889 - Strike Force Hydra (U).gba","",00378538
 B4BP,00155FEC,"1894 - MegaMan Battle Network 4 Blue Moon (E).gba","",00155E6C
 ARUE,0036DDF8,"1896 - Robot Wars - Advanced Destruction (U).gba","",0036DDB0
-BGCP,004A2038,"1897 - Advance Guardian Heroes (E).gba","",
-BTAP,0061F3B8,"1900 - Astro Boy - Omega Factor (E).gba","",
+BGCP,004A2038,"1897 - Advance Guardian Heroes (E).gba","",004A1EB8
+BTAP,0061F3B8,"1900 - Astro Boy - Omega Factor (E).gba","",0061F238
 BLVJ,00E38B7C,"1902 - Legendz - Sign of Nekuromu (J).gba","",00E38B28
 BZFJ,00640040,"1905 - Zoids Saga Fuzors (J).gba","",0063FFD4
-BICS,005ECFEC,"1906 - Los Increibles (S).gba","",
 BZIX,00080018,"1907 - Finding Nemo - The Continuing Adventures (E).gba","",0007FF7C
-A3QE,00064F5C,"1908 - A Sound of Thunder (U).gba","",
-BAEE,00030318,"1909 - Ace Combat Advance (U).gba","",
+BAEE,00030318,"1909 - Ace Combat Advance (U).gba","",000302B8
 AN6E,00155330,"1910 - Klonoa 2 - Dream Champ Tournament (U).gba","",001552DC
 BRKJ,0015575C,"1914 - Rockman EXE 5 - Team of Colonel (J).gba","",001555DC
-BDSP,000150A4,"1916 - Digimon Battle Spirit 2 (E).gba","",
+BDSP,0036C64C,"1916 - Digimon Battle Spirit 2 (E).gba","",0036C5E0
 AXVI,00457810,"1917 - Pokemon Rubino (I).gba","",004577E0
-AXPI,003CE5E8,"1918 - Pokemon Zaffiro (I).gba","",
+AXPI,004574B4,"1918 - Pokemon Zaffiro (I).gba","",00457484
 AIPP,0065EE94,"1919 - Silent Scope (E).gba","",0065EE4C
-BSUI,00051300,"1921 - Shark Story (I).gba","",
 BYYP,000236E8,"1923 - Yu Yu Hakusho - Spirit Detective (E).gba","",000236AC
 A2YE,000A6AF8,"1928 - Top Gun - Combat Zones (U).gba","",000A6AC8
 BMKJ,0004FC50,"1930 - Mezase Koushien (J).gba","",0004FC2C
 AAWP,0006AEFC,"1931 - Contra Advance - The Alien Wars Ex (E).gba","",0006AECC
-BDFE,004EC394,"1935 - SpongeBob SquarePants Gamepack 1 (U).gba","",004EC192
-BCVE,0010CCD0,"1936 - Scooby-Doo Gamepack (U).gba","",
+BDFE,0081FC88,"1935 - SpongeBob SquarePants Gamepack 1 (U).gba","",0081FC70
 BK8J,0005AB2C,"1937 - Kappa no Kai-Kata - Katan Daibouken (J).gba","",0005AAFC
-BMGP,002054CC,"1938 - Mario Golf - Advance Tour (E).gba","",
-AQDS,00136904,"1939 - Disney Princesas (S).gba","",
-BLDS,00136904,"1940 - Disney's Girls Pack 1 (S).gba","",
-BDZS,0042E384,"1942 - Disney Pixar Pack (S).gba","",
+BMGP,002054CC,"1938 - Mario Golf - Advance Tour (E).gba","",00205460
+AQDS,00136904,"1939 - Disney Princesas (S).gba","",001368EC
+BLDS,00136904,"1940 - Disney's Girls Pack 1 (S).gba","",001368EC
 BCYE,001083CC,"1943 - Backyard Baseball 2006 (U).gba","",0010839C
-BRYE,004AEA18,"1944 - Rayman - Hoodlums' Revenge (U).gba","",
-BILP,0046D550,"1945 - Bionicle - Maze of Shadows (E).gba","",0046D534
-BT9X,0004C2E8,"1946 - Tak 2 - The Staff of Dreams (E).gba","",00007641
 BPFP,000A0994,"1948 - Puyo Pop Fever (E).gba","",000A0958
-B36J,008D3514,"1950 - Shin Sangoku Musou Advance (J).gba","",000B6E15
+B36J,008D3514,"1950 - Shin Sangoku Musou Advance (J).gba","",008D34A8
 BNYJ,0007F3B0,"1951 - Nyan Nyan Nyanko no Nyan Collection (J).gba","",0007F374
-B8ME,0014348C,"1952 - Mario Party Advance (U).gba","",00143494
-BLWE,0004C6DC,"1953 - Lego Star Wars (U).gba","",
-B9TJ,0002BA28,"1954 - Shark Tale (J).gba","",
-BLDP,00136F6C,"1955 - Disney's Girls Pack (E).gba","",
-BDZI,0042E384,"1956 - Disney Pixar Pack (I).gba","",
+B8ME,001B42DC,"1952 - Mario Party Advance (U).gba","",001B4288
+BLDP,00136F6C,"1955 - Disney's Girls Pack (E).gba","",00136F54
 BR2E,0009599C,"1958 - Mr. Driller 2 (U).gba","",00095960
 BO8K,003D9C30,"1960 - One Piece - Going Baseball Haejeok Yaku (K).gba","",003D9BF4
 BDVK,00AB8DF4,"1961 - Dragon Ball - Advance Adventure (K).gba","",00D899DC
 KYGP,00619658,"1967 - Yoshi's Universal Gravitation (E).gba","",00619604
 BSVP,0053EC08,"1969 - Smashing Drive (E).gba","",0053EB9C
 B4ZJ,0013BC00,"1971 - RockMan Zero 4 (J).gba","",0013BB58
-BBRP,0002E5F4,"1972 - Disney's Brother Bear (E).gba","",0007C314
 BG2J,00158314,"1973 - Kessakusen! Ganbare Goemon 1+2 (J).gba","",001582D8
 BQAJ,00070750,"1974 - Meitantei Conan - Atasuki no Monument (J).gba","",00070714
-BP8E,000383B0,"1975 - Pac-Man Pinball Advance (U).gba","",
+BP8E,000383B0,"1975 - Pac-Man Pinball Advance (U).gba","",00038350
 BCUJ,00091F60,"1976 - Ochaken no Yumebouken (J).gba","",00091F24
 BTRJ,000F4868,"1978 - The Tower SP (J).gba","",000F482C
 AXPF,0045E094,"1979 - Pokemon Saphir (F).gba","",0045E064
-AXVF,003EC238,"1980 - Pokemon Rubis (F).gba","",
-AWXP,00199DD0,"1981 - ESPN Winter X-Games - Snowboarding 2 (E).gba","",
-BICJ,005FD918,"1983 - Mr. Incredible (J).gba","",
+AXVF,0045E564,"1980 - Pokemon Rubis (F).gba","",0045E534
+AWXP,00014754,"1981 - ESPN Winter X-Games - Snowboarding 2 (E).gba","",00014700
 AXVD,00463428,"1984 - Pokemon Rubin (G).gba","",004633F8
-AXPD,00407888,"1985 - Pokemon Saphir (G).gba","",
+AXPD,00463394,"1985 - Pokemon Saphir (G).gba","",00463364
 BPEE,006B49F0,"1986 - Pokemon Emerald (U).gba","",006B49C0
-B8CP,01DDF670,"1989 - Kingdom Hearts - Chain of Memories (E).gba","",
+B8CP,01DDF670,"1989 - Kingdom Hearts - Chain of Memories (E).gba","",01DDF5EC
 BR9J,000377D4,"1990 - Relaxuma na Mainichi (J).gba","",000377BC
 BQBJ,000D3360,"1991 - Konchu Monster - Battle Master (J).gba","",000D3330
 BQSJ,00099174,"1992 - Konchu Monster - Battle Master Stadium (J).gba","",00099144
-BE3P,000F1308,"1993 - Star Wars Episode III - Revenge of the Sith (E).gba","",000B48D4
-BE8E,00224470,"1997 - Fire Emblem - The Sacred Stones (U).gba","",
-BE3E,000F12EC,"1998 - Star Wars Episode III - Revenge of the Sith (U).gba","",000B48A4
-BDZP,0042E334,"1999 - Disney Pixar Pack (E).gba","",
+BE3P,0010D188,"1993 - Star Wars Episode III - Revenge of the Sith (E).gba","",0010D158
+BE8E,00224470,"1997 - Fire Emblem - The Sacred Stones (U).gba","",002243F8
+BE3E,0010D16C,"1998 - Star Wars Episode III - Revenge of the Sith (U).gba","",0010D13C
 RZWE,0018CC68,"2000 - Wario Ware Twisted! (U).gba","",0018CBF0
 BKPJ,00119474,"2001 - Kawaii Pet Game Gallery 2 (J).gba","",00119450
 B82J,0007A6E0,"2002 - Kawaii Koinu Wonderful (J).gba","",0007A6A4
 BWXJ,0004DC44,"2003 - Wanko Mix Chiwanko World (J).gba","",0004DC14
-BGZE,000BFDAC,"2004 - Madagascar (U).gba","",
-A9TJ,001BFBA0,"2005 - Metal Max 2 Kai (J).gba","",
+A9TJ,00096608,"2005 - Metal Max 2 Kai (J).gba","",000965E4
 AXVE,004554A0,"2006 - Pokemon Ruby (E).gba","",00455470
-BL5P,00087530,"2007 - Lego 2 in 1 - Bionicle and Knights Kingdom (E).gba","",
-BBKJ,003DF4F8,"2008 - Bura Bura Donkey (J).gba","",003E0CB0
-BWBD,001365DC,"2009 - 2 in 1 - Barenbruder & Disney Prinzessinen (G).gba","",
-BCVP,0010CCD0,"2010 - Scooby-Doo Gamepack (E).gba","",
+BBKJ,006EDA40,"2008 - Bura Bura Donkey (J).gba","",006ED9C8
+BWBD,001365DC,"2009 - 2 in 1 - Barenbruder & Disney Prinzessinen (G).gba","",001365C4
 AXPE,00455500,"2011 - Pokemon Sapphire (E).gba","",004554D0
-BWBS,00136904,"2012 - 2 in 1 - Hermano Oso & Disney Princesas (S).gba","",
-U32P,00264758,"2013 - Boktai 2 - Solar Boy Django (E).gba","",
-B8MP,00169598,"2014 - Mario Party Advance (E).gba","",001695A0
+BWBS,00136904,"2012 - 2 in 1 - Hermano Oso & Disney Princesas (S).gba","",001368EC
+U32P,00264758,"2013 - Boktai 2 - Solar Boy Django (E).gba","",002646BC
+B8MP,001DF1A0,"2014 - Mario Party Advance (E).gba","",001DF14C
 BRKP,00155BF4,"2015 - MegaMan Battle Network 5 - Team Colonel (E).gba","",00155A74
 BRBP,00155B0C,"2016 - MegaMan Battle Network 5 - Team Protoman (E).gba","",0015598C
 AOIP,002B1AA0,"2018 - Shrek - Reekin' Havoc (E).gba","",002B1A1C
-BLYI,00064D9C,"2019 - Lemony Snicket - Una serie di sfortunati eventi (I).gba","",
 AWQP,006E6A70,"2020 - Wings (E).gba","",006E6A28
-BBGE,00071E08,"2021 - Batman Begins (U).gba","",
 KYGE,004A5E94,"2022 - Yoshi Topsy-Turvy (U).gba","",004A5E40
 BDVP,00BA480C,"2023 - Dragonball Advanced Adventure (E).gba","",00E7384C
-BNGJ,00058A2C,"2024 - Mahou Sensei Negima! 1 Tokime - Magister Negi Magi (J).gba","",
+BNGJ,00058A2C,"2024 - Mahou Sensei Negima! 1 Tokime - Magister Negi Magi (J).gba","",000589F0
 B4RJ,00278FAC,"2026 - Shikakui Atama wo Marukusuru Advance - Kokugo Sansu Rika Shakai (J).gba","",00278F7C
 B4KJ,00294140,"2028 - Shikakui Atama wo Marukusuru Advance - Kanji Keisan (J).gba","",00294110
-B2AP,00406118,"2030 - 2 in 1 - Asterix and Obelix (E).gba","",003F94FC
 BRKE,00155BF4,"2032 - Megaman Battle Network 5 - Team Colonel (U).gba","",00155A74
 BK6J,0049D2BC,"2033 - Konchu Ouja - Mushiking (J).gba","",0049D28C
 BKRJ,000D10C0,"2034 - Nonono Puzzle Chailien (J).gba","",000D103C
 BRBE,00155B0C,"2035 - Megaman Battle Network 5 - Team Protoman (U).gba","",0015598C
 BMQE,00122E1C,"2036 - Disney's Magical Quest 3 Starring Mickey and Donald (U).gba","",00122D98
-BGZX,00090EE8,"2037 - Madagascar (E).gba","",000913C4
-BREE,000967EC,"2039 - Riviera - The Promised Land (U).gba","",
+BREE,000967EC,"2039 - Riviera - The Promised Land (U).gba","",000966F0
 BFCJ,000A682C,"2040 - Fantastic Children (J).gba","",000A67A8
-BLPS,00136904,"2042 - 2 in 1 - El Rey Leon Y Disney Princesas (S).gba","",
-AZWC,00355BAC,"2043 - Waliou Zhizao (C).gba","",003C06B8
+BLPS,00136904,"2042 - 2 in 1 - El Rey Leon Y Disney Princesas (S).gba","",001368EC
 BMXC,00090BEC,"2044 - Miteluode - Lingdian Renwu (C).gba","",00090BBC
 BM2J,00105A38,"2045 - Momotarou Densetsu G - Gold Deck wo Tsukure! (J).gba","",001059FC
 BWCE,00608B0C,"2046 - 2 in 1 - Golden Nugget Casino & Texas Hold'em Poker (U).gba","",00608ADC
-BEJJ,0037E8E4,"2047 - Erementar Gerad (J).gba","",
+BEJJ,0037E8E4,"2047 - Erementar Gerad (J).gba","",0037E89C
 BM9J,0008B1B0,"2048 - Marheaven - Knockin' on Heaven's Door (J).gba","",0008B144
 BO5J,000E62BC,"2049 - Oshare Princess 5 (J).gba","",000E628C
-BLWJ,0004C844,"2052 - Lego Star Wars (J).gba","",
-B5AP,001AEF10,"2053 - 2 in 1 - Spyro - Season of Ice & Crash Bandicoot 2 - N-Tranced (E).gba","",
-B52P,001793E4,"2054 - 2 in 1 - Spyro 2 - Season of Flame & Crash Nitro Kart (E).gba","",
-B36E,00119CF4,"2055 - Dynasty Warriors Advance (U).gba","",
-BBKE,003E3504,"2056 - DK - King of Swing (U).gba","",003E4CBC
+B5AP,000DB230,"2053 - 2 in 1 - Spyro - Season of Ice & Crash Bandicoot 2 - N-Tranced (E).gba","",000DB1F4
+B52P,00067ECC,"2054 - 2 in 1 - Spyro 2 - Season of Flame & Crash Nitro Kart (E).gba","",00067E84
+B36E,00907E84,"2055 - Dynasty Warriors Advance (U).gba","",00907E18
+BBKE,006ECFB0,"2056 - DK - King of Swing (U).gba","",006ECF38
 BRSP,0041FC88,"2057 - 2 in 1 - SpongeBob Squarepants - Supersponge & Rugrats - Go Wild (E).gba","",0041FC70
 BABJ,000605C8,"2058 - Aleck Bordon Adventure - Tower & Shaft Advance (J).gba","",0006052C
 BCFE,000507FC,"2059 - Charlie and the Chocolate Factory (U).gba","",000507B4
-BLEJ,000541AC,"2060 - Bleach Advance (J).gba","",
+BLEJ,000541AC,"2060 - Bleach Advance (J).gba","",00054158
 BLSJ,006780F0,"2062 - Disney's Lilo & Stitch (J).gba","",006780C0
 BH6J,000D9EFC,"2063 - Haro no Puyo Puyo (J).gba","",000D9ECC
 BCFP,000507FC,"2064 - Charlie and the Chocolate Factory (E).gba","",000507B4
 APDP,0002922C,"2065 - The Pinball of the Dead (E).gba","",000291F0
-BFGE,00144FF4,"2066 - Harvest Moon - More Friends of Mineral Town (U).gba","",
+BFGE,00144FF4,"2066 - Harvest Moon - More Friends of Mineral Town (U).gba","",00144FAC
 BFMJ,000828C8,"2067 - Futari wa Precure Max Heart - Maji Maji! Fight de IN Janai (J).gba","",00082868
-BKEJ,008DBE94,"2068 - Konjiki no Gashbell!! The Card Battle for GBA (J).gba","",
-U33J,0026456C,"2069 - Shin Bokura no Taiyou - Gyakushuu no Sabata (J).gba","",
+BKEJ,00C85F58,"2068 - Konjiki no Gashbell!! The Card Battle for GBA (J).gba","",00C85F28
+U33J,0026456C,"2069 - Shin Bokura no Taiyou - Gyakushuu no Sabata (J).gba","",002644D0
 BHFJ,001519A4,"2071 - Twin Series 4 - Hamu Hamu Monster EX & F Puzzle Hamusuta (J).gba","",00151974
 BMWJ,000FFE98,"2072 - Twin Series 5 - Wanwan Meitantei EX & Manou no Kuni no Cake House (J).gba","",000FFE68
 BWNJ,000ACB60,"2073 - Twin Series 6 - Wannyan Idol Gakuen & Koinu to Issho (J).gba","",000ACB3C
 BMZP,00223544,"2076 - Zooo (E).gba","",002234F0
-BT4E,0006FBC0,"2079 - Dragon Ball GT - Transformation (U).gba","",0006FB98
 BKTP,001240EC,"2080 - Steel Empire (E).gba","",001240A4
 BBJP,0086FCB8,"2082 - 2 in 1 - Spongebob Squarepants Battle for Bikini Bottom & Jimmy Neutron Boy Genius (E).gba","",0086FC64
-BS7P,008B8880,"2083 - 2 in 1 - Shrek 2 & Shark Tale (E).gba","",
-BGZP,000BFDAC,"2084 - Madagascar (E).gba","",
 BQMJ,0008FD44,"2087 - 2 in 1 - Insect Monster & Suchai Labyrinth (J).gba","",0008FD14
 B2PJ,0006E6A8,"2088 - 2 in 1 - Kisekae Wanko Ex & Puzzle Rainbow Magic 2 (J).gba","",0006E684
 AHNP,00638930,"2089 - Spy Hunter (E).gba","",006388E8
 BL3E,00583F10,"2091 - Lizzie McGuire 3 - Homecoming Havoc (U).gba","",00583EE0
 B2OJ,000A35F4,"2092 - Pro Mahjong Tsuwamono Advance (J).gba","",000A35C4
 AXDP,00C5CE48,"2094 - Mortal Kombat - Deadly Alliance (E).gba","",00C5CE0C
-B6EE,0004C658,"2096 - Board Game Classics (U).gba","",00051DCC
 AE3P,00037688,"2097 - Ed, Edd n Eddy - Jawbreakers! (E).gba","",00037670
-BX3P,00E47F44,"2099 - 2 in 1 - Spider-Man & Spider-Man 2 (E).gba","",00E47CA4
-BX4E,0085C21C,"2100 - Tony Hawk's Underground & Kelly Slater's Pro Surfer (U).gba","",008CC2D4
-BP8P,00037F20,"2101 - Pac-Man Pinball Advance (E).gba","",
+BP8P,00037F20,"2101 - Pac-Man Pinball Advance (E).gba","",00037EC0
 A2TP,000629BC,"2102 - Pinball Tycoon (E).gba","",0006298C
 B9AJ,000E226C,"2103 - Kunio kun Nekketsu Collection 1 (J).gba","",000E223C
-BX2E,003A64B0,"2104 - 2 in 1 - Spider-Man - Mysterio's Menace & X2 - Wolverine's Revenge (U).gba","",
-BGZS,000C21A0,"2105 - Madagascar (S).gba","",
 BGPJ,006D4E3C,"2107 - Ride Amdriver Shuggeki Battle Party (J).gba","",006D4E0C
 BTDJ,00048AF4,"2108 - Poke Inu - Poket Dogs (J).gba","",00048AB8
 B4WJ,00155E64,"2109 - RockMan EXE 4 - Tournament Red Sun (J).gba","",00155CE4
 B68E,0001C5E4,"2111 - Marble Madness & Klax (U).gba","",0001C5B4
-B6ZE,0013C81C,"2112 - Centipede, Breakout, Warlords (U).gba","",
 B6BE,0009FB00,"2114 - Paperboy & Rampage (U).gba","",0009FAD0
 BRLE,0026B5DC,"2118 - Rebelstar - Tactical Commmand (U).gba","",0026B5B8
-BNCJ,00588984,"2119 - Tim Burton's The Nightmare Before Christmas - The Pumpkin King (J).gba","",00110A68
+BNCJ,00588984,"2119 - Tim Burton's The Nightmare Before Christmas - The Pumpkin King (J).gba","",00588948
 BMIJ,0004F4A0,"2120 - Wagamama Fairy Mirumo de Pon - Dokidoki Memorial Panic (J).gba","",0004F470
 BX5P,00147988,"2121 - Rayman 10th Anniversary Compilation - Rayman Advance & Rayman 3 (E).gba","",00147958
-B6EP,0004C5DC,"2122 - Board Game Classics (E).gba","",00029050
-AJDE,00062CA0,"2123 - James Pond - Codename Robocod (U).gba","",00062C10
-BTMJ,002062F8,"2126 - Mario Tennis Advance (J).gba","",
+BTMJ,002062F8,"2126 - Mario Tennis Advance (J).gba","",0020628C
 BZPJ,00034238,"2127 - Dr. Mario & Panel de Pon (J).gba","",000341D8
 B4ZP,001388BC,"2129 - MegaMan Zero 4 (E).gba","",00138814
 BYDP,00383ADC,"2130 - Yu-Gi-Oh! - Destiny Board Traveler (E).gba","",00383AA0
 BPUS,001ACB14,"2133 - 2 in 1 - Scooby Doo & Scooby Doo 2 - Desastado (S).gba","",001ACA60
-AP8P,000B83FC,"2135 - Scooby-Doo - The Motion Picture (E).gba","",0003FB0C
 ASBJ,00041324,"2136 - Gyakuten Saiban Best Price (J).gba","",000412F4
-BW2E,003E306C,"2137 - 2 in 1 - Cartoon Network - Block Party & Cartoon Network - Speedway (U).gba","",003E303C
-BILE,0046DB80,"2140 - Bionicle - Maze of Shadows (U).gba","",0046DB64
-B69E,002AF170,"2141 - Gauntlet & Rampart (U).gba","",
 BX5E,00147918,"2144 - Rayman 10th Anniversary (U).gba","",001478E8
-B6AE,000ADE58,"2146 - Spy Hunter & Super Sprint (U).gba","",000ADDC8
 BUEE,0004AA40,"2150 - Danny Phantom - The Ultimate Enemy (U).gba","",0004A9B0
-BHZE,0009C970,"2153 - 2 in 1 - Hot Wheels - Velocity X & Hot Wheels - World Race (U).gba","",
-V49J,005008EC,"2154 - Screw Breaker - Goushin Dorirurero (J).gba","",
+BHZE,0009C970,"2153 - 2 in 1 - Hot Wheels - Velocity X & Hot Wheels - World Race (U).gba","",0009C910
+V49J,005008EC,"2154 - Screw Breaker - Goushin Dorirurero (J).gba","",005008A4
 BBOE,000108F4,"2155 - The Berenstain Bears and the Spooky Old Tree (U).gba","",000108C4
-BULE,00076720,"2156 - Ultimate Spider-Man (U).gba","",
 BONE,0047E350,"2157 - Shonen Jump's - One Piece (U).gba","",0047E320
-BF6E,001F9D38,"2158 - Fifa 06 (U).gba","",
-BBXD,00981760,"2159 - Bibi Blocksberg - Der magische Hexenkreis (G).gba","",00949114
 BFOE,002AD648,"2160 - The Fairly Odd Parents - Clash With The Anti-World (U).gba","",002AD60C
-BGXJ,0022AFB0,"2164 - Gunstar Super Heroes (J).gba","",
+BGXJ,0022AFB0,"2164 - Gunstar Super Heroes (J).gba","",0022AE24
 B4ZE,0013890C,"2166 - MegaMan Zero 4 (U).gba","",00138864
 BRRE,0004F920,"2167 - Bratz - Rock Angelz (U).gba","",0004F884
-BNCE,005E4424,"2168 - Tim Burton's The Nightmare Before Christmas - The Pumpkin King (U).gba","",00110E98
-BULX,001070F0,"2173 - Ultimate Spider-Man (E).gba","",
+BNCE,005E4424,"2168 - Tim Burton's The Nightmare Before Christmas - The Pumpkin King (U).gba","",005E43E8
 BPPJ,0051B708,"2178 - Pokemon Pinball - Ruby & Sapphire (J).gba","",0051B6D8
-BGZI,000BA0B0,"2179 - Madagascar (I).gba","",
 BCXE,00100CC8,"2181 - Kid's Cards (U).gba","",00100C74
-B6ZP,00143D38,"2184 - Centipede, Breakout, Warlords (E).gba","",
-BPED,00305F3C,"2185 - Pokemon Smaragd Edition (G).gba","",
-B53P,0005F6F4,"2186 - 2 in 1 - Spyro - Fusion & Crash Bandicoot - Fusion (E).gba","",
-BPEF,002FC13C,"2187 - Pokemon Version Emeraude (F).gba","",
-BM7E,000A6844,"2189 - Madagascar - Operation Penguin (U).gba","",000A6840
+BPED,006C5BDC,"2185 - Pokemon Smaragd Edition (G).gba","",006C5BAC
+BPEF,006B890C,"2187 - Pokemon Version Emeraude (F).gba","",006B88DC
 BPES,006B6FA4,"2190 - Pokemon Edicion Esmeralda (S).gba","",006B6F74
-B26E,0017D3EC,"2191 - World Poker Tour (U).gba","",
-BQQE,00120A84,"2193 - Spongebob Squarepants - Lights, Camera, Pants (U).gba","",00088DB0
-BH9E,00069C50,"2194 - Tony Hawk's American Sk8land (U).gba","",000FB39C
+B26E,0017D3EC,"2191 - World Poker Tour (U).gba","",0017D3BC
 B6BP,000CD858,"2195 - Paperboy & Rampage (E).gba","",000CD828
-BM7X,000EA2DC,"2198 - Madagascar - Operation Pingouins (E).gba","",
-BHGE,0022BDD4,"2199 - Gunstar Super Heroes (U).gba","",
-BCMJ,000EA360,"2200 - Frontier Stories (J).gba","",
+BHGE,0022BDD4,"2199 - Gunstar Super Heroes (U).gba","",0022BC48
+BCMJ,000EA360,"2200 - Frontier Stories (J).gba","",000EA324
 B9BJ,000E226C,"2201 - Kunio Kun Nekketsu Collection 2 (J).gba","",000E223C
-B46E,01FC1D7C,"2205 - The Sims 2 (U).gba","",
-BPEI,0056DC98,"2207 - Pokemon - Versione Smeraldo (I).gba","",0056DBA0
+BPEI,006B1004,"2207 - Pokemon - Versione Smeraldo (I).gba","",006B0FD4
 BWTP,0072BBBC,"2208 - W.I.T.C.H. (E).gba","",0072BB8C
 BNUE,003238CC,"2211 - Nicktoons Unite (U).gba","",0032389C
 BZPP,00012BE4,"2213 - Dr. Mario & Puzzle League (E).gba","",00012B84
-BE8P,0042FFB0,"2215 - Fire Emblem - The Sacred Stones (E).gba","",
-B69P,0028F7F8,"2217 - Gauntlet & Rampart (E).gba","",
+BE8P,0042FFB0,"2215 - Fire Emblem - The Sacred Stones (E).gba","",0042FF38
 BW5P,000115A0,"2218 - 2 in 1 - Sonic Advance & Sonic Pinball Party (E).gba","",00011570
-BHGP,0022C0C0,"2222 - Gunstar Future Heroes (E).gba","",
-B4UE,007C44DC,"2224 - Shrek SuperSlam (U).gba","",
+BHGP,0022C0C0,"2222 - Gunstar Future Heroes (E).gba","",0022BF34
 BW9P,00010C74,"2225 - 2 in 1 - Columns & Chu Chu Rocket (E).gba","",00010C44
 B68P,0001C93C,"2226 - 2 in 1 - Marble Madness & Klax (E).gba","",0001C90C
 BW6P,0001145C,"2227 - 2 in 1 - Sonic Pinball Party & Sonic Battle (E).gba","",0001142C
@@ -1344,84 +1120,64 @@ BW4P,00011748,"2228 - 2 in 1 - Sonic Advance & Sonic Battle (E).gba","",00011718
 BLQP,005CD2C0,"2230 - 2 Games in 1 - Peter Pan - Return to Neverland + Lilo & Stitch 2 (E) (M6+M4).gba","",005CD290
 BIBE,003F10BC,"2231 - The Bible Game (U).gba","",003F108C
 BKQP,000B8DC4,"2233 - King Kong (E).gba","",000B8D94
-BH9X,00094518,"2235 - Tony Hawk's American Sk8land (E).gba","",00125C94
-B4UP,007E2B44,"2236 - Shrek SuperSlam (E).gba","",
 BFOP,002BE1B4,"2238 - Fairly Oddparents - Clash with the Anti-World (E).gba","",002BE178
-B24J,01DC66BC,"2239 - Pokemon Fushigi na Dungeon - Aka no Kyuujoutai (J).gba","",
-BTMP,00256EB4,"2240 - Mario Power Tennis (E).gba","",
+B24J,01DC66BC,"2239 - Pokemon Fushigi na Dungeon - Aka no Kyuujoutai (J).gba","",01DC6650
+BTMP,00256EB4,"2240 - Mario Power Tennis (E).gba","",00256E48
 BETE,007086FC,"2241 - Atomic Betty (U).gba","",007086D8
-B86E,001DC4E0,"2242 - Hello Kitty - Happy Party Pals (U).gba","",
-B6AP,000B2A14,"2244 - 2 in 1 - Spy Hunter & Super Sprint (E).gba","",000B2984
-B2WE,00FC83B0,"2245 - The Chronicles of Narnia - The Lion, The Witch and The Wardrobe (U).gba","",
 BRRD,00050068,"2248 - Bratz Rock Angelz (G).gba","",0004FFCC
-BIQE,004665AC,"2251 - The Incredibles - Rise of the Underminer (U).gba","",
-BR6J,000A3470,"2253 - RockMan EXE 6 - Dennoujuu Faltzer (J).gba","",
-BR5J,000A4948,"2254 - RockMan EXE 6 - Dennoujuu Grega (J).gba","",
-B36P,0011DBD0,"2260 - Dynasty Warriors Advance (E).gba","",
+BR6J,001632D0,"2253 - RockMan EXE 6 - Dennoujuu Faltzer (J).gba","",00163150
+BR5J,00164E0C,"2254 - RockMan EXE 6 - Dennoujuu Grega (J).gba","",00164C8C
+B36P,00BAE8A8,"2260 - Dynasty Warriors Advance (E).gba","",00BAE83C
 BZPE,0000CC74,"2261 - 2 in 1 - Dr. Mario and Puzzle League (U).gba","",0000CC14
-BM7Y,000EAADC,"2263 - Madagascar - Operation Penguin (E).gba","",
 BD7E,005709FC,"2267 - The Proud Family (U).gba","",005709CC
 B4LJ,0004F9DC,"2269 - Sugar Sugar Rune - Heart Ga Ippai! Moegi Gakuen (J).gba","",0004F97C
 BUDJ,00BCA954,"2271 - Konjiki no Gashbell!! Yuujou no Dengeki Dream Tag Tournament (J).gba","",00BCA924
-BTME,00256EB4,"2272 - Mario Tennis - Power Tour (U).gba","",
+BTME,00256EB4,"2272 - Mario Tennis - Power Tour (U).gba","",00256E48
 B3CJ,000C62D0,"2273 - Summon Night Craft Sword Monogatari - Hajimari no Ishi (J).gba","",000C6288
-BZ4J,00416D0C,"2274 - Final Fantasy IV Advance (J).gba","",
-BZ4E,003DC894,"2275 - Final Fantasy IV Advance (U).gba","",
+BZ4J,00416D0C,"2274 - Final Fantasy IV Advance (J).gba","",00416CB8
+BZ4E,003DC894,"2275 - Final Fantasy IV Advance (U).gba","",003DC840
 B35P,00308AE0,"2276 - Strawberry Shortcake - Ice Cream Island Riding Camp (E).gba","",00308AB0
 B82E,000843A4,"2278 - Dogz (U).gba","",00084368
-BEBE,00026DC4,"2280 - Elf Bowling 1 & 2 (U).gba","",00026DBC
 BKQE,000B8D4C,"2281 - Kong - The 8th Wonder of the World (U).gba","",000B8D1C
 A4GE,001E628C,"2284 - ZatchBell! - Electric Arena (U).gba","",001E6244
-B73J,0006FB68,"2285 - Hudson Collection Vol. 3 - Action Collection (J).gba","",
+B73J,0006FB68,"2285 - Hudson Collection Vol. 3 - Action Collection (J).gba","",0006FB14
 BFVJ,0016CD14,"2286 - Twin Series Vol. 1 - Mezase Debut! Fashion Designer Monogatari & Kawaii Pet Game Gallery 2 (J).gba","",0016CCF0
 BHHE,0007CB70,"2287 - Hi Hi Puffy AmiYumi - Kaznapped (U).gba","",0007CAE0
-BLFE,00582D8C,"2288 - 2 in 1 - Dragon Ball Z - The Legacy of Goku I & II (U).gba","",00582D78
-BM7P,000A6844,"2290 - Madagascar - Operation Penguin (E).gba","",000A6840
-A7ME,00112E40,"2292 - The Amazing Virtual Sea Monkeys (U).gba","",
-ATTE,0027E6E8,"2293 - Tiny Toon Adventures - Scary Dreams (U).gba","",
-AWLF,0007F66C,"2294 - La famille Delajungle - Le Film (F).gba","",
+A7ME,00112E40,"2292 - The Amazing Virtual Sea Monkeys (U).gba","",00112E04
+ATTE,0027E6E8,"2293 - Tiny Toon Adventures - Scary Dreams (U).gba","",0027E5BC
+AWLF,0007F66C,"2294 - La famille Delajungle - Le Film (F).gba","",0007F5DC
 BW5E,000115A0,"2295 - 2 in 1 - Sonic Advance & Sonic Pinball Party (U).gba","",00011570
 BO2J,000B96F4,"2296 - Ochainu no Bouken Jima (J).gba","",000B96AC
 BHHJ,00082F18,"2297 - Hi Hi Puffy AmiYumi (J).gba","",00082E88
 BXKE,0022667C,"2299 - 2 in 1 - Castlevania Double Pack (U).gba","",0022664C
 BTDE,0004A428,"2300 - Pocket Dogs (U).gba","",0004A3EC
 BGQE,0062CD18,"2304 - Greg Hastings' Tournament Paintball Max'd (U).gba","",0062CCB8
-B86X,0028BB8C,"2305 - Hello Kitty - Happy Party Pals (E).gba","",0028BB88
-V49E,005079B8,"2308 - Drill Dozer (U).gba","",
-BAHP,007E2548,"2310 - Alien Homonid (E).gba","",
-BW2P,003E306C,"2311 - 2 in 1 - Cartoon Network - Block Party & Speedway (E).gba","",003E303C
-BRDX,003C9CBC,"2315 - Power Rangers - Space Patrol Delta (E).gba","",003C9CB8
+V49E,005079B8,"2308 - Drill Dozer (U).gba","",00507970
 BNUP,0031FF28,"2318 - Spongebob Squarepants and Friends Unite (E).gba","",0031FEF8
 BXKP,0022667C,"2319 - 2 in 1 - Castlevania Double Pack (E).gba","",0022664C
 BRQP,00114E94,"2321 - 3 in 1 - Darts & Shuffle and Skiball (E).gba","",00114E4C
-BKMP,00054AFC,"2323 - Kim Possible 2 - Drakken's Demise (E).gba","",0003C47C
 BFBP,000030B0,"2325 - 2 in 1 - Disney Sportpack (E).gba","",00003080
-BIND,005F0800,"2326 - 2 in 1 - Findet Nemo & Die Unglaublichen (G).gba","",
 BFWY,00080030,"2327 - 2 in 1 - Findet Nemo & Das Abenteuer Geht Weiter (E).gba","",0007FF94
 AMTC,000AB0E4,"2330 - Miteluode Ronghe (C).gba","",000AB084
 AN8E,000BE128,"2331 - Tales of Phantasia (U).gba","",000BE0EC
 BWCP,00608B0C,"2332 - 2 in 1 - Golden Nugget Casino & Texas Hold'em Poker (E).gba","",00608ADC
 A7AE,0005B1C8,"2334 - Naruto - Ninja Council (U).gba","",0005B18C
 BZWJ,000B25D4,"2335 - Akagi (J).gba","",000B25A4
-B76J,0015B524,"2336 - Hudson Best Collection Vol. 6 - Bouken Jima Collection (J).gba","",
-BUHJ,0062C86C,"2337 - Ueki no Housoku Shinki Sakuretsu! Nouryokumono Battle (J).gba","",
+B76J,0015B524,"2336 - Hudson Best Collection Vol. 6 - Bouken Jima Collection (J).gba","",0015B4D0
+BUHJ,0076BBAC,"2337 - Ueki no Housoku Shinki Sakuretsu! Nouryokumono Battle (J).gba","",0076BB64
 B9CJ,000E226C,"2339 - Kuniokun Nekketsu Collection 3 (J).gba","",000E223C
-BIAE,0004CBC0,"2340 - Ice Age 2 - The Meltdown (U).gba","",
 BY2P,00B96188,"2341 - 2 in 1 - Yu-Gi-Oh! Double Pack (E).gba","",00B960B0
-BT8P,00682398,"2342 - 2 in 1 - Teenage Mutant Ninja Turtles Double Pack (E).gba","",
+BT8P,00682398,"2342 - 2 in 1 - Teenage Mutant Ninja Turtles Double Pack (E).gba","",00682338
 B3NP,0018D008,"2345 - 3 in 1 - Majesco's Sports Pack (E).gba","",0018CFB4
-BYUJ,00175320,"2348 - Yggdra Union (J).gba","",
+BYUJ,00175320,"2348 - Yggdra Union (J).gba","",0017523C
 BTRE,000F0434,"2349 - The Tower SP (J).gba","",000F03F8
 AN3E,00033EEC,"2350 - Catz (U).gba","",00033EB0
 AN8P,000C1AE8,"2351 - Tales of Phantasia (E).gba","",000C1AAC
-BIAP,00E633D4,"2353 - Ice Age 2 - The Meltdown (E).gba","",
-B27E,00154964,"2354 - Top Spin 2 (U).gba","",0006C8B4
-BWOP,001B9B84,"2359 - World Poker Tour (E).gba","",
+BWOP,001B9B84,"2359 - World Poker Tour (E).gba","",001B9B54
 BKCS,000E3248,"2361 - Shinchan Aventuras en Cineland (S).gba","",000E31C4
-BELP,0002FD30,"2365 - Elf The Movie (E).gba","",
+BELP,0002FD30,"2365 - Elf The Movie (E).gba","",0002FCD0
 BWLE,0069D53C,"2366 - The Wild (U).gba","",0069D50C
 BC2J,00148690,"2367 - Crayon Shin chan - Densetsu wo Yobu Omake no Miyako Shockgaan (J).gba","",00148600
-BDZF,0042E384,"2368 - 2 in 1 - Monstres & Cie & Le Monde de Nemo (F).gba","",
 BE4J,001724B4,"2370 - Eyeshield 21 - Devilbats Devildays (J).gba","",00172478
 BUOJ,00034E58,"2371 - Minna no Soft Series Numpla Advance (J).gba","",00034E28
 ABFP,000BB98C,"2372 - Breath of Fire (E).gba","",000BB920
@@ -1429,131 +1185,85 @@ AN3J,000338DC,"2373 - Nakayoshi Pet Advance Series 3 Kawaii Koneko (J).gba","",0
 ASOJ,006D77D8,"2374 - Sonic Advance (J).gba","",006D77A8
 A3UJ,00120E94,"2377 - Mother 3 (J).gba","",00120E1C
 BUEX,0004A934,"2381 - Danny Phantom - The Ultimate Enemy (E).gba","",0004A8A4
-B6WE,0020ACB4,"2383 - FIFA World Cup 2006 (U).gba","",
-BQKJ,00276E58,"2384 - Konchuu no Mori no Daibouken (J).gba","",
-B7IJ,00070E5C,"2385 - Hudson Best Collection Vol. 1 (J).gba","",
-BINP,005EF4EC,"2386 - 2 in 1 - Finding Nemo & The Incredibles (E).gba","",
+BQKJ,00088E4C,"2384 - Konchuu no Mori no Daibouken (J).gba","",00088E1C
+B7IJ,00070E5C,"2385 - Hudson Best Collection Vol. 1 (J).gba","",00070E08
 B2QP,008AD2A8,"2388 - 2 in 1 - Prince of Persia - The Sands of Time & Tomb Raider - The Prophecy (E).gba","",008AD278
-BJKP,00095EBC,"2390 - Juka and the Monophonic Menace (E).gba","",000A3EC8
 BUOE,0003501C,"2392 - Dr. Sudoku (U).gba","",00034FEC
-B8SE,001AB848,"2394 - 2 in 1 - Spyro - Season of Ice & Spyro - Season of Flame (U).gba","",
-U32J,0025E56C,"2395 - Zoku Bokura no Taiyou - Taiyou Shounen Django (J).gba","",
+B8SE,000DB16C,"2394 - 2 in 1 - Spyro - Season of Ice & Spyro - Season of Flame (U).gba","",000DB130
+U32J,0025E56C,"2395 - Zoku Bokura no Taiyou - Taiyou Shounen Django (J).gba","",0025E4D0
 BTJE,00129F20,"2397 - Tringo (U).gba","",00129F08
-BGZJ,000B5990,"2398 - Madagascar (J).gba","",
-B74J,000A02F8,"2399 - Hudson Best Collection Vol. 4 - Nazotoki Collection (J).gba","",
+B74J,000A02F8,"2399 - Hudson Best Collection Vol. 4 - Nazotoki Collection (J).gba","",000A02A4
 BW6J,00011314,"2400 - 2 in 1 - Sonic Pinball Party & Sonic Battle (J).gba","",000112E4
 BW4J,00011144,"2401 - 2 in 1 - Sonic Advance & Sonic Battle (J).gba","",00011114
-BC4E,000175DC,"2402 - 3 in 1 - Candy Land, Chutes and Ladders, Memory (U).gba","",000164AC
-B3UE,0002C4B4,"2403 - 3 in 1 - Life, Yahtzee, Payday (U).gba","",0002C454
-BNMJ,0004FF90,"2404 - Mahou Sensei Negima! Private Lesson 2 (J).gba","",
-B3XE,001B4D5C,"2405 - X-Men - The Official Game (U).gba","",
+BNMJ,0004FF90,"2404 - Mahou Sensei Negima! Private Lesson 2 (J).gba","",0004FF54
 BIXJ,0040CDD8,"2406 - Calciobit (J).gba","",0040CDA8
 BAXJ,003845D0,"2407 - Animal Yokochou - Doki Doki Shinkyuu Shiken! no Kan (J).gba","",00384594
-B72J,00068A5C,"2408 - Hudson Collection Vol. 2 - Lode Runner Collection (J).gba","",
+B72J,00068A5C,"2408 - Hudson Collection Vol. 2 - Lode Runner Collection (J).gba","",00068A08
 B3IJ,000C49F4,"2410 - Mirakuru! Panzou - 7 Tsuno Hosh no Kaizoku (J).gba","",000C49B8
 BC7E,00126108,"2412 - Backyard Sports Baseball 2007 (U).gba","",001260D8
-BBMJ,000FA660,"2414 - B-Legend! Battle B-Daman Fire Spirit (J).gba","",
-B43J,00045750,"2415 - Cinnamon Fuwafuwa Daisakusen (J).gba","",
-B3XP,001B5204,"2416 - X-Men - The Official Game (E).gba","",
-BZ4P,004F5A5C,"2417 - Final Fantasy IV Advance (E).gba","",
-B53E,0003D0C0,"2421 - 2 in 1 - Crash Bandicoot Purple - Ripto's Rampage & Spyro Orange - The Cortex Conspiracy (U).gba","",000D3930
-BULP,00076720,"2422 - Ultimate Spider-Man (E).gba","",
-BCAE,0003D9D8,"2423 - Cars (U).gba","",
-BH9P,00069D58,"2425 - Tony Hawk's American Sk8land (E).gba","",000FB4D4
+BBMJ,000FA660,"2414 - B-Legend! Battle B-Daman Fire Spirit (J).gba","",000FA618
+B43J,00045750,"2415 - Cinnamon Fuwafuwa Daisakusen (J).gba","",00045714
+BZ4P,004F5A5C,"2417 - Final Fantasy IV Advance (E).gba","",004F5A08
 BDVE,00A69068,"2426 - Dragon Ball - Advanced Adventure (U).gba","",00D2BAE4
-BR5E,000A2410,"2427 - MegaMan Battle Network 6 - Cybeast Gregar (U).gba","",
-BR5P,000A2410,"2428 - MegaMan Battle Network 6 - Cybeast Gregar (E).gba","",
-BR6P,000A0F30,"2429 - MegaMan Battle Network 6 - Cybeast Falzar (E).gba","",
-B44P,00420000,"2434 - 3 in 1 - Rugrats, SpongeBob, Tak (E).gba","",
-B8QE,00E914C8,"2435 - Pirates of the Caribbean - Dead Man's Chest (U).gba","",
-BR6E,000A0F30,"2436 - MegaMan Battle Network 6 - Cybeast Falzar (U).gba","",
+BR5E,00159F48,"2427 - MegaMan Battle Network 6 - Cybeast Gregar (U).gba","",00159DC8
+BR5P,00159F48,"2428 - MegaMan Battle Network 6 - Cybeast Gregar (E).gba","",00159DC8
+BR6P,001583F8,"2429 - MegaMan Battle Network 6 - Cybeast Falzar (E).gba","",00158278
+B44P,0041FC88,"2434 - 3 in 1 - Rugrats, SpongeBob, Tak (E).gba","",0041FC70
+BR6E,001583F8,"2436 - MegaMan Battle Network 6 - Cybeast Falzar (U).gba","",00158278
 BY2E,00B9E418,"2437 - 2 in 1 - Yu-Gi-Oh! The Sacred Cards & Yu-Gi-Oh! Reshef Of Destrcution (U).gba","",00B9E340
-BCZP,0020C998,"2439 - SRS - Street Racing Syndicate (E).gba","",
-BM7S,000E02E0,"2441 - Madagascar - Operacion Pinguino (S).gba","",
 BVDJ,001B37D4,"2442 - Bit Generations - Boundish (J).gba","",001B3774
-BVBJ,00087E38,"2443 - Bit Generations - Dial Hex (J).gba","",
-BVCJ,000AD364,"2444 - Bit Generations - Dotstream (J).gba","",
-BQ7E,001C508C,"2445 - Monster House (U).gba","",000E4B58
-BH5S,00061050,"2446 - Vecinos Invasores (S).gba","",0006105C
-B75J,00079CA8,"2448 - Hudson Best Collection Vol. 5 - Shooting Collection (J).gba","",
-BCAJ,0062C12C,"2449 - Cars (J).gba","",006B7BA8
-BVGJ,000351AC,"2451 - Bit Generations - Soundvoyager (J).gba","",
-BVEJ,001ADBB0,"2452 - Bit Generations - Orbital (J).gba","",00028C20
-BVAJ,00347B04,"2454 - Bit Generations - Coloris (J).gba","",
+BVBJ,00087E38,"2443 - Bit Generations - Dial Hex (J).gba","",00087E20
+BVCJ,000AD364,"2444 - Bit Generations - Dotstream (J).gba","",000AD34C
+B75J,00079CA8,"2448 - Hudson Best Collection Vol. 5 - Shooting Collection (J).gba","",00079C54
+BVGJ,000351AC,"2451 - Bit Generations - Soundvoyager (J).gba","",00035194
+BVEJ,001ADBB0,"2452 - Bit Generations - Orbital (J).gba","",001ADB08
+BVAJ,00347B04,"2454 - Bit Generations - Coloris (J).gba","",00347978
 BW3J,000104F0,"2456 - 2 in 1 - Sonic Advance & Chuuchu Rocket (J).gba","",000104C0
 BHSJ,0010212C,"2457 - Hamster Monogatari 3EX 4 Special (J).gba","",00102108
 AB4E,00074EB8,"2458 - Summon Night - Swordcraft Story (U).gba","",00074EA0
 BFWP,00080018,"2459 - 2 in 1 - Finding Nemo & Finding Nemo - The Continuing Adventures (E).gba","",0007FF7C
-BIQJ,0046C274,"2460 - Mr. Incredible - Kyouteki Underminder Toujou (J).gba","",
-BRIJ,00902EB0,"2462 - Rhythm Tengoku (J).gba","",
-BDXE,000E461C,"2463 - Battle B-Daman (U).gba","",
+BDXE,000E461C,"2463 - Battle B-Daman (U).gba","",000E45D4
 AOGE,00438C3C,"2467 - Super Robot Taisen - Original Generation (U).gba","",00438C0C
-BUFE,000C0C04,"2472 - 2 in 1 - Dragon Ball Z - Buu's Fury & Dragon Ball GT - Transformation (U).gba","",
-BCAD,000E9150,"2473 - Cars (G).gba","",
 BUOP,000350F0,"2474 - Dr. Sudoku (E).gba","",000350C0
 BYVE,00B1B980,"2476 - 2 in 1 - Yu-Gi-Oh! - Destiny Board Traveler & Yu-Gi-Oh! - Dungeon Dice Monsters (E).gba","",00B1B944
-BCAI,006200CC,"2477 - Cars (I).gba","",006ABC60
-BL7E,0007A320,"2479 - LEGO Star Wars II - The Original Trilogy (U).gba","",
-BLPI,001363EC,"2480 - 2 in 1 - Disney Principesse & Il Re Leone (I).gba","",
-BCQE,001119CC,"2482 - The Cheetah Girls (U).gba","",0011194C
-BL7P,0007A45C,"2483 - LEGO Star Wars II - The Original Trilogy (E).gba","",
+BLPI,001363EC,"2480 - 2 in 1 - Disney Principesse & Il Re Leone (I).gba","",001363D4
+BCQE,001304C8,"2482 - The Cheetah Girls (U).gba","",0013048C
 BOAE,0008E87C,"2484 - Open Season (U).gba","",0008E84C
-B24E,01E866BC,"2485 - Pokemon Mystery Dungeon - Red Rescue Team (U).gba","",
-BL6E,000E7114,"2487 - My Little Pony Crystal Princess - The Runaway Rainbow (U).gba","",000E7104
+B24E,01E866BC,"2485 - Pokemon Mystery Dungeon - Red Rescue Team (U).gba","",01E86650
 BQYE,000898C4,"2488 - Danny Phantom - Urban Jungle (U).gba","",00089834
 BFEE,00050C5C,"2491 - Dogz - Fashion (U).gba","",00050C20
-B7FE,00247BD8,"2492 - FIFA Soccer 07 (U).gba","",
 AN3X,0003DE44,"2493 - Catz (E).gba","",0003DE08
 B4TE,000411F4,"2497 - Strawberry Shortcake - Sweet Dreams (U).gba","",000411C4
-BN9E,00652100,"2501 - The Little Mermaid - Magic in Two Kingdoms (U).gba","",0023A30C
-BZ5J,0041524C,"2502 - Final Fantasy V Advance (J).gba","",
-BWBF,0013668C,"2503 - 2 in 1 - Frere des Ours & Disney Princesse (F).gba","",
+BN9E,0025D708,"2501 - The Little Mermaid - Magic in Two Kingdoms (U).gba","",0025D6CC
+BZ5J,0041524C,"2502 - Final Fantasy V Advance (J).gba","",004151F8
+BWBF,0013668C,"2503 - 2 in 1 - Frere des Ours & Disney Princesse (F).gba","",00136674
 BRRF,0005002C,"2504 - Bratz - Rock Angelz (F).gba","",0004FF90
-BBME,000F9574,"2507 - Battle B-Daman - Fire Spirits (U).gba","",
-AP8S,000B86C4,"2508 - Scooby-Doo - The Motion Picture (S).gba","",
+BBME,000F9574,"2507 - Battle B-Daman - Fire Spirits (U).gba","",000F952C
 BN2E,0040C970,"2510 - Naruto Ninja Council 2 (U).gba","",0040C940
-BUQE,00218FA8,"2514 - 2 in 1 - Uno & Skip-Bo (U).gba","",00218EC8
-B33E,0014294C,"2516 - The Santa Clause 3 - The Escape Clause (U).gba","",
 BXCE,00020184,"2519 - 3 in 1 - Ker Plunk! & Toss Across & Tip It (U).gba","",00020148
-BB3E,001232F0,"2521 - Barbie - 12 Dancing Princesses (U).gba","",000604BC
 BB4E,0030D1E4,"2522 - 2 in 1 - Matchbox Missions (U).gba","",0030D19C
-BNPE,001409FC,"2523 - Princess Natasha - Student Secret Agent (U).gba","",
-BXPE,001C532C,"2525 - Dora the Explorer - Dora's World Adventure (U).gba","",
-BT8E,00682398,"2526 - Teenage Mutant Ninja Turtles - Double Pack (U).gba","",
+BT8E,00682398,"2526 - Teenage Mutant Ninja Turtles - Double Pack (U).gba","",00682338
 BBIE,0006B314,"2529 - The Barbie Diaries - High School Mystery (U).gba","",0006B2D8
 BSKE,000968A8,"2531 - Summon Night - Swordcraft Story 2 (U).gba","",0009686C
-BS7E,000ABAE0,"2532 - 2 in 1 - Shark Tale & Shrek 2 (U).gba","",
-BQJE,0011C61C,"2537 - 2 in 1 - Hot Wheels Stunt Track Challenge & Hot Wheels World Race (U).gba","",
+BQJE,0011C61C,"2537 - 2 in 1 - Hot Wheels Stunt Track Challenge & Hot Wheels World Race (U).gba","",0011C5BC
 BLHE,000AF964,"2538 - Flushed Away (U).gba","",000AF8D4
-BU5E,001DCC8C,"2543 - Uno 52 (U).gba","",001DCBAC
-BHVP,0010093C,"2544 - Scurge Hive (E).gba","",
-BFYE,0009C3AC,"2548 - Foster's Home for Imaginary Friends (U).gba","",0003459C
-BX3E,00E47F44,"2552 - 2 in 1 - Spider-Man & Spider-Man 2 (U).gba","",00E47CA4
 B3NE,0018D008,"2553 - 3 in 1 - Majesco's Sports Pack (U).gba","",0018CFB4
 BOAX,0009ACC8,"2555 - Open Season (E).gba","",0009AC98
 BRQE,00114E94,"2557 - 3 in 1 - Majesco's Rec Room Challenge (U).gba","",00114E4C
 BRLP,002B9EC4,"2558 - Rebelstar - Tactical Command (E).gba","",002B9EA0
-BJKE,001F9FC4,"2559 - Juka and the Monophonic Menace (U).gba","",
-BHVE,000F052C,"2560 - Scurge Hive (U).gba","",000F0514
-BL8P,0008D00C,"2561 - Laura Croft - Tomb Raider Legend (E).gba","",
-BZ5E,003F2CB4,"2564 - Final Fantasy V Advance (U).gba","",
+BL8P,0008D00C,"2561 - Laura Croft - Tomb Raider Legend (E).gba","",0008CFAC
+BZ5E,003F2CB4,"2564 - Final Fantasy V Advance (U).gba","",003F2C60
 BJTE,0003BF70,"2566 - Tom and Jerry Tales (U).gba","",0003BF40
-B24P,01E866BC,"2567 - Pokemon Mystery Dungeon - Red Rescue Team (E).gba","",
+B24P,01E866BC,"2567 - Pokemon Mystery Dungeon - Red Rescue Team (E).gba","",01E86650
 BPUE,001B8A34,"2570 - 2 in 1 - Scooby-Doo & Scooby-Doo 2 Monsters Unleashed (U).gba","",001B8980
-BU2E,0004C65C,"2571 - 2 in 1 - SpongeBob Squarepants Battle for Bikini Bottom & Nicktoons Freeze Frame Frenzy (U).gba","",
-BXHE,001507D8,"2573 - 2 in 1 - Madagascar Operation Penguin & Shrek 2 (U).gba","",
+BU2E,00A15E10,"2571 - 2 in 1 - SpongeBob Squarepants Battle for Bikini Bottom & Nicktoons Freeze Frame Frenzy (U).gba","",00A15D80
 B82Y,000FE384,"2577 - Dogz (E).gba","",000FE348
 B2RE,004730CC,"2580 - Super Robot Taisen - Original Generation 2 (U).gba","",0047309C
-BIJE,000001FC,"2581 - Sonic The Hedgehog - Genesis (U).gba","",
-AH8P,006F93E4,"2583 - Hot Wheels - Velocity X (E).gba","",00014EDD
-BC9E,0008BF1C,"2585 - Spider-Man - Battle For New York (U).gba","",000909DC
-BENP,00FA512C,"2586 - Eragon (E).gba","",000475B0
+BIJE,0039FEC8,"2581 - Sonic The Hedgehog - Genesis (U).gba","",0039FE98
+AH8P,00599454,"2583 - Hot Wheels - Velocity X (E).gba","",005993E8
 BHHP,000875A4,"2588 - Hi Hi Puffy AmiYumi - Kaznapped (E).gba","",00087514
 BJTP,0003C11C,"2589 - Tom and Jerry Tales (E).gba","",0003C0EC
-BH3P,0181740C,"2590 - Happy Feet (E).gba","",000B107C
-BJHP,001E97CC,"2591 - Justice League Heroes - The Flash (E).gba","",0010E358
 BLHP,000B2BE8,"2592 - Flushed Away (E).gba","",000B2B58
-BT7E,00036400,"2597 - Tonka - On the Job (U).gba","",
-BYUE,001CBD48,"2598 - Yggdra Union - We'll Never Fight Alone (U).gba","",
+BYUE,001CBD48,"2598 - Yggdra Union - We'll Never Fight Alone (U).gba","",001CBC64
 BZ6J,001EA5DC,"2599 - Final Fantasy VI Advance (J).gba","",001EA588
-BL8E,0008D00C,"2600 - Lara Croft - Tomb Raider Legend (U).gba","",
+BL8E,0008D00C,"2600 - Lara Croft - Tomb Raider Legend (U).gba","",0008CFAC
