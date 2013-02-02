@@ -4,6 +4,10 @@ if not bit then
 	bit = require("bit")
 end
 
+print("[Key Bindings]")
+print("Prev MusicPlayer = Shift + Left")
+print("Next MusicPlayer = Shift + Right")
+
 -- ---------------------------------------------------------
 
 -- http://lua-users.org/wiki/LuaCsv
@@ -74,7 +78,12 @@ function ReadM4ADatabase(filename)
 		if csv[5] ~= nil and csv[5] ~= "" then
 			e.mplayer_addr = bit.bor(0x08000000, tonumber(csv[5], 16))
 		end
-		m4aroms[csv[1]] = e
+		if m4aroms[csv[1]] then
+			--print("Found duplicated ID in database [" .. csv[1] .. "]")
+			--m4aroms[csv[1]] = e
+		else
+			m4aroms[csv[1]] = e
+		end
 	end
 	return m4aroms
 end
@@ -108,24 +117,81 @@ function mplayergui(x, y, mplayer_addr_base, mplayer_index)
 
 	mplayer_info_text = mplayer_info_text .. string.format("MusicPlayer %d", mplayer_index)
 
+	-- read MusicPlayerArea* from MPlayTable
+	local mplayerarea_addr = memory.readdword(mplayer_ptr_addr)
+	local mplayerarea_addr_region = bit.rshift(mplayerarea_addr, 24)
 	-- read MusicPlayerTrack* from MPlayTable
 	local mplayertracktable_addr = memory.readdword(mplayer_ptr_addr + 4)
-	if bit.band(mplayertracktable_addr, 0xff000000) ~= 0x03000000 then
-		-- not IRAM, then
+	local mplayertracktable_addr_region = bit.rshift(mplayertracktable_addr, 24)
+
+	mplayer_info_text = mplayer_info_text .. string.format(" [%08x -> %08x,%08x]", mplayer_ptr_addr, mplayerarea_addr, mplayertracktable_addr)
+
+	-- work area must be WRAM or IRAM (safety check)
+	if mplayerarea_addr_region ~= 2 and mplayerarea_addr_region ~= 3 then
+		gui.text(x, y, mplayer_info_text)
+		return
+	end
+	if mplayertracktable_addr_region ~= 2 and mplayertracktable_addr_region ~= 3 then
 		gui.text(x, y, mplayer_info_text)
 		return
 	end
 
-	mplayer_info_text = mplayer_info_text .. string.format(" [%08x -> %08x]", mplayer_ptr_addr, mplayertracktable_addr)
-
+	-- version check
+	local m4a_version = nil
+	local m4a_ver_regular = true
+	local m4a_ver_metroid = true
 	for trackindex = 0, 16 - 1 do
+		local mplayertrack_base = mplayertracktable_addr + (trackindex * 0x50)
+		local songptr
+
+		songptr = memory.readdword(mplayertrack_base + 0x40)
+		if bit.band(songptr, 0xfe000000) == 0x08000000 then
+			m4a_version = ""
+			break
+		end
+
+		songptr = memory.readdword(mplayertrack_base + 0x24)
+		if bit.band(songptr, 0xfe000000) == 0x08000000 then
+			m4a_version = "Metroid"
+			break
+		end
+
+		if songptr ~= 0 then
+			break
+		end
+	end
+	if not m4a_version then
+		gui.text(x, y, mplayer_info_text)
+		return
+	end
+	if m4a_version ~= "" then
+		mplayer_info_text = mplayer_info_text .. " [" .. m4a_version .. "]"
+	end
+
+	local m4a_trackcount = memory.readbyte(mplayerarea_addr + 8)
+	if m4a_version == "Metroid" then
+		m4a_trackcount = memory.readbyte(mplayerarea_addr + 1)
+	end
+	mplayer_info_text = mplayer_info_text .. " " .. m4a_trackcount .. "ch"
+
+	for trackindex = 0, math.min(m4a_trackcount, 16) - 1 do
 		-- read MusicPlayerTrack
 		local mplayertrack_base = mplayertracktable_addr + (trackindex * 0x50)
-		local track = {
-			status = memory.readbyte(mplayertrack_base),
-			note = memory.readbyte(mplayertrack_base + 0x05),
-			songptr = memory.readdword(mplayertrack_base + 0x40),
-		}
+
+		local track = {}
+		if m4a_version == "" then
+			track = {
+				status = memory.readbyte(mplayertrack_base),
+				note = memory.readbyte(mplayertrack_base + 0x05),
+				songptr = memory.readdword(mplayertrack_base + 0x40),
+			}
+		elseif m4a_version == "Metroid" then
+			track = {
+				status = 0x80,
+				note = memory.readbyte(mplayertrack_base + 0x01),
+				songptr = memory.readdword(mplayertrack_base + 0x24),
+			}
+		end
 		if track.status ~= 0 and bit.band(track.songptr, 0xfe000000) == 0x08000000 then
 			mplayer_info_text = mplayer_info_text .. "\n"
 			mplayer_info_text = mplayer_info_text .. string.format("Ch%02d", trackindex)
@@ -137,7 +203,19 @@ function mplayergui(x, y, mplayer_addr_base, mplayer_index)
 	gui.text(x, y, mplayer_info_text)
 end
 
+keys = { {}, {} }
 gui.register(function()
+	local key = input.get()
+	keys[1] = key
+
+	if key.shift then
+		if key.left and not keys[2].left then
+			m4amon_mplayer_index = math.max(0, m4amon_mplayer_index - 1)
+		elseif key.right and not keys[2].right then
+			m4amon_mplayer_index = m4amon_mplayer_index + 1
+		end
+	end
+
 	local romid = ReadRomId()
 	local m4ainfo = m4aroms[romid]
 	if not m4ainfo or not m4ainfo.mplayer_addr then
@@ -145,4 +223,5 @@ gui.register(function()
 	end
 
 	mplayergui(0, 0, m4ainfo.mplayer_addr, m4amon_mplayer_index)
+	keys[2] = keys[1]
 end)
