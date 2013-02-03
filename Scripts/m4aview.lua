@@ -168,15 +168,46 @@ function mplayergui(x, y, mplayer_addr_base, mplayer_index)
 		mplayer_info_text = mplayer_info_text .. " [" .. m4a_version .. "]"
 	end
 
+	local gba_framerate = 262144 / 4389
+	local song = {}
+
 	local m4a_trackcount = memory.readbyte(mplayerarea_addr + 8)
 	if m4a_version == "Metroid" then
 		m4a_trackcount = memory.readbyte(mplayerarea_addr + 1)
+		song.bpm_accuracy = 60 / (24 * 256 / memory.readword(mplayerarea_addr + 0x0c) / gba_framerate)
+		song.bpm = math.ceil(60 / (24 * 256 / memory.readword(mplayerarea_addr + 0x0c) / 60))
+	else
+		song.bpm_accuracy = 60 / (24 * 150 / memory.readword(mplayerarea_addr + 0x20) / gba_framerate)
+		song.bpm = memory.readword(mplayerarea_addr + 0x20)
 	end
+	mplayer_info_text = mplayer_info_text .. "\nSongHeader"
 	mplayer_info_text = mplayer_info_text .. " " .. m4a_trackcount .. "ch"
+	mplayer_info_text = mplayer_info_text .. " T" .. song.bpm
+	--mplayer_info_text = mplayer_info_text .. " T" .. string.format("%.1f", song.bpm_accuracy)
 
 	for trackindex = 0, math.min(m4a_trackcount, 16) - 1 do
 		-- read MusicPlayerTrack
 		local mplayertrack_base = mplayertracktable_addr + (trackindex * 0x50)
+
+		-- mute hack
+		--                     0    1    2    3    4    5    6    7    8    9   10   11   12   13   14   15
+		local mutetarget = { nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil }
+		                 --{ nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil }
+		                 --{true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true }
+		if mutetarget and mutetarget[trackindex + 1] then
+			local volumeval = 1
+			if m4a_version == "" then
+				memory.writebyte(mplayertrack_base + 0x10, volumeval)
+				memory.writebyte(mplayertrack_base + 0x11, volumeval)
+				memory.writebyte(mplayertrack_base + 0x12, volumeval)
+				memory.writebyte(mplayertrack_base + 0x13, volumeval)
+			elseif m4a_version == "Metroid" then
+				memory.writebyte(mplayertrack_base + 0x05, volumeval)
+				memory.writebyte(mplayertrack_base + 0x06, volumeval)
+				memory.writebyte(mplayertrack_base + 0x08, volumeval)
+				memory.writebyte(mplayertrack_base + 0x09, volumeval)
+			end
+		end
 
 		local track = {}
 		if m4a_version == "" then
@@ -184,19 +215,23 @@ function mplayergui(x, y, mplayer_addr_base, mplayer_index)
 				status = memory.readbyte(mplayertrack_base),
 				note = memory.readbyte(mplayertrack_base + 0x05),
 				songptr = memory.readdword(mplayertrack_base + 0x40),
+				muted = ((memory.readbyte(mplayertrack_base + 0x10) == 0 and memory.readbyte(mplayertrack_base + 0x11) == 0) or memory.readbyte(mplayertrack_base + 0x12) == 0),
 			}
 		elseif m4a_version == "Metroid" then
 			track = {
 				status = 0x80,
 				note = memory.readbyte(mplayertrack_base + 0x01),
 				songptr = memory.readdword(mplayertrack_base + 0x24),
+				muted = ((memory.readbyte(mplayertrack_base + 0x08) == 0 and memory.readbyte(mplayertrack_base + 0x09) == 0) or memory.readbyte(mplayertrack_base + 0x05) == 0),
 			}
 		end
 		if track.status ~= 0 and bit.band(track.songptr, 0xfe000000) == 0x08000000 then
 			mplayer_info_text = mplayer_info_text .. "\n"
 			mplayer_info_text = mplayer_info_text .. string.format("Ch%02d", trackindex)
-			-- mplayer_info_text = mplayer_info_text .. string.format(" %08x", track.songptr)
-			mplayer_info_text = mplayer_info_text .. string.format(" %s[%3d]", NoteNameOf(track.note), track.note)
+			if not track.muted then
+				-- mplayer_info_text = mplayer_info_text .. string.format(" %08x", track.songptr)
+				mplayer_info_text = mplayer_info_text .. string.format(" %s[%3d]", NoteNameOf(track.note), track.note)
+			end
 		end
 	end
 
