@@ -217,7 +217,7 @@ function hachiApplyLevelCheats()
         if memory.readword(0x03000d2a) == 269 then
             -- fart causes a miracle
             memory.writebyte(0x030000b0, 3) -- health
-            memory.writebyte(0x030000b1, 0) -- lip quota
+            memory.writebyte(0x030000b2, 0) -- lip quota
         end
     end
 
@@ -250,10 +250,10 @@ emu.registerbefore(function()
     scanJoypad()
     scanInputDevs()
     hachiScanStatus()
-    if not movie.active() then
+    --if not movie.active() then
        hachiApplyCheats()
        --sendJoypad()
-    end
+    --end
 end)
 
 emu.registerafter(function()
