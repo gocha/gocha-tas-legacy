@@ -59,6 +59,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
+				AdditionalOptions="/PDBALTPATH:%_PDB%"
 				LinkIncremental="2"
 				GenerateDebugInformation="true"
 				SubSystem="2"
@@ -130,6 +131,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
+				AdditionalOptions="/PDBALTPATH:%_PDB%"
 				LinkIncremental="1"
 				GenerateDebugInformation="true"
 				SubSystem="2"
