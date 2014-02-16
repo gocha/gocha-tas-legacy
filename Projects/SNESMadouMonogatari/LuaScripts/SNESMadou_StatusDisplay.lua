@@ -450,17 +450,17 @@ emu.registerbefore( function()
 	else
 		updateBattleStatFast()
 	end
-
-	-- detect levelup
-	if arlePrevLevel ~= memory.readbyte(RAM.arleStatBase + BtStatIndex.level) then
-		levelUpStatShowCount = levelUpStatShowLength
-	end
 end)
 
 emu.registerafter( function()
 	emuluaKeyInputUpdateAfter()
 
+	-- detect levelup
+	if arlePrevLevel ~= memory.readbyte(RAM.arleStatBase + BtStatIndex.level) then
+		levelUpStatShowCount = levelUpStatShowLength
+	end
 	arlePrevLevel = memory.readbyte(RAM.arleStatBase + BtStatIndex.level)
+
 	if levelUpStatShowCount > 15 and memory.readbyte(RAM.overworldFlag) ~= 1 then
 		levelUpStatShowCount = 15
 	elseif levelUpStatShowCount > 0 then
